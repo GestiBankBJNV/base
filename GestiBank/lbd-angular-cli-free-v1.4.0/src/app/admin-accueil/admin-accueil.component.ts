@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminAccueilComponent implements OnInit {
 
-  constructor() { }
+  	constructor() { }
 
-  ngOnInit() {
-  }
+  	ngOnInit() {
+  	}
+
+  	clicRechercher(){
+  		console.log('recherche du conseiller');
+		/* Mettre ici le code pour rechercher si le conseiller appartient bien à la base de données */
+	}
 
 }

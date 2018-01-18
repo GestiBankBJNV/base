@@ -17,10 +17,12 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
 import { ClientProfilComponent } from './client-profil/client-profil.component';
+import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component'
 
 const routes: Routes =[
     { path: 'conseiller_accueil',      component: ConseillerAccueilComponent },
     { path: 'admin_accueil',      component: AdminAccueilComponent },
+    { path: 'admin_fiche_conseiller', component: AdminFicheConseillerComponent },
     { path: 'public_connexion',      component: ConnexionComponent },
     { path: 'dashboard',      component: HomeComponent },
     { path: 'client_accueil', component: ClientAccueilComponent },

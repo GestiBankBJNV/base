@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms'; // pour le formulaire des conseillers
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -27,6 +28,7 @@ import { ClientComptesComponent } from './client-comptes/client-comptes.componen
 import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
 import { ClientProfilComponent } from './client-profil/client-profil.component';
+import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { ClientProfilComponent } from './client-profil/client-profil.component';
     ClientComptesComponent,
     AdminAccueilComponent,
     ConseillerAccueilComponent,
-    ClientProfilComponent
+    ClientProfilComponent,
+    AdminFicheConseillerComponent
 
   ],
   imports: [
@@ -57,7 +60,8 @@ import { ClientProfilComponent } from './client-profil/client-profil.component';
     SidebarModule,
     RouterModule,
     AppRoutingModule,
-    LbdModule
+    LbdModule,
+    ReactiveFormsModule // pour le formulaire des conseillers
   ],
   providers: [],
   bootstrap: [AppComponent]
