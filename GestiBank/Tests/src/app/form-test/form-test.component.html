@@ -1,0 +1,16 @@
+<h1>test form</h1>
+
+<form [formGroup] = "formulaire" novalidate>
+	<div class="form-group">
+		<label class="center-block">Name : 
+			<input class="form-control" formControlName="name">			
+		</label>
+		<label class="center-block">Mdp : 
+			<input class="form-control" formControlName="mdp">			
+		</label>
+
+	</div>
+</form>
+
+<p>Form value: {{ formulaire.value | json }}</p>
+<p>Form status: {{ formulaire.status | json }}</p>

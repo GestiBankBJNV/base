@@ -1,0 +1,18 @@
+<h3>Rechercher un conseiller</h3>
+<input [(ngModel)]="conseillerRecherche" type='text'>
+<button (click)="clicRechercher()" type="submit" >Rechercher</button>
+
+<h3 *ngIf="isLoading"><i>Recherche conseillers ... </i></h3>
+<h3 *ngIf="!isLoading">Selectionner un conseiller:</h3>
+ 
+<nav>
+  <button (click)="getConseillers()" class="btn btn-primary">Refresh</button>
+  <a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{conseiller.name}}</p></a>
+</nav>
+ 
+<div *ngIf="selectedConseiller">
+  <hr>
+  <h2>Conseiller Detail</h2>
+  <h3>Editing: {{selectedConseiller.name}}</h3>
+  <conseiller-detail [conseiller]="selectedConseiller"></conseiller-detail>
+</div>

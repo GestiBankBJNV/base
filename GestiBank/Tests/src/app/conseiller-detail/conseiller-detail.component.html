@@ -1,0 +1,47 @@
+<h1>Formulaire d'un conseiller</h1>
+
+
+<form [formGroup] = "formulaire" (ngSubmit)="onSubmit()" novalidate>
+
+	<button type="submit"
+            [disabled]="formulaire.pristine" class="btn btn-success">Save</button> &nbsp;
+    <button type="reset" (click)="revert()"
+            [disabled]="formulaire.pristine" class="btn btn-danger">Revert</button>
+
+	<div class="form-group">
+		<label class="center-block">Nom : 
+			<input class="form-control" formControlName="name">			
+		</label>
+	<div class="form-group">
+		<label class="center-block">Email : 
+			<input class="form-control" formControlName="email">			
+		</label>
+	</div>
+
+	</div>
+	<div formGroupName="adresse" class="well well-lg">
+  		<h4>Adresse</h4>
+  		<div class="form-group">
+    		<label class="center-block">Rue:
+      			<input class="form-control" formControlName="rue">
+    		</label>
+ 		 </div>
+  		<div class="form-group">
+    		<label class="center-block">Ville:
+      			<input class="form-control" formControlName="ville">
+    		</label>
+  		</div>
+  		
+  		<div class="form-group">
+    		<label class="center-block">Code Postal:
+      		<input class="form-control" formControlName="CP">
+    		</label>
+  		</div>
+	</div>
+</form>
+
+<p>Form value: {{ formulaire.value | json }}</p>
+<p>Form status: {{ formulaire.status | json }}</p>
+
+<h4>Name change log</h4>
+<div *ngFor="let name of nameChangeLog">{{name}}</div>
