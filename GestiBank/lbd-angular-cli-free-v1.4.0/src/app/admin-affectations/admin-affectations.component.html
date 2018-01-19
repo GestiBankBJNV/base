@@ -37,10 +37,10 @@
 							                      <td>{{ row[4] }}</td>
 							                      <td>{{ row[5] }}</td>
 							                      <td class="td-actions text-right">
-							                          <a rel="tooltip" title="Affecter demande" class="btn btn-info btn-simple btn-xs">
+							                          <a rel="tooltip" title="Affecter demande" class="btn btn-info btn-simple btn-xs" (click)="affecter=true">
 							                              <i class="fa fa-user"></i>
 							                          </a>
-							                          <a rel="tooltip" title="Modifier Affectation" class="btn btn-success btn-simple btn-xs">
+							                          <a rel="tooltip" title="Modifier Affectation" class="btn btn-success btn-simple btn-xs" (click)="modifier=true">
 							                              <i class="fa fa-edit"></i>
 							                          </a>
 							                          <a rel="tooltip" title="Supprimer" class="btn btn-danger btn-simple btn-xs">
@@ -84,6 +84,42 @@
 								</div>
 
 							</div>				
+						</div>
+					</div>
+
+					<!-- A afficher si on clique sur le bouton dans le tableau -->
+					<div *ngIf="(affecter)">
+						<div class="header">
+							<h4>Associer la demande au conseiller : </h4>
+						</div>
+
+						<div class="content">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<input type="text" value="" placeholder="Input" class="form-control" />
+										<button class="btn btn-primary btn-fill" (click)="affecter=false">Valider</button>
+									</div>
+								</div>				
+							</div>
+						</div>
+					</div>
+
+					<!-- A afficher si on clique sur le bouton dans le tableau -->
+					<div *ngIf="(modifier)">
+						<div class="header">
+							<h4>Affecter le client au conseiller : </h4>
+						</div>
+
+						<div class="content">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<input type="text" value="" placeholder="Input" class="form-control" />
+										<button class="btn btn-primary btn-fill" (click)="modifier=false">Valider</button>
+									</div>
+								</div>				
+							</div>
 						</div>
 					</div>
 

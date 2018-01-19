@@ -14,6 +14,8 @@ declare interface TableData {
 export class AdminAffectationsComponent implements OnInit {
 
 	public tableData1: TableData;
+	private affecter: boolean = false;
+	private modifier: boolean = false;
 
   	constructor() { }
 
