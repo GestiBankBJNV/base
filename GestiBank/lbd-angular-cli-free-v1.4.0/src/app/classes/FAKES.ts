@@ -9,7 +9,7 @@ import { Operation } from './operation';
 //Opérations temporaire (liste)
 export const OPERATIONS : Operation[] = [
 	{date : new Date(), libelle : "Retrait DAB Lille", type : "Débit", montant : 100.0},
-	{date : new Date(), libelle : "Retrait DAB Marseille", type : "v", montant : 80.0},
+	{date : new Date(), libelle : "Retrait DAB Marseille", type : "Débit", montant : 80.0},
 	{date : new Date(), libelle : "Versement", type : "Crédit", montant : 1600.0},
 	{date : new Date(), libelle : "Retrait DAB", type : "Débit", montant : 50.0},
 	{date : new Date(), libelle : "Retrait DAB", type : "Débit", montant : 50.0},

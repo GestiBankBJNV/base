@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Compte } from '../classes/compte';
+import { Client } from '../classes/client';
+import { CLIENT } from '../classes/FAKES';
 
 @Component({
   selector: 'app-client-comptes',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientComptesComponent implements OnInit {
 
+	client : Client = CLIENT;
+	selectedCompte : Compte;
   constructor() { }
 
   ngOnInit() {
   }
 
+  selectCompte(compte) {
+  	console.log("Compte selectionné");
+  	this.selectedCompte = compte;
+  }
 }

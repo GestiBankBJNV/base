@@ -7,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminAccueilComponent implements OnInit {
 
+<<<<<<< HEAD
   	constructor() { }
 
   	ngOnInit() {
   	}
 
   	
+=======
+  constructor() { }
+
+  ngOnInit() {
+  }
+>>>>>>> victorien
 
 }

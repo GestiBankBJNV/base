@@ -27,7 +27,8 @@ export const ROUTES_CLIENT : RouteInfo[] = [
     { path: 'client_accueil', title: 'Accueil',  icon:'pe-7s-home', class: '' },
     { path: 'client_profil', title: 'Mon profil',  icon:'pe-7s-user', class: '' },
     { path: 'client_notifications', title: 'Messages',  icon:'pe-7s-mail', class: '' },
-    { path: 'client_comptes', title: 'Gérer mes comptes',  icon:'pe-7s-graph', class: '' }
+    { path: 'client_comptes', title: 'Gérer mes comptes',  icon:'pe-7s-graph', class: '' },
+    { path: 'client_devises', title: 'Devises',  icon:'pe-7s-cash', class: '' }
 ];
 
 export const ROUTES_ADMIN : RouteInfo[] = [
@@ -37,9 +38,8 @@ export const ROUTES_ADMIN : RouteInfo[] = [
 ];
 
 export const ROUTES_PUBLIC: RouteInfo[] = [
-    { path: 'public_accueil', title: 'Accueil',  icon: 'pe-7s-graph', class: '' },
-    { path: 'public_connexion', title: 'Connexion',  icon: 'pe-7s-graph', class: '' }
-    
+    { path: 'public_connexion', title: 'Espace Public - Connexion',  icon: 'pe-7s-graph', class: '' },
+    { path: 'public_accueil', title: 'Espace Public - Accueil',  icon: 'pe-7s-graph', class: '' }
 
 ];
 

@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from '../classes/client';
 import { CLIENT } from '../classes/FAKES';
 
+declare var $:any;
+
+
 @Component({
   selector: 'app-client-profil',
   templateUrl: './client-profil.component.html',
@@ -65,7 +68,8 @@ export class ClientProfilComponent implements OnInit {
   		
   		//On attend une nouvelle confirmation après la validation d'un formulaire
   		this.resetWait();
-  		console.log(this.client.mail);
+  		//console.log(this.client.mail);
+      this.showNotification('top','center', "Une demande a été envoyée à votre conseiller. Elle sera traitée dès que possible");
   	}
   }
 
@@ -75,5 +79,23 @@ export class ClientProfilComponent implements OnInit {
   		return "Confirmer";
   	}
   	return "Mettre à jour";
+  }
+
+  //Afficher une notification à la validation du formulaire
+  showNotification(from, align, msg){
+      //const type = ['','info','success','warning','danger'];
+
+      //var color = Math.floor((Math.random() * 4) + 1);
+      $.notify({
+          icon: "pe-7s-mail-open-file",
+          message: msg
+      },{
+          type: 'info',
+          timer: 1000,
+          placement: {
+              from: from,
+              align: align
+          }
+      });
   }
 }
