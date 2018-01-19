@@ -22,6 +22,9 @@ import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fi
 import { ClientComptesComponent } from './client-comptes/client-comptes.component';
 import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
 
+import { AdminConseillersComponent } from './admin-conseillers/admin-conseillers.component';
+import { AdminAffectationsComponent } from './admin-affectations/admin-affectations.component';
+
 
 const routes: Routes =[
     { path: 'conseiller_accueil',      component: ConseillerAccueilComponent },
@@ -41,7 +44,9 @@ const routes: Routes =[
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: '',          redirectTo: 'public_accueil', pathMatch: 'full' }
+    { path: '',          redirectTo: 'public_accueil', pathMatch: 'full' },
+    { path: 'admin_conseillers', component: AdminConseillersComponent },
+    { path: 'admin_affectations', component: AdminAffectationsComponent }
 ];
 
 @NgModule({

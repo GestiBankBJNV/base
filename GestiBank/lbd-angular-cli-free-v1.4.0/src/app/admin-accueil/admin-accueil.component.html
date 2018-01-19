@@ -4,26 +4,18 @@
             <div class="col-md-8">
                 <div class="card">
 
-                	<!-- Interface admin : rechercher un conseiller par nom ou matricule -->
+                	<!-- Interface admin : Accueil -->
                 	<div class="header">
-						<h4>Gestion des conseillers</h4>
+						<h3>Bienvenue dans l'espace d'administration</h3>
 					</div>
 
 					<div class="content">
 						<div class="row">
-							<div class="col-md-6">
-					
-								
-								<div class="form-group">
-										
-									<label>Rechercher un conseiller par nom/matricule</label>
-									<input [(ngModel)]="conseillerRecherche" type="text" value="" placeholder="Input" class="form-control"/>
-									<button routerLink="/admin_fiche_conseiller" (click)="clicRechercher()" type="submit" class="btn btn-info btn-fill pull-right">Rechercher</button> <!-- mener à la fiche du conseiller recherché s'il existe --> <!-- effacer routerLink="/ficheConseiller" quand vérif fonctionne -->															
-								</div>
-
-								
-								
-							</div>				
+							<div class="col-md-12">
+								<h4>Vous pouvez sélectionner l'action que vous souhaitez effectuer dans le menu</h4>
+								<p>Conseillers : Gérer les fiches des conseillers et créer de nouvelles fiches</p>		
+								<p>Affectations : Gérer les demandes d'ouverture de compte et (ré)affecter les clients aux conseillers</p>
+							</div>
 						</div>
 					</div>
 
@@ -31,25 +23,6 @@
 			</div>
 		</div>
 
-		<div class="row">
-            <div class="col-md-8">
-                <div class="card">
-
-                	<div class="header">
-						<h4>Gestion des affectations</h4>
-					</div>
-
-					<div class="content">
-						<div class="row">
-							<div class="col-md-4">
-								<!-- Ajouter la liste des demandes d'ouverture de compte etc... p15 -->
-							</div>				
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
+		
 	</div>
 </div>

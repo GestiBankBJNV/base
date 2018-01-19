@@ -31,7 +31,9 @@ export const ROUTES_CLIENT : RouteInfo[] = [
 ];
 
 export const ROUTES_ADMIN : RouteInfo[] = [
-    { path: 'admin_accueil', title: 'Espace Admin',  icon:'pe-7s-user', class: '' }
+    { path: 'admin_accueil', title: 'Espace Admin',  icon:'pe-7s-user', class: '' },
+    { path: 'admin_conseillers', title: 'Conseillers',  icon:'pe-7s-user', class: '' },
+    { path: 'admin_affectations', title: 'Affectations',  icon:'pe-7s-user', class: '' }
 ];
 
 export const ROUTES_PUBLIC: RouteInfo[] = [

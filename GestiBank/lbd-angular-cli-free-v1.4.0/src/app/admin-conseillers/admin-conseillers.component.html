@@ -1,0 +1,48 @@
+<div class="main-content" >
+    <div class="container-fluid">
+    	<div class="row">
+            <div class="col-md-8">
+                <div class="card">
+
+                	<!-- Interface admin : rechercher un conseiller par nom ou matricule -->
+                	<div class="header">
+						<h4>Gestion des conseillers</h4>
+					</div>
+
+					<div class="content">
+						<div class="row">
+							<div class="col-md-6">					
+								
+								<!-- Recherche de conseiller -->
+
+								<div class="form-group">
+										
+									<label>Rechercher un conseiller par nom/matricule</label>
+									<input [(ngModel)]="conseillerRecherche" type="text" value="" placeholder="Input" class="form-control"/>
+									<button routerLink="/admin_fiche_conseiller" (click)="clicRechercher()" type="submit" class="btn btn-info btn-fill pull-right">Rechercher</button> <!-- mener à la fiche du conseiller recherché s'il existe --> <!-- effacer routerLink="/ficheConseiller" quand vérif fonctionne -->															
+								</div>
+
+								
+								
+							</div>	
+							<div class="col-md-6">
+
+								<!-- Création d'un conseiller -->
+
+								<div class="form-group">
+									<label>Nouveau conseiller</label>
+									<input type="text" value="" placeholder="Nom du conseiller" class="form-control"/>
+									<button routerLink="/admin_fiche_conseiller" type="submit" class="btn btn-info btn-fill pull-right">Créer</button>
+								</div>
+
+							</div>			
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
+</div>

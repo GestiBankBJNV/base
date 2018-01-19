@@ -1,0 +1,95 @@
+<div class="main-content" >
+    <div class="container-fluid">
+    	
+		<div class="row">
+            <div class="col-md-8">
+                <div class="card">
+
+                	<div class="header">
+						<h4>Gestion des affectations</h4>
+					</div>
+
+					<div class="content">
+						<div class="row">
+							<div class="col-md-12">
+								<!-- Ajouter la liste des demandes d'ouverture de compte etc... p15 -->
+
+								<h5>Liste des demandes d'ouverture de compte</h5>
+
+								<div class="content table-responsive table-full-width">
+							        <table class="table">
+							                <thead>
+							                    <tr>
+							                      <th class="text-center">{{ tableData1.headerRow[0] }}</th>
+							                      <th>{{  tableData1.headerRow[1]  }}</th>
+							                      <th>{{  tableData1.headerRow[2] }}</th>
+							                      <th>{{  tableData1.headerRow[3]  }}</th>
+							                      <th>{{  tableData1.headerRow[4]  }}</th>
+							                      <th>{{  tableData1.headerRow[5]  }}</th>
+							                    </tr>
+							                </thead>
+							              <tbody>
+							                  <tr *ngFor="let row of tableData1.dataRows">
+							                      <td class="text-center">{{ row[0] }}</td>
+							                      <td>{{ row[1] }}</td>
+							                      <td>{{ row[2] }}</td>
+							                      <td>{{ row[3] }}</td>
+							                      <td>{{ row[4] }}</td>
+							                      <td>{{ row[5] }}</td>
+							                      <td class="td-actions text-right">
+							                          <a rel="tooltip" title="Affecter demande" class="btn btn-info btn-simple btn-xs">
+							                              <i class="fa fa-user"></i>
+							                          </a>
+							                          <a rel="tooltip" title="Modifier Affectation" class="btn btn-success btn-simple btn-xs">
+							                              <i class="fa fa-edit"></i>
+							                          </a>
+							                          <a rel="tooltip" title="Supprimer" class="btn btn-danger btn-simple btn-xs">
+							                              <i class="fa fa-times"></i>
+							                          </a>
+							                      </td>
+							                  </tr>
+							              </tbody>
+							        </table>
+							    </div>
+
+							    <div class="row">
+									<div class="col-md-4">
+										<!-- Filter les demandes affectées ou non -->
+										<div class="dropdown">
+											<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+												Filtrer les demandes affectées
+												<span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu" role="menu">
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Toutes les demandes</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Demande affectée</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Demande non affectée</a></li>												
+											</ul>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<!-- Filter les demandes par statut -->
+										<div class="dropdown">
+											<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+												Filtrer les demandes par statut
+												<span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu" role="menu">
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Toutes les demandes</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">En cours</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Traitée</a></li>												
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>				
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -33,6 +33,8 @@ import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fi
 
 import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
 import { PublicDevisesComponent } from './public-devise/public-devises.component';
+import { AdminConseillersComponent } from './admin-conseillers/admin-conseillers.component';
+import { AdminAffectationsComponent } from './admin-affectations/admin-affectations.component';
 
 
 @NgModule({
@@ -57,6 +59,8 @@ import { PublicDevisesComponent } from './public-devise/public-devises.component
 
     ClientNotificationsComponent,
     PublicDevisesComponent,
+    AdminConseillersComponent,
+    AdminAffectationsComponent,
   ],
   imports: [
     BrowserModule,
