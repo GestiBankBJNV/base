@@ -17,12 +17,11 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
 import { ClientProfilComponent } from './client-profil/client-profil.component';
-<<<<<<< HEAD
-import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component'
-=======
+
+import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component';
 import { ClientComptesComponent } from './client-comptes/client-comptes.component';
 import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
->>>>>>> origin/victorien
+
 
 const routes: Routes =[
     { path: 'conseiller_accueil',      component: ConseillerAccueilComponent },

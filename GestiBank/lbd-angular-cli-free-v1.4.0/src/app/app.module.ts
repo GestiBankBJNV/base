@@ -28,12 +28,12 @@ import { ClientComptesComponent } from './client-comptes/client-comptes.componen
 import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
 import { ClientProfilComponent } from './client-profil/client-profil.component';
-<<<<<<< HEAD
+
 import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component';
-=======
+
 import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
 import { PublicDevisesComponent } from './public-devise/public-devises.component';
->>>>>>> origin/victorien
+
 
 @NgModule({
   declarations: [
@@ -53,13 +53,10 @@ import { PublicDevisesComponent } from './public-devise/public-devises.component
     AdminAccueilComponent,
     ConseillerAccueilComponent,
     ClientProfilComponent,
-<<<<<<< HEAD
-    AdminFicheConseillerComponent
+    AdminFicheConseillerComponent,
 
-=======
     ClientNotificationsComponent,
-    PublicDevisesComponent
->>>>>>> origin/victorien
+    PublicDevisesComponent,
   ],
   imports: [
     BrowserModule,
