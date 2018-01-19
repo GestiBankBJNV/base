@@ -31,8 +31,8 @@
 
 								<div class="form-group">
 									<label>Nouveau conseiller</label>
-									<input type="text" value="" placeholder="Nom du conseiller" class="form-control"/>
-									<button routerLink="/admin_fiche_conseiller" type="submit" class="btn btn-info btn-fill pull-right">Créer</button>
+									<input [(ngModel)]="nomConseillerACreer" type="text" value="" placeholder="Nom du conseiller" class="form-control"/>
+									<button (click)="afficherNouvelleFiche()" type="submit" class="btn btn-info btn-fill pull-right">Créer</button>
 								</div>
 
 							</div>			
@@ -57,24 +57,28 @@
 
 								<nav>
 										  	<!-- <button (click)="getConseillers() && 'isSearching=false'" class="btn btn-primary">Refresh</button> --> <!-- **********************  -->
-									<a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{conseiller.nom}}</p></a>
+									<a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{conseiller.prenom}} {{conseiller.nom}}</p></a>
 								</nav>
-
-								<!-- <div *ngIf="selectedConseiller">			  	
-									<admin-fiche-conseiller [conseiller]="selectedConseiller"></admin-fiche-conseiller>
-								</div> -->
+								
 							</div>
 						</div>
 						
 					</div>
 				</div>
 
-				<div *ngIf="selectedConseiller">			  	
-					<admin-fiche-conseiller [conseiller]="selectedConseiller"></admin-fiche-conseiller>								
-				</div>
+				
 			</div>
 		</div>
 
 		
+		<div *ngIf="selectedConseiller">			  	
+			<admin-fiche-conseiller [conseiller]="selectedConseiller"></admin-fiche-conseiller>								
+		</div>
+
+		<div *ngIf="nouvelleFiche">			  	
+			<admin-fiche-conseiller [conseiller]="nouveauConseiller"></admin-fiche-conseiller>								
+		</div>
+
 	</div>
+
 </div>

@@ -44,6 +44,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   }
 
   ngOnChanges(){
+      console.log(this.conseiller.adresse);
       this.formulaire.reset({
         matricule: this.conseiller.matricule,
         prenom: this.conseiller.prenom,
@@ -52,6 +53,7 @@ export class AdminFicheConseillerComponent implements OnInit {
         adresse: this.conseiller.adresse || new Adresse(),
         infos: ''
       }); 
+      console.log(this.formulaire);
   }
 
   // Modifier la fiche

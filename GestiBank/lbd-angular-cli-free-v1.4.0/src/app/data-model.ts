@@ -9,35 +9,59 @@ export class Conseiller {
 }
 
 export class Adresse {
-	rue = "";
-  	ville  = "";
-  	CP  = ""; 
+	  rue = "";
+  	ville = "";
+  	cp = ""; 
   
 }
 
 export const conseillers: Conseiller[] = [
   {
-    matricule: '1',
+    matricule: '0001',
     email: 'martine@truc.com',
     prenom: 'Martine',
     nom: 'Dupont',    
-    adresse: {rue: '23 rue Gambetta',  ville: 'Lille', CP: '59000'},
+    adresse: {rue: '23 rue Gambetta',  ville: 'Lille', cp: '59000'},
     infos: ''    
   },
   {
-    matricule: '2',
+    matricule: '0002',
     email: 'roger@truc.com',
     prenom: 'Roger',
     nom: 'Martin',    
-    adresse: {rue: '12 rue de Paris',  ville: 'Antony', CP: '92160'},
+    adresse: {rue: '12 rue de Paris',  ville: 'Antony', cp: '92160'},
     infos: ''
   },
   {
-    matricule: '3',
+    matricule: '0003',
     email: 'alice@truc.com',
     prenom: 'Alice',
     nom: 'Pommier',    
-    adresse: {rue: '48 boulevard Pasteur',  ville: 'Marcq-en-Baroeul', CP: '59700'},
+    adresse: {rue: '48 boulevard Pasteur',  ville: 'Marcq-en-Baroeul', cp: '59700'},
+    infos: ''
+  },
+  {
+    matricule: '0004',
+    email: 'Eva@truc.com',
+    prenom: 'Eva',
+    nom: 'Cardin',    
+    adresse: {rue: '2 rue machin',  ville: 'Trucville', cp: '60500'},
+    infos: ''
+  },
+  {
+    matricule: '0005',
+    email: 'Yves@truc.com',
+    prenom: 'Yves',
+    nom: 'Gris',    
+    adresse: {rue: '6 rue des cèdres',  ville: 'Rambouillet', cp: '78450'},
+    infos: ''
+  },
+  {
+    matricule: '0006',
+    email: 'Jean-Pierre@truc.com',
+    prenom: 'Jean-Pierre',
+    nom: 'Malin',    
+    adresse: {rue: '85 avenue des Pins',  ville: 'Grenoble', cp: '38000'},
     infos: ''
   },
 ];

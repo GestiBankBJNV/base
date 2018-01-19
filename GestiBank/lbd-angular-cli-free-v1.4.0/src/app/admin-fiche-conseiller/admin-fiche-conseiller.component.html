@@ -1,7 +1,6 @@
-<div class="main-content" >
-    <div class="container-fluid">
+
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="header">
                         <h4 class="title">Fiche conseiller <!-- ajouter le nom du conseiller ! --></h4>
@@ -46,25 +45,20 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Adresse</label>
-                                            <input type="text" class="form-control" placeholder="Adresse" formControlName="adresse">
+                                            <input type="text" class="form-control" placeholder="Adresse" formControlName="rue">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Ville</label>
                                             <input type="text" class="form-control" placeholder="Ville" formControlName="ville">
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Pays</label>
-                                            <input type="text" class="form-control" placeholder="Pays" formControlName="pays">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
+                                    
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Code Postal</label>
                                             <input type="number" class="form-control" placeholder="Code Postal" formControlName="cp">
@@ -83,7 +77,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-info btn-fill pull-right">Modifier</button>                         
-                            <button type="reset" (click)="revert()" [disabled]="formulaire.pristine" class="btn btn-danger">Revert</button>
+                            <!-- <button type="reset" (click)="revert()" [disabled]="formulaire.pristine" class="btn btn-danger">Revert</button> -->
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -91,5 +85,4 @@
             </div>
             
         </div>
-    </div>
-</div>
+

@@ -38,8 +38,9 @@ export const ROUTES_ADMIN : RouteInfo[] = [
 ];
 
 export const ROUTES_PUBLIC: RouteInfo[] = [
-    { path: 'public_connexion', title: 'Espace Public - Connexion',  icon: 'pe-7s-graph', class: '' },
-    { path: 'public_accueil', title: 'Espace Public - Accueil',  icon: 'pe-7s-graph', class: '' }
+    { path: 'public_accueil', title: 'Accueil',  icon: 'pe-7s-graph', class: '' },
+    { path: 'public_connexion', title: 'Connexion',  icon: 'pe-7s-graph', class: '' },
+    
 
 ];
 
