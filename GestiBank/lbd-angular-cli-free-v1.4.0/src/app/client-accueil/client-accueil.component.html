@@ -6,12 +6,7 @@
                  <div class="card">
                     <div class="header">
                         <h4 class="title">Notifications</h4>
-                    </div>
-                    <div class="content table-responsive table-full-width" *ngIf='(getUnreadNotificationsCount() == 0)'>
-                          <table class="table table-hover table-striped">
-                                <p>Aucune nouvelle notification.</p>
-                          </table>
-
+                        <p class="category" *ngIf='(getUnreadNotificationsCount() == 0)'>Aucune nouvelle notification.</p>
                     </div>
                      <div class="content table-responsive table-full-width" *ngIf='(getUnreadNotificationsCount() > 0)'>
                           <table class="table table-hover table-striped">

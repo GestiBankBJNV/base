@@ -1,5 +1,7 @@
-<!--SIDEBAR VERSION CLIENT-->
+<!-- SIDEBAR -->
 <div class="sidebar-wrapper">
+
+    <!-- LOGO ET TITRE -->
     <div class="logo">
         <a href="#" class="simple-text">
             <div class="logo-img">
@@ -8,7 +10,29 @@
             GestiBank
         </a>
     </div>
+
+    <!-- NAVIGATION -->
     <ul class="nav responsive-nav">
+        <!--On remplit la sidebar avec les titres des routes, en fonction du type d'utilisateur.
+            Voir la fonction 'refresh()' dans sidebar.component.ts-->
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
+            <a  [routerLink]="[menuItem.path]">
+                <i class="{{menuItem.icon}}"></i>
+                <p (click)="refresh()">{{menuItem.title}}</p>
+            </a>
+        </li>
+        <!--Si on est sur mobile, le bouton deconnexion se retrouve également dans la sidebar
+            TODO : Trouver le bug qui empêche ce bouton de disparaître quand on passe d'une vue mobile à une vue desktop-->
+        <div *ngIf="isMobileMenu()">
+            <li class="separator hidden-lg hidden-md"s></li>
+            <li>
+                <a>
+                    <p>Se deconnecter</p>
+                </a>
+            </li>
+        </div>
+
+        <!-- CODE DU TEMPLATE (pour l'exemple)-->
         <!--<li *ngIf="isMobileMenu()">
             <a class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-dashboard"></i>
@@ -62,21 +86,5 @@
                 <li><a href="#">Separated link</a></li>
               </ul>
         </li>-->
-        
-        
-        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-            <a  [routerLink]="[menuItem.path]">
-                <i class="{{menuItem.icon}}"></i>
-                <p (click)="refresh()">{{menuItem.title}}</p>
-            </a>
-        </li>
-        <div *ngIf="isMobileMenu()">
-            <li class="separator hidden-lg hidden-md"s></li>
-            <li>
-                <a>
-                    <p>Se deconnecter</p>
-                </a>
-            </li>
-        </div>
     </ul>
 </div>
