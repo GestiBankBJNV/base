@@ -6,15 +6,38 @@
                 <div class="card">
 
                 	<div class="header">
-						<h4>Gestion des affectations</h4>
+						<h3>Gestion des affectations</h3>
 					</div>
 
 					<div class="content">
 						<div class="row">
 							<div class="col-md-12">
 								<!-- Ajouter la liste des demandes d'ouverture de compte etc... p15 -->
+								<div class="row">
+									<div class="col-md-8">
+										<h4>Liste des demandes d'ouverture de compte</h4>
+									</div>
 
-								<h5>Liste des demandes d'ouverture de compte</h5>
+									<div class="col-md-3 col-md-offset-1">
+										<!-- Filter les demandes affectées ou non -->
+										<div class="dropdown">
+											<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+												Filtrer les demandes
+												<span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu" role="menu">
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Toutes les demandes</a></li>
+												<li role="presentation" class="divider"></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Demandes non affectées</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Demandes affectées</a></li>			
+												<li role="presentation" class="divider"></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">En cours</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Traitée</a></li>												
+											</ul>
+										</div>
+									</div>
+									
+								</div>
 
 								<div class="content table-responsive table-full-width">
 							        <table class="table">
@@ -51,29 +74,7 @@
 							              </tbody>
 							        </table>
 							    </div>
-
-							    <div class="row">
-									<div class="col-md-3 col-md-offset-9">
-										<!-- Filter les demandes affectées ou non -->
-										<div class="dropdown">
-											<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-												Filtrer les demandes
-												<span class="caret"></span>
-											</button>
-											<ul class="dropdown-menu" role="menu">
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Toutes les demandes</a></li>
-												<li role="presentation" class="divider"></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Demandes non affectées</a></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Demandes affectées</a></li>			
-												<li role="presentation" class="divider"></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">En cours</a></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Traitée</a></li>												
-											</ul>
-										</div>
-									</div>
-									
-								</div>
-
+							    
 							</div>				
 						</div>
 					</div>
