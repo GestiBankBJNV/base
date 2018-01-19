@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-import { ROUTES, ROUTES_PUBLIC } from './../sidebar/sidebar.component'
+import { ROUTES, ROUTES_PUBLIC } from './../sidebar/sidebar.component';
+import { FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-connexion',
