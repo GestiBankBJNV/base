@@ -76,7 +76,7 @@
 		</div>
 
 		<div *ngIf="nouvelleFiche">			  	
-			<admin-fiche-conseiller [conseiller]="nouveauConseiller" [creer]="true"></admin-fiche-conseiller>								
+			<admin-fiche-conseiller [conseiller]="nouveauConseiller" [creer]="true" (onCreate)="onCreate($event)"></admin-fiche-conseiller>							
 		</div>
 
 	</div>

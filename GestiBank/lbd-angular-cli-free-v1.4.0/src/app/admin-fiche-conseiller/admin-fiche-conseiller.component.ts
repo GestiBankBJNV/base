@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Adresse, Conseiller, conseillers } from '../data-model';
 import { ConseillerService }           from '../conseiller-service';
@@ -14,19 +14,22 @@ export class AdminFicheConseillerComponent implements OnInit {
 
 	@Input() conseiller: Conseiller;
   @Input() creer: boolean;
+  @Output() onCreate = new EventEmitter<boolean>();
 
 	formulaire: FormGroup;
   nameChangeLog: string[] = [];
 
-  	constructor(private fb: FormBuilder, private conseillerService: ConseillerService) { 
+  
 
-  		this.createForm();
-      this.logNameChange();
-  		// methode pour modifier une valeur du formulaire, utiliser setValue pour obliger le renseignement de tous les champs
-    	/*this.formulaire.patchValue({
-  			email: 'jeanne2@truc.com'
-		});*/
-  	}
+	constructor(private fb: FormBuilder, private conseillerService: ConseillerService) { 
+
+		this.createForm();
+    this.logNameChange();
+		// methode pour modifier une valeur du formulaire, utiliser setValue pour obliger le renseignement de tous les champs
+  	/*this.formulaire.patchValue({
+			email: 'jeanne2@truc.com'
+	});*/
+	}
 
   ngOnInit() {
   }
@@ -72,8 +75,9 @@ export class AdminFicheConseillerComponent implements OnInit {
       }
       if(this.creer) { // on crée un conseiller
         this.conseillerService.addConseiller(this.conseiller);
+        this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
       }
-      this.ngOnChanges();
+      this.ngOnChanges();      
     }
 
    prepareSaveConseiller(): Conseiller {

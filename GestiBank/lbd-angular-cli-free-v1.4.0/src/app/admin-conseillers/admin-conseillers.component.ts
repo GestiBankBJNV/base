@@ -58,5 +58,9 @@ export class AdminConseillersComponent implements OnInit {
       this.nouveauConseiller.matricule = '5698'; // à calculer en fonction des matricules existants
     }
 
+    onCreate() {
+      this.nouvelleFiche = false;
+    }
+
 
 }
