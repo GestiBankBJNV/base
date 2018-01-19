@@ -1,3 +1,4 @@
+//Dummy Notification
 export class Notification {
 	libelle : String;
 	date : Date;

@@ -1,5 +1,6 @@
 import {Compte} from './compte';
 import {Notification} from './notification';
+
 //Dummy client
 export class Client {
 	username : String;
