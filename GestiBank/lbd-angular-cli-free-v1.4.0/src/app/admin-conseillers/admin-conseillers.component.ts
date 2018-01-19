@@ -40,6 +40,7 @@ export class AdminConseillersComponent implements OnInit {
   		this.isSearching = true;
       this.nouvelleFiche = false;
       this.getConseillers(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
+                             /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
       this.isLoading = true;
       console.log('recherche du conseiller ' + this.conseillerRecherche);
       this.conseillers = this.conseillerService.getConseillersByName(this.conseillerRecherche)
@@ -50,6 +51,7 @@ export class AdminConseillersComponent implements OnInit {
     afficherNouvelleFiche() {
       this.isSearching = false;
       this.nouvelleFiche = true;
+      this.selectedConseiller = undefined; // déselectionner un conseiller
       this.nouveauConseiller = undefined; // Pour effacer d'éventuelles informations
       this.nouveauConseiller = new Conseiller();
       this.nouveauConseiller.nom = this.nomConseillerACreer;

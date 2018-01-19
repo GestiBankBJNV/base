@@ -13,6 +13,7 @@ import { ConseillerService }           from '../conseiller-service';
 export class AdminFicheConseillerComponent implements OnInit {
 
 	@Input() conseiller: Conseiller;
+  @Input() creer: boolean;
 
 	formulaire: FormGroup;
   nameChangeLog: string[] = [];
@@ -44,7 +45,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   }
 
   ngOnChanges(){
-      console.log(this.conseiller.adresse);
+      /*console.log(this.conseiller.adresse);*/
       this.formulaire.reset({
         matricule: this.conseiller.matricule,
         prenom: this.conseiller.prenom,
@@ -53,7 +54,7 @@ export class AdminFicheConseillerComponent implements OnInit {
         adresse: this.conseiller.adresse || new Adresse(),
         infos: ''
       }); 
-      console.log(this.formulaire);
+      /*console.log(this.formulaire);*/
   }
 
   // Modifier la fiche
@@ -66,7 +67,12 @@ export class AdminFicheConseillerComponent implements OnInit {
 
   onSubmit() {
       this.conseiller = this.prepareSaveConseiller();
-      this.conseillerService.updateConseiller(this.conseiller).subscribe();
+      if(!this.creer) { // on fait juste une modif        
+        this.conseillerService.updateConseiller(this.conseiller).subscribe();        
+      }
+      if(this.creer) { // on crée un conseiller
+        this.conseillerService.addConseiller(this.conseiller);
+      }
       this.ngOnChanges();
     }
 

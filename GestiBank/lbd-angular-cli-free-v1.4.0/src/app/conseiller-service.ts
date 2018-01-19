@@ -19,14 +19,14 @@ export class ConseillerService {
 
   // Fake server update; assume nothing can go wrong
   updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
-  	console.log('updateConseiller()');
+  	/*console.log('updateConseiller()');*/
     const oldConseiller = conseillers.find(c => c.matricule === conseiller.matricule);
     const newConseiller = Object.assign(oldConseiller, conseiller); // Demo: mutate cached hero
     return of(newConseiller).delay(this.delayMs); // simulate latency with delay
   }
 
   getConseillersByName(nom: string): Observable<Conseiller[]> {
-  	console.log('getConseillerByName()');
+  	/*console.log('getConseillerByName()');*/
 
     //var correspondances: Observable<Conseiller[]>;
     var temp=[];
@@ -35,10 +35,14 @@ export class ConseillerService {
       // mettre dans correspondance les conseillers ayant le nom recherché
       if(conseillers[i].nom.match(nom)) {
          temp.push(conseillers[i]);
-         console.log('conseillers trouvé : ' + conseillers[i].nom);
+         /*console.log('conseillers trouvé : ' + conseillers[i].nom);*/
       }
     }
-
     return of(temp).delay(this.delayMs);
+  }
+
+  addConseiller(conseiller: Conseiller) {
+    // TODO : changer matricule
+    conseillers.push(conseiller);    
   }
 }
