@@ -22,22 +22,20 @@ import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accu
 
 //IMPORTS ADMIN
 import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
+import { AdminAffectationsComponent } from './admin-affectations/admin-affectations.component';
+import { AdminConseillersComponent } from './admin-conseillers/admin-conseillers.component';
+import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component';
 
 //IMPORTS CLIENT
 import { ClientAccueilComponent } from './client-accueil/client-accueil.component';
 import { ClientComptesComponent } from './client-comptes/client-comptes.component';
 import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
-<<<<<<< HEAD
-
-import { AdminConseillersComponent } from './admin-conseillers/admin-conseillers.component';
-import { AdminAffectationsComponent } from './admin-affectations/admin-affectations.component';
-
-=======
 import { ClientProfilComponent } from './client-profil/client-profil.component';
->>>>>>> victorien
+
 
 const routes: Routes =[
     { path: 'admin_accueil',         component: AdminAccueilComponent },        //ROUTES ADMIN
+    { path: 'admin_fiche_conseiller',component: AdminFicheConseillerComponent },      
     { path: 'client_accueil',        component: ClientAccueilComponent },       //ROUTES CLIENT
     { path: 'client_comptes',        component: ClientComptesComponent },
     { path: 'client_devises',        component: PublicDevisesComponent },
@@ -46,13 +44,7 @@ const routes: Routes =[
     { path: 'conseiller_accueil',    component: ConseillerAccueilComponent },   //ROUTES CONSEILLER
     { path: 'public_accueil',        component: EspacePublicComponent },        //ROUTES PUBLIC
     { path: 'public_connexion',      component: ConnexionComponent },
-<<<<<<< HEAD
-    { path: 'dashboard',      component: HomeComponent },
-    { path: 'client_accueil', component: ClientAccueilComponent },
-    { path: 'client_profil', component: ClientProfilComponent },
-    { path: 'client_comptes', component: ClientComptesComponent },
-    { path: 'client_notifications', component: ClientNotificationsComponent },
-    { path: 'public_accueil', component: EspacePublicComponent },
+    { path: 'dashboard',      component: HomeComponent },                        //ROUTES TEMPLATE
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TablesComponent },
     { path: 'typography',     component: TypographyComponent },
@@ -60,20 +52,9 @@ const routes: Routes =[
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: '',          redirectTo: 'public_accueil', pathMatch: 'full' },
     { path: 'admin_conseillers', component: AdminConseillersComponent },
-    { path: 'admin_affectations', component: AdminAffectationsComponent }
-=======
-    { path: 'dashboard',             component: HomeComponent },                //ROUTES PAR DEFAUT (template)
-    { path: 'icons',                 component: IconsComponent },
-    { path: 'maps',                  component: MapsComponent },
-    { path: 'notifications',         component: NotificationsComponent },
-    { path: 'table',                 component: TablesComponent },
-    { path: 'typography',            component: TypographyComponent },
-    { path: 'upgrade',               component: UpgradeComponent },
-    { path: 'user',                  component: UserComponent },
+    { path: 'admin_affectations', component: AdminAffectationsComponent },
     { path: '',                      redirectTo: 'public_accueil', pathMatch: 'full' }
->>>>>>> victorien
 ];
 
 @NgModule({

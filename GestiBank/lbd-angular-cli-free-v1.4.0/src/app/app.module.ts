@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -31,6 +31,7 @@ import { ClientNotificationsComponent } from './client-notifications/client-noti
 import { PublicDevisesComponent } from './public-devise/public-devises.component';
 import { AdminConseillersComponent } from './admin-conseillers/admin-conseillers.component';
 import { AdminAffectationsComponent } from './admin-affectations/admin-affectations.component';
+import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component';
 
 @NgModule({
   declarations: [
@@ -51,13 +52,10 @@ import { AdminAffectationsComponent } from './admin-affectations/admin-affectati
     ConseillerAccueilComponent,
     ClientProfilComponent,
     ClientNotificationsComponent,
-<<<<<<< HEAD
-    PublicDevisesComponent,
     AdminConseillersComponent,
     AdminAffectationsComponent,
-=======
-    PublicDevisesComponent
->>>>>>> victorien
+    PublicDevisesComponent,
+    AdminFicheConseillerComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +66,8 @@ import { AdminAffectationsComponent } from './admin-affectations/admin-affectati
     SidebarModule,
     RouterModule,
     AppRoutingModule,
-    LbdModule
+    LbdModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
