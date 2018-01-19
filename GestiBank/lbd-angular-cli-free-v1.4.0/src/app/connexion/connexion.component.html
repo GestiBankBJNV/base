@@ -6,19 +6,21 @@
                     <h3 class="panel-title">Connexion</h3>
                 </div>
                 <div class="panel-body">
-                    <form>
+                    <form (ngSubmit)="verifLogin()" [formGroup]="formGroupLogin">
                         <fieldset>
                             <div class="form-group">
                             <div id="erreur"></div>
-                                <input id="email" class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                <input formControlName="emailLogin" id="email" class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                             </div>
                             <div class="form-group">
-                              <input id="password" class="form-control" placeholder="Mot de passe" name="password" type="password" value="">
+                              <input formControlName="passwordLogin" id="password" class="form-control" placeholder="Mot de passe" name="password" type="password" value="">
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <a><button  type="submit" class="btn btn-success btn-block">Connexion</button></a>      
+                            <a><button  type="submit" class="btn btn-primary btn-fill"  [disabled]="formGroupLogin.invalid">Connexion</button></a>      
                         </fieldset>
                     </form>
+                    {{ formGroupLogin.value | json }}
+                    {{ formGroupLogin.status }}
                 </div>
             </div>
         </div>
