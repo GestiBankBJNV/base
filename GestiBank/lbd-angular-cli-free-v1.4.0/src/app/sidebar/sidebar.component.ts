@@ -24,9 +24,10 @@ export const ROUTES_CONSEILLER : RouteInfo[] = [
 ];
 
 export const ROUTES_CLIENT : RouteInfo[] = [
-    { path: 'client_accueil', title: 'Accueil',  icon:'pe-7s-user', class: '' },
+    { path: 'client_accueil', title: 'Accueil',  icon:'pe-7s-home', class: '' },
     { path: 'client_profil', title: 'Mon profil',  icon:'pe-7s-user', class: '' },
-    { path: 'client_comptes', title: 'Gérer mes comptes',  icon:'pe-7s-user', class: '' }
+    { path: 'client_notifications', title: 'Messages',  icon:'pe-7s-mail', class: '' },
+    { path: 'client_comptes', title: 'Gérer mes comptes',  icon:'pe-7s-graph', class: '' }
 ];
 
 export const ROUTES_ADMIN : RouteInfo[] = [
@@ -53,17 +54,17 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("Init sidebar");
+    //console.log("Init sidebar");
     this.refresh();
   }
 
   ngOnChanges(){
-    console.log("Changes sidebar");
+    //console.log("Changes sidebar");
     this.refresh();
   }
 
   refresh(){
-    console.log(this.location.path());
+    //console.log(this.location.path());
     if (this.startsWith("public")){
       this.menuItems = ROUTES_PUBLIC.filter(menuItem => menuItem);
     }
@@ -90,7 +91,7 @@ export class SidebarComponent implements OnInit {
   };
 
   startsWith(prefix){
-    console.log("Prefix : " + prefix + ", " + this.location.path());
+    //console.log("Prefix : " + prefix + ", " + this.location.path());
     return (this.location.path().startsWith("/" + prefix));
   }
 }

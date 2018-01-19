@@ -27,6 +27,8 @@ import { ClientComptesComponent } from './client-comptes/client-comptes.componen
 import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
 import { ClientProfilComponent } from './client-profil/client-profil.component';
+import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
+import { PublicDevisesComponent } from './public-devise/public-devises.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +47,9 @@ import { ClientProfilComponent } from './client-profil/client-profil.component';
     ClientComptesComponent,
     AdminAccueilComponent,
     ConseillerAccueilComponent,
-    ClientProfilComponent
-
+    ClientProfilComponent,
+    ClientNotificationsComponent,
+    PublicDevisesComponent
   ],
   imports: [
     BrowserModule,

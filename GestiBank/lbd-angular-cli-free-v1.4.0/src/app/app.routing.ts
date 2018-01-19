@@ -17,6 +17,8 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
 import { ClientProfilComponent } from './client-profil/client-profil.component';
+import { ClientComptesComponent } from './client-comptes/client-comptes.component';
+import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
 
 const routes: Routes =[
     { path: 'conseiller_accueil',      component: ConseillerAccueilComponent },
@@ -25,6 +27,8 @@ const routes: Routes =[
     { path: 'dashboard',      component: HomeComponent },
     { path: 'client_accueil', component: ClientAccueilComponent },
     { path: 'client_profil', component: ClientProfilComponent },
+    { path: 'client_comptes', component: ClientComptesComponent },
+    { path: 'client_notifications', component: ClientNotificationsComponent },
     { path: 'public_accueil', component: EspacePublicComponent },
     { path: 'user',           component: UserComponent },
     { path: 'table',          component: TablesComponent },

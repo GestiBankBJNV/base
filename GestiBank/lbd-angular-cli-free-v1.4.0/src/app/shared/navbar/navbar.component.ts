@@ -4,6 +4,7 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 
 import {Client} from '../../classes/client';
 import { CLIENT } from '../../classes/FAKES';
+import { Notification } from '../../classes/notification';
 
 
 
@@ -76,20 +77,25 @@ export class NavbarComponent implements OnInit{
     //Compte des notifications non lues
     getUnreadNotificationCount()
     {
-      var count = 0;
+      /*var count = 0;
       for (let notif of this.client.notifications)
       {
         if (!notif.isRead){
           count++;
         }
       }
-      return count
+      return count*/
+      return this.getUnreadNotifications().length;
+    }
+
+    getUnreadNotifications() : Notification[] {
+      return this.client.notifications.filter(notif => !notif.isRead);
     }
 
     getNotificationButtonTitle(){
       var c = this.getUnreadNotificationCount();
       if (c > 0){
-        return c + " notifications non lues."
+        return c.toString() + " notifications non lues."
       }
       return "Aucune nouvelle notification."
     }
