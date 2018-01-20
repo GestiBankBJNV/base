@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angu
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Adresse, Conseiller, conseillers } from '../data-model';
 import { ConseillerService }           from '../conseiller-service';
-
+import { NotificationsComponent } from '../notifications/notifications.component';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class AdminFicheConseillerComponent implements OnInit {
 	formulaire: FormGroup;
   nameChangeLog: string[] = [];
 
+  notif: NotificationsComponent = new NotificationsComponent();
   
 
 	constructor(private fb: FormBuilder, private conseillerService: ConseillerService) { 
@@ -38,8 +39,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   // Création du formulaire contenant les données du conseiller : à remplir avec les valeurs de la base de données en fonction du conseiller choisi
   createForm() {
   	this.formulaire = this.fb.group({
-  		matricule: '',
-  		/*username: '',*/  		
+  		matricule: '',		
   		prenom: '',
   		nom: ['', Validators.required ],
       email: '',
@@ -71,14 +71,21 @@ export class AdminFicheConseillerComponent implements OnInit {
 
   onSubmit() {
       this.conseiller = this.prepareSaveConseiller();
+      var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
       if(!this.creer) { // on fait juste une modif        
-        this.conseillerService.updateConseiller(this.conseiller).subscribe();        
+        this.conseillerService.updateConseiller(this.conseiller).subscribe();  
+        // Notifier les modifs
+        this.notif.showNotificationMessage('top', 'right', 'Modifications effectuées', 'warning', 'pe-7s-magic-wand');        
       }
       if(this.creer) { // on crée un conseiller
         this.conseillerService.addConseiller(this.conseiller);
         this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
+        // Notifier la création
+        this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + temp, 'success', 'pe-7s-magic-wand');  
+        // TODO : empecher la création d'un conseiller vide
       }
-      this.ngOnChanges();      
+      this.ngOnChanges();   
+       
     }
 
    prepareSaveConseiller(): Conseiller {
@@ -99,9 +106,13 @@ export class AdminFicheConseillerComponent implements OnInit {
     revert() { this.ngOnChanges(); }
 
     supprConseiller() {
+      var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
       this.conseillerService.deleteConseiller(this.conseiller);
-      // TODO : enlever la fiche
+      // Tenlever la fiche
       this.onDelete.emit();
+      // Notifier la suppression
+      this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp + ' effectuée', 'danger', 'pe-7s-magic-wand');   
+
     }
 
 }

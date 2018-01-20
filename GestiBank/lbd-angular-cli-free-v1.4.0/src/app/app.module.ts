@@ -73,6 +73,6 @@ import { ConseillerService } from './conseiller-service'; /*****/
     ReactiveFormsModule
   ],
   providers: [ ConseillerService ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

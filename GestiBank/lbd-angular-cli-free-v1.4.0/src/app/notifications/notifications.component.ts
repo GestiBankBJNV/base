@@ -29,4 +29,18 @@ export class NotificationsComponent implements OnInit {
           }
       });
   }
+  showNotificationMessage(from, align, message, type, icon){
+
+      $.notify({
+          icon: icon,
+          message: message
+      },{
+          type: type,
+          timer: 1000,
+          placement: {
+              from: from,
+              align: align
+          }
+      });
+  }
 }

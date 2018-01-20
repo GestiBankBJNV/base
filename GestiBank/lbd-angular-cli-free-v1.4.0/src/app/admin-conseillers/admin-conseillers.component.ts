@@ -5,6 +5,8 @@ import 'rxjs/add/operator/finally';
 import { Conseiller }        from '../data-model';
 import { ConseillerService } from '../conseiller-service';
 
+declare var $:any;
+
 @Component({
   selector: 'admin-conseillers',
   templateUrl: './admin-conseillers.component.html',
@@ -63,8 +65,9 @@ export class AdminConseillersComponent implements OnInit {
     }
 
     onDelete() {
+      var temp = this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom;
       this.selectedConseiller = undefined;
       this.isSearching = false;
-    }
+    }   
 
 }

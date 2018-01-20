@@ -65,3 +65,22 @@ export const conseillers: Conseiller[] = [
     infos: ''
   },
 ];
+
+
+// Utiliser des notifications
+declare var $:any;
+
+export function showNotification(from, align, message, typeMessage, logo){
+      
+  $.notify({
+      icon: logo,
+      message: message
+  },{
+      type: typeMessage,
+      timer: 1000,
+      placement: {
+          from: from,
+          align: align
+      }
+  });
+}

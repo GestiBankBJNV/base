@@ -25,10 +25,10 @@
 												<span class="caret"></span>
 											</button>
 											<ul class="dropdown-menu" role="menu">
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Toutes les demandes</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" (click)='recupTable()'>Toutes les demandes</a></li>
 												<li role="presentation" class="divider"></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Demandes non affectées</a></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Demandes affectées</a></li>			
+												<li role="presentation"><a role="menuitem" tabindex="-1"  (click)='filtrerDemandes(false)'>Demandes non affectées</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" (click)='filtrerDemandes(true)'>Demandes affectées</a></li>			
 												<li role="presentation" class="divider"></li>
 												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">En cours</a></li>
 												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Traitée</a></li>												
@@ -42,16 +42,16 @@
 							        <table class="table">
 							                <thead>
 							                    <tr>
-							                      <th class="text-center">{{ tableData1.headerRow[0] }}</th>
-							                      <th>{{  tableData1.headerRow[1]  }}</th>
-							                      <th>{{  tableData1.headerRow[2] }}</th>
-							                      <th>{{  tableData1.headerRow[3]  }}</th>
-							                      <th>{{  tableData1.headerRow[4]  }}</th>
-							                      <th>{{  tableData1.headerRow[5]  }}</th>
+							                      <th class="text-center">{{ tableData.headerRow[0] }}</th>
+							                      <th>{{  tableData.headerRow[1]  }}</th>
+							                      <th>{{  tableData.headerRow[2] }}</th>
+							                      <th>{{  tableData.headerRow[3]  }}</th>
+							                      <th>{{  tableData.headerRow[4]  }}</th>
+							                      <th>{{  tableData.headerRow[5]  }}</th>
 							                    </tr>
 							                </thead>
 							              <tbody>
-							                  <tr *ngFor="let row of tableData1.dataRows">
+							                  <tr *ngFor="let row of tableData.dataRows">
 							                      <td class="text-center">{{ row[0] }}</td>
 							                      <td>{{ row[1] }}</td>
 							                      <td>{{ row[2] }}</td>

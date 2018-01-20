@@ -55,14 +55,8 @@ export class ConseillerService {
     var temp=[];
     for(var i=0; i<conseillers.length; i++){
       // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].nom.match(name)) {
+      if(conseillers[i].nom.match(name) || conseillers[i].matricule === id) {
          temp.push(conseillers[i]);         
-      }
-    }
-    for(var i=0; i<conseillers.length; i++){
-      // mettre dans temp les conseillers ayant le matricule recherché
-      if(conseillers[i].matricule.match(id)) {
-         temp.push(conseillers[i]);
       }
     }
     return of(temp).delay(this.delayMs);
