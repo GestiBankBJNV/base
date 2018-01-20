@@ -15,6 +15,7 @@ export class AdminFicheConseillerComponent implements OnInit {
 	@Input() conseiller: Conseiller;
   @Input() creer: boolean;
   @Output() onCreate = new EventEmitter<boolean>();
+  @Output() onDelete = new EventEmitter<boolean>();
 
 	formulaire: FormGroup;
   nameChangeLog: string[] = [];
@@ -96,5 +97,11 @@ export class AdminFicheConseillerComponent implements OnInit {
     }
 
     revert() { this.ngOnChanges(); }
+
+    supprConseiller() {
+      this.conseillerService.deleteConseiller(this.conseiller);
+      // TODO : enlever la fiche
+      this.onDelete.emit();
+    }
 
 }

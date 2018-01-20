@@ -43,7 +43,7 @@ export class AdminConseillersComponent implements OnInit {
                              /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
       this.isLoading = true;
       console.log('recherche du conseiller ' + this.conseillerRecherche);
-      this.conseillers = this.conseillerService.getConseillersByName(this.conseillerRecherche)
+      this.conseillers = this.conseillerService.getConseillersByNameAndID(this.conseillerRecherche, this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule
                       		// Todo: error handling
                       		.finally(() => this.isLoading = false);
   	}
@@ -62,5 +62,9 @@ export class AdminConseillersComponent implements OnInit {
       this.nouvelleFiche = false;
     }
 
+    onDelete() {
+      this.selectedConseiller = undefined;
+      this.isSearching = false;
+    }
 
 }

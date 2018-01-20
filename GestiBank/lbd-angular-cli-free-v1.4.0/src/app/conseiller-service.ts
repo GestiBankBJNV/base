@@ -26,13 +26,10 @@ export class ConseillerService {
   }
 
   getConseillersByName(nom: string): Observable<Conseiller[]> {
-  	/*console.log('getConseillerByName()');*/
-
-    //var correspondances: Observable<Conseiller[]>;
     var temp=[];
 
     for(var i=0; i<conseillers.length; i++){
-      // mettre dans correspondance les conseillers ayant le nom recherché
+      // mettre dans temp les conseillers ayant le nom recherché
       if(conseillers[i].nom.match(nom)) {
          temp.push(conseillers[i]);
          /*console.log('conseillers trouvé : ' + conseillers[i].nom);*/
@@ -41,8 +38,42 @@ export class ConseillerService {
     return of(temp).delay(this.delayMs);
   }
 
+  getConseillersByID(id: string): Observable<Conseiller[]> {
+    
+    var temp=[];
+
+    for(var i=0; i<conseillers.length; i++){
+      // mettre dans temp les conseillers ayant le nom recherché
+      if(conseillers[i].matricule.match(id)) {
+         temp.push(conseillers[i]);
+      }
+    }
+    return of(temp).delay(this.delayMs);
+  }
+
+  getConseillersByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
+    var temp=[];
+    for(var i=0; i<conseillers.length; i++){
+      // mettre dans temp les conseillers ayant le nom recherché
+      if(conseillers[i].nom.match(name)) {
+         temp.push(conseillers[i]);         
+      }
+    }
+    for(var i=0; i<conseillers.length; i++){
+      // mettre dans temp les conseillers ayant le matricule recherché
+      if(conseillers[i].matricule.match(id)) {
+         temp.push(conseillers[i]);
+      }
+    }
+    return of(temp).delay(this.delayMs);
+  }
+
   addConseiller(conseiller: Conseiller) {
     // TODO : changer matricule
     conseillers.push(conseiller);    
+  }
+
+  deleteConseiller(conseiller: Conseiller) {
+    conseillers.splice(conseillers.indexOf(conseiller), 1);
   }
 }
