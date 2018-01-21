@@ -42,12 +42,12 @@
 							        <table class="table">
 							                <thead>
 							                    <tr>
-							                      <th class="text-center">{{ tableData.headerRow[0] }}</th>
-							                      <th>{{  tableData.headerRow[1]  }}</th>
-							                      <th>{{  tableData.headerRow[2] }}</th>
-							                      <th>{{  tableData.headerRow[3]  }}</th>
-							                      <th>{{  tableData.headerRow[4]  }}</th>
-							                      <th>{{  tableData.headerRow[5]  }}</th>
+							                      <th class="text-center">ID</th>
+							                      <th>Nom</th>
+							                      <th>Ville</th>
+							                      <th><a (click)='trierDateDemande()'>Date de demande</a></th>
+							                      <th><a (click)='trierDateAffectation()'>Date d'affectation</a></th>
+							                      <th>Statut</th>
 							                    </tr>
 							                </thead>
 							              <tbody>
@@ -55,8 +55,8 @@
 							                      <td class="text-center">{{ row[0] }}</td>
 							                      <td>{{ row[1] }}</td>
 							                      <td>{{ row[2] }}</td>
-							                      <td>{{ row[3] }}</td>
-							                      <td>{{ row[4] }}</td>
+							                      <td>{{ row[3] | date:'dd/MM/yyyy'}}</td>
+							                      <td>{{ row[4] | date:'dd/MM/yyyy'}}</td>
 							                      <td>{{ row[5] }}</td>
 							                      <td class="td-actions text-right">
 							                          <a rel="tooltip" title="Affecter demande" class="btn btn-info btn-simple btn-xs" (click)="affecter=true">
