@@ -10,25 +10,52 @@ import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 })
 export class ConnexionComponent implements OnInit {
 
+  // création d'utilisateur pour les tests
+  utilisateurs = [
+                     {user: 'nassim', password: '1234', status: 'client'},
+                     {user: 'brice', password: '1234', status: 'admin'},
+                     {user: 'victorien', password:'1234', status: 'conseiller'},
+                     {user: 'jeanne', password:'1234', status: 'client'}
+                ];
+
+
+  // regupération du submit du formulaire Login
 	formGroupLogin: FormGroup;
 
   constructor(public fb: FormBuilder) { }
 
   ngOnInit() {
-  	// this.formGroupLogin = new FormGroup({
-  	// 	emailLogin: new FormControl(),
-  	// 	passwordLogin: new FormControl()
-  	//});
 
+    // Rend les champs du login (user et password obligatoire)
   	this.formGroupLogin = this.fb.group({
+
+                        //rend le champs obligatoire
   		emailLogin: ['', Validators.required],
   		passwordLogin: ['', Validators.required]
-  	})
 
-  	
+  	})  	
 }
-  verifLogin(){
 
+  verifLogin(email, password){
+
+    let isExist = false;
+    let status: string;
+
+    for(let utilisateur of this.utilisateurs){
+
+      if (email === utilisateur.user && password === utilisateur.password) {
+        
+          isExist = true;
+          status = utilisateur.status;
+          break; // sortie de la boucle si l'utilisateur et le mot de passe existe
+
+      }
+
+    }
+
+    console.log(isExist, status);    
+   
+   return isExist;
   }
 
 }
