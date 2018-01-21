@@ -3,8 +3,9 @@
 <!--TABLEAU DE COMPTES-->
 	<div class="card">
 		<div class="header">
-			<h4 class="title">Mes comptes</h4>
-			<p class="category">Comptes ouverts</p>
+			<h4 class="title col-md-3">Mes comptes</h4>
+      		<button class="btn btn-default col-md-3 col-md-offset-6" (click)="ouvrirCompte()">Ouvrir un nouveau compte</button>
+			<!--<p class="category col-md-3">Comptes ouverts</p>-->
 		</div>
 		<div class="content table-responsive table-full-width">
 			<table class="table table-hover table-striped">
@@ -25,8 +26,34 @@
 	<!--TABLEAU D'OPERATIONS (SI UN COMPTE EST SELECTIONNÉ)-->
 	<div *ngIf="(selectedCompte)" class="card card-plain">
 		<div class="header">
-			<h4 class="title">Compte N° {{ selectedCompte.iban }}</h4>
-			<p class="category">Compte {{ selectedCompte.type }} - Dernières opérations</p>
+			<div class="row">
+				<h4 class="title col-md-3">Compte N° {{ selectedCompte.iban }}</h4>
+				<span class="category col-md-3">Compte {{ selectedCompte.type }} - Dernières opérations</span>
+				<hr/>
+			</div>
+		</div>
+		<div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+					<button class="btn btn-default form-control" (click)="toggleOpenAccount()">Commander un chèquier</button>
+					<button class="btn btn-default form-control" (click)="editIBAN()">Éditer un RIB</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Opérations du :</label>
+					<input type="date" #startDate class="form-control" value='{{ selectedCompte.operations[0].date | date : "yyyy-MM-dd"}}' (change)="refreshStart(startDate.value)"/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Au :</label>
+					<input type="date" #endDate class="form-control" value='{{ selectedCompte.operations[selectedCompte.operations.length - 1].date | date : "yyyy-MM-dd" }}' (change)="refreshEnd(endDate.value)"/>
+				</div>
+            </div>
+        </div>
+		<div class="row">
+			<hr/>
 		</div>
 		<div class="content table-responsive table-full-width">
 			<table class="table table-hover">
@@ -37,11 +64,29 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let operation of selectedCompte.operations">
+					<tr *ngFor="let operation of displayedOperations">
 						<td>{{ operation.type }}</td><td>{{ operation.libelle }}</td><td>{{ operation.montant }} €</td><td>{{ operation.date | date : "dd/MM/yy hh:mm" }}</td>
 					</tr>
 				</tbody>
 			</table>
+		</div>
+	</div>
+
+	<!--OUVERTURE DE COMPTE -->
+	<div *ngIf="(openAccount)" class="card">
+		<div class="header">
+			<h4 class="title">Ouvrir un nouveau compte</h4>
+			<p class="category">Choisissez le type de compte que vous désirez ouvrir :</p>
+			<hr/>
+		</div>
+		<div class="content">			
+			<div class="row">
+				<select [(ngModel)]="accountType" class="btn dropdown-toggle col-md-3 col-md-offset-1">
+					<option selected>Courant</option>
+					<option>Épargne</option>
+				</select>
+                <button type="submit" class="btn btn-info btn-fill col-md-3 col-md-offset-4" (click)="validForm()">{{ (awaitingConfirm) ? "Confirmer" : "Ouvrir un compte" }}</button>
+			</div>
 		</div>
 	</div>
 </div>

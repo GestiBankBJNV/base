@@ -80,8 +80,12 @@ export class NavbarComponent implements OnInit{
     //FONCTIONS -- CLIENT
     //Compte des notifications non lues (Client)
     getUnreadNotificationCount()
-    {     
-      return this.getUnreadNotifications().length;
+    {
+      //s
+      if (this.user.notifications){
+        return this.getUnreadNotifications().length;
+      }
+      return 0;     
     }
 
     //retourne les notifications non lues(Client)
