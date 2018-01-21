@@ -5,7 +5,7 @@ export class Conseiller {
 	prenom: string;
 	nom: string;
 	adresse: Adresse;
-	infos: string;
+	infos: string; // TODO : remplacer infos par liste de clients
 }
 
 export class Adresse {

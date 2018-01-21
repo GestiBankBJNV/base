@@ -25,7 +25,7 @@ export class AdminAffectationsComponent implements OnInit {
   	}
 
     recupTable(){
-      this.tableData = { // cette table devra être récupérée depuis une BDD : ici on utilise une méthode
+      this.tableData = { // TODO : formatage des dates pour le tri
             headerRow: [ 'ID', 'Nom', 'Ville', 'Date de demande', "Date d'affectation", 'Statut'], /* A faire : trier les demandes par date de demande ou d'affectation en cliquant sur le header de la colonne */
             dataRows: [
                 ['1', 'Dakota Rice', 'Oud-Turnhout', '12/01/18', '', ''],
@@ -38,18 +38,18 @@ export class AdminAffectationsComponent implements OnInit {
         };      
     }
 
-    filtrerDemandes(filtreAffectes : boolean){
+    filtrerDemandes(filtre: string){
       this.recupTable();
-      console.log('filtrer demandes ');
       //On parcours la table en decroissance pour eviter l auto modification des index
-       for (var i=this.tableData.dataRows.length -1; i>=0; i--){
-         console.log('test ligne ' + i);
-         if(filtreAffectes && this.tableData.dataRows[i][4] == ''){
-           console.log(this.tableData.dataRows[i]);
+       for (var i=this.tableData.dataRows.length -1; i>=0; i--){         
+         if(filtre == 'affectee' && this.tableData.dataRows[i][4] == ''){           
            this.tableData.dataRows.splice(i, 1);           
-         } else if (!filtreAffectes && this.tableData.dataRows[i][4] != ''){
-           console.log(this.tableData.dataRows[i]);
+         } else if (filtre == 'nonAffectee' && this.tableData.dataRows[i][4] != ''){           
            this.tableData.dataRows.splice(i, 1);   
+         } else if (filtre == 'enCours' && this.tableData.dataRows[i][5] != 'en cours') {
+           this.tableData.dataRows.splice(i, 1);
+         } else if (filtre == 'traitee' && this.tableData.dataRows[i][5] != 'traitée') {
+           this.tableData.dataRows.splice(i, 1);
          }
        }
     }

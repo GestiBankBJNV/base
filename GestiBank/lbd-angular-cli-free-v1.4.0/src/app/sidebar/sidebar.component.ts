@@ -32,14 +32,14 @@ export const ROUTES_CLIENT : RouteInfo[] = [
 ];
 
 export const ROUTES_ADMIN : RouteInfo[] = [
-    { path: 'admin_accueil', title: 'Espace Admin',  icon:'pe-7s-user', class: '' },
-    { path: 'admin_conseillers', title: 'Conseillers',  icon:'pe-7s-user', class: '' },
-    { path: 'admin_affectations', title: 'Affectations',  icon:'pe-7s-user', class: '' }
+    { path: 'admin_accueil', title: 'Espace Admin',  icon:'pe-7s-home', class: '' },
+    { path: 'admin_conseillers', title: 'Conseillers',  icon:'pe-7s-id', class: '' },
+    { path: 'admin_affectations', title: 'Affectations',  icon:'pe-7s-way', class: '' }
 ];
 
 export const ROUTES_PUBLIC: RouteInfo[] = [
-    { path: 'public_accueil', title: 'Accueil',  icon: 'pe-7s-graph', class: '' },
-    { path: 'public_connexion', title: 'Connexion',  icon: 'pe-7s-graph', class: '' },
+    { path: 'public_accueil', title: 'Accueil',  icon: 'pe-7s-home', class: '' },
+    { path: 'public_connexion', title: 'Connexion',  icon: 'pe-7s-lock', class: '' },
     
 
 ];

@@ -11,14 +11,14 @@
 
 					<div class="content">
 						
-								<!-- Ajouter la liste des demandes d'ouverture de compte etc... p15 -->
+								<!-- TODO : pb quand page rétrécie, + p15 -->
 								<div class="row">
 									<div class="col-md-8">
 										<h4>Liste des demandes d'ouverture de compte</h4>
 									</div>
 
 									<div class="col-md-3 col-md-offset-1">
-										<!-- Filter les demandes affectées ou non -->
+										<!-- Filter les demandes affectées ou non. TODO : mieux placer le dropdown dans la page -->
 										<div class="dropdown">
 											<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
 												Filtrer les demandes
@@ -27,11 +27,11 @@
 											<ul class="dropdown-menu" role="menu">
 												<li role="presentation"><a role="menuitem" tabindex="-1" (click)='recupTable()'>Toutes les demandes</a></li>
 												<li role="presentation" class="divider"></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1"  (click)='filtrerDemandes(false)'>Demandes non affectées</a></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" (click)='filtrerDemandes(true)'>Demandes affectées</a></li>			
+												<li role="presentation"><a role="menuitem" tabindex="-1"  (click)="filtrerDemandes('nonAffectee')">Demandes non affectées</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('affectee')">Demandes affectées</a></li>			
 												<li role="presentation" class="divider"></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">En cours</a></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Traitée</a></li>												
+												<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('enCours')">En cours</a></li>
+												<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('traitee')">Traitée</a></li>												
 											</ul>
 										</div>
 									</div>

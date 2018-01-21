@@ -42,7 +42,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   		matricule: '',		
   		prenom: '',
   		nom: ['', Validators.required ],
-      email: '',
+      email: '', // TODO : Pour vérifier si une adresse email correcte a été entrée, voir tuto Dynamic Forms sur angular.io
   		adresse: this.fb.group(new Adresse()),
   		infos: '' // à mettre la liste des clients
   	});
@@ -81,7 +81,7 @@ export class AdminFicheConseillerComponent implements OnInit {
         this.conseillerService.addConseiller(this.conseiller);
         this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
         // Notifier la création
-        this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + temp, 'success', 'pe-7s-magic-wand');  
+        this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + temp, 'success', 'pe-7s-add-user');  
         // TODO : empecher la création d'un conseiller vide
       }
       this.ngOnChanges();   
@@ -111,7 +111,7 @@ export class AdminFicheConseillerComponent implements OnInit {
       // Tenlever la fiche
       this.onDelete.emit();
       // Notifier la suppression
-      this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp + ' effectuée', 'danger', 'pe-7s-magic-wand');   
+      this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp, 'danger', 'pe-7s-delete-user');   
 
     }
 
