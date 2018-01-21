@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { ROUTES, ROUTES_PUBLIC } from './../sidebar/sidebar.component';
 import { FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import { RouterModule, Router} from '@angular/router';
 
 @Component({
   selector: 'app-connexion',
@@ -22,7 +23,7 @@ export class ConnexionComponent implements OnInit {
   // regupération du submit du formulaire Login
 	formGroupLogin: FormGroup;
 
-  constructor(public fb: FormBuilder) { }
+  constructor(public fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
 
@@ -44,18 +45,14 @@ export class ConnexionComponent implements OnInit {
     for(let utilisateur of this.utilisateurs){
 
       if (email === utilisateur.user && password === utilisateur.password) {
-        
-          isExist = true;
-          status = utilisateur.status;
+
+        this.router.navigate([utilisateur.status + '_accueil']);
           break; // sortie de la boucle si l'utilisateur et le mot de passe existe
 
       }
 
     }
-
-    console.log(isExist, status);    
    
-   return isExist;
   }
 
 }
