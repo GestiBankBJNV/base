@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { Adresse, Conseiller, conseillers } from '../data-model';
+import { Adresse, Conseiller, conseillers, Client } from '../data-model';
 import { ConseillerService }           from '../conseiller-service';
 import { NotificationsComponent } from '../notifications/notifications.component';
 
@@ -44,21 +44,18 @@ export class AdminFicheConseillerComponent implements OnInit {
   		nom: ['', Validators.required ],
       email: '', // TODO : Pour vérifier si une adresse email correcte a été entrée, voir tuto Dynamic Forms sur angular.io
   		adresse: this.fb.group(new Adresse()),
-  		infos: '' // à mettre la liste des clients
   	});
   }
 
   ngOnChanges(){
-      /*console.log(this.conseiller.adresse);*/
+      console.log(this.conseiller.clients);
       this.formulaire.reset({
         matricule: this.conseiller.matricule,
         prenom: this.conseiller.prenom,
         nom: this.conseiller.nom,
         email: this.conseiller.email,
-        adresse: this.conseiller.adresse || new Adresse(),
-        infos: ''
+        adresse: this.conseiller.adresse || new Adresse(),       
       }); 
-      /*console.log(this.formulaire);*/
   }
 
   // Modifier la fiche
@@ -97,7 +94,7 @@ export class AdminFicheConseillerComponent implements OnInit {
         nom: formModel.nom as string,
         email: formModel.email as string,
         adresse: formModel.adresse,
-        infos: ''
+        clients: []
       };
 
       return saveConseiller;
@@ -112,7 +109,7 @@ export class AdminFicheConseillerComponent implements OnInit {
       this.onDelete.emit();
       // Notifier la suppression
       this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp, 'danger', 'pe-7s-delete-user');   
-
+      // TODO : empecher la suppression si liste clients non vide
     }
 
 }
