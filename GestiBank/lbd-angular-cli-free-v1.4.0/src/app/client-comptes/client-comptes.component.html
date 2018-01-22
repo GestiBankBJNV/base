@@ -4,7 +4,7 @@
 	<div class="card">
 		<div class="header">
 			<h4 class="title col-md-3">Mes comptes</h4>
-      		<button class="btn btn-default col-md-3 col-md-offset-6" (click)="ouvrirCompte()">Ouvrir un nouveau compte</button>
+      		<button class="btn btn-default col-md-3 col-md-offset-6" (click)="toggleOpenAccount()">Ouvrir un nouveau compte</button>
 			<!--<p class="category col-md-3">Comptes ouverts</p>-->
 		</div>
 		<div class="content table-responsive table-full-width">
@@ -42,6 +42,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Opérations du :</label>
+                    <!--passer la date dans ngModel provoque des problèmes de formatage-->
 					<input type="date" #startDate class="form-control" value='{{ selectedCompte.operations[0].date | date : "yyyy-MM-dd"}}' (change)="refreshStart(startDate.value)"/>
                 </div>
             </div>

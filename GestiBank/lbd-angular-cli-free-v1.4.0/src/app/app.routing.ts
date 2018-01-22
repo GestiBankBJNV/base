@@ -36,6 +36,8 @@ import { ClientProfilComponent } from './client-profil/client-profil.component';
 
 const routes: Routes =[
     { path: 'admin_accueil',         component: AdminAccueilComponent },        //ROUTES ADMIN
+    { path: 'admin_affectations', component: AdminAffectationsComponent },
+    { path: 'admin_conseillers', component: AdminConseillersComponent },
     { path: 'admin_devises',        component: PublicDevisesComponent },
     { path: 'admin_fiche_conseiller',component: AdminFicheConseillerComponent },      
     { path: 'client_accueil',        component: ClientAccueilComponent },       //ROUTES CLIENT
@@ -56,8 +58,6 @@ const routes: Routes =[
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: 'admin_conseillers', component: AdminConseillersComponent },
-    { path: 'admin_affectations', component: AdminAffectationsComponent },
     { path: '',                      redirectTo: 'public_accueil', pathMatch: 'full' }
 ];
 
