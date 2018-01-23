@@ -104,7 +104,38 @@ export const clientsTab: Client[] = [
     numTel: '0683657416',
     demandes: [new DemandeChequier()] 
   },
-  
+  {
+    email: 'Aude@truc.com',
+    prenom: 'Aude',
+    nom: 'Cardin',    
+    adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
+    numTel: '0683657416',
+    demandes: [] 
+  },
+  {
+    email: 'Coralie@truc.com',
+    prenom: 'Coralie',
+    nom: 'Machin',    
+    adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
+    numTel: '0683657416',
+    demandes: [] 
+  },
+  {
+    email: 'Omar@truc.com',
+    prenom: 'Omar',
+    nom: 'Sully',    
+    adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
+    numTel: '0683657416',
+    demandes: [] 
+  },
+  {
+    email: 'Adrien@truc.com',
+    prenom: 'Adrien',
+    nom: 'Bergstein',    
+    adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
+    numTel: '0683657416',
+    demandes: [] 
+  },
 ];
 
 export const conseillers: Conseiller[] = [
@@ -114,7 +145,7 @@ export const conseillers: Conseiller[] = [
     prenom: 'Martine',
     nom: 'Dupont',    
     adresse: {rue: '23 rue Gambetta',  ville: 'Lille', cp: '59000'},
-    clients: clientsTab   
+    clients: [clientsTab[0], clientsTab[1]]
   },
   {
     matricule: '0002',
@@ -122,7 +153,7 @@ export const conseillers: Conseiller[] = [
     prenom: 'Roger',
     nom: 'Martin',    
     adresse: {rue: '12 rue de Paris',  ville: 'Antony', cp: '92160'},
-    clients: [] 
+    clients: [clientsTab[2]] 
   },
   {
     matricule: '0003',
@@ -130,7 +161,7 @@ export const conseillers: Conseiller[] = [
     prenom: 'Alice',
     nom: 'Pommier',    
     adresse: {rue: '48 boulevard Pasteur',  ville: 'Marcq-en-Baroeul', cp: '59700'},
-    clients: [] 
+    clients: [clientsTab[3], clientsTab[4], clientsTab[5]] 
   },
   {
     matricule: '0004',
