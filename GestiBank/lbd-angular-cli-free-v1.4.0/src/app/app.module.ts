@@ -34,6 +34,7 @@ import { AdminAffectationsComponent } from './admin-affectations/admin-affectati
 import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component';
 
 import { ConseillerService } from './conseiller-service'; /*****/
+import { ClientService } from './client-service'; /*****/
 
 
 @NgModule({
@@ -72,7 +73,7 @@ import { ConseillerService } from './conseiller-service'; /*****/
     LbdModule,
     ReactiveFormsModule
   ],
-  providers: [ ConseillerService ],
+  providers: [ ConseillerService, ClientService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

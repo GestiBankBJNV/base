@@ -42,24 +42,23 @@
 							        <table class="table">
 							                <thead>
 							                    <tr>
-							                      <th class="text-center">ID</th>
+							                      <th>Prénom</th>
 							                      <th>Nom</th>
-							                      <th>Ville</th>
 							                      <th><a (click)='trierDateDemande()'>Date de demande</a></th>
 							                      <th><a (click)='trierDateAffectation()'>Date d'affectation</a></th>
 							                      <th>Statut</th>
 							                    </tr>
 							                </thead>
 							              <tbody>
-							                  <tr *ngFor="let row of tableData.dataRows">
-							                      <td class="text-center">{{ row[0] }}</td>
-							                      <td>{{ row[1] }}</td>
-							                      <td>{{ row[2] }}</td>
-							                      <td>{{ row[3] | date:'dd/MM/yyyy'}}</td>
-							                      <td>{{ row[4] | date:'dd/MM/yyyy'}}</td>
-							                      <td>{{ row[5] }}</td>
-							                      <td class="td-actions text-right">
-							                          <a rel="tooltip" title="Affecter demande" class="btn btn-info btn-simple btn-xs" (click)="affecter=true">
+							                  <tr *ngFor="let demande of tableData">
+							                      <td>{{ demande.coordonnees.prenom }}</td>
+							                      <td>{{ demande.coordonnees.nom }}</td>							                      
+							                      <td>{{ demande.date | date:'dd/MM/yyyy'}}</td>
+							                      <td>{{ demande.dateAffectation | date:'dd/MM/yyyy'}}</td>
+							                      <td>{{ demande.statut }}</td>
+							                      <td><button *ngIf="demande.dateAffectation == undefined" (click)="affect(demande)" class="btn btn-danger btn-xs">Affecter</button></td>
+							                      <!-- <td class="td-actions text-right">
+							                          <a rel="tooltip" title="Affecter demande" class="btn btn-info btn-simple btn-xs" (click)="affect('client')"> 
 							                              <i class="fa fa-user"></i>
 							                          </a>
 							                          <a rel="tooltip" title="Modifier Affectation" class="btn btn-success btn-simple btn-xs" (click)="modifier=true">
@@ -68,7 +67,7 @@
 							                          <a rel="tooltip" title="Supprimer" class="btn btn-danger btn-simple btn-xs">
 							                              <i class="fa fa-times"></i>
 							                          </a>
-							                      </td>
+							                      </td> -->
 							                  </tr>
 							              </tbody>
 							        </table>
@@ -84,32 +83,34 @@
 
 						<div class="content">
 							<div class="row">
-								<div class="col-md-4">
+								<div class="col-md-5">
 									<div class="form-group">
-										<input type="text" value="" placeholder="Input" class="form-control" />
-										<button class="btn btn-primary btn-fill" (click)="affecter=false">Valider</button>
+										<input type="text" value="" placeholder="Conseiller" class="form-control" [(ngModel)]="conseillerRecherche" (keydown.enter)="clicRechercher()"/>
+										<button type="submit" class="btn btn-info btn-fill pull-right" (click)="clicRechercherConseiller()">Valider</button> 
 									</div>
 								</div>				
 							</div>
 						</div>
+					</div>					
+
+					<!-- Recherche les conseillers compatibles -->
+                	<div class="header" *ngIf="(isSearching)">
+						<h4 *ngIf="isLoading"><i>Recherche conseillers ... </i></h4>
+						<h4 *ngIf="!isLoading">Selectionner le conseiller :</h4> 
 					</div>
 
-					<!-- A afficher si on clique sur le bouton dans le tableau -->
-					<div *ngIf="(modifier)">
-						<div class="header">
-							<h4>Affecter le client au conseiller : </h4>
-						</div>
+					<div class="content" *ngIf="(isSearching)">
 
-						<div class="content">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<input type="text" value="" placeholder="Input" class="form-control" />
-										<button class="btn btn-primary btn-fill" (click)="modifier=false">Valider</button>
-									</div>
-								</div>				
+						<div class="row">
+							<div class="col-md-12">									
+
+								<nav>
+									<a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{ conseiller.matricule }} : {{conseiller.prenom}} {{conseiller.nom}}</p></a>
+								</nav>
+								
 							</div>
 						</div>
+						
 					</div>
 
 				</div>

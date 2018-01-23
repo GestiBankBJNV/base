@@ -43,7 +43,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   		prenom: '',
   		nom: ['', Validators.required ],
       email: '', // TODO : Pour vérifier si une adresse email correcte a été entrée, voir tuto Dynamic Forms sur angular.io
-  		adresse: this.fb.group(new Adresse()),
+  		adresse: this.fb.group(new Adresse()), 
   	});
   }
 
@@ -94,7 +94,8 @@ export class AdminFicheConseillerComponent implements OnInit {
         nom: formModel.nom as string,
         email: formModel.email as string,
         adresse: formModel.adresse,
-        clients: []
+        clients: [],
+        demandes: []
       };
 
       return saveConseiller;
@@ -110,6 +111,7 @@ export class AdminFicheConseillerComponent implements OnInit {
       // Notifier la suppression
       this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp, 'danger', 'pe-7s-delete-user');   
       // TODO : empecher la suppression si liste clients non vide
+     
     }
 
 }

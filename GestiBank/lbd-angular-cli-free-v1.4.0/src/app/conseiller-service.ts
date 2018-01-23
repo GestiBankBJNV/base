@@ -7,7 +7,7 @@ import 'rxjs/add/operator/delay';
 import { Conseiller, conseillers } from './data-model';
 
 @Injectable()
-export class ConseillerService {
+export class ConseillerService { // Correspond finalement aux méthodes de l'admin, mais je ne vais pas modifier le nom maintenant...
 
   delayMs = 500;
 
