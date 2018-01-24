@@ -30,6 +30,7 @@ export class Adresse {
 }
 
 export class Demande {
+  id: number;
   date: Date;
   dateAffectation: Date;
   statut: string;
@@ -207,6 +208,7 @@ export const conseillers: Conseiller[] = [
 
 export const demandesInscription: DemandeInscription[] = [
   {
+    id: 1,
     date: new Date(2018,0,15),
     dateAffectation: undefined,
     statut: '',
@@ -214,6 +216,7 @@ export const demandesInscription: DemandeInscription[] = [
     coordonnees: {email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}}
   },
   {
+    id: 2,
     date: new Date(2017,11,5),
     dateAffectation: new Date(2017,6,12),
     statut: 'traitée',
@@ -221,6 +224,7 @@ export const demandesInscription: DemandeInscription[] = [
     coordonnees: {email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}}
   },
   {
+    id: 3,
     date: new Date(2018,0,7),
     dateAffectation: undefined,
     statut: '',
@@ -228,6 +232,7 @@ export const demandesInscription: DemandeInscription[] = [
     coordonnees: {email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}}
   },
   {
+    id: 4,
     date: new Date(2018,0,9),
     dateAffectation: new Date(2018,0,11),
     statut: 'en cours',
@@ -235,6 +240,7 @@ export const demandesInscription: DemandeInscription[] = [
     coordonnees: {email:"philip@truc.com", prenom: "Philip", nom: "Chaney", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}}
   },
   {
+    id: 5,
     date: new Date(2018,0,13),
     dateAffectation: undefined,
     statut: '',
@@ -242,6 +248,7 @@ export const demandesInscription: DemandeInscription[] = [
     coordonnees: {email:"doris@truc.com", prenom: "Doris", nom: "Greene", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}}
   },
   {
+    id: 6,
     date: new Date(2018,0,10),
     dateAffectation: undefined,
     statut: '',

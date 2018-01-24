@@ -92,27 +92,29 @@
                                 </div>
                             <!-- </div> -->
 
-                            <!-- TODO: ajouter la liste des demandes -->
+                            <!-- la liste des demandes dans un tableau -->
                             <label>Demandes</label>
                             <!-- <div class="card"> -->
                                 <div class="content table-responsive table-full-width">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>Statut</th>
+                                                <th>N° </th>
                                                 <th>Prénom</th>
                                                 <th>Nom</th>
                                                 <th>Date de demande</th>
                                                 <th>Date d'affectation</th>
+                                                <th>Statut</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr *ngFor="let row of conseiller.demandes">
-                                                <td>{{ row.statut }}</td>
+                                                <td>{{ row.id }}</td>
                                                 <td>{{ row.coordonnees.prenom }}</td>
                                                 <td>{{ row.coordonnees.nom }}</td>
                                                 <td>{{ row.date | date:'dd/MM/yyyy' }}</td>   
-                                                <td>{{ row.dateAffectation | date:'dd/MM/yyyy' }}</td>                                            
+                                                <td>{{ row.dateAffectation | date:'dd/MM/yyyy' }}</td>   
+                                                <td>{{ row.statut }}</td>                                         
                                             </tr>
                                         </tbody>
                                     </table>

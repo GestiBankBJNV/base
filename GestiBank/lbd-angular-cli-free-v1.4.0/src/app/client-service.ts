@@ -12,16 +12,27 @@ export class ClientService {
 	delayMs = 500;
 
     // Fake server get; assume nothing can go wrong
-    getConseillers(): Observable<Client[]> {
+    getClients(): Observable<Client[]> {
 	  	console.log('getConseiller()');
 	    return of(clients).delay(this.delayMs); // simulate latency with delay
     }
 
     // Fake server update; assume nothing can go wrong
-  updateConseiller(client: Client): Observable<Client>  {
-  	/*console.log('updateConseiller()');*/
-    const oldClient = clients.find(c => c.id === client.id);
-    const newClient = Object.assign(oldClient, client); // Demo: mutate cached hero
-    return of(newClient).delay(this.delayMs); // simulate latency with delay
+    updateClient(client: Client): Observable<Client>  {
+    	/*console.log('updateConseiller()');*/
+      const oldClient = clients.find(c => c.id === client.id);
+      const newClient = Object.assign(oldClient, client); // Demo: mutate cached hero
+      return of(newClient).delay(this.delayMs); // simulate latency with delay
+    }
+
+    getClientByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
+    var temp=[];
+    for(var i=0; i<clients.length; i++){
+      // mettre dans temp les conseillers ayant le nom recherché
+      if(clients[i].nom.match(name) || clients[i].id.toString() === id) {
+         temp.push(clients[i]);         
+      }
+    }
+    return of(temp).delay(this.delayMs);
   }
 }
