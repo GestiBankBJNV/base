@@ -39,7 +39,7 @@
 								</div>
 
 								<div class="content table-responsive table-full-width">
-							        <table class="table">
+							        <table class="table table-hover">
 							                <thead>
 							                    <tr>
 							                      <th>Prénom</th>
@@ -78,7 +78,7 @@
 					<!-- A afficher si on clique sur le bouton dans le tableau -->
 					<div *ngIf="(affecter)">
 						<div class="header">
-							<h4>Associer la demande au conseiller : </h4>
+							<h4>Associer la demande du {{ selectedDemande.date | date:'dd/MM/yyyy' }} ({{ selectedDemande.libelle }}) au conseiller : </h4>
 						</div>
 
 						<div class="content">
