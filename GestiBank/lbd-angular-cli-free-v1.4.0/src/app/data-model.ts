@@ -1,4 +1,5 @@
 
+// TODO : mettre à jour les classes avec diagramme de classe
 
 /* *********** Classes *********** */
 
@@ -7,7 +8,6 @@ export class Personne {
   prenom: string;
   nom: string;
   adresse: Adresse;
-  // TODO : numTel: String; --> attention formulaire fiche conseiller
   numTel: String;
   // TODO : Faut-il ajouter le pseudo ??
 }
@@ -43,11 +43,9 @@ export class DemandeInscription extends Demande {
 }
 
 export class DemandeClient extends Demande {
-  // TODO
 }
 
 export class DemandeChequier extends DemandeClient {
-  // TODO
   libelle = 'Demande de chéquier';
 }
 

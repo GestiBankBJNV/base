@@ -31,7 +31,7 @@ export class AdminConseillersComponent implements OnInit {
   	getConseillers() {
     	this.isLoading = true;
     	this.conseillers = this.conseillerService.getConseillers()
-                      		// Todo: error handling
+                      		// Normalement à faire error handling
                       		.finally(() => this.isLoading = false);
     	this.selectedConseiller = undefined;
   	}
@@ -46,7 +46,7 @@ export class AdminConseillersComponent implements OnInit {
       this.isLoading = true;
       console.log('recherche du conseiller ' + this.conseillerRecherche);
       this.conseillers = this.conseillerService.getConseillersByNameAndID(this.conseillerRecherche, this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule
-                      		// Todo: error handling
+                      		// Normalement à faire : error handling
                       		.finally(() => this.isLoading = false);
   	}
 

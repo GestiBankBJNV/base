@@ -28,7 +28,7 @@ export class DemandeService {
 		var temp = [];
 		for(var i=0; i<demandesInscription.length; i++){      		
          	temp.push(demandesInscription[i]);
-      	} // plutôt que de copier le tableau, on pourrait utiliser un push, mais il faudrait repenser aux conditions (todo later)    
+      	} // plutôt que de copier le tableau, on pourrait utiliser un push, mais il faudrait repenser aux conditions  
 
        	for (var i=demandesInscription.length -1; i>=0; i--){         
 	         if(filtre == 'affectee' && demandesInscription[i].dateAffectation == undefined){           

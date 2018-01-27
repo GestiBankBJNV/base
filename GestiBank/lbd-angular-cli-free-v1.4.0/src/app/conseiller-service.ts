@@ -51,7 +51,6 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     return of(temp).delay(this.delayMs);
   }
 
-  // TODO : Majuscules pour comparer sans pb de casse
   getConseillersByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
     var temp=[];
     name = name.toUpperCase();

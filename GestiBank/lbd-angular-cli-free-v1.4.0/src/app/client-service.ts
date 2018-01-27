@@ -25,7 +25,6 @@ export class ClientService {
       return of(newClient).delay(this.delayMs); // simulate latency with delay
     }
 
-    // TODO : Majuscules pour comparer sans pb de casse
     getClientByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
       name = name.toUpperCase();
       var temp=[];

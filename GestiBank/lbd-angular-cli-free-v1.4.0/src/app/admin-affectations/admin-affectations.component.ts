@@ -40,21 +40,21 @@ export class AdminAffectationsComponent implements OnInit {
   getDemandes() { // récupère tous les conseillers via le service
     this.isLoading = true;
     this.demandes = this.demandeService.getDemandesInscription()
-                        // Todo: error handling
+                        // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }
 
   getConseillers() { // récupère tous les conseillers via le service
     this.isLoading = true;
     this.conseillers = this.conseillerService.getConseillers()
-                        // Todo: error handling
+                        // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }
 
   getClient() { // récupère tous les conseillers via le service
     this.isLoadingClient = true;
     this.clients = this.clientService.getClients() 
-                        // Todo: error handling
+                        // Normalement à faire : error handling
                         .finally(() => this.isLoadingClient = false);
   }
 
@@ -74,29 +74,29 @@ export class AdminAffectationsComponent implements OnInit {
     // Ajouter la demande à la liste du conseiller
     conseiller.demandes.push(this.selectedDemande);
     this.conseillerService.updateConseiller(conseiller).subscribe();  
-    // TODO : Notifier l'affectation
+    // Notifier l'affectation
     this.notif.showNotificationMessage('top', 'right', 'Demande affectée au conseiller : ' + conseiller.prenom + ' ' + conseiller.nom, 'success', 'pe-7s-magic-wand');
     
   } 
 
-  clicRechercherClient() { // TODO : ne fonctionne pas : renvoie mauvais clients
+  clicRechercherClient() {
     this.getClient(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
                            /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
     this.isLoadingClient = true;
     this.clients = this.clientService.getClientByNameAndID(this.clientRecherche, this.clientRecherche) // ce champ contient soit un nom, soit un matricule
-                        // Todo: error handling
+                        // Normalement à faire : error handling
                         .finally(() => this.isLoadingClient = false);
   }
 
   clicRechercherConseiller() { // Méthode utilisée pour assurer la saisie du conseiller auquel affecter la demande
     this.isLoading = true;  
-    this.isSearching = true; // TODO : modifs à effectuer pour l'onglet modif ?
+    this.isSearching = true;
     this.getConseillers(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
                            /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
     this.isLoading = true;
     console.log('recherche du conseiller ' + this.conseillerRecherche);
     this.conseillers = this.conseillerService.getConseillersByNameAndID(this.conseillerRecherche, this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule
-                        // Todo: error handling
+                        // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }
 
@@ -106,7 +106,7 @@ export class AdminAffectationsComponent implements OnInit {
                            /* il n'y en a pas beaucoup donc c'est pas si grave */
     this.isLoading = true;
     this.demandes = this.demandeService.filtrerDemandes(filtre) // ce champ contient soit un nom, soit un matricule
-                        // Todo: error handling
+                        // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }
 
@@ -125,7 +125,7 @@ export class AdminAffectationsComponent implements OnInit {
                            /* il n'y en a pas beaucoup donc c'est pas si grave */
     this.isLoading = true;
     this.demandes = this.demandeService.trierDate(typeDate, isCroissant) // ce champ contient soit un nom, soit un matricule
-                        // Todo: error handling
+                        // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }
 

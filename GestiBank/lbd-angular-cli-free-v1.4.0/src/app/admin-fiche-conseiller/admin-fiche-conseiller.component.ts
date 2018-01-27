@@ -108,12 +108,10 @@ export class AdminFicheConseillerComponent implements OnInit {
     supprConseiller() {
       var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
       this.conseillerService.deleteConseiller(this.conseiller);
-      // Tenlever la fiche
+      // enlever la fiche
       this.onDelete.emit();
       // Notifier la suppression
-      this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp, 'danger', 'pe-7s-delete-user');   
-      // TODO : empecher la suppression si liste clients non vide
-     
+      this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp, 'danger', 'pe-7s-delete-user');        
     }
 
 }
