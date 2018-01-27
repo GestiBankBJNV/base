@@ -16,6 +16,7 @@ export class ClientComptesComponent implements OnInit {
 	client : Client = CLIENT;
 	selectedCompte : Compte;
   openAccount : Boolean = false;
+  editIban : Boolean = false;
   accountType : String = "Courant";//Mettre une valeur par défaut, autrement la balise select sera vide au chargement de la page
   awaitingConfirm : Boolean = false;
   startDate : Date;
@@ -32,6 +33,8 @@ export class ClientComptesComponent implements OnInit {
   	//console.log("Compte selectionné");
   	this.selectedCompte = compte;
     this.openAccount = false;
+    this.editIban = false;
+    this.awaitingConfirm = false;
     this.startDate = compte.operations[0].date;
     this.endDate = compte.operations[compte.operations.length - 1].date;
     this.refreshOperations(0);
@@ -40,14 +43,16 @@ export class ClientComptesComponent implements OnInit {
   //Choisir le type de compte à ouvrir
   toggleOpenAccount(){
     this.openAccount = true;
+    this.editIban = false;
     this.selectedCompte = null;
+    this.awaitingConfirm = false;
   }
 
   //Valider la demande d'ouverture de compte
-  validForm(){
+  validOpenAccount(){
     if (this.awaitingConfirm){
       this.awaitingConfirm = false;
-      console.log("demande");
+      //console.log("demande");
       let msg : String = "Votre demande d'ouverture de compte " + this.accountType + " a bien été enregistrée";
       this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté cliet.
       //TODO : envoyer une demande au conseiller
@@ -59,6 +64,21 @@ export class ClientComptesComponent implements OnInit {
     }
   }
   
+  //Valider la demande de commande de chèquier
+  validOrderCheck(){
+    if (this.awaitingConfirm){
+      this.awaitingConfirm = false;
+      //console.log("chequier");
+      let msg : String = "Votre commande de chèquier pour le compte " + this.selectedCompte.iban + " a bien été enregistrée";
+      this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté cliet.
+      //TODO : envoyer une demande au conseiller
+      this.showNotification('top','center',msg);//On affiche une notif sur la page
+    }
+    else{
+      this.awaitingConfirm = true;
+    }
+  }
+
   //Rafraichir la date de départ
   refreshStart(date){
     this.startDate = new Date(date);
@@ -88,8 +108,13 @@ export class ClientComptesComponent implements OnInit {
   }
 
   //
-  editIBAN(){
-    
+  toggleIBAN(){
+    this.editIban = (!this.editIban);    
+  }
+
+  //Impression
+  print(){
+    window.print();
   }
 
   //Afficher une notification à la validation du formulaire
