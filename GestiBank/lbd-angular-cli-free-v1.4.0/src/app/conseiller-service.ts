@@ -51,11 +51,13 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     return of(temp).delay(this.delayMs);
   }
 
+  // TODO : Majuscules pour comparer sans pb de casse
   getConseillersByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
     var temp=[];
+    name = name.toUpperCase();
     for(var i=0; i<conseillers.length; i++){
       // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].nom.match(name) || conseillers[i].matricule === id) {
+      if(conseillers[i].nom.toUpperCase().match(name) || conseillers[i].matricule === id) {
          temp.push(conseillers[i]);         
       }
     }

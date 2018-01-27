@@ -13,10 +13,10 @@
 		<!-- Onglets -->
 		<ul role="tablist" class="nav nav-tabs">
 			<li role="presentation" class="active">
-				<a href="#demandes" data-toggle="tab">Demandes</a>
+				<a href="#demandes" data-toggle="tab" (click)="changerOnglet()">Demandes</a>
 			</li>
 			<li>
-				<a href="#change" data-toggle="tab">Modifications</a>
+				<a href="#change" data-toggle="tab" (click)="changerOnglet()">Modifications</a>
 			</li>
 		</ul>
 		
@@ -130,8 +130,12 @@
 						<div class="row">
 							<div class="col-md-6">
 								<label>Client</label>
-								<input [(ngModel)]="clientRecherche" type="text" value="" placeholder="Client" class="form-control" (keydown)="clicRechercherClient()"/>
-								<h4 *ngIf="isLoading"><i>Recherche clients ... </i></h4>
+								<div class="form-group">
+									<input [(ngModel)]="clientRecherche" type="text" value="" placeholder="Client" class="form-control" (keydown.enter)="clicRechercherClient()"/>
+									<button type="submit" class="btn btn-info btn-fill pull-right" (click)="clicRechercherClient()">Rechercher</button> 
+								</div>
+								
+								<h4 *ngIf="isLoadingClient"><i>Recherche clients ... </i></h4>
 								<div *ngFor="let client of clients | async">
 									<label>
 										<input type="radio" name="optionsRadiosClients" data-toggle="radio" value="option1">
@@ -142,7 +146,11 @@
 						
 							<div class="col-md-6">
 								<label>Conseiller</label>
-								<input [(ngModel)]="conseillerRecherche" type="text" value="" placeholder="Conseiller" class="form-control" (keydown)="clicRechercherConseiller()"/>
+								<div class="form-group">
+									<input [(ngModel)]="conseillerRecherche" type="text" value="" placeholder="Conseiller" class="form-control" (keydown.enter)="clicRechercherConseiller()"/>
+									<button type="submit" class="btn btn-info btn-fill pull-right" (click)="clicRechercherConseiller()">Rechercher</button> 
+								</div>
+								
 								<h4 *ngIf="isLoading"><i>Recherche conseillers ... </i></h4>
 								<div *ngFor="let conseiller of conseillers | async">
 									<label>

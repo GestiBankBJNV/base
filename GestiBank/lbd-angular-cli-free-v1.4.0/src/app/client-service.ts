@@ -25,14 +25,16 @@ export class ClientService {
       return of(newClient).delay(this.delayMs); // simulate latency with delay
     }
 
+    // TODO : Majuscules pour comparer sans pb de casse
     getClientByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
-    var temp=[];
-    for(var i=0; i<clients.length; i++){
-      // mettre dans temp les conseillers ayant le nom recherché
-      if(clients[i].nom.match(name) || clients[i].id.toString() === id) {
-         temp.push(clients[i]);         
+      name = name.toUpperCase();
+      var temp=[];
+      for(var i=0; i<clients.length; i++){
+        // mettre dans temp les conseillers ayant le nom recherché
+        if(clients[i].nom.toUpperCase().match(name) || clients[i].id.toString() === id) {
+           temp.push(clients[i]);         
+        }
       }
-    }
-    return of(temp).delay(this.delayMs);
+      return of(temp).delay(this.delayMs);
   }
 }

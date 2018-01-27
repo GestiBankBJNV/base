@@ -25,6 +25,7 @@ export class AdminAffectationsComponent implements OnInit {
   demandes: Observable<DemandeInscription[]>;
   clients: Observable<Client[]>;
   isLoading = false; // simulation de latence
+  isLoadingClient = false; // pour les clients dans l'onglet modif
   isSearching = false; // quand on affiche une liste de conseillers après avoir chercher dans une input text
   conseillerRecherche: string = ''; // garder sous la main le conseiller recherché
   clientRecherche: string = ''; // garder sous la main le client recherché
@@ -51,10 +52,10 @@ export class AdminAffectationsComponent implements OnInit {
   }
 
   getClient() { // récupère tous les conseillers via le service
-    this.isLoading = true;
-    this.clients = this.clientService.getClients()
+    this.isLoadingClient = true;
+    this.clients = this.clientService.getClients() 
                         // Todo: error handling
-                        .finally(() => this.isLoading = false);
+                        .finally(() => this.isLoadingClient = false);
   }
 
   // méthode utilisée au clic du bouton affecter dans le tableau
@@ -78,17 +79,18 @@ export class AdminAffectationsComponent implements OnInit {
     
   } 
 
-  clicRechercherClient() {
+  clicRechercherClient() { // TODO : ne fonctionne pas : renvoie mauvais clients
     this.getClient(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
                            /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
-    this.isLoading = true;
+    this.isLoadingClient = true;
     this.clients = this.clientService.getClientByNameAndID(this.clientRecherche, this.clientRecherche) // ce champ contient soit un nom, soit un matricule
                         // Todo: error handling
-                        .finally(() => this.isLoading = false);
+                        .finally(() => this.isLoadingClient = false);
   }
 
   clicRechercherConseiller() { // Méthode utilisée pour assurer la saisie du conseiller auquel affecter la demande
-    this.isSearching = true;
+    this.isLoading = true;  
+    this.isSearching = true; // TODO : modifs à effectuer pour l'onglet modif ?
     this.getConseillers(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
                            /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
     this.isLoading = true;
@@ -125,6 +127,23 @@ export class AdminAffectationsComponent implements OnInit {
     this.demandes = this.demandeService.trierDate(typeDate, isCroissant) // ce champ contient soit un nom, soit un matricule
                         // Todo: error handling
                         .finally(() => this.isLoading = false);
+  }
+
+  /* ***** Méthode au changement d'onglet ***** */
+  changerOnglet(onglet: string){ // on réinitialise tous les attributs nécessaires
+
+    this.conseillers = undefined;
+    this.clients = undefined;
+    this.affecter = false; 
+    this.trieCroissantDemande = true; 
+    this.trieCroissantAffectation = true;  
+    this.conseillerRecherche = ''; 
+    this.clientRecherche = ''; 
+    this.selectedDemande = undefined; 
+    this.isLoading = false;
+    this.isLoadingClient = false;
+    this.isSearching = false;
+
   }
 
 }
