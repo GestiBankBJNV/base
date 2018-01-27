@@ -44,6 +44,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   		nom: ['', Validators.required ],
       email: '', // TODO : Pour vérifier si une adresse email correcte a été entrée, voir tuto Dynamic Forms sur angular.io
   		adresse: this.fb.group(new Adresse()), 
+      numTel: ''
   	});
   }
 
@@ -53,7 +54,8 @@ export class AdminFicheConseillerComponent implements OnInit {
         prenom: this.conseiller.prenom,
         nom: this.conseiller.nom,
         email: this.conseiller.email,
-        adresse: this.conseiller.adresse || new Adresse(),       
+        adresse: this.conseiller.adresse || new Adresse(), 
+        numTel: this.conseiller.numTel      
       }); 
   }
 
@@ -84,7 +86,7 @@ export class AdminFicheConseillerComponent implements OnInit {
        
     }
 
-   prepareSaveConseiller(): Conseiller {
+   prepareSaveConseiller(): Conseiller { // Préparation pour sauvegarder grace au conseiller-service
       const formModel = this.formulaire.value;
 
       const saveConseiller: Conseiller = {
@@ -93,6 +95,7 @@ export class AdminFicheConseillerComponent implements OnInit {
         nom: formModel.nom as string,
         email: formModel.email as string,
         adresse: formModel.adresse,
+        numTel: formModel.numTel,
         clients: this.conseiller.clients || [],
         demandes: this.conseiller.demandes || []
       };
