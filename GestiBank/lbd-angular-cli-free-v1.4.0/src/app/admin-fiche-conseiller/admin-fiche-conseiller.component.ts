@@ -48,7 +48,6 @@ export class AdminFicheConseillerComponent implements OnInit {
   }
 
   ngOnChanges(){
-      console.log(this.conseiller.clients);
       this.formulaire.reset({
         matricule: this.conseiller.matricule,
         prenom: this.conseiller.prenom,
@@ -94,8 +93,8 @@ export class AdminFicheConseillerComponent implements OnInit {
         nom: formModel.nom as string,
         email: formModel.email as string,
         adresse: formModel.adresse,
-        clients: [],
-        demandes: []
+        clients: this.conseiller.clients || [],
+        demandes: this.conseiller.demandes || []
       };
 
       return saveConseiller;
