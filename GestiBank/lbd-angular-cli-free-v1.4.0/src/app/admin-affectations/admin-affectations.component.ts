@@ -30,8 +30,8 @@ export class AdminAffectationsComponent implements OnInit {
   conseillerRecherche: string = ''; // garder sous la main le conseiller recherché
   clientRecherche: string = ''; // garder sous la main le client recherché
   selectedDemande: DemandeInscription; // garder sous la main la demande que l'on va affecter à un conseiller
-  selectedClient: Client;
-  selectedConseiller: Conseiller;
+  selectedClient: Client; // Pour l'onglet modifs
+  selectedConseiller: Conseiller; // Pour l'onglet modifs
 
 	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService) { }
 
@@ -147,7 +147,7 @@ export class AdminAffectationsComponent implements OnInit {
 
   }
 
-  // TODO : affectation du client au conseiller (onglet modif)
+  /* ***** Affectation du client au conseiller (onglet modif) ***** */
   validerModifConseiller(){
     console.log(this.selectedClient.nom);
     console.log(this.selectedConseiller.nom);
@@ -156,7 +156,7 @@ export class AdminAffectationsComponent implements OnInit {
     this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
     // Supprimer le client de la liste de son ancien conseiller
     this.conseillerService.deleteClient(this.selectedClient);
-    // todo: notifier les modifs
+    // Notifier les modifs
     this.notif.showNotificationMessage('top', 'right', 'Client : ' + this.selectedClient.prenom + ' ' + this.selectedClient.nom + ' affecté au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
 
   }
