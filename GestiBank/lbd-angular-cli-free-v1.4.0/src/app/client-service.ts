@@ -26,11 +26,10 @@ export class ClientService {
     }
 
     getClientByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
-      name = name.toUpperCase();
       var temp=[];
       for(var i=0; i<clients.length; i++){
         // mettre dans temp les conseillers ayant le nom recherché
-        if(clients[i].nom.toUpperCase().match(name) || clients[i].id.toString() === id) {
+        if(clients[i].nom.toUpperCase().startsWith(name.toUpperCase(), 0) || clients[i].id.toString() === id) {
            temp.push(clients[i]);         
         }
       }

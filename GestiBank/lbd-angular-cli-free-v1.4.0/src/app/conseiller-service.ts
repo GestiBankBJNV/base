@@ -29,7 +29,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
 
     for(var i=0; i<conseillers.length; i++){
       // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].nom.match(nom)) {
+      if(conseillers[i].nom.startsWith(nom, 0)) {
          temp.push(conseillers[i]);
          /*console.log('conseillers trouvé : ' + conseillers[i].nom);*/
       }
@@ -52,10 +52,9 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
 
   getConseillersByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
     var temp=[];
-    name = name.toUpperCase();
     for(var i=0; i<conseillers.length; i++){
       // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].nom.toUpperCase().match(name) || conseillers[i].matricule === id) {
+      if(conseillers[i].nom.toUpperCase().startsWith(name.toUpperCase(), 0) || conseillers[i].matricule === id) {
          temp.push(conseillers[i]);         
       }
     }
