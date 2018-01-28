@@ -58,6 +58,7 @@
 								<nav>
 										  	<!-- <button (click)="getConseillers() && 'isSearching=false'" class="btn btn-primary">Refresh</button> --> <!-- **********************  -->
 									<a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{ conseiller.matricule }}: {{conseiller.prenom}} {{conseiller.nom}}</p></a>
+									<p *ngIf="(conseillers | async)?.length==0">Pas de conseiller correspondant</p>
 								</nav>
 								
 							</div>

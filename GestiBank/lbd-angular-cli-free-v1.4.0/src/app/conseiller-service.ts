@@ -13,7 +13,6 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
 
   // Fake server get; assume nothing can go wrong
   getConseillers(): Observable<Conseiller[]> {
-  	console.log('getConseiller()');
     return of(conseillers).delay(this.delayMs); // simulate latency with delay
   }
 

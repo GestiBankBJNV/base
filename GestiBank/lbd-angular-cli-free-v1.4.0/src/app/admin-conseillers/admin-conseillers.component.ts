@@ -32,8 +32,9 @@ export class AdminConseillersComponent implements OnInit {
     	this.isLoading = true;
     	this.conseillers = this.conseillerService.getConseillers()
                       		// Normalement à faire error handling
-                      		.finally(() => this.isLoading = false);
-    	this.selectedConseiller = undefined;
+                      		.finally(() => this.isLoading = false);      
+
+      this.selectedConseiller = undefined;
   	}
 
   	select(conseiller: Conseiller) { this.selectedConseiller = conseiller; } 

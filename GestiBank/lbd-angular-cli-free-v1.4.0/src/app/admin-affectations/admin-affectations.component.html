@@ -107,6 +107,7 @@
 
 							<nav>
 								<a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{ conseiller.matricule }} : {{conseiller.prenom}} {{conseiller.nom}}</p></a>
+								<p *ngIf="(conseillers | async)?.length==0">Pas de conseiller correspondant</p>
 							</nav>
 							
 						</div>
@@ -135,12 +136,13 @@
 								</div>
 								
 								<h4 *ngIf="isLoadingClient"><i>Recherche clients ... </i></h4>
-								<div *ngFor="let client of clients | async">
-									<label>
+								<div *ngFor="let client of clients | async">									
+									<label>										
 										<input type="radio" name="optionsRadiosClients" data-toggle="radio" value="option1">
 										<i></i>{{ client.id }} : {{client.prenom}} {{client.nom}}
 									</label>
 								</div>
+								<i *ngIf="(clients | async)?.length==0">Pas de client correspondant</i>
 							</div>
 						
 							<div class="col-md-6">
@@ -152,11 +154,12 @@
 								
 								<h4 *ngIf="isLoading"><i>Recherche conseillers ... </i></h4>
 								<div *ngFor="let conseiller of conseillers | async">
-									<label>
+									<label>										
 										<input type="radio" name="optionsRadiosConseillers" data-toggle="radio" value="option1">
 										<i></i>{{ conseiller.matricule }} : {{conseiller.prenom}} {{conseiller.nom}}
 									</label>	
-								</div>							
+								</div>	
+								<i *ngIf="(conseillers | async)?.length==0">Pas de conseiller correspondant</i>						
 							</div>
 						</div>
 
