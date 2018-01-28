@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Conseiller, conseillers } from './data-model';
+import { Conseiller, conseillers, Client } from './data-model';
 
 @Injectable()
 export class ConseillerService { // Correspond finalement aux méthodes de l'admin, mais je ne vais pas modifier le nom maintenant...
@@ -59,6 +59,24 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
       }
     }
     return of(temp).delay(this.delayMs);
+  }
+
+  getConseillerWithClient(client: Client){
+    for(var i=0; i<conseillers.length; i++){
+      for(var j=0; j<conseillers[i].clients.length; j++){
+        if(conseillers[i].clients[j] == client){
+          return conseillers[i];
+        }
+      }
+    }
+    return undefined;
+  }
+
+  deleteClient(client: Client){
+    var conseiller = this.getConseillerWithClient(client);
+    var clients = conseiller.clients;
+    clients.splice(clients.indexOf(client), 1);
+    conseiller.clients = clients;
   }
 
   addConseiller(conseiller: Conseiller) {

@@ -30,6 +30,8 @@ export class AdminAffectationsComponent implements OnInit {
   conseillerRecherche: string = ''; // garder sous la main le conseiller recherché
   clientRecherche: string = ''; // garder sous la main le client recherché
   selectedDemande: DemandeInscription; // garder sous la main la demande que l'on va affecter à un conseiller
+  selectedClient: Client;
+  selectedConseiller: Conseiller;
 
 	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService) { }
 
@@ -94,7 +96,6 @@ export class AdminAffectationsComponent implements OnInit {
     this.getConseillers(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
                            /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
     this.isLoading = true;
-    console.log('recherche du conseiller ' + this.conseillerRecherche);
     this.conseillers = this.conseillerService.getConseillersByNameAndID(this.conseillerRecherche, this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule
                         // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
@@ -143,6 +144,20 @@ export class AdminAffectationsComponent implements OnInit {
     this.isLoading = false;
     this.isLoadingClient = false;
     this.isSearching = false;
+
+  }
+
+  // TODO : affectation du client au conseiller (onglet modif)
+  validerModifConseiller(){
+    console.log(this.selectedClient.nom);
+    console.log(this.selectedConseiller.nom);
+    // Ajouter le client à la liste du conseiller
+    this.selectedConseiller.clients.push(this.selectedClient);
+    this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
+    // Supprimer le client de la liste de son ancien conseiller
+    this.conseillerService.deleteClient(this.selectedClient);
+    // todo: notifier les modifs
+    this.notif.showNotificationMessage('top', 'right', 'Client : ' + this.selectedClient.prenom + ' ' + this.selectedClient.nom + ' affecté au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
 
   }
 

@@ -138,7 +138,7 @@
 								<h4 *ngIf="isLoadingClient"><i>Recherche clients ... </i></h4>
 								<div *ngFor="let client of clients | async">									
 									<label>										
-										<input type="radio" name="optionsRadiosClients" data-toggle="radio" value="option1">
+										<input type="radio" name="optionsRadiosClients" data-toggle="radio" (click)="this.selectedClient=client">
 										<i></i>{{ client.id }} : {{client.prenom}} {{client.nom}}
 									</label>
 								</div>
@@ -155,7 +155,7 @@
 								<h4 *ngIf="isLoading"><i>Recherche conseillers ... </i></h4>
 								<div *ngFor="let conseiller of conseillers | async">
 									<label>										
-										<input type="radio" name="optionsRadiosConseillers" data-toggle="radio" value="option1">
+										<input type="radio" name="optionsRadiosConseillers" data-toggle="radio" (click)="this.selectedConseiller=conseiller">
 										<i></i>{{ conseiller.matricule }} : {{conseiller.prenom}} {{conseiller.nom}}
 									</label>	
 								</div>	
@@ -166,7 +166,7 @@
 						<div class="content">
 							<div class="row">
 								<div class="col-md-2 col-md-offset-10">
-									<button class="btn btn-primary btn-round">Valider</button>
+									<button class="btn btn-primary btn-round" (click)="validerModifConseiller()">Valider</button>
 								</div>
 							</div>
 						</div>
