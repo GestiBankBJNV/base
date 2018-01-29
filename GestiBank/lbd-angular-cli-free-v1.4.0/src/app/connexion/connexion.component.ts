@@ -11,7 +11,7 @@ import { Router} from '@angular/router';
 })
 export class ConnexionComponent implements OnInit {
 
-  // création d'utilisateur pour les tests
+  // création d'utilisateurs pour les tests
   utilisateurs = [
                      {user: 'nassim', password: '1234', status: 'client'},
                      {user: 'brice', password: '1234', status: 'admin'},
@@ -37,6 +37,7 @@ export class ConnexionComponent implements OnInit {
   	})  	
 }
 
+  // vérification de l'user + redirection vers le bon composant
   verifLogin(email, password){
     
 
