@@ -46,8 +46,6 @@ import { ConseillerService } from './conseiller-service'; /*****/
 import { ClientService } from './client-service'; /*****/
 import { DemandeService } from './demande-service'; /*****/
 
-
-
 @NgModule({
   declarations: [
     AdminAccueilComponent,        //ADMIN
@@ -61,14 +59,14 @@ import { DemandeService } from './demande-service'; /*****/
     ConseillerAccueilComponent,    //CONSEILLER
     ConnexionComponent,            //PUBLIC
     EspacePublicComponent,
+    LoginComponent,
+    PublicDevisesComponent,
     AppComponent,                  //DEFAULT
     HomeComponent,
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent,    
-    LoginComponent,
-    PublicDevisesComponent,    
+    UpgradeComponent,
     UserComponent,
     TablesComponent,
     TypographyComponent

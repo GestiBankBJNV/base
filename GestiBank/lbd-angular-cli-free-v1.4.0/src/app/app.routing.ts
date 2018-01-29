@@ -47,6 +47,7 @@ const routes: Routes =[
     { path: 'client_accueil',        component: ClientAccueilComponent },       //ROUTES CLIENT
     { path: 'client_comptes',        component: ClientComptesComponent },
     { path: 'client_devises',        component: PublicDevisesComponent },
+    { path: 'client_profil',        component: ClientProfilComponent },
     { path: 'client_notifications',  component: ClientNotificationsComponent },
     { path: 'client_profil',  component: ClientProfilComponent },
     { path: 'conseiller_accueil',    component: ConseillerAccueilComponent },   //ROUTES CONSEILLER
