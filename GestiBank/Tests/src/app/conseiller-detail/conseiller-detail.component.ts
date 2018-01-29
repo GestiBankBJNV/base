@@ -22,17 +22,6 @@ export class ConseillerDetailComponent implements OnInit, OnChanges {
 
 	  	this.createForm();
 	  	this.logNameChange();
-
-	  	/*this.conseiller = conseillers[0];*/
-
-	  	/*this.formulaire.setValue({
-	    	name: this.conseiller.name,
-	    	email: this.conseiller.email,
-	    	adresse: this.conseiller.adresses[0] || new Adresse()
-	    });
-	    this.formulaire.patchValue({
-	  		email: 'jeanne2@truc.com'
-		});*/
     }
 
     ngOnInit() {
@@ -64,16 +53,12 @@ export class ConseillerDetailComponent implements OnInit, OnChanges {
 
   	onSubmit() {
   		this.conseiller = this.prepareSaveConseiller();
-      console.log(this.conseiller);
   		this.conseillerService.updateConseiller(this.conseiller).subscribe();
-      console.log(this.conseiller);
   		this.ngOnChanges();
   	}
 
   	prepareSaveConseiller(): Conseiller {
   		const formModel = this.formulaire.value;
-      console.log(formModel.adresse);
-
 
   		const saveConseiller: Conseiller = {
   			id: this.conseiller.id,

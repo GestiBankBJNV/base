@@ -44,17 +44,31 @@ export const ROUTES_CLIENT : RouteInfo[] = [
     { path: 'client_devises', title: 'Devises',  icon:'pe-7s-cash', class: '' }
 ];
 
+<<<<<<< HEAD
 //Routes - espace Conseiller
 export const ROUTES_CONSEILLER : RouteInfo[] = [
     { path: 'conseiller_accueil', title: 'Accueil',  icon:'pe-7s-user', class: '' },
     { path: 'conseiller_devises', title: 'Devises',  icon:'pe-7s-cash', class: '' }
+=======
+export const ROUTES_ADMIN : RouteInfo[] = [
+    { path: 'admin_accueil', title: 'Espace Admin',  icon:'pe-7s-home', class: '' },
+    { path: 'admin_conseillers', title: 'Conseillers',  icon:'pe-7s-id', class: '' },
+    { path: 'admin_affectations', title: 'Affectations',  icon:'pe-7s-way', class: '' }
+>>>>>>> Jeanne
 ];
 
 //Routes - espace Public
 export const ROUTES_PUBLIC: RouteInfo[] = [
+<<<<<<< HEAD
     { path: 'public_accueil', title: 'Accueil',  icon: 'pe-7s-graph', class: '' },
     { path: 'public_connexion', title: 'Connexion',  icon: 'pe-7s-graph', class: '' },
     { path: 'public_devises', title: 'Devises',  icon:'pe-7s-cash', class: '' }
+=======
+    { path: 'public_accueil', title: 'Accueil',  icon: 'pe-7s-home', class: '' },
+    { path: 'public_connexion', title: 'Connexion',  icon: 'pe-7s-lock', class: '' },
+    
+
+>>>>>>> Jeanne
 ];
 
 @Component({

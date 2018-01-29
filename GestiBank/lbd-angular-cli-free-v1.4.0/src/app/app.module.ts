@@ -54,6 +54,12 @@ import { LoginComponent } from './login/login.component';
 =======
 >>>>>>> victorien
 
+import { ConseillerService } from './conseiller-service'; /*****/
+import { ClientService } from './client-service'; /*****/
+import { DemandeService } from './demande-service'; /*****/
+
+
+
 @NgModule({
   declarations: [
     AdminAccueilComponent,        //ADMIN
@@ -106,7 +112,7 @@ import { LoginComponent } from './login/login.component';
     RouterModule,
     SidebarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ ConseillerService, ClientService, DemandeService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
