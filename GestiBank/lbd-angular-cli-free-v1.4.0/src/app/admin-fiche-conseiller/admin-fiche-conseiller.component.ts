@@ -90,12 +90,15 @@ export class AdminFicheConseillerComponent implements OnInit {
       const formModel = this.formulaire.value;
 
       const saveConseiller: Conseiller = {
+        id: this.conseiller.id,
         matricule: this.conseiller.matricule,
         prenom: formModel.prenom as string,
         nom: formModel.nom as string,
+        nomUtilisateur: this.conseiller.nomUtilisateur, // todo : rajouter dans le formulaire 
         email: formModel.email as string,
         adresse: formModel.adresse,
         numTel: formModel.numTel,
+        dateDebutContrat: this.conseiller.dateDebutContrat, // todo : rajouter dans le formulaire 
         clients: this.conseiller.clients || [],
         demandes: this.conseiller.demandes || []
       };
