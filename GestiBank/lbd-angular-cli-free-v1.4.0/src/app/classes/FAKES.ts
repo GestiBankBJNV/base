@@ -38,8 +38,8 @@ export const COMPTES : Compte[] = [
 export const CLIENT : Client = {
 	username : "sdefruit",
 	entreprise : "CAF",
-	nom : "DeFruit",
-	prenom : "Salade",
+	nom : "Dupont",
+	prenom : "Thierry",
 	password : "azerty",
 	mail : "il_etait_ou_hein_le_youki@gotainer.com",
 	comptes : COMPTES,
