@@ -23,6 +23,7 @@ export class ClientComptesComponent implements OnInit {
   endDate : Date;
   displayedOperations : Operation[] = [];
   displayedCount : Number = 20;
+  transferDestIBAN : String = "";
   constructor() { }
 
   ngOnInit() {

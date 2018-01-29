@@ -89,14 +89,18 @@
 				<p class="category">Indiquez la somme à transférer, et le numéro IBAN du compte destinataire</p>
 				<hr/>
 			</div>
-			<div class="content">			
-				<div class="row">
-					<select [(ngModel)]="accountType" class="btn dropdown-toggle col-md-3 col-md-offset-1">
-						<option selected>Courant</option>
-						<option>Épargne</option>
-					</select>
-                	<button type="submit" class="btn btn-info btn-fill col-md-3 col-md-offset-4" (click)="validOpenAccount()">{{ (awaitingConfirm) ? "Confirmer" : "Ouvrir un compte" }}</button>
-				</div>
+			<div class="content">
+				<form>			
+					<div class="row">
+						<div class="form-group">
+                        	<label for="iban">IBAN Destinataire : </label>
+                            <input [(ngModel)]="transferDestIBAN" name="iban" type="text" class="form-control" placeholder="IBAN destinataire">
+                        </div>
+						<div class="form-group">
+	                		<button type="submit" class="btn btn-info form-control btn-fill col-md-3 col-md-offset-3" (click)="validOpenAccount()">{{ (awaitingConfirm) ? "Confirmer" : "Ouvrir un compte" }}</button>
+						</div>
+					</div>
+				</form>
 			</div>					
 		</div>
 	</div>
