@@ -148,9 +148,10 @@ export class AdminAffectationsComponent implements OnInit {
   }
 
   /* ***** Affectation du client au conseiller (onglet modif) ***** */
-  validerModifConseiller(){
+  validerModifConseiller(){ // TODO : vérifier (semble ne pas fonctionner --> tests)
     console.log(this.selectedClient.nom);
     console.log(this.selectedConseiller.nom);
+    debugger;
     // Ajouter le client à la liste du conseiller
     this.selectedConseiller.clients.push(this.selectedClient);
     this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  

@@ -43,7 +43,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
 
     for(var i=0; i<conseillers.length; i++){
       // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].matricule.match(id)) {
+      if(conseillers[i].matricule === id) {
          temp.push(conseillers[i]);
       }
     }
