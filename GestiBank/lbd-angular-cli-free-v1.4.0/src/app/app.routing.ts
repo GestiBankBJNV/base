@@ -19,6 +19,11 @@ import { PublicDevisesComponent } from './public-devise/public-devises.component
 
 //IMPORTS CONSEILLER
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
+<<<<<<< HEAD
+=======
+import { ClientProfilComponent } from './client-profil/client-profil.component';
+import { LoginComponent } from './login/login.component';
+>>>>>>> Nassim
 
 //IMPORTS ADMIN
 import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
@@ -34,6 +39,7 @@ import { ClientProfilComponent } from './client-profil/client-profil.component';
 
 
 const routes: Routes =[
+<<<<<<< HEAD
     { path: 'admin_accueil',         component: AdminAccueilComponent },        //ROUTES ADMIN
     { path: 'admin_fiche_conseiller',component: AdminFicheConseillerComponent },      
     { path: 'client_accueil',        component: ClientAccueilComponent },       //ROUTES CLIENT
@@ -55,6 +61,27 @@ const routes: Routes =[
     { path: 'admin_conseillers', component: AdminConseillersComponent },
     { path: 'admin_affectations', component: AdminAffectationsComponent },
     { path: '',                      redirectTo: 'public_accueil', pathMatch: 'full' }
+=======
+    { path: 'public_login',             component: LoginComponent },
+    { path: 'conseiller_accueil',       component: ConseillerAccueilComponent },
+    { path: 'admin_accueil',            component: AdminAccueilComponent },
+    { path: 'admin_fiche_conseiller',   component: AdminFicheConseillerComponent },
+    { path: 'public_connexion',         component: ConnexionComponent },
+    { path: 'dashboard',                component: HomeComponent },
+    { path: 'client_accueil',           component: ClientAccueilComponent },
+    { path: 'client_profil',            component: ClientProfilComponent },
+    { path: 'client_comptes',           component: ClientComptesComponent },
+    { path: 'client_notifications',     component: ClientNotificationsComponent },
+    { path: 'public_accueil',           component: EspacePublicComponent },
+    { path: 'user',                     component: UserComponent },
+    { path: 'table',                    component: TablesComponent },
+    { path: 'typography',               component: TypographyComponent },
+    { path: 'icons',                    component: IconsComponent },
+    { path: 'maps',                     component: MapsComponent },
+    { path: 'notifications',            component: NotificationsComponent },
+    { path: 'upgrade',                  component: UpgradeComponent },
+    { path: '',          redirectTo: 'public_accueil', pathMatch: 'full' }
+>>>>>>> Nassim
 ];
 
 @NgModule({
