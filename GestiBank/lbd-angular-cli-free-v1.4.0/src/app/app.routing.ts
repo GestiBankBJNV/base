@@ -34,6 +34,7 @@ import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fi
 //IMPORTS CLIENT
 import { ClientAccueilComponent } from './client-accueil/client-accueil.component';
 import { ClientComptesComponent } from './client-comptes/client-comptes.component';
+import { ClientProfilComponent } from './client-profil/client-profil.component';
 import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
 
 
@@ -47,6 +48,7 @@ const routes: Routes =[
     { path: 'client_comptes',        component: ClientComptesComponent },
     { path: 'client_devises',        component: PublicDevisesComponent },
     { path: 'client_notifications',  component: ClientNotificationsComponent },
+    { path: 'client_profil',  component: ClientProfilComponent },
     { path: 'conseiller_accueil',    component: ConseillerAccueilComponent },   //ROUTES CONSEILLER
     { path: 'conseiller_devises',    component: PublicDevisesComponent },
     { path: 'public_accueil',        component: EspacePublicComponent },        //ROUTES PUBLIC

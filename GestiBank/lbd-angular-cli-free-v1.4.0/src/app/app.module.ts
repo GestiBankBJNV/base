@@ -29,11 +29,6 @@ import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fi
 //IMPORTS CLIENT
 import { ClientAccueilComponent } from './client-accueil/client-accueil.component';
 import { ClientComptesComponent } from './client-comptes/client-comptes.component';
-<<<<<<< HEAD
-import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
-import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
-=======
->>>>>>> victorien
 import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
 import { ClientProfilComponent } from './client-profil/client-profil.component';
 
@@ -44,16 +39,9 @@ import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accu
 import { ConnexionComponent } from './connexion/connexion.component';
 import { EspacePublicComponent } from './espace-public/espace-public.component';
 import { PublicDevisesComponent } from './public-devise/public-devises.component';
-
-<<<<<<< HEAD
-import { AdminConseillersComponent } from './admin-conseillers/admin-conseillers.component';
-import { AdminAffectationsComponent } from './admin-affectations/admin-affectations.component';
-import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component';
 import { LoginComponent } from './login/login.component';
 
-=======
->>>>>>> victorien
-
+//Services
 import { ConseillerService } from './conseiller-service'; /*****/
 import { ClientService } from './client-service'; /*****/
 import { DemandeService } from './demande-service'; /*****/
@@ -78,27 +66,12 @@ import { DemandeService } from './demande-service'; /*****/
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-<<<<<<< HEAD
-    UpgradeComponent,
-    ClientAccueilComponent,
-    EspacePublicComponent,
-    ConnexionComponent,
-    ClientComptesComponent,
-    AdminAccueilComponent,
-    ConseillerAccueilComponent,
-    ClientNotificationsComponent,
-    AdminConseillersComponent,
-    AdminAffectationsComponent,
-    PublicDevisesComponent,
-    AdminFicheConseillerComponent,
+    UpgradeComponent,    
     LoginComponent,
-=======
-    PublicDevisesComponent,
-    UpgradeComponent,
+    PublicDevisesComponent,    
     UserComponent,
     TablesComponent,
     TypographyComponent
->>>>>>> victorien
   ],
   imports: [
     AppRoutingModule,
