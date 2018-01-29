@@ -14,5 +14,5 @@ export class Client {
 	adresse : String;
 	pays : String;
 	codePostal : String;
-	ville : String;
+	ville : String;	
 }

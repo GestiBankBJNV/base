@@ -2,12 +2,20 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import {LocationStrategy, PlatformLocation, Location } from '@angular/common';
 
 declare const $: any;
+
+//Interface contenant les informations sur les routes utilisées
 declare interface RouteInfo {
     path: string;
     title: string;
     icon: string;
     class: string;
 }
+
+/*
+  /!\ RANGER LES ROUTES PAR ORDRE D'APPARITION DANS LA SIDEBAR /!\
+*/
+
+//Routes par défaut du template
 export const ROUTES: RouteInfo[] = [
     { path: 'dashboard', title: 'Accueil',  icon: 'pe-7s-graph', class: '' },
     { path: 'user', title: 'Mon profil',  icon:'pe-7s-user', class: '' },
@@ -19,10 +27,15 @@ export const ROUTES: RouteInfo[] = [
     { path: 'upgrade', title: 'Upgrade to PRO',  icon:'pe-7s-rocket', class: 'active-pro' },
 ];
 
-export const ROUTES_CONSEILLER : RouteInfo[] = [
-    { path: 'conseiller_accueil', title: 'Accueil',  icon:'pe-7s-user', class: '' }
+//Routes - espace Admin
+export const ROUTES_ADMIN : RouteInfo[] = [
+    { path: 'admin_accueil', title: 'Espace Admin',  icon:'pe-7s-home', class: '' },
+    { path: 'admin_conseillers', title: 'Conseillers',  icon:'pe-7s-id', class: '' },
+    { path: 'admin_affectations', title: 'Affectations',  icon:'pe-7s-way', class: '' },
+    { path: 'admin_devises', title: 'Devises',  icon:'pe-7s-cash', class: '' }
 ];
 
+//Routes - espace Client
 export const ROUTES_CLIENT : RouteInfo[] = [
     { path: 'client_accueil', title: 'Accueil',  icon:'pe-7s-home', class: '' },
     { path: 'client_profil', title: 'Mon profil',  icon:'pe-7s-user', class: '' },
@@ -31,17 +44,18 @@ export const ROUTES_CLIENT : RouteInfo[] = [
     { path: 'client_devises', title: 'Devises',  icon:'pe-7s-cash', class: '' }
 ];
 
-export const ROUTES_ADMIN : RouteInfo[] = [
-    { path: 'admin_accueil', title: 'Espace Admin',  icon:'pe-7s-home', class: '' },
-    { path: 'admin_conseillers', title: 'Conseillers',  icon:'pe-7s-id', class: '' },
-    { path: 'admin_affectations', title: 'Affectations',  icon:'pe-7s-way', class: '' }
+//Routes - espace Conseiller
+export const ROUTES_CONSEILLER : RouteInfo[] = [
+    { path: 'conseiller_accueil', title: 'Accueil',  icon:'pe-7s-user', class: '' },
+    { path: 'conseiller_devises', title: 'Devises',  icon:'pe-7s-cash', class: '' }
+
 ];
 
+//Routes - espace Public
 export const ROUTES_PUBLIC: RouteInfo[] = [
     { path: 'public_accueil', title: 'Accueil',  icon: 'pe-7s-home', class: '' },
     { path: 'public_connexion', title: 'Connexion',  icon: 'pe-7s-lock', class: '' },
-    
-
+    { path: 'public_devises', title: 'Devises',  icon:'pe-7s-cash', class: '' }
 ];
 
 @Component({
@@ -50,23 +64,25 @@ export const ROUTES_PUBLIC: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
 
-  @Input() page : String;
+  @Input() page : String; //On passera la valeur de location.path() (qui contient le chemin d'accès au module) dans cet input. A chaque changement de valeur, la fonction ngOnChanges() est appelée
 
-  menuItems: any[];
-  constructor(public location : Location) { 
-    this.location = location;    
+  menuItems: any[]; //Contient les informations sur les routes.
+
+  constructor(public location : Location) {
+    this.location = location;
   }
 
+  //Rafraichissement de la sidebar à son initialisation
   ngOnInit() {
-    //console.log("Init sidebar");
     this.refresh();
   }
 
+  //Rafraichissement de la sidebar à chaque changement de valeur de 'page'
   ngOnChanges(){
-    //console.log("Changes sidebar");
     this.refresh();
   }
 
+  //Rafraichissement de la liste de routes (menuItems)
   refresh(){
     //console.log(this.location.path());
     if (this.startsWith("public")){
@@ -84,9 +100,9 @@ export class SidebarComponent implements OnInit {
     else{
       this.menuItems = ROUTES.filter(menuItem => menuItem);
     }
-
   }
 
+  //Teste la largeur d'écran. Voir éventuellement à passer la valeur dans une constante globale, plutôt que de l'avoir codée en dur.
   isMobileMenu() {
       if ($(window).width() > 991) {
           return false;
@@ -94,6 +110,7 @@ export class SidebarComponent implements OnInit {
       return true;
   };
 
+  //Cherche le préfixe de l'url actuelle.
   startsWith(prefix){
     //console.log("Prefix : " + prefix + ", " + this.location.path());
     return (this.location.path().startsWith("/" + prefix));
