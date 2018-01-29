@@ -16,7 +16,7 @@ export class ClientComptesComponent implements OnInit {
 	client : Client = CLIENT;
 	selectedCompte : Compte;
   openAccount : Boolean = false;
-  editIban : Boolean = false;
+  transfer : Boolean = false;
   accountType : String = "Courant";//Mettre une valeur par défaut, autrement la balise select sera vide au chargement de la page
   awaitingConfirm : Boolean = false;
   startDate : Date;
@@ -33,7 +33,7 @@ export class ClientComptesComponent implements OnInit {
   	//console.log("Compte selectionné");
   	this.selectedCompte = compte;
     this.openAccount = false;
-    this.editIban = false;
+    this.transfer = false;
     this.awaitingConfirm = false;
     this.startDate = compte.operations[0].date;
     this.endDate = compte.operations[compte.operations.length - 1].date;
@@ -43,7 +43,7 @@ export class ClientComptesComponent implements OnInit {
   //Choisir le type de compte à ouvrir
   toggleOpenAccount(){
     this.openAccount = true;
-    this.editIban = false;
+    this.transfer = false;
     this.selectedCompte = null;
     this.awaitingConfirm = false;
   }
@@ -108,13 +108,17 @@ export class ClientComptesComponent implements OnInit {
   }
 
   //
-  toggleIBAN(){
-    this.editIban = (!this.editIban);    
+  toggleTransfer(){
+    this.transfer = (!this.transfer);    
   }
 
   //Impression
   print(){
-    window.print();
+    //N'imprime que ce qui est visible à l'écran, à la manière d'un printScreen...
+    //Apparemment, il faut repasser les éléments flottants du css en display-block
+    //On peut également reconstituer uniquement une page avec les éléments qui nous intéressent, lancer l'impression, puis remettre la page à son état d'origine.
+    //à voir, donc...
+    window.print();    
   }
 
   //Afficher une notification à la validation du formulaire

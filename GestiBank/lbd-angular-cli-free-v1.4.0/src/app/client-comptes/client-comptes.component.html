@@ -36,8 +36,8 @@
             <div class="col-md-3">
                 <div class="form-group">
 					<button class="btn btn-default form-control" (click)="validOrderCheck()">{{ (awaitingConfirm) ? "Confirmer" : "Commander un chèquier" }}</button>
-					<button class="btn btn-default form-control" (click)="toggleIBAN()">{{ (editIban) ? "Voir les opérations" : "Éditer un RIB" }}</button>
-					<button class="btn btn-default form-control" (click)="print()"><i class="pe-7s-print"></i>Imprimer</button>
+					<button class="btn btn-default form-control" (click)="toggleTransfer()">{{ (transfer) ? "Voir les opérations" : "Effectuer un virement" }}</button>
+					<button *ngIf="(!transfer)" class="btn btn-default form-control" (click)="print()"><i class="pe-7s-print"></i>Imprimer</button>
                 </div>
             </div>
             <div class="col-md-3">
@@ -68,7 +68,7 @@
 		<div class="row">
 			<hr/>
 		</div>
-		<div *ngIf="(!editIban)" class="content table-responsive table-full-width">
+		<div *ngIf="(!transfer)" class="content table-responsive table-full-width">
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -83,71 +83,21 @@
 				</tbody>
 			</table>
 		</div>
-		<div *ngIf="(editIban)">
+		<div *ngIf="(transfer)" class="card">
 			<div class="header">
-				<div class="row">
-					<h3 class="title col-md-4 col-md-offset-4">GESTIBANK</h3>
-				</div>
-				<div class="row">
-					<h4 class="title col-md-4 col-md-offset-4">Relevé d'Identité Bancaire</h4>
-				</div>
-				<div class="row">
-					<hr/>
-				</div>
+				<h4 class="title">Effectuer un virement</h4>
+				<p class="category">Indiquez la somme à transférer, et le numéro IBAN du compte destinataire</p>
+				<hr/>
 			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<span>Identifiant national de compte bancaire</span>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>Banque</th><th>Guichet</th><th>N° Compte</th><th>Clé</th><th>Devise</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>(banque.noBanque)</td><td>(compte.noGuichet)</td><td>(compte.noCompte)</td><td>99</td><td>EUR</td>
-							</tr>							
-						</tbody>
-					</table>
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>Identifiant International de compte Bancaire (IBAN)</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>{{ selectedCompte.iban }}</td>
-							</tr>							
-						</tbody>
-					</table>
+			<div class="content">			
+				<div class="row">
+					<select [(ngModel)]="accountType" class="btn dropdown-toggle col-md-3 col-md-offset-1">
+						<option selected>Courant</option>
+						<option>Épargne</option>
+					</select>
+                	<button type="submit" class="btn btn-info btn-fill col-md-3 col-md-offset-4" (click)="validOpenAccount()">{{ (awaitingConfirm) ? "Confirmer" : "Ouvrir un compte" }}</button>
 				</div>
-				<div class="col-md-6">					
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th>(Specimen)</th>
-							</tr>
-						</thead>						
-						<tbody>							
-							<tr>
-								<td>GB</td>
-							</tr>
-						</tbody>
-					</table>
-					<table class="table table-hover">
-						<tbody>
-							<tr>
-								<th>Bank Identifier Code (BIC)</th>
-							</tr>
-							<tr>
-								<td>GBFR</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+			</div>					
 		</div>
 	</div>
 
