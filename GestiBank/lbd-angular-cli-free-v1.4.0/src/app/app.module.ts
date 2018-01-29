@@ -26,17 +26,14 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { ClientComptesComponent } from './client-comptes/client-comptes.component';
 import { AdminAccueilComponent } from './admin-accueil/admin-accueil.component';
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
-import { ClientProfilComponent } from './client-profil/client-profil.component';
 import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
 import { PublicDevisesComponent } from './public-devise/public-devises.component';
-<<<<<<< HEAD
+
 import { AdminConseillersComponent } from './admin-conseillers/admin-conseillers.component';
 import { AdminAffectationsComponent } from './admin-affectations/admin-affectations.component';
 import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fiche-conseiller.component';
-=======
 import { LoginComponent } from './login/login.component';
 
->>>>>>> Nassim
 
 @NgModule({
   declarations: [
@@ -55,16 +52,12 @@ import { LoginComponent } from './login/login.component';
     ClientComptesComponent,
     AdminAccueilComponent,
     ConseillerAccueilComponent,
-    ClientProfilComponent,
     ClientNotificationsComponent,
     AdminConseillersComponent,
     AdminAffectationsComponent,
     PublicDevisesComponent,
-<<<<<<< HEAD
-    AdminFicheConseillerComponent
-=======
+    AdminFicheConseillerComponent,
     LoginComponent,
->>>>>>> Nassim
   ],
   imports: [
     BrowserModule,
