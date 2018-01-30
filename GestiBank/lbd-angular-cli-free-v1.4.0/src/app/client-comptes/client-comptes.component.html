@@ -95,10 +95,14 @@
 						<div class="form-group">
 							<div class="col-md-3">
                         		<label for="iban">IBAN Destinataire : </label>
-                            	<input [(ngModel)]="transferDestIBAN" name="iban" type="text" class="form-control" placeholder="IBAN destinataire">
+                            	<input required [(ngModel)]="transferDestIBAN" name="iban" type="text" class="form-control" placeholder="IBAN destinataire" (change)="confirmTransfer = false">
+	                		</div>
+	                		<div class="col-md-3">
+                        		<label for="somme">Somme à transférer (en €) : </label>
+                            	<input required [(ngModel)]="transferAmount" name="somme" type="number" class="form-control" value="0" min="0"  (change)="confirmTransfer = false">
 	                		</div>
 	                		<div class="col-md-3 col-md-offset-3">
-	                			<button type="submit" class="btn btn-info form-control btn-fill" (click)="validOpenAccount()">{{ (awaitingConfirm) ? "Confirmer" : "Ouvrir un compte" }}</button>
+	                			<button type="submit" class="btn btn-info form-control btn-fill" (click)="validTransfer()">{{ (confirmTransfer) ? "Confirmer" : "Effectuer un virement" }}</button>
 							</div>
 						</div>
 					</div>

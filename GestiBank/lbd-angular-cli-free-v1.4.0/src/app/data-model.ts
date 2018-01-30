@@ -39,6 +39,7 @@ export class Client extends Personne {
   nbEnfants: number;
   situationMatrimoniale: string;
   comptes: Compte[];
+  //conseiller : Conseiller;
 }
 
 export class Compte {
@@ -105,6 +106,7 @@ export class Notification {
   date: Date;
   message: string;
   type: string;
+  //isRead : boolean;//A rajouter dans Java
 }
 
 export class Banque {

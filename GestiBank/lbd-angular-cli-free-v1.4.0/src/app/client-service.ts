@@ -21,7 +21,7 @@ export class ClientService {
     updateClient(client: Client): Observable<Client>  {
     	/*console.log('updateConseiller()');*/
       const oldClient = clients.find(c => c.id === client.id);
-      const newClient = Object.assign(oldClient, client); // Demo: mutate cached hero
+      const newClient = Object.assign(oldClient, client); // Demo: mutate cached user
       return of(newClient).delay(this.delayMs); // simulate latency with delay
     }
 

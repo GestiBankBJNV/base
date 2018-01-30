@@ -17,8 +17,10 @@ export class ClientComptesComponent implements OnInit {
 	selectedCompte : Compte;
   openAccount : Boolean = false;
   transfer : Boolean = false;
+  transferAmount : Number = 0;
   accountType : String = "Courant";//Mettre une valeur par défaut, autrement la balise select sera vide au chargement de la page
   awaitingConfirm : Boolean = false;
+  confirmTransfer : Boolean = false;
   startDate : Date;
   endDate : Date;
   displayedOperations : Operation[] = [];
@@ -35,6 +37,7 @@ export class ClientComptesComponent implements OnInit {
   	this.selectedCompte = compte;
     this.openAccount = false;
     this.transfer = false;
+    this.confirmTransfer = false;
     this.awaitingConfirm = false;
     this.startDate = compte.operations[0].date;
     this.endDate = compte.operations[compte.operations.length - 1].date;
@@ -45,6 +48,7 @@ export class ClientComptesComponent implements OnInit {
   toggleOpenAccount(){
     this.openAccount = true;
     this.transfer = false;
+    this.confirmTransfer = false;
     this.selectedCompte = null;
     this.awaitingConfirm = false;
   }
@@ -79,6 +83,30 @@ export class ClientComptesComponent implements OnInit {
       this.awaitingConfirm = true;
     }
   }
+  //Valider un virement
+  validTransfer(){
+    console.log("destIBAN : " + this.transferDestIBAN + ", somme : " + this.transferAmount);
+    if (!this.checkIBAN()){
+      this.confirmTransfer = false;
+      return;
+    }
+    if (this.confirmTransfer){
+      this.confirmTransfer = false;
+      //console.log("chequier");
+      let msg : String = "Votre demande de virement vers le compte " + this.transferDestIBAN + " a bien été enregistrée";
+      this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté cliet.
+      //TODO : envoyer une demande au conseiller
+      this.showNotification('top','center',msg);//On affiche une notif sur la page
+    }
+    else{
+      this.confirmTransfer = true;
+    }
+  }
+
+  //vérifier que le numéro IBAN utilisé pour le virement est correct
+  checkIBAN() : boolean{
+    return (this.transferDestIBAN != "");//TODO : prévoir un meilleur test
+  }
 
   //Rafraichir la date de départ
   refreshStart(date){
@@ -110,7 +138,9 @@ export class ClientComptesComponent implements OnInit {
 
   //
   toggleTransfer(){
-    this.transfer = (!this.transfer);    
+    this.transfer = (!this.transfer);
+    this.awaitingConfirm = false;    
+    this.confirmTransfer = false;
   }
 
   //Impression
