@@ -95,6 +95,7 @@ export class AdminFicheConseillerComponent implements OnInit {
         prenom: formModel.prenom as string,
         nom: formModel.nom as string,
         nomUtilisateur: this.conseiller.nomUtilisateur, // todo : rajouter dans le formulaire 
+        password: this.conseiller.password,
         email: formModel.email as string,
         adresse: formModel.adresse,
         numTel: formModel.numTel,

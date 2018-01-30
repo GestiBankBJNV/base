@@ -10,6 +10,7 @@ export class Personne {  // ajouter password (dans java)
   prenom: string;
   nom: string;  
   nomUtilisateur: string; // à changer dans java
+  password: string;
   email: string;
   adresse: Adresse;
   numTel: String;
@@ -140,6 +141,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     prenom: 'Antoine',
     nom: 'Dupont',   
     nomUtilisateur: 'ADupont', 
+    password: '',
     email: 'Antoine@email.com',
     adresse: {rue: '23 rue Gambetta',  ville: 'Lille', cp: '59000'},
     numTel: '0683657416',
@@ -153,6 +155,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     prenom: 'Mathieu',
     nom: 'Cassel',  
     nomUtilisateur: 'MCassel', 
+    password: '',
     email: 'Mathieu@email.com',  
     adresse: {rue: '3 rue des accacias',  ville: 'Massy', cp: '91000'},
     numTel: '0616582364',
@@ -165,8 +168,9 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     id: 3,    
     prenom: 'Lydie',
     nom: 'Despres',  
-    nomUtilisateur: 'LDespres', 
-    email: 'Lydie@email.com', 
+    nomUtilisateur: 'LDespres',
+    password: '', 
+    email: 'Lydie@email.com',     
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
     nbEnfants: 0,
@@ -179,7 +183,8 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     prenom: 'Aude',
     nom: 'Cardin',
     nomUtilisateur: 'ACardin', 
-    email: 'Aude@email.com',   
+    password: '',
+    email: 'Aude@email.com',  
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
     nbEnfants: 3,
@@ -192,6 +197,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     prenom: 'Coralie',
     nom: 'Machin',    
     nomUtilisateur: 'CMachin',
+    password: '',
     email: 'Coralie@email.com',
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
@@ -205,6 +211,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     prenom: 'David',
     nom: 'Sully',  
     nomUtilisateur: 'DSully',  
+    password: '',
     email: 'Omar@email.com',
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
@@ -218,6 +225,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     prenom: 'Adrien',
     nom: 'Bergstein',   
     nomUtilisateur: 'ABergstein', 
+    password: '',
     email: 'Adrien@email.com',
     adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
     numTel: '0683657416',
@@ -236,6 +244,7 @@ export const conseillers: Conseiller[] = [
     prenom: 'Martine',
     nom: 'Dupont',  
     nomUtilisateur: 'MDupont',  
+    password: '',
     adresse: {rue: '23 rue Gambetta',  ville: 'Lille', cp: '59000'},
     numTel: '0625364859',
     dateDebutContrat: new Date(),
@@ -249,6 +258,7 @@ export const conseillers: Conseiller[] = [
     prenom: 'Roger',
     nom: 'Martin',   
     nomUtilisateur: 'RMartin', 
+    password: '',
     adresse: {rue: '12 rue de Paris',  ville: 'Antony', cp: '92160'},
     numTel: '0625364859',
     dateDebutContrat: new Date(),
@@ -262,6 +272,7 @@ export const conseillers: Conseiller[] = [
     prenom: 'Alice',
     nom: 'Pommier',    
     nomUtilisateur: 'APommier',
+    password: '',
     adresse: {rue: '48 boulevard Pasteur',  ville: 'Marcq-en-Baroeul', cp: '59700'},
     numTel: '0625364859',
     dateDebutContrat: new Date(),
@@ -275,6 +286,7 @@ export const conseillers: Conseiller[] = [
     prenom: 'Eva',
     nom: 'Cardin',   
     nomUtilisateur: 'ECardin', 
+    password: '',
     adresse: {rue: '2 rue machin',  ville: 'Trucville', cp: '60500'},
     numTel: '0625364859',
     dateDebutContrat: new Date(),
@@ -288,6 +300,7 @@ export const conseillers: Conseiller[] = [
     prenom: 'Yves',
     nom: 'Gris',   
     nomUtilisateur: 'YGris', 
+    password: '',
     adresse: {rue: '6 rue des cèdres',  ville: 'Rambouillet', cp: '78450'},
     numTel: '0625364859',
     dateDebutContrat: new Date(),
@@ -301,6 +314,7 @@ export const conseillers: Conseiller[] = [
     prenom: 'Jean-Pierre',
     nom: 'Malin',    
     nomUtilisateur: 'JPMalin',
+    password: '',
     adresse: {rue: '85 avenue des Pins',  ville: 'Grenoble', cp: '38000'},
     numTel: '0625364859',
     dateDebutContrat: new Date(),
@@ -316,7 +330,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
-    coordonnees: {id: 101, email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", nomUtilisateur: 'DRice', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 101, email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", nomUtilisateur: 'DRice', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
   },
   {
     id: 2,
@@ -324,7 +338,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: new Date(2017,6,12),
     statut: 'traitée',
     libelle: "inscription",
-    coordonnees: {id: 102, email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", nomUtilisateur: 'MHooper', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 102, email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", nomUtilisateur: 'MHooper', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
   },
   {
     id: 3,
@@ -332,7 +346,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
-    coordonnees: {id: 103, email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", nomUtilisateur: 'SRodriguez', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 103, email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", nomUtilisateur: 'SRodriguez', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
   },
   {
     id: 4,
@@ -340,7 +354,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: new Date(2018,0,11),
     statut: 'en cours',
     libelle: "inscription",
-    coordonnees: {id: 104, email:"philip@truc.com", prenom: "Philip", nom: "Chaney", nomUtilisateur: 'PChaney', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 104, email:"philip@truc.com", prenom: "Philip", nom: "Chaney", nomUtilisateur: 'PChaney', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
   },
   {
     id: 5,
@@ -348,7 +362,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
-    coordonnees: {id: 105, email:"doris@truc.com", prenom: "Doris", nom: "Greene", nomUtilisateur: 'DGreen', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 105, email:"doris@truc.com", prenom: "Doris", nom: "Greene", nomUtilisateur: 'DGreen', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
   },
   {
     id: 6,
@@ -356,7 +370,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
-    coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
   },
 ];
 
