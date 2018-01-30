@@ -45,32 +45,34 @@
 				<div class="card" *ngIf="(isSearching)">
 
                 	<!-- Interface admin : rechercher un conseiller par nom ou matricule -->
-                	<div class="header">
-						<h4 *ngIf="isLoading"><i>Recherche conseillers ... </i></h4>
-						<h4 *ngIf="!isLoading">Selectionner un conseiller :</h4> 
-					</div>
+                	<!-- https://valor-software.com/ngx-bootstrap/#/accordion -->
+                	<accordion>
+  						<accordion-group [isOpen]="derouler" heading="Selectionner un conseiller :">
+                			
+							<h4 *ngIf="isLoading"><i>Recherche conseillers ... </i></h4>
+							<!-- <h4 *ngIf="!isLoading">Selectionner un conseiller :</h4> --> 							
 
-					<div class="content">
+							<div class="content">
 
-						<div class="row">
-							<div class="col-md-12">									
-
-								<nav>
-										  	<!-- <button (click)="getConseillers() && 'isSearching=false'" class="btn btn-primary">Refresh</button> --> <!-- **********************  -->
-									<a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{ conseiller.matricule }}: {{conseiller.prenom}} {{conseiller.nom}}</p></a>
-									<p *ngIf="(conseillers | async)?.length==0">Pas de conseiller correspondant</p>
-								</nav>
+								<div class="row">
+									<div class="col-md-12">			
+									
+										<nav>
+											<a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{ conseiller.matricule }}: {{conseiller.prenom}} {{conseiller.nom}}</p></a>
+											<p *ngIf="(conseillers | async)?.length==0">Pas de conseiller correspondant</p>
+										</nav>									
 								
-							</div>
-						</div>
+									</div>
+								</div>
 						
-					</div>
+							</div>
+						</accordion-group>
+					</accordion>
 				</div>
 
 				
 			</div>
 		</div>
-
 		
 		<div *ngIf="selectedConseiller">			  	
 			<admin-fiche-conseiller [conseiller]="selectedConseiller" (onDelete)="onDelete($event)"></admin-fiche-conseiller>								

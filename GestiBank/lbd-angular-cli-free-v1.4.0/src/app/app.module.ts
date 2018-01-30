@@ -1,4 +1,5 @@
 import { AppRoutingModule } from './app.routing';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FooterModule } from './shared/footer/footer.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -8,6 +9,7 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarModule } from './sidebar/sidebar.module';
+import { AccordionModule, TypeaheadModule } from 'ngx-bootstrap';
 
 //IMPORTS TEMPLATE
 import { AppComponent } from './app.component';
@@ -45,7 +47,6 @@ import { LoginComponent } from './login/login.component';
 import { ConseillerService } from './conseiller-service'; /*****/
 import { ClientService } from './client-service'; /*****/
 import { DemandeService } from './demande-service';
-import { SelectSearchComponent } from './select-search/select-search.component'; /*****/
 
 @NgModule({
   declarations: [
@@ -70,11 +71,11 @@ import { SelectSearchComponent } from './select-search/select-search.component';
     UpgradeComponent,
     UserComponent,
     TablesComponent,
-    TypographyComponent,
-    SelectSearchComponent
+    TypographyComponent
   ],
   imports: [
     AppRoutingModule,
+    CommonModule,
     BrowserModule,
     FooterModule,
     FormsModule,
@@ -83,7 +84,9 @@ import { SelectSearchComponent } from './select-search/select-search.component';
     NavbarModule,
     ReactiveFormsModule,
     RouterModule,
-    SidebarModule
+    SidebarModule,
+    AccordionModule.forRoot(),
+    TypeaheadModule.forRoot()
   ],
   providers: [ ConseillerService, ClientService, DemandeService ],
   bootstrap: [ AppComponent ]

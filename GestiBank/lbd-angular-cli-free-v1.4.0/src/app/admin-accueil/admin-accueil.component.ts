@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectSearchComponent } from '../select-search/select-search.component';
 
 @Component({
   selector: 'app-admin-accueil',

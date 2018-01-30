@@ -33,6 +33,8 @@ export class AdminAffectationsComponent implements OnInit {
   selectedClient: Client; // Pour l'onglet modifs
   selectedConseiller: Conseiller; // Pour l'onglet modifs
 
+  selected: string;
+
 	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService) { }
 
 	ngOnInit() {
@@ -133,8 +135,8 @@ export class AdminAffectationsComponent implements OnInit {
   /* ***** Méthode au changement d'onglet ***** */
   changerOnglet(onglet: string){ // on réinitialise tous les attributs nécessaires
 
-    this.conseillers = undefined;
-    this.clients = undefined;
+    this.getConseillers();
+    this.getClient();
     this.affecter = false; 
     this.trieCroissantDemande = true; 
     this.trieCroissantAffectation = true;  
