@@ -44,7 +44,8 @@ import { LoginComponent } from './login/login.component';
 //Services
 import { ConseillerService } from './conseiller-service'; /*****/
 import { ClientService } from './client-service'; /*****/
-import { DemandeService } from './demande-service'; /*****/
+import { DemandeService } from './demande-service';
+import { SelectSearchComponent } from './select-search/select-search.component'; /*****/
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { DemandeService } from './demande-service'; /*****/
     UpgradeComponent,
     UserComponent,
     TablesComponent,
-    TypographyComponent
+    TypographyComponent,
+    SelectSearchComponent
   ],
   imports: [
     AppRoutingModule,
