@@ -187,12 +187,12 @@
 								<i *ngIf="(conseillers | async)?.length==0">Pas de conseiller correspondant</i>	 -->
 
 								<!-- https://valor-software.com/ngx-bootstrap/#/typeahead -->
-								<pre class="card card-block card-header">Conseiller : {{ selected | json }} </pre>
-								<input [(ngModel)]="selected"
-								       [typeahead]="this.conseillers"
+								<pre class="card card-block card-header">Conseiller : {{ conseillerRecherche | json }} </pre>
+								<input [(ngModel)]="conseillerRecherche"
+								       [typeahead]="this.conseillersDataSource"
 								       [typeaheadScrollable]="true"
 								       [typeaheadOptionsInScrollableView]="5"
-								       [typeaheadOptionField]="nom"
+								       typeaheadOptionField="nom"
 								       class="form-control">					
 							</div>
 						</div>
