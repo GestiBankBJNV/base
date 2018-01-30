@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TablesComponent } from '../tables/tables.component'
-import { Conseiller, Client, DemandeInscription, /*JDTEST**/ conseillers} from '../data-model';
+import { Conseiller, Client, DemandeInscription} from '../data-model';
 import { ConseillerService } from '../conseiller-service';
 import { ClientService } from '../client-service';
 import { DemandeService } from '../demande-service';
@@ -177,37 +177,11 @@ constructorSelect() {
     this.conseillersDataSource = Observable.create((observer: any) => {
       // Runs on every search
       observer.next(this.conseillerRecherche);
-    }).mergeMap((token: string) => this.getStatesAsObservable(token));
+    }).mergeMap((token: string) => this.conseillerService.getConseillersByNameAndID(token, token));
   }
  
-  getStatesAsObservable(token: string): Observable<any> {
-    let query = new RegExp(token, 'ig');
  
-    return Observable.of(
-      conseillers.filter((conseiller: any) => {
-        return query.test(conseiller.nom);
-      })
-    );
-  }
-
-
-    /*this.dataSource = Observable.create((observer: any) => {
-      // Runs on every search
-      observer.next(this.asyncSelected);
-    }).mergeMap((token: string) => this.getStatesAsObservable(token));
-  }
- 
-  getStatesAsObservable(token: string): Observable<any> {
-    let query = new RegExp(token, 'ig');
- 
-    return Observable.of(
-      this.statesComplex.filter((state: any) => {
-        return query.test(state.name);
-      })
-    );
-  }
- 
-  changeTypeaheadLoading(e: boolean): void {
+ /* changeTypeaheadLoading(e: boolean): void {
     this.typeaheadLoading = e;
   }
  
@@ -219,8 +193,5 @@ constructorSelect() {
     console.log('Selected value: ', e.value);
   }
 }*/
-
-
-
 
 }
