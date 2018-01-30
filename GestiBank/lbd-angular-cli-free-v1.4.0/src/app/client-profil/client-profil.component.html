@@ -12,7 +12,7 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Entreprise (facultatif)</label>
-                                        <input [(ngModel)]="fakeClient.entreprise" name="entreprise" type="text" class="form-control" placeholder="Entreprise">
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.entreprise" name="entreprise" type="text" class="form-control" placeholder="Entreprise">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -24,7 +24,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Adresse mail</label>
-                                        <input [(ngModel)]="fakeClient.mail" name="mail" type="email" class="form-control" placeholder="Email" value='{{fakeClient.mail}}'>
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.mail" name="mail" type="email" class="form-control" placeholder="Email" value='{{fakeClient.mail}}'>
                                     </div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Adresse</label>
-                                        <input [(ngModel)]="fakeClient.adresse" name="adresse" type="text" class="form-control" placeholder="Adresse">
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.adresse" name="adresse" type="text" class="form-control" placeholder="Adresse">
                                     </div>
                                 </div>
                             </div>
@@ -57,19 +57,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Ville</label>
-                                        <input [(ngModel)]="fakeClient.ville" name="ville" type="text" class="form-control" placeholder="Ville">
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.ville" name="ville" type="text" class="form-control" placeholder="Ville">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Pays</label>
-                                        <input [(ngModel)]="fakeClient.pays" name="pays" type="text" class="form-control" placeholder="Pays">
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.pays" name="pays" type="text" class="form-control" placeholder="Pays">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Code postal</label>
-                                        <input [(ngModel)]="fakeClient.cp" name="cp" type="number" class="form-control" placeholder="Code postal">
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.cp" name="cp" type="number" class="form-control" placeholder="Code postal">
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>-->
-                            <button type="submit" class="btn btn-info btn-fill pull-right" (click)="validForm()">{{getConfirmBTText()}}</button>
+                            <button type="submit" class="btn btn-info btn-fill pull-right" (click)="validForm()" routerLink="{{ (waitConfirm) ? '../client_accueil' : './'}}">{{getConfirmBTText()}}</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>

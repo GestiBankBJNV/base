@@ -16,7 +16,8 @@ import { Notification } from '../../classes/notification';
 
 export class NavbarComponent implements OnInit{
 
-    client : Client = CLIENT;
+    user : any = CLIENT;
+
 
     private listTitles: any[];
     location: Location;
@@ -62,36 +63,37 @@ export class NavbarComponent implements OnInit{
         }
     };
 
-    getTitle(){
-      return "Bienvenue, " + this.client.prenom + " " + this.client.nom;
-      /*var titlee = this.location.prepareExternalUrl(this.location.path());
-      titlee = titlee.split('/').pop();
-      for(var item = 0; item < this.listTitles.length; item++){
-          if(this.listTitles[item].path === titlee){
-              return this.listTitles[item].title;
-          }
-      }
-      return 'Dashboard';*/
+    //Retourne le préfixe de l'url en fonction du type d'utilisateur
+    //On teste si les variables existent, pour déterminer le type d'user
+    getPrefix(){
+      if (this.user.matricule){ return "conseiller";}
+      if (this.user.conseillers){ return "admin";}//trouver un meilleur test pour les admins
+      if (this.user.adresse){ return "client";}
+      return "public";
     }
 
-    //Compte des notifications non lues
+    //Cherche le préfixe de l'url actuelle.
+    startsWith(prefix){
+      return (this.location.path().startsWith("/" + prefix));
+    }
+
+    //FONCTIONS -- CLIENT
+    //Compte des notifications non lues (Client)
     getUnreadNotificationCount()
     {
-      /*var count = 0;
-      for (let notif of this.client.notifications)
-      {
-        if (!notif.isRead){
-          count++;
-        }
+      //s
+      if (this.user.notifications){
+        return this.getUnreadNotifications().length;
       }
-      return count*/
-      return this.getUnreadNotifications().length;
+      return 0;     
     }
 
+    //retourne les notifications non lues(Client)
     getUnreadNotifications() : Notification[] {
-      return this.client.notifications.filter(notif => !notif.isRead);
+      return this.user.notifications.filter(notif => !notif.isRead);
     }
 
+    //Titre du bouton "notification"
     getNotificationButtonTitle(){
       var c = this.getUnreadNotificationCount();
       if (c > 0){
@@ -99,4 +101,6 @@ export class NavbarComponent implements OnInit{
       }
       return "Aucune nouvelle notification."
     }
+
+    
 }

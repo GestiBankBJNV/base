@@ -1,4 +1,29 @@
-  <div class="main-content" >
+
+<div class="main-content">
+	<div class="row">
+        <div class="col-md-5 col-md-push-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Connexion</h3>
+                </div>
+                <div class="panel-body">                   
+                    <form (ngSubmit)="verifLogin(emailLogin.value, passwordLogin.value)" [formGroup]="formGroupLogin">
+                        <fieldset>
+                            <div class="form-group">
+                            <div id="erreur"></div>
+                                <input formControlName="emailLogin" #emailLogin id="email" class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                            </div>
+                            <div class="form-group">
+                              <input formControlName="passwordLogin" #passwordLogin id="password" class="form-control" placeholder="Mot de passe" name="password" type="password" value="">
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <a><button  type="submit" class="btn btn-primary btn-fill"  [disabled]="formGroupLogin.invalid">Connexion</button></a>      
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- 
   	<button  routerLink="/admin_accueil">
  		<p>Espace Admin</p>
  	</button>
@@ -7,5 +32,19 @@
  	</button>
   	<button  routerLink="/client_accueil">
  		<p>Espace Client</p>
- 	</button>
+ 	</button> -->
  </div>
+
+<div class="main-content" >
+	<div class="row">
+		<div class="col-md-4">
+			<button  class="btn btn-default form-control" routerLink="/admin_accueil">Espace Admin</button>
+		</div>
+		<div class="col-md-4">
+			<button  class="btn btn-default form-control col-md-4" routerLink="/conseiller_accueil">Espace Conseiller</button>
+		</div>
+		<div class="col-md-4">
+			<button  class="btn btn-default form-control col-md-4" routerLink="/client_accueil">Espace Client</button>
+		</div>
+	</div>
+</div>

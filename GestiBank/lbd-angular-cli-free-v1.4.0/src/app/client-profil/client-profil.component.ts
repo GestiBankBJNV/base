@@ -69,7 +69,9 @@ export class ClientProfilComponent implements OnInit {
   		//On attend une nouvelle confirmation après la validation d'un formulaire
   		this.resetWait();
   		//console.log(this.client.mail);
-      this.showNotification('top','center', "Une demande a été envoyée à votre conseiller. Elle sera traitée dès que possible");
+      let msg = "Une demande de modification de profil a été envoyée à votre conseiller. Elle sera traitée dès que possible";
+      this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});
+      this.showNotification('top','center', msg);
   	}
   }
 
