@@ -1,5 +1,22 @@
 <div class="main-content" >
-	<p>
-	  conseiller-accueil works!
-	</p>
+	<h2>Clients</h2>
+  <p>Liste des clients qui vous sont affectés</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>E-mail</th>
+        <th>Demande(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+      	<td>{{client.nom}}</td>
+      	<td>{{client.prenom}}</td>
+      	<td>{{client.email}}</td>
+      	<td>{{client.demandes.length}}</td>        
+      </tr>      
+    </tbody>
+  </table>
 </div>

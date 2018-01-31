@@ -15,7 +15,7 @@ export class Personne {
 export class Conseiller extends Personne {
   matricule: string;
   clients: Client[];
-  demandes: Demande[];
+  demandes: Demande[];  
 }
 
 export class Client extends Personne {
