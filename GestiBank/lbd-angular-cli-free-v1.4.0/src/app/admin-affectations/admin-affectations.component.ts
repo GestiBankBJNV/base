@@ -39,7 +39,8 @@ export class AdminAffectationsComponent implements OnInit {
   selectedClient: Client; // Pour l'onglet modifs
   selectedConseiller: Conseiller; // Pour l'onglet modifs
 
-  conseillersDataSource:  Observable<any>;
+  conseillersDataSource:  Observable<Conseiller>;
+  clientsDataSource:  Observable<Client>;
 
 
 	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService) { 
@@ -174,10 +175,12 @@ export class AdminAffectationsComponent implements OnInit {
 /**********************************************************************************************************************************************/
 
   // Formulaire de l'onglet modifications
-  modifCtrl: FormControl = new FormControl();
+  modifCtrlClient: FormControl = new FormControl();
+  modifCtrlConseiller: FormControl = new FormControl();
  
   modifForm: FormGroup = new FormGroup({
-    personne: this.modifCtrl
+    client: this.modifCtrlClient,
+    conseiller: this.modifCtrlConseiller
   });
 
   constructorSelect() {
@@ -186,6 +189,11 @@ export class AdminAffectationsComponent implements OnInit {
       // Runs on every search
       observer.next(this.conseillerRecherche);
     }).mergeMap((token: string) => this.conseillerService.getConseillersByNameAndID(token, token));
+
+    this.clientsDataSource = Observable.create((observer: any) => {
+      // Runs on every search
+      observer.next(this.clientRecherche);
+    }).mergeMap((token: string) => this.clientService.getClientByNameAndID(token, token));
   }
  
  
@@ -200,6 +208,11 @@ export class AdminAffectationsComponent implements OnInit {
   typeaheadOnSelect(e: TypeaheadMatch): void {
     console.log('Selected value: ', e.item);
     this.selectedConseiller = e.item;
+  }
+
+  typeaheadOnSelectClient(e: TypeaheadMatch): void {
+    console.log('Selected value: ', e.item);
+    this.selectedClient = e.item;
   }
 }
 

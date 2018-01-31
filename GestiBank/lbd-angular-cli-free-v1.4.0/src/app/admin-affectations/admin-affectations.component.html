@@ -145,14 +145,14 @@
 								<i *ngIf="(clients | async)?.length==0">Pas de client correspondant</i> -->
 							
 
-								<label>Client</label>
+								<!-- <label>Client</label>
 								<div class="dropdown">
 									<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
 										<i *ngIf="!this.selectedClient">Choisir le client : </i>
 										<i *ngIf="this.selectedClient"> {{ selectedClient.prenom }} {{ selectedClient.nom }} </i>
 										<span class="caret"></span>
 									</button>
-									<ul class="dropdown-menu" role="menu"> <!-- todo : la recherche ne fonctionne pas -->
+									<ul class="dropdown-menu" role="menu">  todo : la recherche ne fonctionne pas 
 										<li>
 											<input [(ngModel)]="clientRecherche" type="search" value="" placeholder="Rechercher client" class="form-control" (keydown)="clicRechercherClient()"/>
 										</li>
@@ -160,13 +160,31 @@
 										<li role="presentation" *ngFor="let client of clients | async"><a role="menuitem" (click)="this.selectedClient=client"> {{ client.id }} : {{client.prenom}} {{client.nom}}</a></li>
 										<li *ngIf="(clients | async)?.length==0">Pas de client correspondant</li>
 									</ul>
-									<!-- <select class="btn dropdown-toggle">
+									<select class="btn dropdown-toggle">
 										<option>
 											<input [(ngModel)]="clientRecherche" type="text" value="" placeholder="Rechercher client" class="form-control" (keydown)="clicRechercherClient()"/>
 										</option>
 										<option *ngFor="let client of clients | async"><a role="menuitem" (click)="this.selectedClient=client"> {{ client.id }} : {{client.prenom}} {{client.nom}}</a></option>
-									</select> -->
-								</div>
+									</select> 
+								</div> -->
+
+								<form [formGroup]="modifForm">									
+									<ng-template #customClientTemplate let-modelClient="item" let-index="index">
+									   <h5>{{ modelClient.prenom }} {{ modelClient.nom }} </h5>
+									</ng-template>
+									<label>Client</label>
+									<input [(ngModel)]="clientRecherche"
+											formControlName="client"
+									       [typeahead]="this.clientsDataSource"
+									       [typeaheadScrollable]="true"
+									       [typeaheadOptionsInScrollableView]="5"
+									       [typeaheadMinLength]="0"
+									       typeaheadOptionField="nom"
+									       [typeaheadItemTemplate]="customClientTemplate"
+									       placeholder="Rechercher un client"
+									       (typeaheadOnSelect)="typeaheadOnSelectClient($event)"
+									       class="form-control">
+								</form>
 
 							</div>
 						
@@ -189,19 +207,19 @@
 								
 								<!-- https://valor-software.com/ngx-bootstrap/#/typeahead -->
 								<!-- <pre class="card card-block card-header">Conseiller : {{ conseillerRecherche | json }} </pre> -->
-								<form [formGroup]="modifForm">
-									<label>Conseiller</label>
-									<ng-template #customItemTemplate let-model="item" let-index="index">
-									   <h5>{{model.id | json}} : {{ model.prenom }} {{ model.nom }} </h5>
+								<form [formGroup]="modifForm">									
+									<ng-template #customConseillerTemplate let-model="item" let-index="index">
+									   <h5>{{model.matricule | json}} : {{ model.prenom }} {{ model.nom }} </h5>
 									</ng-template>
+									<label>Conseiller</label>
 									<input [(ngModel)]="conseillerRecherche"
-											formControlName="personne"
+											formControlName="conseiller"
 									       [typeahead]="this.conseillersDataSource"
 									       [typeaheadScrollable]="true"
 									       [typeaheadOptionsInScrollableView]="5"
 									       [typeaheadMinLength]="0"
 									       typeaheadOptionField="nom"
-									       [typeaheadItemTemplate]="customItemTemplate"
+									       [typeaheadItemTemplate]="customConseillerTemplate"
 									       placeholder="Rechercher un conseiller"
 									       (typeaheadOnSelect)="typeaheadOnSelect($event)"
 									       class="form-control">
