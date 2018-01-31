@@ -2,12 +2,15 @@ import { AppRoutingModule } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { FooterModule } from './shared/footer/footer.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { LbdModule } from './lbd/lbd.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarModule } from './sidebar/sidebar.module';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 //IMPORTS TEMPLATE
 import { AppComponent } from './app.component';
@@ -46,6 +49,12 @@ import { ConseillerService } from './conseiller-service'; /*****/
 import { ClientService } from './client-service'; /*****/
 import { DemandeService } from './demande-service'; /*****/
 
+
+//Fonction utilisée par le module de traduction
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
+
 @NgModule({
   declarations: [
     AdminAccueilComponent,        //ADMIN
@@ -76,12 +85,20 @@ import { DemandeService } from './demande-service'; /*****/
     BrowserModule,
     FooterModule,
     FormsModule,
+    HttpClientModule,
     HttpModule,
     LbdModule,
     NavbarModule,
     ReactiveFormsModule,
     RouterModule,
-    SidebarModule
+    SidebarModule,
+    TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+                }
+            })
   ],
   providers: [ ConseillerService, ClientService, DemandeService ],
   bootstrap: [ AppComponent ]
