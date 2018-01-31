@@ -26,7 +26,7 @@
 	"client_notifications_title" : "Notifications",
 	"client_notifications_details" : "Details",
 	"client_notifications_date" : "Date",
-	"client_notifications_infos_many" : "{{ getUnreadNotificationsCount() }} unread notifications.",
+	"client_notifications_infos_many" : "unread notifications.",
 	"client_notifications_infos_none" : "No new notification.",
 	"client_notifications_infos_one" : "One new notification.",
 	"client_profile_address" : "Address",
