@@ -64,6 +64,7 @@ const routes: Routes =[
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
+    { path: '**',        redirectTo: 'public_accueil' },
     { path: '',                      redirectTo: 'public_accueil', pathMatch: 'full' }
 ];
 
