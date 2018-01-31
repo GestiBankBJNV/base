@@ -7,6 +7,7 @@ import { DemandeService } from '../demande-service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/finally';
 import { NotificationsComponent } from '../notifications/notifications.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import 'rxjs/add/observable/of';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
@@ -172,7 +173,14 @@ export class AdminAffectationsComponent implements OnInit {
   }
 /**********************************************************************************************************************************************/
 
-constructorSelect() {
+  // Formulaire de l'onglet modifications
+  modifCtrl: FormControl = new FormControl();
+ 
+  modifForm: FormGroup = new FormGroup({
+    personne: this.modifCtrl
+  });
+
+  constructorSelect() {
     //this.clicRechercherConseiller();
     this.conseillersDataSource = Observable.create((observer: any) => {
       // Runs on every search
@@ -187,11 +195,12 @@ constructorSelect() {
  
   changeTypeaheadNoResults(e: boolean): void {
     this.typeaheadNoResults = e;
-  }
+  }*/
  
   typeaheadOnSelect(e: TypeaheadMatch): void {
-    console.log('Selected value: ', e.value);
+    console.log('Selected value: ', e.item);
+    this.selectedConseiller = e.item;
   }
-}*/
-
 }
+
+

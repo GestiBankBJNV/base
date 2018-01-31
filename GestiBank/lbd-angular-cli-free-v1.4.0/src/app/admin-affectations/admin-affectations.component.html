@@ -186,14 +186,26 @@
 								</div>	
 								<i *ngIf="(conseillers | async)?.length==0">Pas de conseiller correspondant</i>	 -->
 
+								
 								<!-- https://valor-software.com/ngx-bootstrap/#/typeahead -->
-								<pre class="card card-block card-header">Conseiller : {{ conseillerRecherche | json }} </pre>
-								<input [(ngModel)]="conseillerRecherche"
-								       [typeahead]="this.conseillersDataSource"
-								       [typeaheadScrollable]="true"
-								       [typeaheadOptionsInScrollableView]="5"
-								       typeaheadOptionField="nom"
-								       class="form-control">					
+								<!-- <pre class="card card-block card-header">Conseiller : {{ conseillerRecherche | json }} </pre> -->
+								<form [formGroup]="modifForm">
+									<label>Conseiller</label>
+									<ng-template #customItemTemplate let-model="item" let-index="index">
+									   <h5>{{model.id | json}} : {{ model.prenom }} {{ model.nom }} </h5>
+									</ng-template>
+									<input [(ngModel)]="conseillerRecherche"
+											formControlName="personne"
+									       [typeahead]="this.conseillersDataSource"
+									       [typeaheadScrollable]="true"
+									       [typeaheadOptionsInScrollableView]="5"
+									       [typeaheadMinLength]="0"
+									       typeaheadOptionField="nom"
+									       [typeaheadItemTemplate]="customItemTemplate"
+									       placeholder="Rechercher un conseiller"
+									       (typeaheadOnSelect)="typeaheadOnSelect($event)"
+									       class="form-control">
+								</form>					
 							</div>
 						</div>
 
