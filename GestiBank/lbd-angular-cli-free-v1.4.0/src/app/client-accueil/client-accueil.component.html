@@ -8,14 +8,14 @@
                 <!--TABLEAU NOTIFS -->
                  <div class="card">
                     <div class="header">
-                        <h4 class="title">Notifications</h4>
-                        <p class="category" *ngIf='(getUnreadNotificationsCount() == 0)'>Aucune nouvelle notification.</p>
+                        <h4 class="title">{{ 'client_notifications_title' | translate }}</h4>
+                        <p class="category" *ngIf='(getUnreadNotificationsCount() == 0)'>{{ 'client_notifications_infos_none' | translate }}</p>
                     </div>
                      <div class="content table-responsive table-full-width" *ngIf='(getUnreadNotificationsCount() > 0)'>
                           <table class="table table-hover table-striped">
                                 <thead>
                                     <tr>                                        
-                                        <th>Libellé :</th><th>Date</th>
+                                        <th>{{ 'client_notifications_details' | translate }} :</th><th>Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -30,14 +30,14 @@
                     <!--TABLEAU MES COMPTES-->
                 <div class="card">
                     <div class="header">
-                        <h4 class="title" [routerLink]="['../client_comptes']">Mes comptes</h4>
+                        <h4 class="title" [routerLink]="['../client_comptes']">{{ 'client_account_title' | translate }}</h4>
                         <!--<p class="category">Comptes ouverts</p>-->
                     </div>
                     <div class="content table-responsive table-full-width">
                           <table class="table table-hover table-striped">
                                 <thead>
                                     <tr>                                        
-                                        <th>IBAN :</th><th>Type</th><th>Solde</th>
+                                        <th>{{ 'client_account_iban' | translate }}</th><th>{{ 'client_account_type' | translate }}</th><th>{{ 'client_account_amount' | translate }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>

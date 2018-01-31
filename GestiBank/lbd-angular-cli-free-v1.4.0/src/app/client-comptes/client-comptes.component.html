@@ -3,15 +3,15 @@
 <!--TABLEAU DE COMPTES-->
 	<div class="card">
 		<div class="header">
-			<h4 class="title col-md-3">Mes comptes</h4>
-      		<button class="btn btn-default col-md-3 col-md-offset-6" (click)="toggleOpenAccount()">Ouvrir un nouveau compte</button>
+			<h4 class="title col-md-3">{{ 'client_account_title' | translate }}</h4>
+      		<button class="btn btn-default col-md-3 col-md-offset-6" (click)="toggleOpenAccount()">{{ 'client_account_openAccount' | translate }}</button>
 			<!--<p class="category col-md-3">Comptes ouverts</p>-->
 		</div>
 		<div class="content table-responsive table-full-width">
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr>                                        
-						<th>IBAN :</th><th>Type</th><th>Solde</th>
+						<th>{{ 'client_account_iban' | translate }}</th><th>{{ 'client_account_type' | translate }}</th><th>{{ 'client_account_amount' | translate }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,35 +27,35 @@
 	<div *ngIf="(selectedCompte)" class="card card-plain">
 		<div class="header">
 			<div class="row">
-				<h4 class="title col-md-3">Compte N° {{ selectedCompte.iban }}</h4>
-				<span class="category col-md-3">Compte {{ selectedCompte.type }} - Dernières opérations</span>
+				<h4 class="title col-md-3">{{ 'client_account_account' | translate }} N° {{ selectedCompte.iban }}</h4>
+				<span class="category col-md-3">{{ 'client_account_account' | translate }} {{ selectedCompte.type }} - {{ 'client_account_lastOp' | translate }}</span>
 				<hr/>
 			</div>
 		</div>
 		<div class="row">			
             <div class="col-md-3">
                 <div class="form-group">
-					<button class="btn btn-default form-control" (click)="validOrderCheck()">{{ (awaitingConfirm) ? "Confirmer" : "Commander un chèquier" }}</button>
-					<button class="btn btn-default form-control" (click)="toggleTransfer()">{{ (transfer) ? "Voir les opérations" : "Effectuer un virement" }}</button>
-					<button *ngIf="(!transfer)" class="btn btn-default form-control" (click)="print()"><i class="pe-7s-print"></i>Imprimer</button>
+					<button class="btn btn-default form-control" (click)="validOrderCheck()">{{ (awaitingConfirm) ? ('client_account_confirm' | translate) : ('client_account_orderCheck' | translate) }}</button>
+					<button class="btn btn-default form-control" (click)="toggleTransfer()">{{ (transfer) ? ('client_account_checkOp' | translate) : ('client_account_doTransfer' | translate) }}</button>
+					<button *ngIf="(!transfer)" class="btn btn-default form-control" (click)="print()"><i class="pe-7s-print"></i>{{ 'client_account_print' | translate }}</button>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label>Opérations du :</label>
+                    <label>{{ 'client_account_opFrom' | translate }} :</label>
                     <!--passer la date dans ngModel provoque des problèmes de formatage-->
 					<input type="date" #startDate class="form-control" value='{{ selectedCompte.operations[0].date | date : "yyyy-MM-dd"}}' (change)="refreshStart(startDate.value)"/>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label>Au :</label>
+                    <label>{{ 'client_account_opTo' | translate }} :</label>
 					<input type="date" #endDate class="form-control" value='{{ selectedCompte.operations[selectedCompte.operations.length - 1].date | date : "yyyy-MM-dd" }}' (change)="refreshEnd(endDate.value)"/>
 				</div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
-                    <label>Afficher :</label>
+                    <label>{{ 'client_account_display' | translate }} :</label>
 					<select [(ngModel)]="displayedCount" (change)="refreshOperations(0)" class="btn dropdown-toggle form-control">
 						<option>1</option>
 						<option>10</option>
@@ -72,7 +72,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Type</th><th>Détails</th><th>Montant</th><th>Date</th>
+						<th>{{ 'client_account_type' | translate }}</th><th>{{ 'client_account_details' | translate }}</th><th>{{ 'client_account_amount' | translate }}</th><th>{{ 'client_account_date' | translate }}</th>
 						<!--<th *ngFor="let cell of tableData2.headerRow">{{ cell }}</th>-->
 					</tr>
 				</thead>
@@ -85,8 +85,8 @@
 		</div>
 		<div *ngIf="(transfer)" class="card">
 			<div class="header">
-				<h4 class="title">Effectuer un virement</h4>
-				<p class="category">Indiquez la somme à transférer, et le numéro IBAN du compte destinataire</p>
+				<h4 class="title">{{ 'client_account_doTransfer' | translate }}</h4>
+				<p class="category">{{ 'client_account_transferInstructions' | translate }}</p>
 				<hr/>
 			</div>
 			<div class="content">
@@ -94,15 +94,15 @@
 					<div class="row">
 						<div class="form-group">
 							<div class="col-md-3">
-                        		<label for="iban">IBAN Destinataire : </label>
+                        		<label for="iban">{{ 'client_account_destIban' | translate }} :</label>
                             	<input required [(ngModel)]="transferDestIBAN" name="iban" type="text" class="form-control" placeholder="IBAN destinataire" (change)="confirmTransfer = false">
 	                		</div>
 	                		<div class="col-md-3">
-                        		<label for="somme">Somme à transférer (en €) : </label>
+                        		<label for="somme">{{ 'client_account_transferAmount' | translate }} : </label>
                             	<input required [(ngModel)]="transferAmount" name="somme" type="number" class="form-control" value="0" min="0"  (change)="confirmTransfer = false">
 	                		</div>
 	                		<div class="col-md-3 col-md-offset-3">
-	                			<button type="submit" class="btn btn-info form-control btn-fill" (click)="validTransfer()">{{ (confirmTransfer) ? "Confirmer" : "Effectuer un virement" }}</button>
+	                			<button type="submit" class="btn btn-info form-control btn-fill" (click)="validTransfer()">{{ (confirmTransfer) ? ('client_account_confirm' | translate) : ('client_account_doTransfer' | translate) }}</button>
 							</div>
 						</div>
 					</div>
@@ -114,17 +114,17 @@
 	<!--OUVERTURE DE COMPTE -->
 	<div *ngIf="(openAccount)" class="card">
 		<div class="header">
-			<h4 class="title">Ouvrir un nouveau compte</h4>
-			<p class="category">Choisissez le type de compte que vous désirez ouvrir :</p>
+			<h4 class="title">{{ 'client_account_openAccount' | translate }}</h4>
+			<p class="category">{{ 'client_account_openAccountInstructions' | translate }} :</p>
 			<hr/>
 		</div>
 		<div class="content">			
 			<div class="row">
 				<select [(ngModel)]="accountType" class="btn dropdown-toggle col-md-3 col-md-offset-1">
-					<option selected>Courant</option>
-					<option>Épargne</option>
+					<option selected>{{ 'client_account_type_current' | translate }}</option>
+					<option>{{ 'client_account_type_saving' | translate }}</option>
 				</select>
-                <button type="submit" class="btn btn-info btn-fill col-md-3 col-md-offset-4" (click)="validOpenAccount()">{{ (awaitingConfirm) ? "Confirmer" : "Ouvrir un compte" }}</button>
+                <button type="submit" class="btn btn-info btn-fill col-md-3 col-md-offset-4" (click)="validOpenAccount()">{{ (awaitingConfirm) ? ('client_account_confirm' | translate) : ('client_account_openAccount' | translate) }}</button>
 			</div>
 		</div>
 	</div>
