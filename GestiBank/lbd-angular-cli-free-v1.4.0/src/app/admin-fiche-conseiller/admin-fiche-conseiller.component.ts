@@ -24,8 +24,9 @@ export class AdminFicheConseillerComponent implements OnInit {
   
 
 	constructor(private fb: FormBuilder, private conseillerService: ConseillerService) { 
-
+    /* Création du formulaire */
 		this.createForm();
+    /* Méthode pour modifier le formulaire ?? */
     this.logNameChange();
 		// methode pour modifier une valeur du formulaire, utiliser setValue pour obliger le renseignement de tous les champs
   	/*this.formulaire.patchValue({
@@ -36,7 +37,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Création du formulaire contenant les données du conseiller : à remplir avec les valeurs de la base de données en fonction du conseiller choisi
+  /* Création du formulaire contenant les données du conseiller */
   createForm() {
   	this.formulaire = this.fb.group({
   		matricule: '',		
@@ -48,6 +49,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   	});
   }
 
+  /* Modification du formulaire contenant les données du conseiller */
   ngOnChanges(){
       this.formulaire.reset({
         matricule: this.conseiller.matricule,
@@ -67,55 +69,58 @@ export class AdminFicheConseillerComponent implements OnInit {
     );
   }
 
+  /* Méthode utilisée lors de la soumission du formulaire avec le bouton créer/modifier */
   onSubmit() {
-      this.conseiller = this.prepareSaveConseiller();
-      var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
-      if(!this.creer) { // on fait juste une modif        
-        this.conseillerService.updateConseiller(this.conseiller).subscribe();  
-        // Notifier les modifs
-        this.notif.showNotificationMessage('top', 'right', 'Modifications effectuées', 'warning', 'pe-7s-magic-wand');        
-      }
-      if(this.creer) { // on crée un conseiller
-        this.conseillerService.addConseiller(this.conseiller);
-        this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
-        // Notifier la création
-        this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + temp, 'success', 'pe-7s-add-user');  
-        // TODO : empecher la création d'un conseiller vide
-      }
-      this.ngOnChanges();   
+    /* Récupération des données du formulaire */
+    this.conseiller = this.prepareSaveConseiller();
+    var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
+    if(!this.creer) { // on fait juste une modif        
+      this.conseillerService.updateConseiller(this.conseiller).subscribe();  
+      // Notifier les modifs
+      this.notif.showNotificationMessage('top', 'right', 'Modifications effectuées', 'warning', 'pe-7s-magic-wand');        
+    }
+    if(this.creer) { // on crée un conseiller
+      this.conseillerService.addConseiller(this.conseiller);
+      this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
+      // Notifier la création
+      this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + temp, 'success', 'pe-7s-add-user');  
+      // TODO : empecher la création d'un conseiller vide
+    }
+    this.ngOnChanges();   
        
-    }
+  }
 
-   prepareSaveConseiller(): Conseiller { // Préparation pour sauvegarder grace au conseiller-service
-      const formModel = this.formulaire.value;
+  /* Enregistrement des données du formulaire dans un objet Conseiller*/
+  prepareSaveConseiller(): Conseiller { // Préparation pour sauvegarder grace au conseiller-service
+    const formModel = this.formulaire.value;
 
-      const saveConseiller: Conseiller = {
-        id: this.conseiller.id,
-        matricule: this.conseiller.matricule,
-        prenom: formModel.prenom as string,
-        nom: formModel.nom as string,
-        nomUtilisateur: this.conseiller.nomUtilisateur, // todo : rajouter dans le formulaire 
-        password: this.conseiller.password,
-        email: formModel.email as string,
-        adresse: formModel.adresse,
-        numTel: formModel.numTel,
-        dateDebutContrat: this.conseiller.dateDebutContrat, // todo : rajouter dans le formulaire 
-        clients: this.conseiller.clients || [],
-        demandes: this.conseiller.demandes || []
-      };
+    const saveConseiller: Conseiller = {
+      id: this.conseiller.id,
+      matricule: this.conseiller.matricule,
+      prenom: formModel.prenom as string,
+      nom: formModel.nom as string,
+      nomUtilisateur: this.conseiller.nomUtilisateur, // TODO : rajouter dans le formulaire 
+      password: this.conseiller.password, // TODO : à mettre dans le formulaire pour modif
+      email: formModel.email as string,
+      adresse: formModel.adresse,
+      numTel: formModel.numTel,
+      dateDebutContrat: this.conseiller.dateDebutContrat, // TODO : rajouter dans le formulaire, mais non modifiable
+      clients: this.conseiller.clients || [],
+      demandes: this.conseiller.demandes || []
+    };
+    return saveConseiller;
+  }
 
-      return saveConseiller;
-    }
+  /* Annuler les modifications du formulaire non enregistrées --> non utilisée...*/
+  revert() { this.ngOnChanges(); }
 
-    revert() { this.ngOnChanges(); }
-
-    supprConseiller() {
-      var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
-      this.conseillerService.deleteConseiller(this.conseiller);
-      // enlever la fiche
-      this.onDelete.emit();
-      // Notifier la suppression
-      this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp, 'danger', 'pe-7s-delete-user');        
-    }
-
+  /* Méthode pour supprimer un conseiller */
+  supprConseiller() {
+    var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
+    this.conseillerService.deleteConseiller(this.conseiller);
+    // enlever la fiche
+    this.onDelete.emit();
+    // Notifier la suppression
+    this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp, 'danger', 'pe-7s-delete-user');        
+  }
 }
