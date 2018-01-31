@@ -97,6 +97,7 @@ export class ClientComptesComponent implements OnInit {
       this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté cliet.
       //TODO : envoyer une demande au conseiller
       this.showNotification('top','center',msg);//On affiche une notif sur la page
+      this.transfer = false; //On retourne sur la page opérations.
     }
     else{
       this.confirmTransfer = true;
