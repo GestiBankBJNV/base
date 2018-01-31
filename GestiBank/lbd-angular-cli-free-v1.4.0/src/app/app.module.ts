@@ -106,4 +106,4 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [ ConseillerService, ClientService, DemandeService ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}
