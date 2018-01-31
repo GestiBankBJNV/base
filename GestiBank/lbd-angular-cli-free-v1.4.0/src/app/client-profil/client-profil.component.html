@@ -4,26 +4,26 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Éditer mon profil</h4>
+                        <h4 class="title">{{ 'client_profile_title' | translate }}</h4>
                     </div>
                     <div class="content">
                         <form>
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <label>Entreprise (facultatif)</label>
+                                        <label>{{ 'client_profile_company' | translate }} ({{ 'client_profile_optional' | translate }})</label>
                                         <input (change)='resetWait()' [(ngModel)]="fakeClient.entreprise" name="entreprise" type="text" class="form-control" placeholder="Entreprise">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label>Nom d'utilisateur</label>
+                                        <label>{{ 'client_profile_username' | translate }}</label>
                                         <input type="text" class="form-control" disabled placeholder="Nom d'utilisateur" value='{{client.username}}'>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Adresse mail</label>
+                                        <label for="exampleInputEmail1">{{ 'client_profile_mail' | translate }}</label>
                                         <input (change)='resetWait()' [(ngModel)]="fakeClient.mail" name="mail" type="email" class="form-control" placeholder="Email" value='{{fakeClient.mail}}'>
                                     </div>
                                 </div>
@@ -32,14 +32,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Nom</label>
-                                        <input type="text" class="form-control" disabled placeholder="Nom" value='{{client.nom}}'>
+                                        <label>{{ 'client_profile_lastName' | translate }}</label>
+                                        <input type="text" class="form-control" disabled placeholder="{{ 'client_profile_lastName' | translate }}" value='{{client.nom}}'>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Prénom</label>
-                                        <input type="text" class="form-control" disabled placeholder="Prénom" value='{{client.prenom}}'>
+                                        <label>{{ 'client_profile_firstName' | translate }}</label>
+                                        <input type="text" class="form-control" disabled placeholder="{{ 'client_profile_firstName' | translate }}" value='{{client.prenom}}'>
                                     </div>
                                 </div>
                             </div>
@@ -47,8 +47,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Adresse</label>
-                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.adresse" name="adresse" type="text" class="form-control" placeholder="Adresse">
+                                        <label>{{ 'client_profile_address' | translate }}</label>
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.adresse" name="adresse" type="text" class="form-control" placeholder="{{ 'client_profile_address' | translate }}">
                                     </div>
                                 </div>
                             </div>
@@ -56,20 +56,20 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Ville</label>
-                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.ville" name="ville" type="text" class="form-control" placeholder="Ville">
+                                        <label>{{ 'client_profile_city' | translate }}</label>
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.ville" name="ville" type="text" class="form-control" placeholder="{{ 'client_profile_city' | translate }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Pays</label>
-                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.pays" name="pays" type="text" class="form-control" placeholder="Pays">
+                                        <label>{{ 'client_profile_country' | translate }}</label>
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.pays" name="pays" type="text" class="form-control" placeholder="{{ 'client_profile_country' | translate }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Code postal</label>
-                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.cp" name="cp" type="number" class="form-control" placeholder="Code postal">
+                                        <label>{{ 'client_profile_zipcode' | translate }}</label>
+                                        <input (change)='resetWait()' [(ngModel)]="fakeClient.cp" name="cp" type="number" class="form-control" placeholder="{{ 'client_profile_zipcode' | translate }}">
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>-->
-                            <button type="button" class="btn btn-info btn-fill pull-right" (click)="validForm()" routerLink="{{ (waitConfirm) ? '../client_accueil' : './'}}">{{getConfirmBTText()}}</button>
+                            <button type="button" class="btn btn-info btn-fill pull-right" (click)="validForm()" routerLink="{{ (waitConfirm) ? '../client_accueil' : './'}}">{{ (waitConfirm) ? ('client_profile_confirm' | translate) : ('client_profile_update' | translate) }}</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
