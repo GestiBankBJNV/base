@@ -1,5 +1,5 @@
 {
-	"client_welcome" : "Bienvenue dans votre Espace Client.",
+	"client_home_title" : "Bienvenue dans votre Espace Client.",
 	"client_notifications_title" : "Notifications",
 	"client_notifications_details" : "Libellé",
 	"client_notifications_date" : "Date",
