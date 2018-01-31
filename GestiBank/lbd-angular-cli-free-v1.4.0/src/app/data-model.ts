@@ -374,4 +374,17 @@ export const demandesInscription: DemandeInscription[] = [
   },
 ];
 
+export const admin: SuperAdmin = {
+  id: 0,
+  prenom: "admin",
+  nom: "admin",
+  nomUtilisateur: "admin",
+  password: "admin",
+  email:"",
+  adresse: undefined,
+  numTel: "",
+  conseillers: undefined,
+  demandesInscriptions: demandesInscription
+}
+
               
