@@ -1,4 +1,5 @@
 import { AppRoutingModule } from './app.routing';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FooterModule } from './shared/footer/footer.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,8 +10,12 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarModule } from './sidebar/sidebar.module';
+<<<<<<< HEAD
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+=======
+import { AccordionModule, TypeaheadModule } from 'ngx-bootstrap';
+>>>>>>> master
 
 //IMPORTS TEMPLATE
 import { AppComponent } from './app.component';
@@ -47,7 +52,7 @@ import { LoginComponent } from './login/login.component';
 //Services
 import { ConseillerService } from './conseiller-service'; /*****/
 import { ClientService } from './client-service'; /*****/
-import { DemandeService } from './demande-service'; /*****/
+import { DemandeService } from './demande-service';
 
 //Fonctions utilisées par le module de traduction
 // AoT requires an exported function for factories
@@ -85,6 +90,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   imports: [
     AppRoutingModule,
+    CommonModule,
     BrowserModule,
     FooterModule,
     FormsModule,
@@ -95,6 +101,7 @@ export function createTranslateLoader(http: HttpClient) {
     ReactiveFormsModule,
     RouterModule,
     SidebarModule,
+<<<<<<< HEAD
     TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -102,6 +109,10 @@ export function createTranslateLoader(http: HttpClient) {
                 deps: [HttpClient]
             }
         })
+=======
+    AccordionModule.forRoot(),
+    TypeaheadModule.forRoot()
+>>>>>>> master
   ],
   providers: [ ConseillerService, ClientService, DemandeService ],
   bootstrap: [ AppComponent ]

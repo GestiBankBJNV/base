@@ -7,12 +7,18 @@ import { DemandeService } from '../demande-service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/finally';
 import { NotificationsComponent } from '../notifications/notifications.component';
+import { FormControl, FormGroup } from '@angular/forms';
+
+import 'rxjs/add/observable/of';
+import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
+
 
 @Component({
   selector: 'app-admin-affectations',
   templateUrl: './admin-affectations.component.html',
   styleUrls: ['./admin-affectations.component.scss']
 })
+
 export class AdminAffectationsComponent implements OnInit {
 
 	//public tableData = []; // tableau contenant les demandes d'inscription
@@ -33,7 +39,13 @@ export class AdminAffectationsComponent implements OnInit {
   selectedClient: Client; // Pour l'onglet modifs
   selectedConseiller: Conseiller; // Pour l'onglet modifs
 
-	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService) { }
+  conseillersDataSource:  Observable<Conseiller>;
+  clientsDataSource:  Observable<Client>;
+
+
+	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService) { 
+    this.constructorSelect();
+  }
 
 	ngOnInit() {
 	  this.getDemandes();   
@@ -133,8 +145,8 @@ export class AdminAffectationsComponent implements OnInit {
   /* ***** Méthode au changement d'onglet ***** */
   changerOnglet(onglet: string){ // on réinitialise tous les attributs nécessaires
 
-    this.conseillers = undefined;
-    this.clients = undefined;
+    this.getConseillers();
+    this.getClient();
     this.affecter = false; 
     this.trieCroissantDemande = true; 
     this.trieCroissantAffectation = true;  
@@ -159,7 +171,49 @@ export class AdminAffectationsComponent implements OnInit {
     this.conseillerService.deleteClient(this.selectedClient);
     // Notifier les modifs
     this.notif.showNotificationMessage('top', 'right', 'Client : ' + this.selectedClient.prenom + ' ' + this.selectedClient.nom + ' affecté au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
+  }
+/**********************************************************************************************************************************************/
 
+  // Formulaire de l'onglet modifications
+  modifCtrlClient: FormControl = new FormControl();
+  modifCtrlConseiller: FormControl = new FormControl();
+ 
+  modifForm: FormGroup = new FormGroup({
+    client: this.modifCtrlClient,
+    conseiller: this.modifCtrlConseiller
+  });
+
+  constructorSelect() {
+    //this.clicRechercherConseiller();
+    this.conseillersDataSource = Observable.create((observer: any) => {
+      // Runs on every search
+      observer.next(this.conseillerRecherche);
+    }).mergeMap((token: string) => this.conseillerService.getConseillersByNameAndID(token, token));
+
+    this.clientsDataSource = Observable.create((observer: any) => {
+      // Runs on every search
+      observer.next(this.clientRecherche);
+    }).mergeMap((token: string) => this.clientService.getClientByNameAndID(token, token));
+  }
+ 
+ 
+ /* changeTypeaheadLoading(e: boolean): void {
+    this.typeaheadLoading = e;
+  }
+ 
+  changeTypeaheadNoResults(e: boolean): void {
+    this.typeaheadNoResults = e;
+  }*/
+ 
+  typeaheadOnSelect(e: TypeaheadMatch): void {
+    console.log('Selected value: ', e.item);
+    this.selectedConseiller = e.item;
   }
 
+  typeaheadOnSelectClient(e: TypeaheadMatch): void {
+    console.log('Selected value: ', e.item);
+    this.selectedClient = e.item;
+  }
 }
+
+

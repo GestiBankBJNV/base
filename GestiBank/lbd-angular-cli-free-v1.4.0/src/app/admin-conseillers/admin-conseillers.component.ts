@@ -22,6 +22,7 @@ export class AdminConseillersComponent implements OnInit {
     nouveauConseiller: Conseiller;
     nomConseillerACreer: string = '';
   	conseillerRecherche: string = '';
+    derouler: boolean = true;
 
   	constructor(private conseillerService: ConseillerService) { }
 
@@ -37,15 +38,18 @@ export class AdminConseillersComponent implements OnInit {
       this.selectedConseiller = undefined;
   	}
 
-  	select(conseiller: Conseiller) { this.selectedConseiller = conseiller; } 
+  	select(conseiller: Conseiller) { 
+      this.selectedConseiller = conseiller; 
+      this.derouler = false; 
+    } 
 
   	clicRechercher() {
   		this.isSearching = true;
       this.nouvelleFiche = false;
+      this.derouler = true; 
       this.getConseillers(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
                              /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
       this.isLoading = true;
-      console.log('recherche du conseiller ' + this.conseillerRecherche);
       this.conseillers = this.conseillerService.getConseillersByNameAndID(this.conseillerRecherche, this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule
                       		// Normalement à faire : error handling
                       		.finally(() => this.isLoading = false);
