@@ -35,6 +35,7 @@ import { AdminFicheConseillerComponent } from './admin-fiche-conseiller/admin-fi
 import { ClientAccueilComponent } from './client-accueil/client-accueil.component';
 import { ClientComptesComponent } from './client-comptes/client-comptes.component';
 import { ClientNotificationsComponent } from './client-notifications/client-notifications.component';
+import { ClientPaginationComponent } from './client-pagination/client-pagination.component';
 import { ClientProfilComponent } from './client-profil/client-profil.component';
 
 //IMPORTS CONSEILLER
@@ -83,7 +84,8 @@ export function createTranslateLoader(http: HttpClient) {
     UpgradeComponent,
     UserComponent,
     TablesComponent,
-    TypographyComponent
+    TypographyComponent,
+    ClientPaginationComponent
   ],
   imports: [
     AppRoutingModule,
