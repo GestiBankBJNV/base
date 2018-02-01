@@ -29,6 +29,8 @@
 	"client_notifications_infos_many" : "unread notifications.",
 	"client_notifications_infos_none" : "No new notification.",
 	"client_notifications_infos_one" : "One new notification.",
+	"client_pagination_next" : "Next",
+	"client_pagination_previous" : "Previous",
 	"client_profile_address" : "Address",
 	"client_profile_city" : "City",
 	"client_profile_company" : "Company",

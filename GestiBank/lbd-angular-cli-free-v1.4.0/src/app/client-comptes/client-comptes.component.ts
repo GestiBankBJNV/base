@@ -26,6 +26,8 @@ export class ClientComptesComponent implements OnInit {
   displayedOperations : Operation[] = [];
   displayedCount : Number = 20;
   transferDestIBAN : String = "";
+  currentPage : Number = 0;
+  pageCount : Number = 10;
   constructor() { }
 
   ngOnInit() {
@@ -169,5 +171,17 @@ export class ClientComptesComponent implements OnInit {
               align: align
           }
       });
+  }
+
+  prevPage(){
+    console.log("prev page");
+  }
+
+  nextPage(){
+    console.log("next page");
+  }
+
+  goPage(e : Number){
+    console.log("Go to page : " + e);
   }
 }
