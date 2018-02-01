@@ -1,59 +1,49 @@
+<!-- ========== Interface admin : rechercher un conseiller par nom ou matricule ========== -->
 <div class="main-content" >
-    <div class="container-fluid">
+    <div class="container-fluid">    	
     	<div class="row">
             <div class="col-md-10">
-                <div class="card">
 
-                	<!-- Interface admin : rechercher un conseiller par nom ou matricule -->
+            	<!-- ========== Première section visible au chargement de la page ========== -->
+                <div class="card">
+                	<!-- ========== Titre ========== -->
                 	<div class="header">
 						<h3>Gestion des conseillers</h3>
 					</div>
 
+					<!-- ========== Contenu ========== -->
 					<div class="content">
 						<div class="row">
-							<div class="col-md-6">					
-								
-								<!-- Recherche de conseiller -->
-
+							<!-- ========== Recherche de conseiller ========== -->
+							<div class="col-md-6">								
 								<div class="form-group">
-										
 									<label>Rechercher un conseiller par nom/matricule</label>
 									<input [(ngModel)]="conseillerRecherche" type="text" value="" placeholder="Nom/Matricule" class="form-control" (keydown.enter)="clicRechercher()"/>
-									<button (click)="clicRechercher()" type="submit" class="btn btn-info btn-fill pull-right">Rechercher</button> <!-- mener à la fiche du conseiller recherché s'il existe --> <!-- effacer routerLink="/ficheConseiller" quand vérif fonctionne -->	
-									
-								</div>							
-								
+									<button (click)="clicRechercher()" type="submit" class="btn btn-info btn-fill pull-right">Rechercher</button>	
+								</div>								
 							</div>	
 
-							<div class="col-md-6">
-
-								<!-- Création d'un conseiller -->
-
+							<!-- ========== Création d'un conseiller ========== -->
+							<div class="col-md-6">								
 								<div class="form-group">
 									<label>Nouveau conseiller</label>
 									<input [(ngModel)]="nomConseillerACreer" type="text" value="" placeholder="Nom du conseiller" class="form-control" (keydown.enter)="afficherNouvelleFiche()"/>
 									<button (click)="afficherNouvelleFiche()" type="submit" class="btn btn-info btn-fill pull-right">Créer</button>
 								</div>
-
 							</div>			
 						</div>
-
 					</div>
-
 				</div>
 
+				<!-- ========== Section visible après validation de la recherche de conseiller ========== -->
 				<div class="card" *ngIf="(isSearching)">
-
-                	<!-- Interface admin : rechercher un conseiller par nom ou matricule -->
                 	<!-- https://valor-software.com/ngx-bootstrap/#/accordion -->
                 	<accordion>
   						<accordion-group [isOpen]="derouler" heading="Selectionner un conseiller :">
-                			
+                			<!-- Todo : changer le heading, si possible... -->
 							<h4 *ngIf="isLoading"><i>Recherche conseillers ... </i></h4>
-							<!-- <h4 *ngIf="!isLoading">Selectionner un conseiller :</h4> --> 							
-
+							<!-- <h4 *ngIf="!isLoading">Selectionner un conseiller :</h4> --> 
 							<div class="content">
-
 								<div class="row">
 									<div class="col-md-12">			
 									
@@ -63,23 +53,22 @@
 										</nav>									
 								
 									</div>
-								</div>
-						
+								</div>						
 							</div>
 						</accordion-group>
 					</accordion>
-				</div>
-
-				
+				</div>				
 			</div>
 		</div>
 		
+		<!-- ========== Nouveau composant : fiche conseiller remplie avec les infos du conseiller recherché (modifiable) ========== -->
 		<div *ngIf="selectedConseiller">			  	
-			<admin-fiche-conseiller [conseiller]="selectedConseiller" (onDelete)="onDelete($event)"></admin-fiche-conseiller>								
+			<admin-fiche-conseiller [conseiller]="selectedConseiller" (onDelete)="onDelete($event)"></admin-fiche-conseiller>							
 		</div>
 
+		<!-- ========== Nouveau composant : fiche conseiller vide (modifiable) ========== -->
 		<div *ngIf="nouvelleFiche">			  	
-			<admin-fiche-conseiller [conseiller]="nouveauConseiller" [creer]="true" (onCreate)="onCreate($event)"></admin-fiche-conseiller>							
+			<admin-fiche-conseiller [conseiller]="nouveauConseiller" [creer]="true" (onCreate)="onCreate($event)"></admin-fiche-conseiller>			
 		</div>
 
 	</div>
