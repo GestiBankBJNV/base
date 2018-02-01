@@ -20,12 +20,9 @@
         "@angular/platform-browser": "^4.0.0",
         "@angular/platform-browser-dynamic": "^4.0.0",
         "@angular/router": "^4.0.0",
-<<<<<<< HEAD
         "@ngx-translate/core": "^7.2.2",
         "@ngx-translate/http-loader": "^2.0.1",
-=======
         "@ng-bootstrap/ng-bootstrap": "^1.0.0",
->>>>>>> master
         "arrive": "^2.4.1",
         "bootstrap": "^3.3.7",
         "bootstrap-notify": "3.1.3",

@@ -10,12 +10,9 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarModule } from './sidebar/sidebar.module';
-<<<<<<< HEAD
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-=======
 import { AccordionModule, TypeaheadModule } from 'ngx-bootstrap';
->>>>>>> master
 
 //IMPORTS TEMPLATE
 import { AppComponent } from './app.component';
@@ -101,18 +98,15 @@ export function createTranslateLoader(http: HttpClient) {
     ReactiveFormsModule,
     RouterModule,
     SidebarModule,
-<<<<<<< HEAD
     TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             }
-        })
-=======
+        }),
     AccordionModule.forRoot(),
     TypeaheadModule.forRoot()
->>>>>>> master
   ],
   providers: [ ConseillerService, ClientService, DemandeService ],
   bootstrap: [ AppComponent ]
