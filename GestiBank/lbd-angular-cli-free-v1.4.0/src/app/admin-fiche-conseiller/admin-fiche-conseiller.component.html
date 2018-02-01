@@ -3,7 +3,7 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Fiche conseiller <!-- ajouter le nom du conseiller ! --></h4>
+                        <h3 class="title">{{ 'admin_fiche_conseiller_titre' | translate }} <!-- Todo : ajouter le nom du conseiller --></h3>
                     </div>
                     <div class="content">
                         <form [formGroup] = "formulaire" (ngSubmit)="onSubmit()" novalidate>
@@ -11,14 +11,14 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <label>Matricule</label>
+                                        <label>{{ 'admin_fiche_conseiller_form_matricule' | translate }}</label>
                                         <input type="text" class="form-control" disabled placeholder="Matricule" value="000000000" formControlName="matricule">
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-7">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Adresse Email</label>
+                                        <label for="exampleInputEmail1">{{ 'admin_fiche_conseiller_form_email' | translate }}</label>
                                         <input type="email" class="form-control" placeholder="email@exemple.com" formControlName="email">
                                     </div>
                                 </div>
@@ -27,20 +27,20 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Prénom</label>
-                                        <input type="text" class="form-control" placeholder="Prénom" formControlName="prenom">
+                                        <label>{{ 'prenom' | translate }}</label>
+                                        <input type="text" class="form-control" placeholder="{{ 'prenom' | translate }}" formControlName="prenom">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Nom</label>
-                                        <input type="text" class="form-control" placeholder="Nom" formControlName="nom">
+                                        <label>{{ 'nom' | translate }}</label>
+                                        <input type="text" class="form-control" placeholder="{{ 'nom' | translate }}" formControlName="nom">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Numéro de téléphone</label>
-                                        <input type="text" class="form-control" placeholder="Numéro" formControlName="numTel">
+                                        <label>{{ 'tel' | translate }}</label>
+                                        <input type="text" class="form-control" placeholder="0000000000" formControlName="numTel">
                                     </div>
                                 </div>
                             </div>
@@ -50,8 +50,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Adresse</label>
-                                            <input type="text" class="form-control" placeholder="Adresse" formControlName="rue">
+                                            <label>{{ 'adresse' | translate }}</label>
+                                            <input type="text" class="form-control" placeholder="{{ 'adresse' | translate }}" formControlName="rue">
                                         </div>
                                     </div>
                                 </div>
@@ -59,30 +59,30 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Ville</label>
-                                            <input type="text" class="form-control" placeholder="Ville" formControlName="ville">
+                                            <label>{{ 'ville' | translate }}</label>
+                                            <input type="text" class="form-control" placeholder="{{ 'ville' | translate }}" formControlName="ville">
                                         </div>
                                     </div>
                                     
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Code Postal</label>
-                                            <input type="number" class="form-control" placeholder="Code Postal" formControlName="cp">
+                                            <label>{{ 'cp' | translate}}</label>
+                                            <input type="number" class="form-control" placeholder="{{ 'cp' | translate}}" formControlName="cp">
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
 
-                            <label>Clients</label>
+                            <label>{{ 'clients' | translate }}</label>
                             <!-- <div class="card"> -->
                                 <div class="content table-responsive table-full-width">
                                     <table class="table">
                                         <thead>
                                             <tr>
                                               <th>ID</th>
-                                              <th>Prénom</th>
-                                              <th>Nom</th>
+                                              <th>{{ 'prenom' | translate }}</th>
+                                              <th>{{ 'nom' | translate }}</th>
                                               <th>Email</th>
                                             </tr>
                                         </thead>
@@ -99,18 +99,18 @@
                             <!-- </div> -->
 
                             <!-- la liste des demandes dans un tableau -->
-                            <label>Demandes</label>
+                            <label>{{ 'demandes' | translate }}</label>
                             <!-- <div class="card"> -->
                                 <div class="content table-responsive table-full-width">
                                     <table class="table">
                                         <thead>
                                             <tr>
                                                 <th>N° </th>
-                                                <th>Prénom</th>
-                                                <th>Nom</th>
-                                                <th>Date de demande</th>
-                                                <th>Date d'affectation</th>
-                                                <th>Statut</th>
+                                                <th>{{ 'prenom' | translate }}</th>
+                                                <th>{{ 'nom' | translate }}</th>
+                                                <th>{{ 'dateDemande' | translate }}</th>
+                                                <th>{{ 'dateAffectation' | translate }}</th>
+                                                <th>{{ 'statut' | translate }}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -126,9 +126,9 @@
                                     </table>
                                 </div>
 
-                            <button type="submit" class="btn btn-info btn-fill pull-right">{{(this.creer) ? 'Créer' : 'Modifier'}}</button>                         
-                            <button *ngIf="creer" type="reset" (click)="revert()" [disabled]="formulaire.pristine" class="btn btn-danger">Effacer</button> 
-                            <button *ngIf="!creer" type="reset" (click)="supprConseiller()" [disabled]="conseiller.clients.length != 0" class="btn btn-danger">Supprimer</button>
+                            <button type="submit" class="btn btn-info btn-fill pull-right">{{(this.creer) ? ('creer' | translate) : ('modifier' | translate)}}</button>                         
+                            <button *ngIf="creer" type="reset" (click)="revert()" [disabled]="formulaire.pristine" class="btn btn-danger">{{ 'effacer' | translate }}</button> 
+                            <button *ngIf="!creer" type="reset" (click)="supprConseiller()" [disabled]="conseiller.clients.length != 0" class="btn btn-danger">{{ 'suppr' | translate }}</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
