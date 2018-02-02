@@ -43,5 +43,6 @@
 	"client_profile_optional" : "Optional",
 	"client_profile_update" : "Update",
 	"client_profile_username" : "Username",
-	"client_profile_zipcode" : "Zip code"
+	"client_profile_zipcode" : "Zip code",
+	"client_route_accueil" : "Home"
 }

@@ -43,5 +43,6 @@
 	"client_profile_optional" : "Facultatif",
 	"client_profile_update" : "Mettre à jour",
 	"client_profile_username" : "Nom d'utilisateur",
-	"client_profile_zipcode" : "Code postal"
+	"client_profile_zipcode" : "Code postal",
+	"client_route_accueil" : "Accueil"
 }
