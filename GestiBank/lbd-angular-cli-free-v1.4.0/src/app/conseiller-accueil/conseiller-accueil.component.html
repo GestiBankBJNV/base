@@ -11,12 +11,36 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let client of clients">
-      	<td>{{client.nom}}</td>
+      <tr *ngFor="let client of clients" (click)="voirDemande(client)">
       	<td>{{client.prenom}}</td>
+      	<td>{{client.nom}}</td>
       	<td>{{client.email}}</td>
       	<td>{{client.demandes.length}}</td>        
       </tr>      
     </tbody>
   </table>
+
+
+<div *ngIf="isDetailDemande">
+  <h2>Client {{nomDemande}}</h2>
+  <p>Liste de ses demandes</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Date de demande</th>
+        <th>Date d'affectation</th>
+        <th>Status</th>
+        <th>libellé</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let demande of demandes">
+        <td>{{demande.date}}</td>
+        <td>{{demande.dateAffectation}}</td>
+        <td>{{demande.status}}</td>
+        <td>{{demande.libelle}}</td>        
+      </tr>      
+    </tbody>
+  </table>
+</div>
 </div>

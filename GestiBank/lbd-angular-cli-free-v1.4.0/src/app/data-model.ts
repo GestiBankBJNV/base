@@ -147,69 +147,6 @@ export const clients: Client[] = [
   },
 ];
 
-export const conseillers: Conseiller[] = [
-  {
-    matricule: '0001',
-    email: 'martine@truc.com',
-    prenom: 'Martine',
-    nom: 'Dupont',    
-    adresse: {rue: '23 rue Gambetta',  ville: 'Lille', cp: '59000'},
-    numTel: '0625364859',
-    clients: [clients[0], clients[1]],
-    demandes: []
-  },
-  {
-    matricule: '0002',
-    email: 'roger@truc.com',
-    prenom: 'Roger',
-    nom: 'Martin',    
-    adresse: {rue: '12 rue de Paris',  ville: 'Antony', cp: '92160'},
-    numTel: '0625364859',
-    clients: [clients[2]],
-    demandes: []
-  },
-  {
-    matricule: '0003',
-    email: 'alice@truc.com',
-    prenom: 'Alice',
-    nom: 'Pommier',    
-    adresse: {rue: '48 boulevard Pasteur',  ville: 'Marcq-en-Baroeul', cp: '59700'},
-    numTel: '0625364859',
-    clients: [clients[3], clients[4], clients[5]],
-    demandes: []
-  },
-  {
-    matricule: '0004',
-    email: 'Eva@truc.com',
-    prenom: 'Eva',
-    nom: 'Cardin',    
-    adresse: {rue: '2 rue machin',  ville: 'Trucville', cp: '60500'},
-    numTel: '0625364859',
-    clients: [clients[6]],
-    demandes: []
-  },
-  {
-    matricule: '0005',
-    email: 'Yves@truc.com',
-    prenom: 'Yves',
-    nom: 'Gris',    
-    adresse: {rue: '6 rue des cèdres',  ville: 'Rambouillet', cp: '78450'},
-    numTel: '0625364859',
-    clients: [],
-    demandes: []
-  },
-  {
-    matricule: '0006',
-    email: 'Jean-Pierre@truc.com',
-    prenom: 'Jean-Pierre',
-    nom: 'Malin',    
-    adresse: {rue: '85 avenue des Pins',  ville: 'Grenoble', cp: '38000'},
-    numTel: '0625364859',
-    clients: [],
-    demandes: []
-  },
-];
-
 export const demandesInscription: DemandeInscription[] = [
   {
     id: 1,
@@ -258,6 +195,69 @@ export const demandesInscription: DemandeInscription[] = [
     statut: '',
     libelle: "inscription",
     coordonnees: {email:"mason@truc.com", prenom: "Mason", nom: "Porter", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+  },
+];
+
+export const conseillers: Conseiller[] = [
+  {
+    matricule: '0001',
+    email: 'martine@truc.com',
+    prenom: 'Martine',
+    nom: 'Dupont',    
+    adresse: {rue: '23 rue Gambetta',  ville: 'Lille', cp: '59000'},
+    numTel: '0625364859',
+    clients: [clients[0], clients[1]],
+    demandes: []
+  },
+  {
+    matricule: '0002',
+    email: 'roger@truc.com',
+    prenom: 'Roger',
+    nom: 'Martin',    
+    adresse: {rue: '12 rue de Paris',  ville: 'Antony', cp: '92160'},
+    numTel: '0625364859',
+    clients: [clients[2], clients[6]],
+    demandes: [demandesInscription[0], demandesInscription[1]]
+  },
+  {
+    matricule: '0003',
+    email: 'alice@truc.com',
+    prenom: 'Alice',
+    nom: 'Pommier',    
+    adresse: {rue: '48 boulevard Pasteur',  ville: 'Marcq-en-Baroeul', cp: '59700'},
+    numTel: '0625364859',
+    clients: [clients[3], clients[4], clients[5]],
+    demandes: []
+  },
+  {
+    matricule: '0004',
+    email: 'Eva@truc.com',
+    prenom: 'Eva',
+    nom: 'Cardin',    
+    adresse: {rue: '2 rue machin',  ville: 'Trucville', cp: '60500'},
+    numTel: '0625364859',
+    clients: [],
+    demandes: []
+  },
+  {
+    matricule: '0005',
+    email: 'Yves@truc.com',
+    prenom: 'Yves',
+    nom: 'Gris',    
+    adresse: {rue: '6 rue des cèdres',  ville: 'Rambouillet', cp: '78450'},
+    numTel: '0625364859',
+    clients: [],
+    demandes: []
+  },
+  {
+    matricule: '0006',
+    email: 'Jean-Pierre@truc.com',
+    prenom: 'Jean-Pierre',
+    nom: 'Malin',    
+    adresse: {rue: '85 avenue des Pins',  ville: 'Grenoble', cp: '38000'},
+    numTel: '0625364859',
+    clients: [],
+    demandes: []
   },
 ];
 
