@@ -22,7 +22,6 @@ export class ConseillerAccueilComponent implements OnInit {
   ngOnInit() {
 
   	this.clients = this.conseillerService.getListeClientsFromConseiller("0003");
-  	console.log(this.clients[0]);
 
   }
 
