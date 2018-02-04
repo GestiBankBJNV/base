@@ -17,17 +17,17 @@ export class ClientComptesComponent implements OnInit {
 	selectedCompte : Compte;
   openAccount : Boolean = false;
   transfer : Boolean = false;
-  transferAmount : Number = 0;
+  transferAmount : number = 0;
   accountType : String = "Courant";//Mettre une valeur par défaut, autrement la balise select sera vide au chargement de la page
   awaitingConfirm : Boolean = false;
   confirmTransfer : Boolean = false;
   startDate : Date;
   endDate : Date;
   displayedOperations : Operation[] = [];
-  displayedCount : Number = 20;
+  displayedCount : number = 20;
   transferDestIBAN : String = "";
-  currentPage : Number = 0;
-  pageCount : Number = 10;
+  currentPage : number = 0;
+  pageCount : number = 10;
   constructor() { }
 
   ngOnInit() {
@@ -126,7 +126,7 @@ export class ClientComptesComponent implements OnInit {
   }
 
   //Rafraichir la liste des operations affichées
-  refreshOperations(startIndex) {
+  refreshOperations(startIndex : number) {
     this.displayedOperations = [];
     for (let i = 0; i < this.displayedCount; i++){
       let j = i + startIndex;
@@ -174,14 +174,17 @@ export class ClientComptesComponent implements OnInit {
   }
 
   prevPage(){
-    console.log("prev page");
+    this.currentPage--;
+    this.refreshOperations(this.currentPage * this.displayedCount);
   }
 
   nextPage(){
-    console.log("next page");
+    this.currentPage++;
+    this.refreshOperations(this.currentPage * this.displayedCount);
   }
 
-  goPage(e : Number){
-    console.log("Go to page : " + e);
+  goPage(e : number){
+    this.currentPage = e;
+    this.refreshOperations(this.currentPage * this.displayedCount);
   }
 }

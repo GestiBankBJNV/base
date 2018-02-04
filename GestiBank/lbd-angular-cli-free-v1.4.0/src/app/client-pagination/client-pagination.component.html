@@ -1,8 +1,8 @@
 <div class="pagination" *ngIf="(totalPages() > 1)">
 	<span>Page {{ page }} sur {{ totalPages() }} --</span>
 	
-	<button (click)="onPrev()" [disabled]="page === 1 || loading">{{ 'client_pagination_previous' | translate }}</button>
-	<a *ngFor="let pageNum of getPages()" (click)='onPage(pageNum - 1)'>{{ pageNum }}</a>
-	<button (click)="onNext()" [disabled]="lastPage() || loading">{{ 'client_pagination_next' | translate }}</button>
+	<button class="btn btn-primary" (click)="onPrev()" [disabled]="page === 1 || loading">{{ 'client_pagination_previous' | translate }}</button>
+	<a *ngFor="let pageNum of getPages()" (click)='onPage(pageNum)'>{{ pageNum + 1}}</a>
+	<button class="btn btn-primary" (click)="onNext()" [disabled]="lastPage() || loading">{{ 'client_pagination_next' | translate }}</button>
 	<span>-- {{ count }} opérations</span>
 </div>
