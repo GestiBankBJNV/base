@@ -69,6 +69,8 @@
 	"ville" : "City",
 	"cp" : "Zip code",
 	"clients" : "Clients",
+	"client" : "client",
+	"conseiller" : "agent",
 	"demandes" : "Requests",
 	"dateDemande" : "Date of request",
 	"dateAffectation" : "Date of assignement",
@@ -79,5 +81,13 @@
 	"suppr" : "Delete",
 	"loading" : "Is loading...",
 	"valider" : "Validate",
-	"affecter" : "Affect"
+	"affecter" : "Affect",
+	"nomUtilisateur" : "Username",
+	"mdp" : "Password",
+	"dateDebutContrat" : "Entry date",
+	"admin_affectations_selectConseiller" : "Select agent :",
+	"admin_affectations_change" : "Change assignements",
+	"admin_affectations_chercher_client" : "Search for a client",
+	"admin_affectations_chercher_conseiller" : "Search for an agent",
+	"admin_affectations_infos" : "Indicate the client whose assignment is to be changed, as well as the new advisor to whom the client is assigned"
 }

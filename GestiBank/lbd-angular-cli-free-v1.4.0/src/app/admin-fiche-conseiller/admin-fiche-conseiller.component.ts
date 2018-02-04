@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { Adresse, Conseiller, conseillers, Client } from '../data-model';
 import { ConseillerService }           from '../conseiller-service';
 import { NotificationsComponent } from '../notifications/notifications.component';
@@ -21,6 +21,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   nameChangeLog: string[] = [];
 
   notif: NotificationsComponent = new NotificationsComponent();
+  today = new Date();
   
 
 	constructor(private fb: FormBuilder, private conseillerService: ConseillerService) { 
@@ -41,11 +42,14 @@ export class AdminFicheConseillerComponent implements OnInit {
   createForm() {
   	this.formulaire = this.fb.group({
   		matricule: '',		
-  		prenom: '',
+  		prenom: ['', Validators.required ],
   		nom: ['', Validators.required ],
-      email: '', // TODO : Pour vérifier si une adresse email correcte a été entrée, voir tuto Dynamic Forms sur angular.io
-  		adresse: this.fb.group(new Adresse()), 
-      numTel: ''
+      nomUtilisateur: ['', Validators.required ],
+      mdp: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]],
+  		adresse: this.fb.group(new Adresse()), // todo : validators
+      numTel: ['', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]+")]],
+      dateDebutContrat: ['', Validators.required] // https://stackoverflow.com/questions/37055311/angular2-how-to-use-javascript-date-object-with-ngmodel-two-way-binding/37055451#37055451
   	});
   }
 
@@ -55,9 +59,12 @@ export class AdminFicheConseillerComponent implements OnInit {
         matricule: this.conseiller.matricule,
         prenom: this.conseiller.prenom,
         nom: this.conseiller.nom,
+        nomUtilisateur: this.conseiller.nomUtilisateur,
+        mdp: this.conseiller.password,
         email: this.conseiller.email,
         adresse: this.conseiller.adresse || new Adresse(), 
-        numTel: this.conseiller.numTel      
+        numTel: this.conseiller.numTel,
+        dateDebutContrat: this.conseiller.dateDebutContrat/*.toLocaleDateString()*/      
       }); 
   }
 
@@ -71,23 +78,29 @@ export class AdminFicheConseillerComponent implements OnInit {
 
   /* Méthode utilisée lors de la soumission du formulaire avec le bouton créer/modifier */
   onSubmit() {
-    /* Récupération des données du formulaire */
-    this.conseiller = this.prepareSaveConseiller();
-    var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
-    if(!this.creer) { // on fait juste une modif        
-      this.conseillerService.updateConseiller(this.conseiller).subscribe();  
-      // Notifier les modifs
-      this.notif.showNotificationMessage('top', 'right', 'Modifications effectuées', 'warning', 'pe-7s-magic-wand');        
+    if(this.formulaire.valid){
+      /* Récupération des données du formulaire */
+      this.conseiller = this.prepareSaveConseiller();
+      var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
+      if(!this.creer) { // on fait juste une modif        
+        this.conseillerService.updateConseiller(this.conseiller).subscribe();  
+        // Notifier les modifs
+        this.notif.showNotificationMessage('top', 'right', 'Modifications effectuées', 'warning', 'pe-7s-magic-wand');        
+      }
+      if(this.creer) { // on crée un conseiller
+        this.conseillerService.addConseiller(this.conseiller);
+        this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
+        // Notifier la création
+        this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + temp, 'success', 'pe-7s-add-user');  
+      }
+      this.ngOnChanges(); 
+    } else if(this.formulaire.get('email').invalid) {
+      this.notif.showNotificationMessage('top', 'right', 'Erreur : email non valide', 'danger', 'pe-7s-close-circle'); 
+    } else if(this.formulaire.get('numTel').invalid){
+      this.notif.showNotificationMessage('top', 'right', 'Erreur : numéro de téléphone non valide', 'danger', 'pe-7s-close-circle'); 
+    } else if (this.formulaire.invalid) {
+      this.notif.showNotificationMessage('top', 'right', 'Veuillez remplir tous les champs obligatoires', 'danger', 'pe-7s-close-circle');
     }
-    if(this.creer) { // on crée un conseiller
-      this.conseillerService.addConseiller(this.conseiller);
-      this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
-      // Notifier la création
-      this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + temp, 'success', 'pe-7s-add-user');  
-      // TODO : empecher la création d'un conseiller vide
-    }
-    this.ngOnChanges();   
-       
   }
 
   /* Enregistrement des données du formulaire dans un objet Conseiller*/
@@ -99,12 +112,12 @@ export class AdminFicheConseillerComponent implements OnInit {
       matricule: this.conseiller.matricule,
       prenom: formModel.prenom as string,
       nom: formModel.nom as string,
-      nomUtilisateur: this.conseiller.nomUtilisateur, // TODO : rajouter dans le formulaire 
-      password: this.conseiller.password, // TODO : à mettre dans le formulaire pour modif
+      nomUtilisateur: formModel.nomUtilisateur as string,
+      password: formModel.mdp as string,
       email: formModel.email as string,
       adresse: formModel.adresse,
       numTel: formModel.numTel,
-      dateDebutContrat: this.conseiller.dateDebutContrat, // TODO : rajouter dans le formulaire, mais non modifiable
+      dateDebutContrat: formModel.dateDebutContrat, // non modifiable si conseiller existe
       clients: this.conseiller.clients || [],
       demandes: this.conseiller.demandes || []
     };

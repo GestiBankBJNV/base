@@ -64,7 +64,8 @@ export class AdminConseillersComponent implements OnInit {
     this.nouveauConseiller = undefined; // Pour effacer d'éventuelles informations
     this.nouveauConseiller = new Conseiller();
     this.nouveauConseiller.nom = this.nomConseillerACreer;
-    this.nouveauConseiller.matricule = '5698'; // TODO : à calculer en fonction des matricules existants
+    this.nouveauConseiller.matricule = '####'; // à calculer en fonction des matricules existants
+    this.nouveauConseiller.dateDebutContrat = new Date();
   }
 
   /* ** Méthodes pour modifier les boutons de la fiche conseiller en fonction de son utilisation ** */

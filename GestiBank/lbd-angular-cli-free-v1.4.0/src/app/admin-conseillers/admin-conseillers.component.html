@@ -40,7 +40,6 @@
                 	<!-- https://valor-software.com/ngx-bootstrap/#/accordion -->
                 	<accordion>
   						<accordion-group [isOpen]="derouler">
-                			<!-- Todo : changer le heading, si possible... -->
                 			<div accordion-heading class="clearfix">
 						     	<h4 *ngIf="isLoading"><i>{{ 'admin_conseillers_isLoading' | translate }}</i></h4>
 								<h4 *ngIf="!isLoading">{{ 'admin_conseillers_accordion_heading' | translate }}</h4>	

@@ -13,6 +13,7 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AccordionModule, TypeaheadModule } from 'ngx-bootstrap';
+import { DateValueAccessorModule } from 'angular-date-value-accessor'; /*npm install --save angular-date-value-accessor*/
 
 //IMPORTS TEMPLATE
 import { AppComponent } from './app.component';
@@ -108,7 +109,8 @@ export function createTranslateLoader(http: HttpClient) {
             }
         }),
     AccordionModule.forRoot(),
-    TypeaheadModule.forRoot()
+    TypeaheadModule.forRoot(),
+    DateValueAccessorModule
   ],
   providers: [ ConseillerService, ClientService, DemandeService ],
   bootstrap: [ AppComponent ]

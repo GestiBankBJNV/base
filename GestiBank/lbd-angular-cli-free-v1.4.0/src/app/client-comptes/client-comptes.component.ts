@@ -59,7 +59,7 @@ export class ClientComptesComponent implements OnInit {
       this.awaitingConfirm = false;
       //console.log("demande");
       let msg : String = "Votre demande d'ouverture de compte " + this.accountType + " a bien été enregistrée";
-      this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté cliet.
+      this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté client.
       //TODO : envoyer une demande au conseiller
       this.openAccount = false;//On n'affiche plus l'onglet
       this.showNotification('top','center',msg);//On affiche une notif sur la page

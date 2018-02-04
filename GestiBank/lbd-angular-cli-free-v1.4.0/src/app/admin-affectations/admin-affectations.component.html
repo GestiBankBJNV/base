@@ -92,6 +92,7 @@
 				</div>
 
 				<!-- ============== Input pour rechercher un conseiller auquel affecter la demande ============== -->
+				<!-- todo : modifier pour un bouton recherche, comme dans l'onglet modifs -->
 				<div class="content">
 					<div class="row">
 						<div class="col-md-5">
@@ -102,12 +103,43 @@
 						</div>				
 					</div>
 				</div>
+
+				<!-- ============== Nouveau code ============= --> 
+				<!-- https://valor-software.com/ngx-bootstrap/#/typeahead -->
+				<!-- <pre class="card card-block card-header">Conseiller : {{ conseillerRecherche | json }} </pre> -->
+				<!-- <div class="content">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+								<form [formGroup]="modifForm">									
+									<ng-template #customConseillerTemplate let-model="item" let-index="index">
+									   <h5>{{model.matricule | json}} : {{ model.prenom }} {{ model.nom }} </h5>
+									</ng-template>
+									<label>{{ 'conseiller' | translate }}</label>
+									<input [(ngModel)]="conseillerRecherche"
+										   formControlName="conseiller"
+									       [typeahead]="this.conseillersDataSource"
+									       [typeaheadScrollable]="true"
+									       [typeaheadOptionsInScrollableView]="5"
+									       [typeaheadMinLength]="0"
+									       typeaheadOptionField="nom"
+									       [typeaheadItemTemplate]="customConseillerTemplate"
+									       placeholder="{{ 'admin_affectations_chercher_conseiller' | translate }}"
+									       (typeaheadOnSelect)="typeaheadOnSelectConseiller($event)"
+									       class="form-control"
+									       required>
+								</form>							
+								<button type="submit" class="btn btn-info btn-fill pull-right" (click)="select(conseiller)">Valider</button>
+							</div>
+						</div>
+					</div>
+				</div> -->
 			</div>					
 
 			<!-- ============== Recherche les conseillers compatibles ============== -->
 	    	<div class="header" *ngIf="(isSearching)">
 				<h4 *ngIf="isLoading"><i>{{ 'admin_conseillers_isLoading' | translate }}</i></h4>
-				<h4 *ngIf="!isLoading">Selectionner le conseiller :</h4> <!-- todo: traduction -->
+				<h4 *ngIf="!isLoading">{{ 'admin_affectations_selectConseiller' | translate }}</h4> 
 			</div>
 
 			<!-- ============== Section qui apparait lorsque l'on recherche un conseiller ============== -->
@@ -133,7 +165,7 @@
 				<!-- ============== Titre ============== -->
 				<div class="row">
 					<div class="col-md-8">
-						<h4>Changement d'affectation</h4> <!-- todo: traduction -->
+						<h4>{{ 'admin_affectations_change' | translate }}</h4> 
 					</div>							
 				</div>
 				
@@ -167,7 +199,7 @@
 									<i *ngIf="this.selectedClient"> {{ selectedClient.prenom }} {{ selectedClient.nom }} </i>
 									<span class="caret"></span>
 								</button>
-								<ul class="dropdown-menu" role="menu">  todo : la recherche ne fonctionne pas 
+								<ul class="dropdown-menu" role="menu">  la recherche ne fonctionne pas 
 									<li>
 										<input [(ngModel)]="clientRecherche" type="search" value="" placeholder="Rechercher client" class="form-control" (keydown)="clicRechercherClient()"/>
 									</li>
@@ -188,7 +220,7 @@
 								<ng-template #customClientTemplate let-modelClient="item" let-index="index">
 								   <h5>{{ modelClient.prenom }} {{ modelClient.nom }} </h5>
 								</ng-template>
-								<label>Client</label>
+								<label>{{ 'client' | translate }}</label>
 								<input [(ngModel)]="clientRecherche"
 										formControlName="client"
 								       [typeahead]="this.clientsDataSource"
@@ -197,9 +229,9 @@
 								       [typeaheadMinLength]="0"
 								       typeaheadOptionField="nom"
 								       [typeaheadItemTemplate]="customClientTemplate"
-								       placeholder="Rechercher un client"
+								       placeholder="{{ 'admin_affectations_chercher_client' | translate }}"
 								       (typeaheadOnSelect)="typeaheadOnSelectClient($event)"
-								       class="form-control"> <!-- todo : traduction -->
+								       class="form-control">
 							</form>
 
 						</div>
@@ -229,7 +261,7 @@
 								<ng-template #customConseillerTemplate let-model="item" let-index="index">
 								   <h5>{{model.matricule | json}} : {{ model.prenom }} {{ model.nom }} </h5>
 								</ng-template>
-								<label>Conseiller</label>
+								<label>{{ 'conseiller' | translate }}</label>
 								<input [(ngModel)]="conseillerRecherche"
 										formControlName="conseiller"
 								       [typeahead]="this.conseillersDataSource"
@@ -238,9 +270,9 @@
 								       [typeaheadMinLength]="0"
 								       typeaheadOptionField="nom"
 								       [typeaheadItemTemplate]="customConseillerTemplate"
-								       placeholder="Rechercher un conseiller"
+								       placeholder="{{ 'admin_affectations_chercher_conseiller' | translate }}"
 								       (typeaheadOnSelect)="typeaheadOnSelectConseiller($event)"
-								       class="form-control"> <!-- todo: traduction -->
+								       class="form-control">
 							</form>					
 						</div>
 					</div>
@@ -248,7 +280,7 @@
 					<!-- ============== Paragraphe d'explications ============= -->
 					<div class="content">
 						<div class="row">
-							<p>Indiquer le client dont l'affectation doit être modifiée, ainsi que le nouveau conseiller auquel on affecte le client</p> <!-- todo: traduction -->
+							<p>{{ 'admin_affectations_infos' | translate }}</p>
 						</div>
 					</div>
 
