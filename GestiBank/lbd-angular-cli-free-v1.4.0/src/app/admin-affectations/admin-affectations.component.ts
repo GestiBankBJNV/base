@@ -110,6 +110,8 @@ export class AdminAffectationsComponent implements OnInit {
       this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
       // Notifier l'affectation
       this.notif.showNotificationMessage('top', 'right', 'Demande affectée au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
+      // Effacer la selection
+      this.selectedConseiller = undefined;
     } else {
       this.notif.showNotificationMessage('top', 'right', 'Erreur : veuillez entrer un conseiller', 'danger', 'pe-7s-magic-wand'); /* todo : traduction */
     }
