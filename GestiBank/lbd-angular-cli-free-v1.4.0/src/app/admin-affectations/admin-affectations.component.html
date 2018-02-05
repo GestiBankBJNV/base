@@ -92,8 +92,8 @@
 				</div>
 
 				<!-- ============== Input pour rechercher un conseiller auquel affecter la demande ============== -->
-				<!-- todo : modifier pour un bouton recherche, comme dans l'onglet modifs -->
-				<div class="content">
+				<!-- ============== Ancien code ============= -->
+				<!-- <div class="content">
 					<div class="row">
 						<div class="col-md-5">
 							<div class="form-group">
@@ -102,12 +102,12 @@
 							</div>
 						</div>				
 					</div>
-				</div>
+				</div> -->
 
 				<!-- ============== Nouveau code ============= --> 
 				<!-- https://valor-software.com/ngx-bootstrap/#/typeahead -->
 				<!-- <pre class="card card-block card-header">Conseiller : {{ conseillerRecherche | json }} </pre> -->
-				<!-- <div class="content">
+				<div class="content">
 					<div class="row">
 						<div class="col-md-5">
 							<div class="form-group">
@@ -129,34 +129,35 @@
 									       class="form-control"
 									       required>
 								</form>							
-								<button type="submit" class="btn btn-info btn-fill pull-right" (click)="select(conseiller)">Valider</button>
+								<button type="submit" class="btn btn-info btn-fill pull-right" (click)="select()">Valider</button>
 							</div>
 						</div>
 					</div>
-				</div> -->
+				</div> 
 			</div>					
 
+			<!-- ============== Ancien code ============= -->
 			<!-- ============== Recherche les conseillers compatibles ============== -->
-	    	<div class="header" *ngIf="(isSearching)">
+	    	<!-- <div class="header" *ngIf="(isSearching)">
 				<h4 *ngIf="isLoading"><i>{{ 'admin_conseillers_isLoading' | translate }}</i></h4>
 				<h4 *ngIf="!isLoading">{{ 'admin_affectations_selectConseiller' | translate }}</h4> 
-			</div>
+			</div> -->
 
 			<!-- ============== Section qui apparait lorsque l'on recherche un conseiller ============== -->
-			<div class="content" *ngIf="(isSearching)">
+			<!-- <div class="content" *ngIf="(isSearching)">
 				<div class="row">
-					<div class="col-md-12">									
+					<div class="col-md-12">	 -->								
 						<!-- ============== Affichage d'une liste de conseillers ============== -->
-						<nav>
+						<!-- <nav> -->
 							<!-- On clique sur le conseiller pour affecter la demande -->
-							<a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{ conseiller.matricule }} : {{conseiller.prenom}} {{conseiller.nom}}</p></a>
+							<!-- <a *ngFor="let conseiller of conseillers | async" (click)="select(conseiller)"><p>{{ conseiller.matricule }} : {{conseiller.prenom}} {{conseiller.nom}}</p></a> -->
 							<!-- S'affiche si la recherche ne donne pas de résultat -->
-							<p *ngIf="(conseillers | async)?.length==0">{{ 'admin_conseillers_noAgent' | translate }}</p>
+							<!-- <p *ngIf="(conseillers | async)?.length==0">{{ 'admin_conseillers_noAgent' | translate }}</p>
 						</nav>
 						
 					</div>
 				</div>					
-			</div>
+			</div> -->
 		</div>
 
 		<!-- ============== ONGLET MODIFICATIONS ============== -->

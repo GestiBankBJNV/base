@@ -97,18 +97,22 @@ export class AdminAffectationsComponent implements OnInit {
   }
 
   /* Méthode utilisée au clic sur le nom d'un conseiller */
-  select(conseiller: Conseiller) { 
-    this.affecter = false;
-    this.isSearching = false;
-    // Modifier le statut et la date d'affectation
-    this.selectedDemande.dateAffectation = new Date();
-    this.selectedDemande.statut = "en cours";
-    this.demandeService.updateDemandeInscription(this.selectedDemande).subscribe();
-    // Ajouter la demande à la liste du conseiller
-    conseiller.demandes.push(this.selectedDemande);
-    this.conseillerService.updateConseiller(conseiller).subscribe();  
-    // Notifier l'affectation
-    this.notif.showNotificationMessage('top', 'right', 'Demande affectée au conseiller : ' + conseiller.prenom + ' ' + conseiller.nom, 'success', 'pe-7s-magic-wand');
+  select(/*conseiller: Conseiller*/) { 
+    if(this.selectedConseiller) {
+      this.affecter = false;
+      this.isSearching = false;
+      // Modifier le statut et la date d'affectation
+      this.selectedDemande.dateAffectation = new Date();
+      this.selectedDemande.statut = "en cours";
+      this.demandeService.updateDemandeInscription(this.selectedDemande).subscribe();
+      // Ajouter la demande à la liste du conseiller
+      this.selectedConseiller.demandes.push(this.selectedDemande);
+      this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
+      // Notifier l'affectation
+      this.notif.showNotificationMessage('top', 'right', 'Demande affectée au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
+    } else {
+      this.notif.showNotificationMessage('top', 'right', 'Erreur : veuillez entrer un conseiller', 'danger', 'pe-7s-magic-wand'); /* todo : traduction */
+    }
     
   } 
 
