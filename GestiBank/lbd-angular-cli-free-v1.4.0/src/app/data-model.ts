@@ -31,9 +31,9 @@ export class Adresse {
 
 export class Demande {
   id: number;
-  date: Date;
+  date: Date = new Date();
   dateAffectation: Date;
-  statut: string;
+  statut: string = "en cours";
   libelle: string;
 }
 

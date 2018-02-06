@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let client of clients" (click)="voirDemande(client)">
+      <tr *ngFor="let client of clients" (click)="voirDemande(client, clients.indexOf(client))">
       	<td>{{client.prenom}}</td>
       	<td>{{client.nom}}</td>
       	<td>{{client.email}}</td>
@@ -31,6 +31,7 @@
         <th>Date d'affectation</th>
         <th>Status</th>
         <th>libellé</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -38,7 +39,11 @@
         <td>{{demande.date}}</td>
         <td>{{demande.dateAffectation}}</td>
         <td>{{demande.status}}</td>
-        <td>{{demande.libelle}}</td>        
+        <td>{{demande.libelle}}</td>
+        <td>
+            <button type="button" class="btn btn-success" (click)="demandeTraite(demande)">Envoyer</button>
+            <button type="button" class="btn btn-warning" (click)="fermerfenetre()">Annuler</button>
+        </td>       
       </tr>      
     </tbody>
   </table>
