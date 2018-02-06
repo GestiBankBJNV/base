@@ -48,11 +48,11 @@ export class Compte {
   operations: Operation[];
 }
 
-export class CompteCourant extends Compte {
+export class CompteEpargne extends Compte {
   taux: number;
 }
 
-export class CompteEpargne extends Compte {
+export class CompteCourant extends Compte {
   decouvert: number;
 }
 
