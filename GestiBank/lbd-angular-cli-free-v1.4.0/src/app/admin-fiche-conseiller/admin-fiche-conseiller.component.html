@@ -129,7 +129,7 @@
 
                     <button type="submit" class="btn btn-info btn-fill pull-right">{{(this.creer) ? ('creer' | translate) : ('modifier' | translate)}}</button>                         
                     <button *ngIf="creer" type="reset" (click)="revert()" [disabled]="formulaire.pristine" class="btn btn-danger">{{ 'effacer' | translate }}</button> 
-                    <button *ngIf="!creer" type="reset" (click)="supprConseiller()" [disabled]="conseiller.clients.length != 0" class="btn btn-danger" title="Un conseiller ne peut être supprimé que si sa liste de clients est vide">{{ 'suppr' | translate }}</button> <!-- todo: indiquer pourquoi disabled à l'utilisateur -->
+                    <button *ngIf="!creer" type="reset" (click)="supprConseiller()" [disabled]="conseiller.clients.length != 0" class="btn btn-danger" title="Un conseiller ne peut être supprimé que si sa liste de clients est vide">{{ 'suppr' | translate }}</button>
                     <div class="clearfix"></div>
                 </form>
             </div>

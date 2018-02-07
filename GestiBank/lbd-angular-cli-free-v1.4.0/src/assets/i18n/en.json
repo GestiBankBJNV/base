@@ -89,5 +89,7 @@
 	"admin_affectations_change" : "Change assignements",
 	"admin_affectations_chercher_client" : "Search for a client",
 	"admin_affectations_chercher_conseiller" : "Search for an agent",
-	"admin_affectations_infos" : "Indicate the client whose assignment is to be changed, as well as the new advisor to whom the client is assigned"
+	"admin_affectations_infos" : "Indicate the client whose assignment is to be changed, as well as the new advisor to whom the client is assigned",
+	"admin_affectation_erreur_no_conseiller" : "Error : please enter an agent",
+	"admin_affectation_notif_demande_affectee" : "Request sent to agent : "
 }

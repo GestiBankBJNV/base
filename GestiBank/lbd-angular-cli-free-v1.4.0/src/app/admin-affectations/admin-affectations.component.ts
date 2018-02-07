@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../notifications/notifications.component
 import { FormControl, FormGroup } from '@angular/forms';
 import 'rxjs/add/observable/of';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -38,7 +39,8 @@ export class AdminAffectationsComponent implements OnInit {
   selectedClient: Client; // Pour l'onglet modifs
   selectedConseiller: Conseiller; // Pour l'onglet modifs
 
-	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService) { 
+/* traduction https://stackoverflow.com/questions/45870513/angular-ngx-translate-usage-in-typescript*/
+	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService, private translate: TranslateService) { 
     this.constructorSelect();
   }
 
@@ -109,13 +111,16 @@ export class AdminAffectationsComponent implements OnInit {
       this.selectedConseiller.demandes.push(this.selectedDemande);
       this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
       // Notifier l'affectation
-      this.notif.showNotificationMessage('top', 'right', 'Demande affectée au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
+      let note: string;
+      this.translate.get('admin_affectation_notif_demande_affectee').subscribe(res => { note = res });
+      this.notif.showNotificationMessage('top', 'right', /*'Demande affectée au conseiller : '*/note + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
       // Effacer la selection
       this.selectedConseiller = undefined;
     } else {
-      this.notif.showNotificationMessage('top', 'right', 'Erreur : veuillez entrer un conseiller', 'danger', 'pe-7s-magic-wand'); /* todo : traduction */
-    }
-    
+      let note: string;
+      this.translate.get('admin_affectation_erreur_no_conseiller').subscribe(res => { note = res });
+      this.notif.showNotificationMessage('top', 'right', /*'Erreur : veuillez entrer un conseiller'*/note, 'danger', 'pe-7s-magic-wand'); 
+    }    
   } 
 
   /* Méthode utilisée à la validation de la recherche par nom/id du conseiller */

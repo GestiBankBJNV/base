@@ -89,5 +89,7 @@
 	"admin_affectations_change" : "Changement d'affectation",
 	"admin_affectations_chercher_client" : "Rechercher un client",
 	"admin_affectations_chercher_conseiller" : "Rechercher un conseiller",
-	"admin_affectations_infos" : "Indiquer le client dont l'affectation doit être modifiée, ainsi que le nouveau conseiller auquel on affecte le client"
+	"admin_affectations_infos" : "Indiquer le client dont l'affectation doit être modifiée, ainsi que le nouveau conseiller auquel on affecte le client",
+	"admin_affectation_erreur_no_conseiller" : "Erreur : veuillez entrer un conseiller",
+	"admin_affectation_notif_demande_affectee" : "Demande affectée au conseiller : "
 }
