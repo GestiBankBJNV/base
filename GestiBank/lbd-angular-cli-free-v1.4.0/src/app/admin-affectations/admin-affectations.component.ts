@@ -8,9 +8,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/finally';
 import { NotificationsComponent } from '../notifications/notifications.component';
 import { FormControl, FormGroup } from '@angular/forms';
-
 import 'rxjs/add/observable/of';
 import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -39,11 +39,8 @@ export class AdminAffectationsComponent implements OnInit {
   selectedClient: Client; // Pour l'onglet modifs
   selectedConseiller: Conseiller; // Pour l'onglet modifs
 
-  conseillersDataSource:  Observable<Conseiller>;
-  clientsDataSource:  Observable<Client>;
-
-
-	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService) { 
+/* traduction https://stackoverflow.com/questions/45870513/angular-ngx-translate-usage-in-typescript*/
+	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService, private translate: TranslateService) { 
     this.constructorSelect();
   }
 
@@ -51,95 +48,28 @@ export class AdminAffectationsComponent implements OnInit {
 	  this.getDemandes();   
 	}
 
-  getDemandes() { // récupère tous les conseillers via le service
+  /* Récuperation de toutes les demandes via le service */
+  getDemandes() {
     this.isLoading = true;
     this.demandes = this.demandeService.getDemandesInscription()
                         // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }
 
-  getConseillers() { // récupère tous les conseillers via le service
+  /* Récuperation de tous les conseillers via le service */
+  getConseillers() {
     this.isLoading = true;
     this.conseillers = this.conseillerService.getConseillers()
                         // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }
 
-  getClient() { // récupère tous les conseillers via le service
+  /* Récuperation de tous les clients via le service */
+  getClient() { 
     this.isLoadingClient = true;
     this.clients = this.clientService.getClients() 
                         // Normalement à faire : error handling
                         .finally(() => this.isLoadingClient = false);
-  }
-
-  // méthode utilisée au clic du bouton affecter dans le tableau
-  affect(demande: DemandeInscription) { 
-    this.affecter = true;
-    this.selectedDemande = demande;
-  }
-
-  select(conseiller: Conseiller) { // Méthode utilisée au clic sur le nom d'un conseiller
-    this.affecter = false;
-    this.isSearching = false;
-    // Modifier le statut et la date d'affectation
-    this.selectedDemande.dateAffectation = new Date();
-    this.selectedDemande.statut = "en cours";
-    this.demandeService.updateDemandeInscription(this.selectedDemande).subscribe();
-    // Ajouter la demande à la liste du conseiller
-    conseiller.demandes.push(this.selectedDemande);
-    this.conseillerService.updateConseiller(conseiller).subscribe();  
-    // Notifier l'affectation
-    this.notif.showNotificationMessage('top', 'right', 'Demande affectée au conseiller : ' + conseiller.prenom + ' ' + conseiller.nom, 'success', 'pe-7s-magic-wand');
-    
-  } 
-
-  clicRechercherClient() {
-    this.getClient(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
-                           /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
-    this.isLoadingClient = true;
-    this.clients = this.clientService.getClientByNameAndID(this.clientRecherche, this.clientRecherche) // ce champ contient soit un nom, soit un matricule
-                        // Normalement à faire : error handling
-                        .finally(() => this.isLoadingClient = false);
-  }
-
-  clicRechercherConseiller() { // Méthode utilisée pour assurer la saisie du conseiller auquel affecter la demande
-    this.isLoading = true;  
-    this.isSearching = true;
-    this.getConseillers(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
-                           /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
-    this.isLoading = true;
-    this.conseillers = this.conseillerService.getConseillersByNameAndID(this.conseillerRecherche, this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule
-                        // Normalement à faire : error handling
-                        .finally(() => this.isLoading = false);
-  }
-
-  /* ***** Méthodes pour le filtrage et le tri du tableau ***** */
-  filtrerDemandes(filtre: string){      
-    this.getDemandes(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
-                           /* il n'y en a pas beaucoup donc c'est pas si grave */
-    this.isLoading = true;
-    this.demandes = this.demandeService.filtrerDemandes(filtre) // ce champ contient soit un nom, soit un matricule
-                        // Normalement à faire : error handling
-                        .finally(() => this.isLoading = false);
-  }
-
-  trierDateDemande(){
-    this.trierDate('demande', this.trieCroissantDemande);
-    this.trieCroissantDemande = !this.trieCroissantDemande;
-  }
-
-  trierDateAffectation(){
-    this.trierDate('affectation', this.trieCroissantAffectation);
-    this.trieCroissantAffectation = !this.trieCroissantAffectation;
-  }
-
-  trierDate(typeDate : string, isCroissant: boolean){      
-    this.getDemandes(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
-                           /* il n'y en a pas beaucoup donc c'est pas si grave */
-    this.isLoading = true;
-    this.demandes = this.demandeService.trierDate(typeDate, isCroissant) // ce champ contient soit un nom, soit un matricule
-                        // Normalement à faire : error handling
-                        .finally(() => this.isLoading = false);
   }
 
   /* ***** Méthode au changement d'onglet ***** */
@@ -159,22 +89,92 @@ export class AdminAffectationsComponent implements OnInit {
 
   }
 
-  /* ***** Affectation du client au conseiller (onglet modif) ***** */
-  validerModifConseiller(){ // TODO : vérifier (semble ne pas fonctionner --> tests)
-    console.log(this.selectedClient.nom);
-    console.log(this.selectedConseiller.nom);
-    debugger;
-    // Ajouter le client à la liste du conseiller
-    this.selectedConseiller.clients.push(this.selectedClient);
-    this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
-    // Supprimer le client de la liste de son ancien conseiller
-    this.conseillerService.deleteClient(this.selectedClient);
-    // Notifier les modifs
-    this.notif.showNotificationMessage('top', 'right', 'Client : ' + this.selectedClient.prenom + ' ' + this.selectedClient.nom + ' affecté au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
-  }
-/**********************************************************************************************************************************************/
+  /**********************************************************************************************************************************************/
+  /* ONGLET AFFECTATIONS */
 
-  // Formulaire de l'onglet modifications
+  /* méthode utilisée au clic du bouton affecter dans le tableau */
+  affect(demande: DemandeInscription) { 
+    this.affecter = true;
+    this.selectedDemande = demande;
+  }
+
+  /* Méthode utilisée au clic sur le nom d'un conseiller */
+  select(/*conseiller: Conseiller*/) { 
+    if(this.selectedConseiller) {
+      this.affecter = false;
+      this.isSearching = false;
+      // Modifier le statut et la date d'affectation
+      this.selectedDemande.dateAffectation = new Date();
+      this.selectedDemande.statut = "en cours";
+      this.demandeService.updateDemandeInscription(this.selectedDemande).subscribe();
+      // Ajouter la demande à la liste du conseiller
+      this.selectedConseiller.demandes.push(this.selectedDemande);
+      this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
+      // Notifier l'affectation
+      let note: string;
+      this.translate.get('admin_affectation_notif_demande_affectee').subscribe(res => { note = res });
+      this.notif.showNotificationMessage('top', 'right', /*'Demande affectée au conseiller : '*/note + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
+      // Effacer la selection
+      this.selectedConseiller = undefined;
+    } else {
+      let note: string;
+      this.translate.get('admin_affectation_erreur_no_conseiller').subscribe(res => { note = res });
+      this.notif.showNotificationMessage('top', 'right', /*'Erreur : veuillez entrer un conseiller'*/note, 'danger', 'pe-7s-magic-wand'); 
+    }    
+  } 
+
+  /* Méthode utilisée à la validation de la recherche par nom/id du conseiller */
+  clicRechercherConseiller() { 
+    this.isLoading = true;  
+    this.isSearching = true;
+    this.getConseillers(); // Récupérer tous les conseillers
+    this.conseillers = this.conseillerService.getConseillersByNameAndID(this.conseillerRecherche, this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule TODO: ne mettre qu'un seul paramètre dans cette méthode
+                        // Normalement à faire : error handling
+                        .finally(() => this.isLoading = false);
+  }
+
+  /* ***** Méthodes pour le filtrage et le tri du tableau ***** */
+  /* Méthode de filtrage */
+  filtrerDemandes(filtre: string){      
+    this.getDemandes(); 
+    this.isLoading = true;
+    this.demandes = this.demandeService.filtrerDemandes(filtre) // ce champ contient soit un nom, soit un matricule
+                        // Normalement à faire : error handling
+                        .finally(() => this.isLoading = false);
+  }
+
+  /* Méthode appelée lors du clic sur l'entete du tableau "Date de demande" */
+  trierDateDemande(){
+    this.trierDate('demande', this.trieCroissantDemande);
+    this.trieCroissantDemande = !this.trieCroissantDemande;
+  }
+
+  /* Méthode appelée lors du clic sur l'entete du tableau "Date d'affectation" */
+  trierDateAffectation(){
+    this.trierDate('affectation', this.trieCroissantAffectation);
+    this.trieCroissantAffectation = !this.trieCroissantAffectation;
+  }
+
+  /* Méthode appelée par les méthodes de tri de dates */
+  trierDate(typeDate : string, isCroissant: boolean){      
+    this.getDemandes(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
+                           /* il n'y en a pas beaucoup donc c'est pas si grave */
+    this.isLoading = true;
+    this.demandes = this.demandeService.trierDate(typeDate, isCroissant) // ce champ contient soit un nom, soit un matricule
+                        // Normalement à faire : error handling
+                        .finally(() => this.isLoading = false);
+  }
+
+  /**********************************************************************************************************************************************/
+  /* ONGLET MODIFICATIONS */
+
+  /* cf: https://valor-software.com/ngx-bootstrap/#/typeahead*/
+
+  /* Observables utilisés dans cet onglet */
+  conseillersDataSource:  Observable<Conseiller>; // J'utilise d'autres Observables parce que je ne veux pas modifier tout ce que j'ai déjà fait...
+  clientsDataSource:  Observable<Client>;
+
+  /* Formulaire de l'onglet modifications */
   modifCtrlClient: FormControl = new FormControl();
   modifCtrlConseiller: FormControl = new FormControl();
  
@@ -183,8 +183,8 @@ export class AdminAffectationsComponent implements OnInit {
     conseiller: this.modifCtrlConseiller
   });
 
+  /* Méthode utilisée dans le constructeur pour créer les observables que l'on utilise pour récupérer les clients et les conseillers */
   constructorSelect() {
-    //this.clicRechercherConseiller();
     this.conseillersDataSource = Observable.create((observer: any) => {
       // Runs on every search
       observer.next(this.conseillerRecherche);
@@ -196,24 +196,35 @@ export class AdminAffectationsComponent implements OnInit {
     }).mergeMap((token: string) => this.clientService.getClientByNameAndID(token, token));
   }
  
- 
- /* changeTypeaheadLoading(e: boolean): void {
-    this.typeaheadLoading = e;
-  }
- 
-  changeTypeaheadNoResults(e: boolean): void {
-    this.typeaheadNoResults = e;
-  }*/
- 
-  typeaheadOnSelect(e: TypeaheadMatch): void {
-    console.log('Selected value: ', e.item);
+  /* Méthode utilisée lors du clic sur un conseiller */
+  typeaheadOnSelectConseiller(e: TypeaheadMatch): void { 
     this.selectedConseiller = e.item;
   }
 
+  /* Méthode utilisée lors du clic sur un client */
   typeaheadOnSelectClient(e: TypeaheadMatch): void {
-    console.log('Selected value: ', e.item);
     this.selectedClient = e.item;
   }
+
+  /* Affectation du client au conseiller, au clic sur le bouton 'Valider' */
+  validerModifConseiller(){ 
+    // Ajouter le client à la liste du conseiller
+    this.selectedConseiller.clients.push(this.selectedClient);
+    this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
+    // Supprimer le client de la liste de son ancien conseiller
+    this.conseillerService.deleteClient(this.selectedClient);
+    // Notifier les modifs
+    this.notif.showNotificationMessage('top', 'right', 'Client : ' + this.selectedClient.prenom + ' ' + this.selectedClient.nom + ' affecté au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
+  }
+
+  /* Ancienne méthode qui était utilisée pour rechercher le client dont on souhaite modifier l'affectation */
+  /*clicRechercherClient() {
+    this.getClient(); // Récupérer tous les conseillers
+    this.isLoadingClient = true;
+    this.clients = this.clientService.getClientByNameAndID(this.clientRecherche, this.clientRecherche) // ce champ contient soit un nom, soit un matricule
+                        // Normalement à faire : error handling
+                        .finally(() => this.isLoadingClient = false);
+  }*/
 }
 
 

@@ -81,6 +81,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
 
   addConseiller(conseiller: Conseiller) {
     // TODO : changer matricule
+    conseiller.matricule = conseillers[conseillers.length-1].matricule + 1;
     conseillers.push(conseiller);    
   }
 

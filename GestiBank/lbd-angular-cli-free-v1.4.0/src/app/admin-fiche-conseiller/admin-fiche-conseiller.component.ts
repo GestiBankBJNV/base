@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { Adresse, Conseiller, conseillers, Client } from '../data-model';
 import { ConseillerService }           from '../conseiller-service';
 import { NotificationsComponent } from '../notifications/notifications.component';
@@ -21,11 +21,13 @@ export class AdminFicheConseillerComponent implements OnInit {
   nameChangeLog: string[] = [];
 
   notif: NotificationsComponent = new NotificationsComponent();
+  today = new Date();
   
 
 	constructor(private fb: FormBuilder, private conseillerService: ConseillerService) { 
-
+    /* Création du formulaire */
 		this.createForm();
+    /* Méthode pour modifier le formulaire ?? */
     this.logNameChange();
 		// methode pour modifier une valeur du formulaire, utiliser setValue pour obliger le renseignement de tous les champs
   	/*this.formulaire.patchValue({
@@ -36,26 +38,31 @@ export class AdminFicheConseillerComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Création du formulaire contenant les données du conseiller : à remplir avec les valeurs de la base de données en fonction du conseiller choisi
+  /* Création du formulaire contenant les données du conseiller */
   createForm() {
   	this.formulaire = this.fb.group({
   		matricule: '',		
-  		prenom: '',
+  		prenom: ['', Validators.required ],
   		nom: ['', Validators.required ],
-      email: '', // TODO : Pour vérifier si une adresse email correcte a été entrée, voir tuto Dynamic Forms sur angular.io
-  		adresse: this.fb.group(new Adresse()), 
-      numTel: ''
+      nomUtilisateur: ['', Validators.required ],
+      mdp: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]],
+      numTel: ['', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]+")]],
+      dateDebutContrat: ['', Validators.required] // https://stackoverflow.com/questions/37055311/angular2-how-to-use-javascript-date-object-with-ngmodel-two-way-binding/37055451#37055451
   	});
   }
 
+  /* Modification du formulaire contenant les données du conseiller */
   ngOnChanges(){
       this.formulaire.reset({
         matricule: this.conseiller.matricule,
         prenom: this.conseiller.prenom,
         nom: this.conseiller.nom,
-        email: this.conseiller.email,
-        adresse: this.conseiller.adresse || new Adresse(), 
-        numTel: this.conseiller.numTel      
+        nomUtilisateur: this.conseiller.nomUtilisateur,
+        mdp: this.conseiller.password,
+        email: this.conseiller.email, 
+        numTel: this.conseiller.numTel,
+        dateDebutContrat: this.conseiller.dateDebutContrat/*.toLocaleDateString()*/      
       }); 
   }
 
@@ -67,7 +74,10 @@ export class AdminFicheConseillerComponent implements OnInit {
     );
   }
 
+  /* Méthode utilisée lors de la soumission du formulaire avec le bouton créer/modifier */
   onSubmit() {
+    if(this.formulaire.valid){
+      /* Récupération des données du formulaire */
       this.conseiller = this.prepareSaveConseiller();
       var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
       if(!this.creer) { // on fait juste une modif        
@@ -80,42 +90,47 @@ export class AdminFicheConseillerComponent implements OnInit {
         this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
         // Notifier la création
         this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + temp, 'success', 'pe-7s-add-user');  
-        // TODO : empecher la création d'un conseiller vide
       }
-      this.ngOnChanges();   
-       
+      this.ngOnChanges(); 
+    } else if(this.formulaire.get('email').invalid) {
+      this.notif.showNotificationMessage('top', 'right', 'Erreur : email non valide', 'danger', 'pe-7s-close-circle'); 
+    } else if(this.formulaire.get('numTel').invalid){
+      this.notif.showNotificationMessage('top', 'right', 'Erreur : numéro de téléphone non valide', 'danger', 'pe-7s-close-circle'); 
+    } else if (this.formulaire.invalid) {
+      this.notif.showNotificationMessage('top', 'right', 'Veuillez remplir tous les champs obligatoires', 'danger', 'pe-7s-close-circle');
     }
+  }
 
-   prepareSaveConseiller(): Conseiller { // Préparation pour sauvegarder grace au conseiller-service
-      const formModel = this.formulaire.value;
+  /* Enregistrement des données du formulaire dans un objet Conseiller*/
+  prepareSaveConseiller(): Conseiller { // Préparation pour sauvegarder grace au conseiller-service
+    const formModel = this.formulaire.value;
 
-      const saveConseiller: Conseiller = {
-        id: this.conseiller.id,
-        matricule: this.conseiller.matricule,
-        prenom: formModel.prenom as string,
-        nom: formModel.nom as string,
-        nomUtilisateur: this.conseiller.nomUtilisateur, // todo : rajouter dans le formulaire 
-        password: this.conseiller.password,
-        email: formModel.email as string,
-        adresse: formModel.adresse,
-        numTel: formModel.numTel,
-        dateDebutContrat: this.conseiller.dateDebutContrat, // todo : rajouter dans le formulaire 
-        clients: this.conseiller.clients || [],
-        demandes: this.conseiller.demandes || []
-      };
+    const saveConseiller: Conseiller = {
+      id: this.conseiller.id,
+      matricule: this.conseiller.matricule,
+      prenom: formModel.prenom as string,
+      nom: formModel.nom as string,
+      nomUtilisateur: formModel.nomUtilisateur as string,
+      password: formModel.mdp as string,
+      email: formModel.email as string,
+      numTel: formModel.numTel,
+      dateDebutContrat: formModel.dateDebutContrat, // non modifiable si conseiller existe
+      clients: this.conseiller.clients || [],
+      demandes: this.conseiller.demandes || []
+    };
+    return saveConseiller;
+  }
 
-      return saveConseiller;
-    }
+  /* Annuler les modifications du formulaire non enregistrées --> non utilisée...*/
+  revert() { this.ngOnChanges(); }
 
-    revert() { this.ngOnChanges(); }
-
-    supprConseiller() {
-      var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
-      this.conseillerService.deleteConseiller(this.conseiller);
-      // enlever la fiche
-      this.onDelete.emit();
-      // Notifier la suppression
-      this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp, 'danger', 'pe-7s-delete-user');        
-    }
-
+  /* Méthode pour supprimer un conseiller */
+  supprConseiller() {
+    var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
+    this.conseillerService.deleteConseiller(this.conseiller);
+    // enlever la fiche
+    this.onDelete.emit();
+    // Notifier la suppression
+    this.notif.showNotificationMessage('top', 'right', 'Suppression du conseiller ' + temp, 'danger', 'pe-7s-delete-user');        
+  }
 }

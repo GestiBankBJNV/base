@@ -11,8 +11,7 @@ export class Personne {  // ajouter password (dans java)
   nom: string;  
   nomUtilisateur: string; // à changer dans java
   password: string;
-  email: string;
-  adresse: Adresse;
+  email: string;  
   numTel: String;
 }
 
@@ -36,6 +35,7 @@ export class Conseiller extends Personne {
 
 export class Client extends Personne {  
   /*demandes: DemandeClient[];*/
+  adresse: Adresse;
   nbEnfants: number;
   situationMatrimoniale: string;
   comptes: Compte[];
@@ -48,11 +48,11 @@ export class Compte {
   operations: Operation[];
 }
 
-export class CompteCourant extends Compte {
+export class CompteEpargne extends Compte {
   taux: number;
 }
 
-export class CompteEpargne extends Compte {
+export class CompteCourant extends Compte {
   decouvert: number;
 }
 
@@ -81,7 +81,7 @@ export class Demande { // manque le statut et la date d'affectation dans java
 
 
 export class DemandeInscription extends Demande { // = Inscription dans java (à modifier)
-  coordonnees: Personne;
+  coordonnees: Client;
 }
 
 export class DemandeClient extends Demande {
@@ -92,7 +92,7 @@ export class DemandeChequier extends DemandeClient {
 }
 
 export class DemandeModif extends DemandeClient {
-  coordonnees: Personne;
+  coordonnees: Client;
   libelle = 'Demande de modification';
 }
 
@@ -247,9 +247,8 @@ export const conseillers: Conseiller[] = [
     nom: 'Dupont',  
     nomUtilisateur: 'MDupont',  
     password: '',
-    adresse: {rue: '23 rue Gambetta',  ville: 'Lille', cp: '59000'},
     numTel: '0625364859',
-    dateDebutContrat: new Date(),
+    dateDebutContrat: new Date(2018, 0, 1),
     clients: [clients[0], clients[1]],
     demandes: []
   },
@@ -261,9 +260,8 @@ export const conseillers: Conseiller[] = [
     nom: 'Martin',   
     nomUtilisateur: 'RMartin', 
     password: '',
-    adresse: {rue: '12 rue de Paris',  ville: 'Antony', cp: '92160'},
     numTel: '0625364859',
-    dateDebutContrat: new Date(),
+    dateDebutContrat: new Date(2018, 0, 5),
     clients: [clients[2]],
     demandes: []
   },
@@ -275,9 +273,8 @@ export const conseillers: Conseiller[] = [
     nom: 'Pommier',    
     nomUtilisateur: 'APommier',
     password: '',
-    adresse: {rue: '48 boulevard Pasteur',  ville: 'Marcq-en-Baroeul', cp: '59700'},
     numTel: '0625364859',
-    dateDebutContrat: new Date(),
+    dateDebutContrat: new Date(2017, 11, 15),
     clients: [clients[3], clients[4], clients[5]],
     demandes: []
   },
@@ -289,9 +286,8 @@ export const conseillers: Conseiller[] = [
     nom: 'Cardin',   
     nomUtilisateur: 'ECardin', 
     password: '',
-    adresse: {rue: '2 rue machin',  ville: 'Trucville', cp: '60500'},
     numTel: '0625364859',
-    dateDebutContrat: new Date(),
+    dateDebutContrat: new Date(2018, 0, 23),
     clients: [clients[6]],
     demandes: []
   },
@@ -303,9 +299,8 @@ export const conseillers: Conseiller[] = [
     nom: 'Gris',   
     nomUtilisateur: 'YGris', 
     password: '',
-    adresse: {rue: '6 rue des cèdres',  ville: 'Rambouillet', cp: '78450'},
     numTel: '0625364859',
-    dateDebutContrat: new Date(),
+    dateDebutContrat: new Date(2018, 0, 3),
     clients: [],
     demandes: []
   },
@@ -317,9 +312,8 @@ export const conseillers: Conseiller[] = [
     nom: 'Malin',    
     nomUtilisateur: 'JPMalin',
     password: '',
-    adresse: {rue: '85 avenue des Pins',  ville: 'Grenoble', cp: '38000'},
     numTel: '0625364859',
-    dateDebutContrat: new Date(),
+    dateDebutContrat: new Date(2018, 0, 7),
     clients: [],
     demandes: []
   },
@@ -332,7 +326,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
-    coordonnees: {id: 101, email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", nomUtilisateur: 'DRice', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 101, email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", nomUtilisateur: 'DRice', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
   },
   {
     id: 2,
@@ -340,7 +334,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: new Date(2017,6,12),
     statut: 'traitée',
     libelle: "inscription",
-    coordonnees: {id: 102, email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", nomUtilisateur: 'MHooper', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 102, email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", nomUtilisateur: 'MHooper', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
   },
   {
     id: 3,
@@ -348,7 +342,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
-    coordonnees: {id: 103, email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", nomUtilisateur: 'SRodriguez', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 103, email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", nomUtilisateur: 'SRodriguez', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
   },
   {
     id: 4,
@@ -356,7 +350,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: new Date(2018,0,11),
     statut: 'en cours',
     libelle: "inscription",
-    coordonnees: {id: 104, email:"philip@truc.com", prenom: "Philip", nom: "Chaney", nomUtilisateur: 'PChaney', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 104, email:"philip@truc.com", prenom: "Philip", nom: "Chaney", nomUtilisateur: 'PChaney', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0,situationMatrimoniale:"célibataire", comptes: []}
   },
   {
     id: 5,
@@ -364,7 +358,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
-    coordonnees: {id: 105, email:"doris@truc.com", prenom: "Doris", nom: "Greene", nomUtilisateur: 'DGreen', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 105, email:"doris@truc.com", prenom: "Doris", nom: "Greene", nomUtilisateur: 'DGreen', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
   },
   {
     id: 6,
@@ -372,7 +366,7 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
-    coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
   },
 ];
 
@@ -383,7 +377,6 @@ export const admin: SuperAdmin = {
   nomUtilisateur: "admin",
   password: "admin",
   email:"",
-  adresse: undefined,
   numTel: "",
   conseillers: undefined,
   demandesInscriptions: demandesInscription
