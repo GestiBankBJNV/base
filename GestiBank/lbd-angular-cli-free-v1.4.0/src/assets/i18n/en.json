@@ -44,9 +44,7 @@
 	"client_profile_update" : "Update",
 	"client_profile_username" : "Username",
 	"client_profile_zipcode" : "Zip code",
-<<<<<<< HEAD
-	"client_route_accueil" : "Home"
-=======
+	"client_route_accueil" : "Home",
 	"admin_accueil_bienvenue" : "Welcome to the administration space",
 	"admin_accueil_conseil_selection" : "You can select the action you need in the sidebar",
 	"admin_accueil_conseil_conseillers" : "Agents: Manage records of agents and creating new records",
@@ -97,5 +95,4 @@
 	"admin_affectations_infos" : "Indicate the client whose assignment is to be changed, as well as the new advisor to whom the client is assigned",
 	"admin_affectation_erreur_no_conseiller" : "Error : please enter an agent",
 	"admin_affectation_notif_demande_affectee" : "Request sent to agent : "
->>>>>>> origin/Jeanne
 }

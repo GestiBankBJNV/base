@@ -44,9 +44,7 @@
 	"client_profile_update" : "Mettre à jour",
 	"client_profile_username" : "Nom d'utilisateur",
 	"client_profile_zipcode" : "Code postal",
-<<<<<<< HEAD
-	"client_route_accueil" : "Accueil"
-=======
+	"client_route_accueil" : "Accueil",
 	"admin_accueil_bienvenue" : "Bienvenue dans l'espace d'administration",
 	"admin_accueil_conseil_selection" : "Vous pouvez sélectionner l'action que vous souhaitez effectuer dans le menu",
 	"admin_accueil_conseil_conseillers" : "Conseillers : Gérer les fiches des conseillers et créer de nouvelles fiches",
@@ -97,5 +95,4 @@
 	"admin_affectations_infos" : "Indiquer le client dont l'affectation doit être modifiée, ainsi que le nouveau conseiller auquel on affecte le client",
 	"admin_affectation_erreur_no_conseiller" : "Erreur : veuillez entrer un conseiller",
 	"admin_affectation_notif_demande_affectee" : "Demande affectée au conseiller : "
->>>>>>> origin/Jeanne
 }
