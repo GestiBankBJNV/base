@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
-
+import { DatePipe } from '@angular/common';
 import { Conseiller, Client, Demande } from '../data-model';
 import { Observable } from 'rxjs/Observable';
 

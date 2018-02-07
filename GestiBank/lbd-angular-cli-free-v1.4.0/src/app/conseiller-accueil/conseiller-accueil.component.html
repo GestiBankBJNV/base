@@ -36,8 +36,8 @@
     </thead>
     <tbody>
       <tr *ngFor="let demande of demandes">
-        <td>{{demande.date}}</td>
-        <td>{{demande.dateAffectation}}</td>
+        <td>{{demande.date | date:'dd/MM/yyyy'}}</td>
+        <td>{{demande.dateAffectation | date:'dd/MM/yyyy'}}</td>
         <td>{{demande.status}}</td>
         <td>{{demande.libelle}}</td>
         <td>
