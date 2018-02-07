@@ -13,12 +13,12 @@ import { Observable } from 'rxjs/Observable';
 
 export class ConseillerAccueilComponent implements OnInit {
 
-	clients: Client[];
-  demandes: Demande[];
-  nomDemande: String;
-  indexClient: number;
-  idSelectionne: number = null;
-  isDetailDemande: boolean = false;
+	clients: Client[];// récuperation des clients
+  demandes: Demande[]; //récuperation des demandes par client
+  nomDemande: String;//recuperation du nom de la demande
+  indexClient: number;//recuperation de l'index du client
+  idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
+  isDetailDemande: boolean = false;//initialisation de la vue des demande sur false
 
   constructor(private conseillerService: ConseillerService) { }
 

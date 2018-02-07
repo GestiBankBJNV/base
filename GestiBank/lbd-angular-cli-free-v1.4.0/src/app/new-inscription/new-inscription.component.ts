@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
-import { Conseiller, Client, Demande } from '../data-model';
+import { Conseiller, Client, Demande, Personne } from '../data-model';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -22,7 +22,9 @@ export class NewInscriptionComponent implements OnInit {
 
   verifInscription(d: Demande){
 
-  		
+  	let coordonnee: Personne;
+
+
   }
 
 }
