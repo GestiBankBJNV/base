@@ -217,7 +217,7 @@ export const conseillers: Conseiller[] = [
     adresse: {rue: '12 rue de Paris',  ville: 'Antony', cp: '92160'},
     numTel: '0625364859',
     clients: [clients[2], clients[6]],
-    demandes: [demandesInscription[0], demandesInscription[1]]
+    demandes: [demandesInscription[0], demandesInscription[2], demandesInscription[3], demandesInscription[4]]
   },
   {
     matricule: '0003',
