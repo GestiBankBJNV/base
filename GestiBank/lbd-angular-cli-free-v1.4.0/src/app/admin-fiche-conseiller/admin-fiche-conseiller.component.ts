@@ -47,7 +47,6 @@ export class AdminFicheConseillerComponent implements OnInit {
       nomUtilisateur: ['', Validators.required ],
       mdp: ['', [Validators.required, Validators.minLength(6)]],
       email: ['', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]],
-  		adresse: this.fb.group(new Adresse()), // todo : validators
       numTel: ['', [Validators.required, Validators.minLength(10), Validators.pattern("[0-9]+")]],
       dateDebutContrat: ['', Validators.required] // https://stackoverflow.com/questions/37055311/angular2-how-to-use-javascript-date-object-with-ngmodel-two-way-binding/37055451#37055451
   	});
@@ -61,8 +60,7 @@ export class AdminFicheConseillerComponent implements OnInit {
         nom: this.conseiller.nom,
         nomUtilisateur: this.conseiller.nomUtilisateur,
         mdp: this.conseiller.password,
-        email: this.conseiller.email,
-        adresse: this.conseiller.adresse || new Adresse(), 
+        email: this.conseiller.email, 
         numTel: this.conseiller.numTel,
         dateDebutContrat: this.conseiller.dateDebutContrat/*.toLocaleDateString()*/      
       }); 
@@ -115,7 +113,6 @@ export class AdminFicheConseillerComponent implements OnInit {
       nomUtilisateur: formModel.nomUtilisateur as string,
       password: formModel.mdp as string,
       email: formModel.email as string,
-      adresse: formModel.adresse,
       numTel: formModel.numTel,
       dateDebutContrat: formModel.dateDebutContrat, // non modifiable si conseiller existe
       clients: this.conseiller.clients || [],
