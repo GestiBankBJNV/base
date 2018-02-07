@@ -1,0 +1,22 @@
+<div class="main-content">
+	<h2>Nouvelles Inscription</h2>
+  <p>Liste des nouvelles inscriptions</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>date d'inscription</th>
+        <th>date d'affectation</th>
+        <th>Libellé</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let demande of demandes" (click)="verifInscription(demande)">
+      	<td>{{demande.date | date:'dd/MM/yyyy'}}</td>
+      	<td>{{demande.dateAffectation | date:'dd/MM/yyyy'}}</td>
+      	<td>{{demande.libelle}}</td>
+      	<td>{{demande.statut}}</td>        
+      </tr>      
+    </tbody>
+  </table>
+</div>

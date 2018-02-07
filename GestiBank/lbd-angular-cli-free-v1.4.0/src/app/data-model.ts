@@ -152,9 +152,9 @@ export const demandesInscription: DemandeInscription[] = [
     id: 1,
     date: new Date(2018,0,15),
     dateAffectation: undefined,
-    statut: '',
+    statut: 'en cours',
     libelle: "inscription",
-    coordonnees: {email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859'}
   },
   {
     id: 2,
@@ -162,15 +162,15 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: new Date(2017,6,12),
     statut: 'traitée',
     libelle: "inscription",
-    coordonnees: {email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859'}
   },
   {
     id: 3,
     date: new Date(2018,0,7),
     dateAffectation: undefined,
-    statut: '',
+    statut: 'en cours',
     libelle: "inscription",
-    coordonnees: {email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859'}
   },
   {
     id: 4,
@@ -178,23 +178,23 @@ export const demandesInscription: DemandeInscription[] = [
     dateAffectation: new Date(2018,0,11),
     statut: 'en cours',
     libelle: "inscription",
-    coordonnees: {email:"philip@truc.com", prenom: "Philip", nom: "Chaney", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {email:"philip@truc.com", prenom: "Philip", nom: "Chaney", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859'}
   },
   {
     id: 5,
     date: new Date(2018,0,13),
     dateAffectation: undefined,
-    statut: '',
+    statut: 'en cours',
     libelle: "inscription",
-    coordonnees: {email:"doris@truc.com", prenom: "Doris", nom: "Greene", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {email:"doris@truc.com", prenom: "Doris", nom: "Greene", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859'}
   },
   {
     id: 6,
     date: new Date(2018,0,10),
     dateAffectation: undefined,
-    statut: '',
+    statut: 'en cours',
     libelle: "inscription",
-    coordonnees: {email:"mason@truc.com", prenom: "Mason", nom: "Porter", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859',}
+    coordonnees: {email:"mason@truc.com", prenom: "Mason", nom: "Porter", adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859'}
   },
 ];
 
