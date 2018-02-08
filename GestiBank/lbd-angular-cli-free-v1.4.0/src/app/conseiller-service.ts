@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Conseiller, conseillers, Client } from './data-model';
+import { Conseiller, conseillers, Client, Demande } from './data-model';
 
 @Injectable()
 export class ConseillerService { // Correspond finalement aux méthodes de l'admin, mais je ne vais pas modifier le nom maintenant...
@@ -110,7 +110,15 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
   }
 
   getClientFromConseiller(conseiller: Conseiller){
+  }
 
+  getListDemandeInscriptionByConseiller(id: string){
+
+    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
+
+    let demandes: Demande[] = conseiller.demandes;
+
+    return demandes;
 
   }
 }

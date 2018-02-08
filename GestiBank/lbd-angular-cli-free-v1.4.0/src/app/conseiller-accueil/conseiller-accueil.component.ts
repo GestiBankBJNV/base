@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
-
-import { Conseiller, Client } from '../data-model';
+import { DatePipe } from '@angular/common';
+import { Conseiller, Client, Demande } from '../data-model';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -12,16 +12,76 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class ConseillerAccueilComponent implements OnInit {
+<<<<<<< HEAD
 	//Création de la variable de type clients pour la récupération des clients affectés au conseiller.
 	clients: Client[];
+=======
+
+	clients: Client[];// récuperation des clients
+  demandes: Demande[]; //récuperation des demandes par client
+  nomDemande: String;//recuperation du nom de la demande
+  indexClient: number;//recuperation de l'index du client
+  idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
+  isDetailDemande: boolean = false;//initialisation de la vue des demande sur false
+>>>>>>> 1e952cd0cfdfe1793f0fd21c4b439e54d566265f
 
   constructor(private conseillerService: ConseillerService) { }
 
   ngOnInit() {
 
+<<<<<<< HEAD
   	//initiatlisation pour l'affichage dans le tableau des différents clients.
   	this.clients = this.conseillerService.getListeClientsFromConseiller("0002");
+=======
+  	this.clients = this.conseillerService.getListeClientsFromConseiller("0002");
 
+  }
+
+  voirDemande(c: Client, indexC: number){
+
+    //si l'id cliqué est différent de l'ancien id et qu'il y a
+    //au moins une demande le tableau des demandes clients s'ouvrent
+    if (c.id != this.idSelectionne && c.demandes.length != 0) {
+      this.isDetailDemande = true;
+      this.demandes = c.demandes;
+      this.nomDemande = c.nom;
+      this.idSelectionne = c.id;
+      this.indexClient = indexC;
+    }else{// on réinitialise les varaibles lors de la fermeture du tableau
+      this.isDetailDemande = false;  
+      this.idSelectionne = null;
+      this.indexClient = null;
+      
+    }
+
+  }
+
+  //validation d'une demande
+  demandeTraite(d: Demande){
+
+    //recupération de l'index de la liste des demandes
+    let indexToRemove = this.demandes.indexOf(d);
+
+    //remove de la demande en recupérant l'indice du client et l'indice de la demande
+    //quand le conseiller valide la demande
+    this.clients[this.indexClient].demandes.splice(indexToRemove, 1);
+
+    //si le client n'a plus de demande après la validation d'une demande
+    //on réinitilise le tableau pour le fermer.
+    if (this.demandes.length === 0) {
+      this.isDetailDemande = false;
+      this.idSelectionne = null;
+      this.indexClient = null;
+    }
+  }
+>>>>>>> 1e952cd0cfdfe1793f0fd21c4b439e54d566265f
+
+  //fermeture d'une demande sans la supprimer 
+  //A vérifier si on a le droit de supprimer une demande client
+  fermerfenetre(){
+      this.isDetailDemande = false;
+      this.idSelectionne = null;
+      this.indexClient = null;
   }
 
 }
