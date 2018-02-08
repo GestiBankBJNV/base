@@ -82,7 +82,9 @@
 					</tr>
 				</tbody>
 			</table>
-			<app-client-pagination></app-client-pagination>
+			<div class="row">
+				<app-client-pagination class="col-md-offset-3 col-md-6" (goPrev)='prevPage()' (goNext)='nextPage()' (goPage)='goPage($event)' [page]='currentPage + 1' [count]='selectedCompte.operations.length' [perPage]='displayedCount' [pagesToShow]='5'></app-client-pagination>
+			</div>
 		</div>
 		<div *ngIf="(transfer)" class="card">
 			<div class="header">

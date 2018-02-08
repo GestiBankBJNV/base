@@ -18,7 +18,7 @@
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
             <a  [routerLink]="[menuItem.path]">
                 <i class="{{menuItem.icon}}"></i>
-                <p (click)="refresh()">{{menuItem.title}}</p>
+                <p (click)="refresh()">{{menuItem.title | translate}}</p>
             </a>
         </li>
         <!--Si on est sur mobile, le bouton deconnexion se retrouve également dans la sidebar

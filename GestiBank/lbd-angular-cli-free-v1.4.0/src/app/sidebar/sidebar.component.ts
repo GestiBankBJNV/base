@@ -37,7 +37,7 @@ export const ROUTES_ADMIN : RouteInfo[] = [
 
 //Routes - espace Client
 export const ROUTES_CLIENT : RouteInfo[] = [
-    { path: 'client_accueil', title: 'Accueil',  icon:'pe-7s-home', class: '' },
+    { path: 'client_accueil', title: 'client_route_accueil',  icon:'pe-7s-home', class: '' },
     { path: 'client_profil', title: 'Mon profil',  icon:'pe-7s-user', class: '' },
     { path: 'client_notifications', title: 'Messages',  icon:'pe-7s-mail', class: '' },
     { path: 'client_comptes', title: 'Gérer mes comptes',  icon:'pe-7s-graph', class: '' },
