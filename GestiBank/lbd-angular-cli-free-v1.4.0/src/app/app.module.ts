@@ -52,7 +52,6 @@ import { LoginComponent } from './login/login.component';
 import { ConseillerService } from './conseiller-service'; /*****/
 import { ClientService } from './client-service'; /*****/
 import { DemandeService } from './demande-service';
-<<<<<<< HEAD
 
 //Fonctions utilisées par le module de traduction
 // AoT requires an exported function for factories
@@ -62,9 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-=======
 import { NewInscriptionComponent } from './new-inscription/new-inscription.component'; /*****/
->>>>>>> Nassim
 
 @NgModule({
   declarations: [
@@ -90,11 +87,8 @@ import { NewInscriptionComponent } from './new-inscription/new-inscription.compo
     UserComponent,
     TablesComponent,
     TypographyComponent,
-<<<<<<< HEAD
-    ClientPaginationComponent
-=======
+    ClientPaginationComponent,
     NewInscriptionComponent
->>>>>>> Nassim
   ],
   imports: [
     AppRoutingModule,
