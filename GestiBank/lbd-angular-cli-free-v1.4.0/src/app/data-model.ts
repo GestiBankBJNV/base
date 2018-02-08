@@ -179,7 +179,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     nbEnfants: 0,
     situationMatrimoniale: 'pacsé',
     comptes: [],
-    demandes: []
+    demandes: [new DemandeChequier()]
   },
   {
     id: 4,    
