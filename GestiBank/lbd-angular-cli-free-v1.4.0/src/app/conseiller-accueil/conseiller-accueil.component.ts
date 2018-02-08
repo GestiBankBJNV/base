@@ -12,17 +12,15 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class ConseillerAccueilComponent implements OnInit {
-
-	//nseillerService: ConseillerService =  new ConseillerService();
-	//conseiller: Conseiller[];
+	//Création de la variable de type clients pour la récupération des clients affectés au conseiller.
 	clients: Client[];
 
   constructor(private conseillerService: ConseillerService) { }
 
   ngOnInit() {
 
-  	this.clients = this.conseillerService.getListeClientsFromConseiller("0003");
-  	console.log(this.clients[0]);
+  	//initiatlisation pour l'affichage dans le tableau des différents clients.
+  	this.clients = this.conseillerService.getListeClientsFromConseiller("0002");
 
   }
 
