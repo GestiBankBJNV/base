@@ -47,6 +47,7 @@ export const ROUTES_CLIENT : RouteInfo[] = [
 //Routes - espace Conseiller
 export const ROUTES_CONSEILLER : RouteInfo[] = [
     { path: 'conseiller_accueil', title: 'Accueil',  icon:'pe-7s-user', class: '' },
+    { path: 'conseiller_new_inscription', title: 'Nouveaux', icon:'pe-7s-add-user', class: ''},
     { path: 'conseiller_devises', title: 'Devises',  icon:'pe-7s-cash', class: '' }
 
 ];

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Conseiller, conseillers, Client } from './data-model';
+import { Conseiller, conseillers, Client, Demande } from './data-model';
 
 @Injectable()
 export class ConseillerService { // Correspond finalement aux méthodes de l'admin, mais je ne vais pas modifier le nom maintenant...
@@ -35,6 +35,27 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
       }
     }
     return of(temp).delay(this.delayMs);
+  }
+
+   getConseillersByIdSimple(id: string): Conseiller{
+    var temp: Conseiller;
+
+    for(var i=0; i<conseillers.length; i++){
+      // mettre dans temp les conseillers ayant le nom recherché
+      if(conseillers[i].matricule === id) {
+         temp = conseillers[i];
+         break;
+         /*console.log('conseillers trouvé : ' + conseillers[i].nom);*/
+      }
+    }
+    return temp;
+  }
+
+  getListeClientsFromConseiller(id : string){
+    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
+    return conseiller.clients;    
+
+
   }
 
   getConseillersByID(id: string): Observable<Conseiller[]> {
@@ -87,5 +108,18 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
 
   deleteConseiller(conseiller: Conseiller) {
     conseillers.splice(conseillers.indexOf(conseiller), 1);
+  }
+
+  getClientFromConseiller(conseiller: Conseiller){
+  }
+
+  getListDemandeInscriptionByConseiller(id: string){
+
+    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
+
+    let demandes: Demande[] = conseiller.demandes;
+
+    return demandes;
+
   }
 }
