@@ -11,11 +11,8 @@ import { Observable } from 'rxjs/Observable';
   providers:[ConseillerService]
 })
 
-export class ConseillerAccueilComponent implements OnInit {
-<<<<<<< HEAD
-	//Création de la variable de type clients pour la récupération des clients affectés au conseiller.
-	clients: Client[];
-=======
+export class ConseillerAccueilComponent implements OnInit {	
+
 
 	clients: Client[];// récuperation des clients
   demandes: Demande[]; //récuperation des demandes par client
@@ -23,16 +20,13 @@ export class ConseillerAccueilComponent implements OnInit {
   indexClient: number;//recuperation de l'index du client
   idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
   isDetailDemande: boolean = false;//initialisation de la vue des demande sur false
->>>>>>> 1e952cd0cfdfe1793f0fd21c4b439e54d566265f
 
   constructor(private conseillerService: ConseillerService) { }
 
   ngOnInit() {
 
-<<<<<<< HEAD
+
   	//initiatlisation pour l'affichage dans le tableau des différents clients.
-  	this.clients = this.conseillerService.getListeClientsFromConseiller("0002");
-=======
   	this.clients = this.conseillerService.getListeClientsFromConseiller("0002");
 
   }
@@ -74,7 +68,6 @@ export class ConseillerAccueilComponent implements OnInit {
       this.indexClient = null;
     }
   }
->>>>>>> 1e952cd0cfdfe1793f0fd21c4b439e54d566265f
 
   //fermeture d'une demande sans la supprimer 
   //A vérifier si on a le droit de supprimer une demande client
