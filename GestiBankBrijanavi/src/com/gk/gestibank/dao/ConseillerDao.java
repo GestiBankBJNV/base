@@ -2,6 +2,8 @@ package com.gk.gestibank.dao;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
 

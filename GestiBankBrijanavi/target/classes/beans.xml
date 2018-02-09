@@ -11,7 +11,7 @@
         <!-- Root Context: defines shared resources visible to all other web components -->
         <context:component-scan base-package="com.gk.gestibank" />
 
-        <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+        <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
                 p:driverClassName="com.mysql.jdbc.Driver"
                 p:url="jdbc:mysql://localhost/AnnuaireExpertise"
                 p:username="CompteAnnuaire"
@@ -29,13 +29,13 @@
                 <prop key="hibernate.format_sql">true</prop>
             </props>
                 </property>
-                <!--
+                
                 <property name="mappingResources">
                 <list>
                     <value>hibernate.cfg.xml</value>
                         </list>
                 </property>
-                 -->
+                
         </bean>
 
         <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
@@ -55,8 +55,8 @@
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 	<property name="location">
 		<value>classpath:app.properties</value>
-	</property>
-</bean>
+	</property> 
+</bean> -->
 	
 	
 </beans>

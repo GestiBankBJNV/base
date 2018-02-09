@@ -1,0 +1,42 @@
+package com.gk.gestibank.service.conseiller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.gk.gestibank.model.Conseiller;
+
+public class GestionnaireConseiller implements IGererConseillers {
+	
+	List<Conseiller> conseillers = new ArrayList<Conseiller>();
+
+	@Override
+	public List<Conseiller> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void createConseiller(Conseiller conseiller) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteConseiller(String matricule) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateConseiller(Conseiller conseiller) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Conseiller getConseillerByNameOrMatricule(String recherche) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
