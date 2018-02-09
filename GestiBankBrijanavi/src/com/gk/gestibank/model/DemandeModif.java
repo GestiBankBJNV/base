@@ -1,9 +1,13 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DemandeModif extends DemandeClient {
 
+	@Autowired
 	private Client coordonnees;
 	
 	public DemandeModif() {

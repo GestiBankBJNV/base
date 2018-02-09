@@ -9,7 +9,7 @@ import com.gk.gestibank.model.Conseiller;
 
 public class ConseillerDaoImpl implements ConseillerDao {
 	
-	public ArrayList<Conseiller> conseillers = new ArrayList<Conseiller>() ; // todo : remplacer par SessionFactory...
+	public ArrayList<Conseiller> conseillers = new ArrayList<Conseiller>() ; // todo : remplacer par SessionFactory... (accès àa la BDD)
 
 	@Override
 	public List<Conseiller> getAll() {
@@ -22,8 +22,8 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	}
 
 	@Override
-	public void updateConseiller(Conseiller conseiller) {
-		conseillers.get(conseillers.indexOf(conseiller));		
+	public void updateConseiller(Conseiller conseiller) {	
+		// TODO Auto-generated method stub
 	}
 
 	@Override
@@ -33,28 +33,9 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	}
 
 	@Override
-	public Client getClientByName(String nom) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Client getClientById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Conseiller getConseillerByNameOrMatricule(String nom,
 			String matricule) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public boolean validerDemande() {
-		return false;
-		// TODO Auto-generated method stub
-	}
-
 }

@@ -2,12 +2,15 @@ package com.gk.gestibank.dao;
 
 import java.util.List;
 
+import com.gk.gestibank.model.Compte;
 import com.gk.gestibank.model.Operation;
 
 public interface CompteDao {
 
-	public void crediter(double montant);
-	public void debiter(double montant);
-	public List<Operation> getAllOperations();
-	// todo : autres méthodes ?
+	public List<Compte> getAll();
+	public void createCompte(Compte compte);
+	public void deleteCompte(int code);
+	public void updateMontant(double montant);
+	public List<Operation> getAllOperationsFromCompte(int code);
+	public Compte getCompteByCode(int code);
 }

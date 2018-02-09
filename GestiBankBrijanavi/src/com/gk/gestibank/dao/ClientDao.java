@@ -7,7 +7,9 @@ import com.gk.gestibank.model.Client;
 public interface ClientDao {
 
 	public List<Client> getAll();
-	public void updatePassword(String mdp);
-	public void visualiserCompte(int numero);
-	// todo : autres méthodes ?
+	public void createClient(Client client);
+	public void updateClient(Client client);
+	public void deleteClient(int id);
+	public void getClientByName(String nom);
+
 }

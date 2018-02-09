@@ -11,10 +11,5 @@ public interface ConseillerDao {
 	public void createConseiller(Conseiller conseiller);
 	public void updateConseiller(Conseiller conseiller);
 	public void deleteConseiller(String Matricule);
-	public Client getClientByName(String nom);
-	public Client getClientById(int id);
 	public Conseiller getConseillerByNameOrMatricule(String nom, String matricule);
-	public boolean validerDemande();
-	
-	// todo : autres méthodes ?
 }

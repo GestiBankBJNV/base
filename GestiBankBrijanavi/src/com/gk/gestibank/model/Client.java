@@ -2,16 +2,22 @@ package com.gk.gestibank.model;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Client extends Utilisateur {
 	
 	private int nbEnfants;
 	private String situationMatrimoniale;
+	@Autowired
 	private Set<Compte> comptes;
 	private String adresse;
 	private String ville;
 	private String cp;
+	@Autowired
 	private Set<DemandeClient> demandes;
+	@Autowired
 	private Set<Notification> notifications;
 	
 	public Client() {

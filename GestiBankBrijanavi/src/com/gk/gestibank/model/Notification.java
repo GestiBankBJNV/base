@@ -1,7 +1,9 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class Notification {
 
 	private String libelle;
