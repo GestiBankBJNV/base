@@ -1,0 +1,10 @@
+
+public class Notification {
+
+	private String libelle
+	private Date date;
+	
+	public Notification() {
+	}
+
+}

@@ -1,0 +1,9 @@
+
+public class Compte {
+	private int code;
+	private double solde;
+
+	public Compte() {
+	}
+
+}

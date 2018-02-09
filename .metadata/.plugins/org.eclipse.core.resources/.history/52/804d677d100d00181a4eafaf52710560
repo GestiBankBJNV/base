@@ -1,0 +1,60 @@
+package com.gk.gestibank.dao.impl;
+
+import java.util.List;
+
+import com.gk.gestibank.dao.ConseillerDao;
+import com.gk.gestibank.model.Client;
+import com.gk.gestibank.model.Conseiller;
+
+public class ConseillerDaoImpl implements ConseillerDao {
+
+	@Override
+	public List<Conseiller> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void createConseiller(Conseiller conseiller) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateConseiller(Conseiller conseiller) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteConseiller(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Client getClient(String nom) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Client getClientById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Conseiller getConseillerByNameOrMatricule(String nom,
+			String matricule) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void validerDemande() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

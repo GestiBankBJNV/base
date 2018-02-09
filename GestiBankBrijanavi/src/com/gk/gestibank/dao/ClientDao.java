@@ -1,0 +1,13 @@
+package com.gk.gestibank.dao;
+
+import java.util.List;
+
+import com.gk.gestibank.model.Client;
+
+public interface ClientDao {
+
+	public List<Client> getAll();
+	public void updatePassword(String mdp);
+	public void visualiserCompte(int numero);
+	// todo : autres méthodes ?
+}

@@ -1,0 +1,16 @@
+import java.util.Date;
+
+
+public class DemandeModif extends DemandeClient {
+
+	public DemandeModif() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public DemandeModif(int id, Date date, Date dateAffectation, String statut,
+			String libelle) {
+		super(id, date, dateAffectation, statut, libelle);
+		// TODO Auto-generated constructor stub
+	}
+
+}

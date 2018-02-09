@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;IChargerDonnees.java&apos; to &apos;GestiBankBrijanavi/src/com.gk.gestibank.conseiller.service.impl.txt&apos;&#x0D;&#x0A;- Original project: &apos;TP2SpringExpertiseData&apos;&#x0D;&#x0A;- Destination element: &apos;GestiBankBrijanavi/src/com.gk.gestibank.conseiller.service.impl.txt&apos;&#x0D;&#x0A;- Original element: &apos;fr.eni.spring.expert.service.impl.txt.IChargerDonnees.java&apos;" description="Copy compilation unit" destination="=GestiBankBrijanavi/src&lt;com.gk.gestibank.conseiller.service.impl.txt" element1="/src\/main\/java&lt;fr.eni.spring.expert.service.impl.txt{IChargerDonnees.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1518121418041" units="1" version="1.0"/>
+</session>

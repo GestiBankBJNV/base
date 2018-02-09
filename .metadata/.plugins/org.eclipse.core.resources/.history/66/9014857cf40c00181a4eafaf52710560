@@ -1,0 +1,15 @@
+import java.util.Date;
+
+
+public class DemandeClient {
+
+	private int id;
+	private Date date;
+	private Date dateAffectation;
+	private String statut;
+	private String libelle;
+	
+	public DemandeClient() {
+	}
+
+}

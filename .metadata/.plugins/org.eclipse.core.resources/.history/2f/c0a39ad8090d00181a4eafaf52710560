@@ -1,0 +1,5 @@
+package com.gk.gestibank.dao.copy;
+
+public interface NotificationDao {
+
+}

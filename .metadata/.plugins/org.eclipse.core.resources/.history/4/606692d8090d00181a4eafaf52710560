@@ -1,0 +1,8 @@
+package com.gk.gestibank.dao.copy;
+
+import com.gk.gestibank.model.DemandeInscription;
+
+public interface UtilisateurDao {
+	public void demanderInscription(DemandeInscription demandeInscription);
+	// todo: autres méthodes ?
+}
