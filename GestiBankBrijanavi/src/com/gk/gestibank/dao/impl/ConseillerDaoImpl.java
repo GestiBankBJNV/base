@@ -18,9 +18,19 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	public ArrayList<Conseiller> conseillers = new ArrayList<Conseiller>() ; // todo : remplacer par SessionFactory... (accès à la BDD)
 	
 	public ConseillerDaoImpl() {
+		chargerConseillers();
+	}
+	
+	public void chargerConseillers(){
+		List<Client> clients = new ArrayList<Client>();
+		Client cl = new Client();
+		cl.setNom("Test");
+		cl.setId(1);
+		clients.add(cl);
+		
 		Conseiller c1 = new Conseiller(1, "Jeanne", "Grelier", "Jaja", "1234", 
 				"j@email.com", "0658654236", "conseiller", 
-				"425A", new Date(), new ArrayList<Client>(), 
+				"425A", new Date(), clients, 
 				new ArrayList<DemandeInscription>());
 		Conseiller c2 = new Conseiller(2, "JD", "Eymann", "Jdeon", "1234", 
 				"jd@email.com", "0657894236", "conseiller", 
@@ -30,6 +40,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 				"jo@email.com", "0658656546", "conseiller", 
 				"427A", new Date(), new ArrayList<Client>(), 
 				new ArrayList<DemandeInscription>());
+		
 		conseillers.add(c1);
 		conseillers.add(c2);
 		conseillers.add(c3);
@@ -47,19 +58,65 @@ public class ConseillerDaoImpl implements ConseillerDao {
 
 	@Override
 	public void updateConseiller(Conseiller conseiller) {	
-		// TODO Auto-generated method stub
+		int i = conseillers.indexOf(conseiller);
+		conseillers.set(i, conseiller);
 	}
 
 	@Override
 	public void deleteConseiller(String matricule) {
-		// TODO Auto-generated method stub
+		for(Conseiller c : conseillers){
+			if(c.getMatricule() == matricule){
+				conseillers.remove(c);
+				break;
+			}
+		}
+	}
+
+	@Override
+	public Conseiller getConseillerByNameOrMatricule(String recherche) {
+		for(Conseiller c : conseillers){
+			if(c.getNom() == recherche || c.getMatricule() == recherche ){
+				return c;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public List<Client> getClientsFromConseiller(String matricule) {
+		Conseiller c = getConseillerByNameOrMatricule(matricule);
+		return c.getClients();
+	}
+
+	@Override
+	public void addClientToConseiller(Client client, String matricule) {
+		List<Client> clients = getClientsFromConseiller(matricule);
+		clients.add(client);
+		
+		getConseillerByNameOrMatricule(matricule).setClients(clients);		
+	}
+
+	@Override
+	public void deleteClientFromConseiller(int idClient, String matricule) {
+		List<Client> clients = getClientsFromConseiller(matricule);
+		Client client = new Client();
+		client.setId(idClient);
+		clients.remove(client);
+		
+		getConseillerByNameOrMatricule(matricule).setClients(clients);
 		
 	}
 
 	@Override
-	public Conseiller getConseillerByNameOrMatricule(String nom,
-			String matricule) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule) {
+		Conseiller c = getConseillerByNameOrMatricule(matricule);
+		return c.getDemandesInscription();
 	}
+	
+	@Override
+	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule) {
+		// TODO Auto-generated method stub
+		
+	}	
+
 }

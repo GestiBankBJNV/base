@@ -103,16 +103,15 @@ public class Client extends Utilisateur {
 
 	@Override
 	public String toString() {
-		return "Client [getNbEnfants()=" + getNbEnfants()
-				+ ", getSituationMatrimoniale()=" + getSituationMatrimoniale()
-				+ ", getComptes()=" + getComptes() + ", getAdresse()="
-				+ getAdresse() + ", getVille()=" + getVille() + ", getCp()="
-				+ getCp() + ", getDemandes()=" + getDemandes()
-				+ ", getNotifications()=" + getNotifications() + ", getId()="
-				+ getId() + ", getPrenom()=" + getPrenom() + ", getNom()="
-				+ getNom() + ", getNomUtilisateur()=" + getNomUtilisateur()
-				+ ", getPassword()=" + getPassword() + ", getEmail()="
-				+ getEmail() + ", getNumTel()=" + getNumTel()
-				+ ", getStatut()=" + getStatut() + "]";
+		return "Client [Id : " + getId() + ", Prenom : " + getPrenom() + ", Nom : "
+				+ getNom() + ", NomUtilisateur : " + getNomUtilisateur()
+				+ ", Password : " + getPassword() + ", Email : "
+				+ getEmail() + ", NumTel : " + getNumTel()
+				+ ", Statut : " + getStatut() + "NbEnfants : " + getNbEnfants()
+				+ ", SituationMatrimoniale : " + getSituationMatrimoniale()
+				+ ", Comptes : " + getComptes() + ", Adresse : "
+				+ getAdresse() + ", Ville : " + getVille() + ", Cp : "
+				+ getCp() + ", Demandes : " + getDemandes()
+				+ ", Notifications : " + getNotifications() + "]";
 	}
 }

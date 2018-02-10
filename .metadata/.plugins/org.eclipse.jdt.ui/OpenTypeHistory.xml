@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=GestiBankBrijanavi/src&lt;com.gk.gestibank.dao{ClientDao.java[ClientDao" modifiers="513" timestamp="1518112830378"/>
+<typeInfo handle="=GestiBankBrijanavi/src&lt;com.gk.gestibank.dao{ClientDao.java[ClientDao" modifiers="513" timestamp="1518179101567"/>
 <typeInfo handle="=GestiBankBrijanavi/src&lt;com.gk.gestibank.service.conseiller{IChargerConseiller.java[IChargerConseiller" modifiers="513" timestamp="1518182523753"/>
+<typeInfo handle="=GestiBankBrijanavi/src&lt;com.gk.gestibank.service.conseiller{IGererConseillers.java[IGererConseillers" modifiers="513" timestamp="1518196358029"/>
 </typeInfoHistroy>
