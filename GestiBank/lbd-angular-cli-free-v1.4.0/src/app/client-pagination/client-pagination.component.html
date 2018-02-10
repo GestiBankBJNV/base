@@ -1,8 +1,12 @@
+<!-- PAGINATION -->
 <div class="pagination" *ngIf="(totalPages() > 1)">
-	<span>Page {{ page }} sur {{ totalPages() }} --</span>
-	
-	<button class="btn btn-primary" (click)="onPrev()" [disabled]="page === 1 || loading">{{ 'client_pagination_previous' | translate }}</button>
+	<!-- "Page x / y" -->
+	<span>Page {{ page }} / {{ totalPages() }} --</span>
+	<!-- Précédent -->
+	<button class="btn btn-primary" (click)="onPrev()" [disabled]="page == 1">{{ 'client_pagination_previous' | translate }}</button>
+	<!-- Liste de page -->
 	<a *ngFor="let pageNum of getPages()" (click)='onPage(pageNum)'>{{ pageNum + 1}}</a>
-	<button class="btn btn-primary" (click)="onNext()" [disabled]="lastPage() || loading">{{ 'client_pagination_next' | translate }}</button>
-	<span>-- {{ count }} opérations</span>
+	<!-- Suivant -->
+	<button class="btn btn-primary" (click)="onNext()" [disabled]="lastPage()">{{ 'client_pagination_next' | translate }}</button>
+	<span>-- {{ count }} {{ client_pagination_operations | translate }}</span>
 </div>
