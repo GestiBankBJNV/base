@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
+import com.gk.gestibank.model.DemandeInscription;
 
 public interface IConseillerService {
 
@@ -14,5 +15,6 @@ public interface IConseillerService {
 	public Conseiller getConseillerByNameOrMatricule(String recherche);
 	public void addClientToConseiller(Client client, String matricule);
 	public void deleteClientFromConseiller(int idClient, String matricule);
-
+	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule);
+	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule);
 }

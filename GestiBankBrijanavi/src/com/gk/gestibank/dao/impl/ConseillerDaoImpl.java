@@ -115,8 +115,10 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	
 	@Override
 	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule) {
-		// TODO Auto-generated method stub
+		List<DemandeInscription> inscription = getInscriptionsFromConseiller(matricule);
+		inscription.add(demandeInscription);
 		
+		getConseillerByNameOrMatricule(matricule).setDemandesInscription(inscription);		
 	}	
 
 }

@@ -11,6 +11,7 @@ import com.gk.gestibank.dao.ConseillerDao;
 import com.gk.gestibank.dao.impl.ConseillerDaoImpl;
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
+import com.gk.gestibank.model.DemandeInscription;
 
 @Service
 public class ConseillerService implements IConseillerService {
@@ -58,6 +59,18 @@ public class ConseillerService implements IConseillerService {
 	public void deleteClientFromConseiller(int idClient, String matricule) {
 		// vérifs ?
 		conseillerDao.deleteClientFromConseiller(idClient, matricule);		
+	}
+
+	@Override
+	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule) {
+		// vérifs ?
+		return conseillerDao.getInscriptionsFromConseiller(matricule);
+	}
+
+	@Override
+	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule) {
+		// vérifs ?
+		conseillerDao.addInscriptionToConseiller(demandeInscription, matricule);
 	}
 
 }
