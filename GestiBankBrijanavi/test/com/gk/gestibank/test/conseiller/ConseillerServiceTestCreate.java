@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.gk.gestibank.dao.impl.ConseillerDaoImpl;
@@ -17,7 +18,7 @@ public class ConseillerServiceTestCreate {
 
 	public static void main(String[] args) {		
 				
-		ApplicationContext context = new FileSystemXmlApplicationContext("C:/Users/Jeanne/Documents/GitHub/base/GestiBankBrijanavi/resources/beans.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		ConseillerService gestionConseillers = (ConseillerService) context.getBean("conseillerService");
 		
 		Conseiller conseiller = new Conseiller();
