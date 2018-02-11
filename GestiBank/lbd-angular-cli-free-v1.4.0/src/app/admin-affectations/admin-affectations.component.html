@@ -27,61 +27,69 @@
 	<div class="tab-content">
 		<div id="demandes" class="tab-pane active">
 
-			<!-- ============== Titre ============== -->
-			<div class="header">				
-				<h4>{{ 'admin_affectations_tableau_titre' | translate }}</h4>
-			</div>
+			<accordion>
+				<accordion-group [isOpen]="derouler">
+				<!-- ============== Titre ============== -->
+    			<div accordion-heading class="clearfix">
+			     	<h4>{{ 'admin_affectations_tableau_titre' | translate }}</h4>	
+					<!-- TODO : ajouter une fleche -->      
+			    </div>
 
-			<!-- ============== Bouton de filtrage ============== -->
-			<div class="content">
-				<div class="dropdown">
-					<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-						{{ 'admin_affectations_bouton_filtre' | translate }}
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" role="menu">
-						<li role="presentation"><a role="menuitem" tabindex="-1" (click)='getDemandes()'>Toutes les demandes</a></li>
-						<li role="presentation" class="divider"></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1"  (click)="filtrerDemandes('nonAffectee')">Demandes non affectées</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('affectee')">Demandes affectées</a></li>			
-						<li role="presentation" class="divider"></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('enCours')">En cours</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('traitee')">Traitée</a></li>				
-					</ul>
-				</div>										
-			</div>
+				<!-- ============== Bouton de filtrage ============== -->
+				<div class="content">
+					<div class="dropdown">
+						<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+							{{ 'admin_affectations_bouton_filtre' | translate }}
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)='getDemandes()'>Toutes les demandes</a></li>
+							<li role="presentation" class="divider"></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1"  (click)="filtrerDemandes('nonAffectee')">Demandes non affectées</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('affectee')">Demandes affectées</a></li>			
+							<li role="presentation" class="divider"></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('enCours')">En cours</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('traitee')">Traitée</a></li>				
+						</ul>
+					</div>										
+				</div>
 
-			<!-- ============== Tableau des demandes ============== -->
-			<div class="content table-responsive table-full-width">
-		        <table class="table table-hover">
-		        	<!-- Titres des colonnes -->
-	                <thead>
-	                    <tr>
-	                    	<th class="text-right">N°</th>
-	                      	<th>{{ 'prenom' | translate }}</th>
-	                      	<th>{{ 'nom' | translate }}</th>
-	                      	<th><a (click)='trierDateDemande()'>{{ 'dateDemande' | translate }}</a></th> <!-- tri de la colonne au clic sur son titre -->
-	                      	<th><a (click)='trierDateAffectation()'>{{ 'dateAffectation' | translate }}</a></th> <!-- tri de la colonne au clic sur son titre -->
-	                      	<th>{{ 'statut' | translate }}</th>
-	                    </tr>
-	                </thead>
-	                <!-- Contenu des lignes récupéré depuis une liste de demandes -->
-	              	<tbody>
-	                  	<tr *ngFor="let demande of demandes | async">
-	                  		<td class="text-right">{{ demande.id }}</td>
-	                      	<td>{{ demande.coordonnees.prenom }}</td>
-	                      	<td>{{ demande.coordonnees.nom }}</td>							                      
-	                      	<td>{{ demande.date | date:'dd/MM/yyyy'}}</td>
-	                      	<td>{{ demande.dateAffectation | date:'dd/MM/yyyy'}}</td>
-	                      	<td>{{ demande.statut }}</td>
-	                      	<!-- bouton pour affecter la demande à un conseiller -->
-	                      	<td><a href="/admin_affectations#association"><button *ngIf="demande.dateAffectation == undefined" (click)="affect(demande)" class="btn btn-danger btn-xs">{{ 'affecter' | translate }}</button></a></td>							                      
-	                  	</tr>
-	              	</tbody>
-		        </table>
-		        <!-- Affichage lors du chargement du tableau -->
-		        <p *ngIf="isLoading" class="text-center"><i>{{ 'loading' | translate }}</i></p>
-		    </div>							    
+				<!-- ============== Tableau des demandes ============== -->
+				<!-- https://valor-software.com/ngx-bootstrap/#/accordion -->
+    	
+				<div class="content table-responsive table-full-width">
+			        <table class="table table-hover">
+			        	<!-- Titres des colonnes -->
+		                <thead>
+		                    <tr>
+		                    	<th class="text-right">N°</th>
+		                      	<th>{{ 'prenom' | translate }}</th>
+		                      	<th>{{ 'nom' | translate }}</th>
+		                      	<th><a (click)='trierDateDemande()'>{{ 'dateDemande' | translate }}</a></th> <!-- tri de la colonne au clic sur son titre -->
+		                      	<th><a (click)='trierDateAffectation()'>{{ 'dateAffectation' | translate }}</a></th> <!-- tri de la colonne au clic sur son titre -->
+		                      	<th>{{ 'statut' | translate }}</th>
+		                    </tr>
+		                </thead>
+		                <!-- Contenu des lignes récupéré depuis une liste de demandes -->
+		              	<tbody>
+		                  	<tr *ngFor="let demande of demandes | async">
+		                  		<td class="text-right">{{ demande.id }}</td>
+		                      	<td>{{ demande.coordonnees.prenom }}</td>
+		                      	<td>{{ demande.coordonnees.nom }}</td>							                      
+		                      	<td>{{ demande.date | date:'dd/MM/yyyy'}}</td>
+		                      	<td>{{ demande.dateAffectation | date:'dd/MM/yyyy'}}</td>
+		                      	<td>{{ demande.statut }}</td>
+		                      	<!-- bouton pour affecter la demande à un conseiller -->
+		                      	<td><a href="/admin_affectations#association"><button *ngIf="demande.dateAffectation == undefined" (click)="affect(demande)" class="btn btn-danger btn-xs">{{ 'affecter' | translate }}</button></a></td>							                      
+		                  	</tr>
+		              	</tbody>
+			        </table>
+			        <!-- Affichage lors du chargement du tableau -->
+			        <p *ngIf="isLoading" class="text-center"><i>{{ 'loading' | translate }}</i></p>
+			    </div>		
+			</accordion-group>
+	    </accordion>
+
 		
 		
 			<!-- ============== S'affiche si on clique sur le bouton dans le tableau ============== -->

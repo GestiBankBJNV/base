@@ -38,6 +38,7 @@ export class AdminAffectationsComponent implements OnInit {
   selectedDemande: DemandeInscription; // garder sous la main la demande que l'on va affecter à un conseiller
   selectedClient: Client; // Pour l'onglet modifs
   selectedConseiller: Conseiller; // Pour l'onglet modifs
+  derouler: boolean = true; // Pour l'accordion
 
 /* traduction https://stackoverflow.com/questions/45870513/angular-ngx-translate-usage-in-typescript*/
 	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService, private translate: TranslateService) { 
@@ -96,6 +97,7 @@ export class AdminAffectationsComponent implements OnInit {
   affect(demande: DemandeInscription) { 
     this.affecter = true;
     this.selectedDemande = demande;
+    this.derouler = false;
   }
 
   /* Méthode utilisée au clic sur le nom d'un conseiller */
@@ -116,6 +118,8 @@ export class AdminAffectationsComponent implements OnInit {
       this.notif.showNotificationMessage('top', 'right', /*'Demande affectée au conseiller : '*/note + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
       // Effacer la selection
       this.selectedConseiller = undefined;
+      // Réafficher le tableau des demandes
+      this.derouler = true;
     } else {
       let note: string;
       this.translate.get('admin_affectation_erreur_no_conseiller').subscribe(res => { note = res });
