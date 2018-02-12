@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
-import { Adresse, Conseiller, conseillers, Client } from '../data-model';
+import { Conseiller, conseillers, Client } from '../data-model';
 import { ConseillerService }           from '../conseiller-service';
 import { NotificationsComponent } from '../notifications/notifications.component';
 
@@ -114,9 +114,10 @@ export class AdminFicheConseillerComponent implements OnInit {
       password: formModel.mdp as string,
       email: formModel.email as string,
       numTel: formModel.numTel,
+      statut: 'conseiller',
       dateDebutContrat: formModel.dateDebutContrat, // non modifiable si conseiller existe
       clients: this.conseiller.clients || [],
-      demandes: this.conseiller.demandes || []
+      demandesInscription: this.conseiller.demandesInscription || []
     };
     return saveConseiller;
   }

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Demande, DemandeInscription, demandesInscription } from './data-model';
+import { DemandeInscription, demandesInscription } from './data-model';
 
 @Injectable()
 export class DemandeService {
@@ -17,7 +17,7 @@ export class DemandeService {
   	}
 
   	// Fake server update; assume nothing can go wrong
-  	updateDemandeInscription(demande: Demande): Observable<DemandeInscription>  {
+  	updateDemandeInscription(demande: DemandeInscription): Observable<DemandeInscription>  {
 	    const oldDemande = demandesInscription.find(d => d.id === demande.id);
 	    const newDemande = Object.assign(oldDemande, demande); // Demo: mutate cached hero
 	    return of(newDemande).delay(this.delayMs); // simulate latency with delay

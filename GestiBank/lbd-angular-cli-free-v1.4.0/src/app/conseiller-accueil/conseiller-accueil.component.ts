@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
 import { DatePipe } from '@angular/common';
-import { Conseiller, Client, Demande } from '../data-model';
+import { Conseiller, Client, DemandeClient } from '../data-model';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -15,7 +15,7 @@ export class ConseillerAccueilComponent implements OnInit {
 
 
 	clients: Client[];// récuperation des clients
-  demandes: Demande[]; //récuperation des demandes par client
+  demandes: DemandeClient[]; //récuperation des demandes par client
   nomDemande: String;//recuperation du nom de la demande
   indexClient: number;//recuperation de l'index du client
   idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
@@ -51,7 +51,7 @@ export class ConseillerAccueilComponent implements OnInit {
   }
 
   //validation d'une demande
-  demandeTraite(d: Demande){
+  demandeTraite(d: DemandeClient){
 
     //recupération de l'index de la liste des demandes
     let indexToRemove = this.demandes.indexOf(d);

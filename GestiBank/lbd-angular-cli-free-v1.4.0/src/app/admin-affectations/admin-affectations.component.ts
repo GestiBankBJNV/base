@@ -110,7 +110,7 @@ export class AdminAffectationsComponent implements OnInit {
       this.selectedDemande.statut = "en cours";
       this.demandeService.updateDemandeInscription(this.selectedDemande).subscribe();
       // Ajouter la demande à la liste du conseiller
-      this.selectedConseiller.demandes.push(this.selectedDemande);
+      this.selectedConseiller.demandesInscription.push(this.selectedDemande);
       this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
       // Notifier l'affectation
       let note: string;
