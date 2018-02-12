@@ -22,7 +22,6 @@ import { LoginComponent } from './login/login.component';
 
 //IMPORTS CONSEILLER
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
-import { NewInscriptionComponent } from './new-inscription/new-inscription.component';
 
 
 
@@ -53,7 +52,6 @@ const routes: Routes =[
     { path: 'client_profil',  component: ClientProfilComponent },
     { path: 'conseiller_accueil',    component: ConseillerAccueilComponent },   //ROUTES CONSEILLER
     { path: 'conseiller_devises',    component: PublicDevisesComponent },
-    { path: 'conseiller_new_inscription', component: NewInscriptionComponent},
     { path: 'public_accueil',        component: EspacePublicComponent },        //ROUTES PUBLIC
     { path: 'public_login',             component: LoginComponent },
     { path: 'public_connexion',      component: ConnexionComponent },
