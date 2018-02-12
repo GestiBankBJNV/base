@@ -17,7 +17,7 @@ import com.gk.gestibank.model.DemandeInscription;
 public class ConseillerService implements IConseillerService {
 	
 	@Autowired
-	private ConseillerDao conseillerDao = new ConseillerDaoImpl();
+	private ConseillerDao conseillerDao;
 	
 	@Override
 	public List<Conseiller> getAll() {

@@ -6,13 +6,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ConseillerDao;
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
 import com.gk.gestibank.model.DemandeInscription;
 
-@Component
+@Repository
 public class ConseillerDaoImpl implements ConseillerDao {
 	
 	public ArrayList<Conseiller> conseillers = new ArrayList<Conseiller>() ; // todo : remplacer par SessionFactory... (accès à la BDD)
