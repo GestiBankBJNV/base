@@ -8,12 +8,12 @@ import { Operation } from './operation';
 
 //Opérations temporaire (liste)
 export const OPERATIONS : Operation[] = [
-	{date : new Date(), libelle : "Retrait DAB Lille", type : "Débit", montant : 100.0},
-	{date : new Date(), libelle : "Retrait DAB Marseille", type : "Débit", montant : 80.0},
-	{date : new Date(), libelle : "Versement", type : "Crédit", montant : 1600.0},
-	{date : new Date(), libelle : "Retrait DAB", type : "Débit", montant : 50.0},
-	{date : new Date(), libelle : "Retrait DAB", type : "Débit", montant : 50.0},
-	{date : new Date(), libelle : "Retrait DAB", type : "Débit", montant : 80.0}
+	{date : new Date(), libelle : "Retrait DAB Lille", type : "operation_type_debit", montant : 100.0},
+	{date : new Date(), libelle : "Retrait DAB Marseille", type : "operation_type_debit", montant : 80.0},
+	{date : new Date(), libelle : "Versement", type : "operation_type_credit", montant : 1600.0},
+	{date : new Date(), libelle : "Retrait DAB", type : "operation_type_debit", montant : 50.0},
+	{date : new Date(), libelle : "Retrait DAB", type : "operation_type_debit", montant : 50.0},
+	{date : new Date(), libelle : "Retrait DAB", type : "operation_type_debit", montant : 80.0}
 ]
 
 //Notifs temporaires (liste)
@@ -28,10 +28,10 @@ export const NOTIFS : Notification[] = [
 
 //Comptes temporaires (liste)
 export const COMPTES : Compte[] = [
-	{ iban : "0123456789", solde : 1500.18, type : "courant", operations : OPERATIONS},
-	{ iban : "1011121314", solde : 1510.28, type : "courant", operations : OPERATIONS},
-	{ iban : "1516171819", solde : 1520.38, type : "epargne", operations : OPERATIONS},
-	{ iban : "2021222324", solde : 1530.48, type : "epargne", operations : OPERATIONS}
+	{ iban : "0123456789", solde : 1500.18, type : "account_type_current", operations : OPERATIONS},
+	{ iban : "1011121314", solde : 1510.28, type : "account_type_current", operations : OPERATIONS},
+	{ iban : "1516171819", solde : 1520.38, type : "account_type_saving", operations : OPERATIONS},
+	{ iban : "2021222324", solde : 1530.48, type : "account_type_saving", operations : OPERATIONS}
 ]
 
 //client temporaire (unique)

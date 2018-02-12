@@ -1,4 +1,8 @@
 {	
+	"account_type_current" : "Courant",
+	"account_type_saving" : "Épargne",
+	"operation_type_credit" : "Crédit",
+	"operation_type_debit" : "Débit",
 	"client_account_account" : "Compte",
 	"client_account_amount" : "Montant",
 	"client_account_checkOp" : "Consulter les opérations",
@@ -17,6 +21,7 @@
 	"client_account_orderCheck" : "Commander un chèquier",
 	"client_account_print" : "Imprimer",
 	"client_account_title" : "Mes comptes",
+	"client_account_total" : "Solde",
 	"client_account_transferAmount" : "Montant à transférer (en €)",	
 	"client_account_transferInstructions" : "Indiquez la somme à transférer, et le numéro IBAN du compte destinataire.",	
 	"client_account_type" : "Type",
@@ -30,6 +35,7 @@
 	"client_notifications_infos_none" : "Aucune nouvelle notification.",
 	"client_notifications_infos_one" : "Une nouvelle notification non lue.",
 	"client_pagination_next" : "Suivant",
+	"client_pagination_operations" : "opérations",
 	"client_pagination_previous" : "Précédent",
 	"client_profile_address" : "Adresse",
 	"client_profile_city" : "Ville",
@@ -94,5 +100,6 @@
 	"admin_affectations_chercher_conseiller" : "Rechercher un conseiller",
 	"admin_affectations_infos" : "Indiquer le client dont l'affectation doit être modifiée, ainsi que le nouveau conseiller auquel on affecte le client",
 	"admin_affectation_erreur_no_conseiller" : "Erreur : veuillez entrer un conseiller",
-	"admin_affectation_notif_demande_affectee" : "Demande affectée au conseiller : "
+	"admin_affectation_notif_demande_affectee" : "Demande affectée au conseiller : ",
+	"public_devises_title" : "Conversion de devises"
 }

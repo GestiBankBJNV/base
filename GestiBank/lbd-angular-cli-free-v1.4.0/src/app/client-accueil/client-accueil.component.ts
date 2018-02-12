@@ -19,12 +19,14 @@ export class ClientAccueilComponent implements OnInit {
   ngOnInit() {
   }
 
-  getUnreadNotificationsCount() {
-   return this.getUnreadNotifications().length;
-  }
-  
+
+  //Renvoie une liste de notifications
   getUnreadNotifications() : Notification[] {
       return this.client.notifications.filter(notif => !notif.isRead);
   }
 
+  //Renvoie le nombre de notification non lues
+  getUnreadNotificationsCount() {
+    return this.getUnreadNotifications().length;
+  }
 }
