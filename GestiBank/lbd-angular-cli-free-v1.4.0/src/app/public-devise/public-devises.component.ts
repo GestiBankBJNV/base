@@ -13,7 +13,7 @@ export class PublicDevisesComponent implements OnInit {
 	currenciesFrom : string[] = [];		//Devises disponibles (entree)
 	currencyFrom : string = "EUR";		//Conversion de
 	currenciesTo : string[] = [];		//Devises disponibles (sortie)
-	currencyTo : string = "USD";		//Vers
+	currencyTo : string = "USD";		//Conversion Vers
 	rates : string;						//Taux de conversion
 	inputValue : number = 1;			//Valeur d'entrée
 	convertedValue : number = 0;		//Valeur de sortie
@@ -48,6 +48,7 @@ export class PublicDevisesComponent implements OnInit {
   //rafraichir la valeur convertie
   refreshConvertedValue(){
   	let rate : number = this.rates[this.currencyTo];
+  	if(this.currencyFrom == this.currencyTo){ rate = 1; }
   	this.convertedValue = this.inputValue * rate;
   }
 
@@ -58,7 +59,7 @@ export class PublicDevisesComponent implements OnInit {
 export class Currency{
 	base : string;		//Devise de base
 	date : string;		//Date de l'actualisation du taux
-	rates : string;		//
+	rates : string;		//Liste de taux de change, par rapport à la devise "base"
 
 	constructor(base : string, date : string, rates : string) {
 		this.base = base;
