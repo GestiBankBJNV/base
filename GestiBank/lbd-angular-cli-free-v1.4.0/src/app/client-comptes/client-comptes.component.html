@@ -92,8 +92,8 @@
 				</thead>
 				<!-- Liste des opérations -->
 				<tbody>
-					<tr *ngFor="let operation of displayedOperations" class="{{ operation.type }}">
-						<td>{{ operation.type | translate }}</td><td>{{ operation.libelle }}</td><td>{{ operation.montant }} €</td><td>{{ operation.date | date : "dd/MM/yy hh:mm" }}</td><td>€</td>
+					<tr *ngFor="let operation of displayedOperations; let i = index" class="{{ operation.type }}">
+						<td>{{ operation.type | translate }}</td><td>{{ operation.libelle }}</td><td>{{ operation.montant }} €</td><td>{{ operation.date | date : "dd/MM/yy hh:mm" }}</td><td>{{ displayedAmounts[i] |  number:'.1-2' }}€</td>
 					</tr>
 				</tbody>
 			</table>
