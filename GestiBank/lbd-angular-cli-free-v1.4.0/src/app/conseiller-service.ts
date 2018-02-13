@@ -15,17 +15,21 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
   constructor(private http : Http) {}
 
   getConseillers() : Observable<Conseiller[]>{
-    return this.http.get("http://localhost:8080/conseillers")
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers")
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  // Fake server update; assume nothing can go wrong
+  getConseillersByNameOrMatricule(recherche : string){
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + recherche)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+  }
+
   updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
-  	/*console.log('updateConseiller()');*/
-    const oldConseiller = conseillers.find(c => c.matricule === conseiller.matricule);
-    const newConseiller = Object.assign(oldConseiller, conseiller); // Demo: mutate cached hero
-    return of(newConseiller).delay(this.delayMs); // simulate latency with delay
+    return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
    getConseillersByIdSimple(id: string): Conseiller{
@@ -47,11 +51,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     return conseiller.clients;    
   }
 
-  getConseillersByNameOrMatricule(recherche : string){
-    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + recherche)
-    .map((res : Response) => res.json())
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
-  }
+  
 
   getConseillerWithClient(client: Client){
     for(var i=0; i<conseillers.length; i++){
@@ -114,5 +114,12 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
       }
     }
     return of(temp).delay(this.delayMs);
+  }*/
+
+  // Fake server update; assume nothing can go wrong
+  /*updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
+    const oldConseiller = conseillers.find(c => c.matricule === conseiller.matricule);
+    const newConseiller = Object.assign(oldConseiller, conseiller); // Demo: mutate cached hero
+    return of(newConseiller).delay(this.delayMs); // simulate latency with delay
   }*/
 }
