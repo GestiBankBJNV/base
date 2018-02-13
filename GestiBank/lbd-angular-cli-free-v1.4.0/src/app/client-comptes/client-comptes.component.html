@@ -4,19 +4,20 @@
 	<div class="card">
 		<div class="header">
 			<h4 class="title col-md-3">{{ 'client_account_title' | translate }}</h4>
+			<!-- Faire une demande d'ouverture de compte -->
       		<button class="btn btn-default col-md-3 col-md-offset-6" (click)="toggleOpenAccount()">{{ 'client_account_openAccount' | translate }}</button>
-			<!--<p class="category col-md-3">Comptes ouverts</p>-->
 		</div>
 		<div class="content table-responsive table-full-width">
+			<!-- Liste des comptes bancaires-->
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr>                                        
-						<th>{{ 'client_account_iban' | translate }}</th><th>{{ 'client_account_type' | translate }}</th><th>{{ 'client_account_amount' | translate }}</th>
+						<th>{{ 'client_account_iban' | translate }}</th><th>{{ 'client_account_type' | translate }}</th><th>{{ 'client_account_total' | translate }}</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr *ngFor="let compte of client.comptes" (click)="selectCompte(compte)">
-						<td>{{ compte.iban }}</td><td>{{ compte.type }}</td><td>{{ compte.solde }} €</td>
+						<td>{{ compte.iban }}</td><td>{{ compte.type | translate }}</td><td>{{ compte.solde }} €</td>
 					</tr>
 				</tbody>
 			</table>
@@ -27,32 +28,44 @@
 	<div *ngIf="(selectedCompte)" class="card card-plain">
 		<div class="header">
 			<div class="row">
+				<!-- "Compte n° xxxxx" -->
 				<h4 class="title col-md-3">{{ 'client_account_account' | translate }} N° {{ selectedCompte.iban }}</h4>
-				<span class="category col-md-3">{{ 'client_account_account' | translate }} {{ selectedCompte.type }} - {{ 'client_account_lastOp' | translate }}</span>
+				<!-- "Compte (type) - Dernières opérations" -->
+				<span class="category col-md-3">{{ 'client_account_account' | translate }} {{ selectedCompte.type | translate }} - {{ 'client_account_lastOp' | translate }}</span>
 				<hr/>
 			</div>
 		</div>
+		
+		<!--Contrôles-->
 		<div class="row">			
             <div class="col-md-3">
                 <div class="form-group">
+					<!-- Commander un chèquier -->
 					<button class="btn btn-default form-control" (click)="validOrderCheck()">{{ (awaitingConfirm) ? ('client_account_confirm' | translate) : ('client_account_orderCheck' | translate) }}</button>
+					<!--Effecture un virement -->
 					<button class="btn btn-default form-control" (click)="toggleTransfer()">{{ (transfer) ? ('client_account_checkOp' | translate) : ('client_account_doTransfer' | translate) }}</button>
+					<!--Imprimer-->
 					<button *ngIf="(!transfer)" class="btn btn-default form-control" (click)="print()"><i class="pe-7s-print"></i>{{ 'client_account_print' | translate }}</button>
                 </div>
             </div>
+            
+            <!--Selection date - début -->
             <div class="col-md-3">
                 <div class="form-group">
                     <label>{{ 'client_account_opFrom' | translate }} :</label>
-                    <!--passer la date dans ngModel provoque des problèmes de formatage-->
+                    <!--(passer la date dans ngModel provoque des problèmes de formatage)-->
 					<input type="date" #startDate class="form-control" value='{{ selectedCompte.operations[0].date | date : "yyyy-MM-dd"}}' (change)="refreshStart(startDate.value)"/>
                 </div>
             </div>
+			<!--Selection date - fin -->
             <div class="col-md-3">
                 <div class="form-group">
                     <label>{{ 'client_account_opTo' | translate }} :</label>
 					<input type="date" #endDate class="form-control" value='{{ selectedCompte.operations[selectedCompte.operations.length - 1].date | date : "yyyy-MM-dd" }}' (change)="refreshEnd(endDate.value)"/>
 				</div>
             </div>
+            
+            <!--Nombre d'opérations à afficher par page  (défaut : 20)-->
             <div class="col-md-3">
                 <div class="form-group">
                     <label>{{ 'client_account_display' | translate }} :</label>
@@ -68,24 +81,29 @@
 		<div class="row">
 			<hr/>
 		</div>
+
+		<!-- OPERATIONS -->
 		<div *ngIf="(!transfer)" class="content table-responsive table-full-width">
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>{{ 'client_account_type' | translate }}</th><th>{{ 'client_account_details' | translate }}</th><th>{{ 'client_account_amount' | translate }}</th><th>{{ 'client_account_date' | translate }}</th>
-						<!--<th *ngFor="let cell of tableData2.headerRow">{{ cell }}</th>-->
+						<th>{{ 'client_account_type' | translate }}</th><th>{{ 'client_account_details' | translate }}</th><th>{{ 'client_account_amount' | translate }}</th><th>{{ 'client_account_date' | translate }}</th><th>{{ 'client_account_total' | translate }}</th>
 					</tr>
 				</thead>
+				<!-- Liste des opérations -->
 				<tbody>
-					<tr *ngFor="let operation of displayedOperations">
-						<td>{{ operation.type }}</td><td>{{ operation.libelle }}</td><td>{{ operation.montant }} €</td><td>{{ operation.date | date : "dd/MM/yy hh:mm" }}</td>
+					<tr *ngFor="let operation of displayedOperations" class="{{ operation.type }}">
+						<td>{{ operation.type | translate }}</td><td>{{ operation.libelle }}</td><td>{{ operation.montant }} €</td><td>{{ operation.date | date : "dd/MM/yy hh:mm" }}</td><td>€</td>
 					</tr>
 				</tbody>
 			</table>
+			<!-- Pagination (voir composant client-pagination) -->
 			<div class="row">
 				<app-client-pagination class="col-md-offset-3 col-md-6" (goPrev)='prevPage()' (goNext)='nextPage()' (goPage)='goPage($event)' [page]='currentPage + 1' [count]='selectedCompte.operations.length' [perPage]='displayedCount' [pagesToShow]='5'></app-client-pagination>
 			</div>
 		</div>
+
+		<!-- VIREMENT -->
 		<div *ngIf="(transfer)" class="card">
 			<div class="header">
 				<h4 class="title">{{ 'client_account_doTransfer' | translate }}</h4>
@@ -98,7 +116,7 @@
 						<div class="form-group">
 							<div class="col-md-3">
                         		<label for="iban">{{ 'client_account_destIban' | translate }} :</label>
-                            	<input required [(ngModel)]="transferDestIBAN" name="iban" type="text" class="form-control" placeholder="IBAN destinataire" (change)="confirmTransfer = false">
+                            	<input required [(ngModel)]="transferDestIBAN" name="iban" type="text" class="form-control" placeholder="{{ 'client_account_destIban' | translate }}" (change)="confirmTransfer = false">
 	                		</div>
 	                		<div class="col-md-3">
                         		<label for="somme">{{ 'client_account_transferAmount' | translate }} : </label>

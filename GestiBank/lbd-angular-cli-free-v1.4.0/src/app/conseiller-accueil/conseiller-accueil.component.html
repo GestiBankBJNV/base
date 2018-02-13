@@ -1,53 +1,5 @@
-<div class="main-content">
-	<h2>Clients</h2>
-  <p>Liste des clients qui vous sont affectés</p>
-  <!-- Affichage dans un tableau de la liste des clients du conseiller -->           
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Prénom</th>
-        <th>Nom</th>
-        <th>E-mail</th>
-        <th>Demande(s)</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let client of clients" (click)="voirDemande(client, clients.indexOf(client))">
-      	<td>{{client.prenom}}</td>
-      	<td>{{client.nom}}</td>
-      	<td>{{client.email}}</td>
-      	<td>{{client.demandes.length}}</td>
-        <td><button type="button" class="btn btn-info btn-sm">Editer</button></td>
-      </tr>      
-    </tbody>
-  </table>
-<!-- Affichage dans un tableau de la liste des demandes du client sélectionner -->
-<div *ngIf="isDetailDemande">
-  <h2>Client {{nomDemande}}</h2>
-  <p>Liste de ses demandes</p>            
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Date de demande</th>
-        <th>Date d'affectation</th>
-        <th>Status</th>
-        <th>libellé</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let demande of demandes">
-        <td>{{demande.date | date:'dd/MM/yyyy'}}</td>
-        <td>{{demande.dateAffectation | date:'dd/MM/yyyy'}}</td>
-        <td>{{demande.status}}</td>
-        <td>{{demande.libelle}}</td>
-        <td>
-            <button type="button" class="btn btn-success" (click)="demandeTraite(demande)">Envoyer</button>
-            <button type="button" class="btn btn-warning" (click)="fermerfenetre()">Annuler</button>
-        </td>       
-      </tr>      
-    </tbody>
-  </table>
-</div>
+<div class="main-content" >
+	<p>
+	  conseiller-accueil works!
+	</p>
 </div>

@@ -1,3 +1,41 @@
-<p>
-  public-devises works!
-</p>
+<!-- CONVERTISSEUR DE DEVISES -->
+<div class="main-content">
+	<div class="card">
+		<div class="header">
+			<div class="row">
+				<h4 class="row title col-md-3">{{ 'public_devises_title' | translate }}</h4>
+			</div>
+			<hr/>
+		</div>
+		<div class="content">
+			<div class="row">
+				<div class="col-md-3">
+                	<div class="form-group">
+						<input (change)="refreshConvertedValue()" [(ngModel)]="inputValue" min="0" type="number" class="form-control"/>
+					</div>
+				</div>
+				<div class="col-md-3">
+                	<div class="form-group">
+						<select [(ngModel)]="currencyFrom" (change)="refreshCurrenciesInput()" class="btn dropdown-toggle col-md-12">
+							<option>{{ currencyFrom }}</option>
+							<option *ngFor="let cF of currenciesFrom">{{ cF }}</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+                	<div class="form-group">
+						<input [(ngModel)]="convertedValue" type="text" disabled class="form-control"/>
+					</div>
+				</div>
+				<div class="col-md-3">
+                	<div class="form-group">
+						<select [(ngModel)]="currencyTo" (change)="refreshCurrenciesOutput()" class="btn dropdown-toggle col-md-12">
+							<option>{{ currencyTo }}</option>
+							<option *ngFor="let cT of currenciesTo">{{ cT }}</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

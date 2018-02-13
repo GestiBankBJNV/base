@@ -1,4 +1,8 @@
 {	
+	"account_type_current" : "Current",
+	"account_type_saving" : "Saving",
+	"operation_type_credit" : "Credit",
+	"operation_type_debit" : "Debit",
 	"client_account_account" : "Account",
 	"client_account_amount" : "Amount",
 	"client_account_checkOp" : "Consult operations",
@@ -17,6 +21,7 @@
 	"client_account_orderCheck" : "Order checks",
 	"client_account_print" : "Print",
 	"client_account_title" : "My accounts",
+	"client_account_total" : "Balance",
 	"client_account_transferAmount" : "Amount to Transfer (€)",	
 	"client_account_transferInstructions" : "Enter an amount to transfer, and the destination account's IBAN number.",	
 	"client_account_type" : "Type",
@@ -30,6 +35,7 @@
 	"client_notifications_infos_none" : "No new notification.",
 	"client_notifications_infos_one" : "One new notification.",
 	"client_pagination_next" : "Next",
+	"client_pagination_operations" : "operations",
 	"client_pagination_previous" : "Previous",
 	"client_profile_address" : "Address",
 	"client_profile_city" : "City",
@@ -94,5 +100,6 @@
 	"admin_affectations_chercher_conseiller" : "Search for an agent",
 	"admin_affectations_infos" : "Indicate the client whose assignment is to be changed, as well as the new advisor to whom the client is assigned",
 	"admin_affectation_erreur_no_conseiller" : "Error : please enter an agent",
-	"admin_affectation_notif_demande_affectee" : "Request sent to agent : "
+	"admin_affectation_notif_demande_affectee" : "Request sent to agent : ",
+	"public_devises_title" : "Currencies converter"
 }

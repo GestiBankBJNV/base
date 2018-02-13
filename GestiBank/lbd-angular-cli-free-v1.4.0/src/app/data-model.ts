@@ -1,8 +1,6 @@
-
 // TODO : mettre à jour les classes avec diagramme de classe
 // Pourquoi dans java on a : EspaceAdmin, Espace... , Guest ?
 // Je n'ai pas mis de méthodes dans les classes car ce n'est pas vraiment utile en typescript (et il va falloir tout refaire en java de toute façon...)
-
 /* *********** Classes *********** */
 
 export class Utilisateur {  // ajouter password (dans java)
@@ -361,5 +359,3 @@ export const conseillers: Conseiller[] = [
     demandesInscription: []
   },
 ];
-
-

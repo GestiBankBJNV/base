@@ -7,8 +7,7 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-conseiller-accueil',
   templateUrl: './conseiller-accueil.component.html',
-  styleUrls: ['./conseiller-accueil.component.scss'],
-  providers:[ConseillerService]
+  styleUrls: ['./conseiller-accueil.component.scss']
 })
 
 export class ConseillerAccueilComponent implements OnInit {	
