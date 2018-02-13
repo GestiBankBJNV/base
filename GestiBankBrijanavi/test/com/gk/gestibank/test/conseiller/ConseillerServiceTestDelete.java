@@ -18,7 +18,7 @@ public class ConseillerServiceTestDelete {
 
 	public static void main(String[] args) {		
 				
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		ConseillerService gestionConseillers = (ConseillerService) context.getBean("conseillerService");
 		
 		gestionConseillers.deleteConseiller("425A");
@@ -31,4 +31,4 @@ public class ConseillerServiceTestDelete {
 	}
 
 }
-// 10/02/2018 Test ok
+// 13/02/2018 Test ok

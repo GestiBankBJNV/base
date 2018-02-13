@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;GestiBankBrijanavi/resources/beans.xml&apos; to &apos;applicationContext.xml&apos;" description="Rename resource &apos;beans.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="resources/beans.xml" name="applicationContext.xml" stamp="1518513843860" updateReferences="true"/>
+</session>

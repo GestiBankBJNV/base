@@ -1,0 +1,37 @@
+package com.gk.gestibank.web;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.gk.gestibank.model.Conseiller;
+import com.gk.gestibank.service.conseiller.ConseillerService;
+
+@Path("/conseillers")
+public class WSConseiller {
+
+	@Autowired
+	ConseillerService conseillerService;
+
+	public WSConseiller() {
+
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Conseiller> getAll(){
+		return conseillerService.getAll();
+	}
+
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String sayHello(){
+		return "hello!";
+	}
+
+}

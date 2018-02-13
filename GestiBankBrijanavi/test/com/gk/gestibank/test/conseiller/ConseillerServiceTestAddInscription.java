@@ -18,7 +18,7 @@ public class ConseillerServiceTestAddInscription {
 
 	public static void main(String[] args) {		
 				
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		ConseillerService service = (ConseillerService) context.getBean("conseillerService");
 		
 		System.out.println(service.getConseillerByNameOrMatricule("427A"));
@@ -34,4 +34,4 @@ public class ConseillerServiceTestAddInscription {
 	}
 
 }
-// 11/02/2018 Test ok
+// 13/02/2018 Test ok

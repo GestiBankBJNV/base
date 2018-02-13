@@ -1,0 +1,9 @@
+package com.gk.gestibank.web;
+
+public class WSConseiller {
+
+	public WSConseiller() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -2521,3 +2521,676 @@
 2018-02-12 09:45:33,589 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
 2018-02-12 09:45:33,589 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2018-02-12 09:45:33,589 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:49:26,244 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:49:26,556 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:49:26,556 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:49:26,556 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:49:26,556 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:49:29,020 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:49:29,052 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:49:29,070 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:49:29,071 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:49:29,071 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:49:30,199 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:49:30,199 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:49:30,200 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:49:30,200 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:49:50,983 [Worker-10] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:49:50,999 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:49:50,999 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:49:50,999 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:49:51,014 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:50:04,586 [Worker-24] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-02-13 09:50:04,633 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:50:04,649 [Worker-24] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GestiBankBrijanavi/src
+2018-02-13 09:50:04,649 [Worker-24] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /GestiBankBrijanavi/src/test/java because it overlaps with /GestiBankBrijanavi/src
+2018-02-13 09:50:04,742 [Worker-24] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2018-02-13 09:50:04,945 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:50:04,945 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:50:04,945 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:50:04,945 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:51:15,601 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:51:15,601 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:51:15,601 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:51:15,601 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:52:19,064 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:52:19,064 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:52:19,064 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:52:19,064 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:57:28,341 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:57:28,669 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:57:28,669 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:57:28,669 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:57:28,669 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:57:30,213 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:57:30,213 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:57:30,213 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:57:30,213 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:58:02,116 [Worker-24] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-02-13 09:58:02,178 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:58:02,397 [Worker-24] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GestiBankBrijanavi/src
+2018-02-13 09:58:02,397 [Worker-24] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /GestiBankBrijanavi/src/test/java because it overlaps with /GestiBankBrijanavi/src
+2018-02-13 09:58:02,506 [Worker-24] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2018-02-13 09:58:03,161 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:58:03,161 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:58:03,161 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:58:03,161 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:58:57,826 [Worker-22] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:58:58,372 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:58:58,372 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:58:58,372 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:58:58,372 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 09:58:58,372 [Worker-22] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of GestiBankBrijanavi
+2018-02-13 09:58:58,388 [Worker-22] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for GestiBankBrijanavi
+2018-02-13 09:58:58,388 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:59:09,770 [Worker-24] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-02-13 09:59:09,817 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:59:10,020 [Worker-24] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GestiBankBrijanavi/src
+2018-02-13 09:59:10,020 [Worker-24] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /GestiBankBrijanavi/src/test/java because it overlaps with /GestiBankBrijanavi/src
+2018-02-13 09:59:11,081 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:59:11,377 [Worker-24] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for GestiBankBrijanavi
+2018-02-13 09:59:11,439 [Worker-24] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-02-13 09:59:12,703 [Worker-24] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 09:59:13,046 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:59:13,046 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 09:59:13,046 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 09:59:13,046 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:03:16,274 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:03:16,274 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:03:16,274 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:03:16,274 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:03:37,615 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:03:37,615 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:03:37,615 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:03:37,615 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:06:24,066 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:06:24,066 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:06:24,066 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:06:24,066 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:07:01,662 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:07:01,662 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:07:01,662 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:07:01,662 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:07:13,081 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:07:13,081 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:07:13,081 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:07:13,081 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:09:45,579 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:09:45,580 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:09:45,580 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:09:45,581 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:09:53,405 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:09:53,405 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:09:53,405 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:09:53,405 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:10:40,581 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:10:40,581 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:10:40,581 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:10:40,581 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:10:50,780 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:10:50,780 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:10:50,780 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:10:50,795 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:14:59,094 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:14:59,094 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:14:59,094 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:14:59,094 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:18:58,479 [Worker-21] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 10:18:58,588 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-spring4/2.26/jersey-spring4-2.26.pom
+2018-02-13 10:18:58,604 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-spring4/2.26/jersey-spring4-2.26.pom
+2018-02-13 10:18:58,619 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/project/2.26/project-2.26.pom
+2018-02-13 10:18:58,635 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/project/2.26/project-2.26.pom
+2018-02-13 10:18:58,666 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/project/2.26/project-2.26.pom
+2018-02-13 10:18:58,697 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/project/2.26/project-2.26.pom
+2018-02-13 10:18:58,728 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-bom/2.5.0-b42/hk2-bom-2.5.0-b42.pom
+2018-02-13 10:18:58,744 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-bom/2.5.0-b42/hk2-bom-2.5.0-b42.pom
+2018-02-13 10:18:58,775 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-server/2.26/jersey-server-2.26.pom
+2018-02-13 10:18:58,791 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-server/2.26/jersey-server-2.26.pom
+2018-02-13 10:18:58,806 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-common/2.26/jersey-common-2.26.pom
+2018-02-13 10:18:58,916 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-common/2.26/jersey-common-2.26.pom
+2018-02-13 10:18:58,931 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.pom
+2018-02-13 10:18:58,962 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.pom
+2018-02-13 10:18:58,994 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/javax.inject/2.5.0-b42/javax.inject-2.5.0-b42.pom
+2018-02-13 10:18:59,025 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/javax.inject/2.5.0-b42/javax.inject-2.5.0-b42.pom
+2018-02-13 10:18:59,040 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/2.5.0-b42/external-2.5.0-b42.pom
+2018-02-13 10:18:59,056 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/2.5.0-b42/external-2.5.0-b42.pom
+2018-02-13 10:18:59,056 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-parent/2.5.0-b42/hk2-parent-2.5.0-b42.pom
+2018-02-13 10:18:59,181 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-parent/2.5.0-b42/hk2-parent-2.5.0-b42.pom
+2018-02-13 10:18:59,196 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-client/2.26/jersey-client-2.26.pom
+2018-02-13 10:18:59,212 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-client/2.26/jersey-client-2.26.pom
+2018-02-13 10:18:59,228 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-jaxb/2.26/jersey-media-jaxb-2.26.pom
+2018-02-13 10:18:59,243 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-jaxb/2.26/jersey-media-jaxb-2.26.pom
+2018-02-13 10:18:59,259 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/project/2.26/project-2.26.pom
+2018-02-13 10:18:59,354 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/project/2.26/project-2.26.pom
+2018-02-13 10:18:59,386 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/inject/jersey-hk2/2.26/jersey-hk2-2.26.pom
+2018-02-13 10:18:59,401 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/inject/jersey-hk2/2.26/jersey-hk2-2.26.pom
+2018-02-13 10:18:59,401 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/inject/project/2.26/project-2.26.pom
+2018-02-13 10:18:59,417 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/inject/project/2.26/project-2.26.pom
+2018-02-13 10:18:59,448 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-locator/2.5.0-b42/hk2-locator-2.5.0-b42.pom
+2018-02-13 10:18:59,575 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-locator/2.5.0-b42/hk2-locator-2.5.0-b42.pom
+2018-02-13 10:18:59,590 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b42/aopalliance-repackaged-2.5.0-b42.pom
+2018-02-13 10:18:59,606 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b42/aopalliance-repackaged-2.5.0-b42.pom
+2018-02-13 10:18:59,606 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-api/2.5.0-b42/hk2-api-2.5.0-b42.pom
+2018-02-13 10:18:59,622 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-api/2.5.0-b42/hk2-api-2.5.0-b42.pom
+2018-02-13 10:18:59,637 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-utils/2.5.0-b42/hk2-utils-2.5.0-b42.pom
+2018-02-13 10:18:59,653 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-utils/2.5.0-b42/hk2-utils-2.5.0-b42.pom
+2018-02-13 10:18:59,668 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2.pom
+2018-02-13 10:18:59,684 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2.pom
+2018-02-13 10:18:59,700 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/jersey-container-servlet-core/2.26/jersey-container-servlet-core-2.26.pom
+2018-02-13 10:18:59,715 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/jersey-container-servlet-core/2.26/jersey-container-servlet-core-2.26.pom
+2018-02-13 10:18:59,731 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/project/2.26/project-2.26.pom
+2018-02-13 10:18:59,746 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/project/2.26/project-2.26.pom
+2018-02-13 10:18:59,762 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2/2.5.0-b42/hk2-2.5.0-b42.pom
+2018-02-13 10:18:59,778 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2/2.5.0-b42/hk2-2.5.0-b42.pom
+2018-02-13 10:18:59,871 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/config-types/2.5.0-b42/config-types-2.5.0-b42.pom
+2018-02-13 10:18:59,887 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/config-types/2.5.0-b42/config-types-2.5.0-b42.pom
+2018-02-13 10:18:59,902 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-xml-dom/2.5.0-b42/hk2-xml-dom-2.5.0-b42.pom
+2018-02-13 10:18:59,918 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-xml-dom/2.5.0-b42/hk2-xml-dom-2.5.0-b42.pom
+2018-02-13 10:18:59,949 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-configuration-persistence/2.5.0-b42/hk2-configuration-persistence-2.5.0-b42.pom
+2018-02-13 10:18:59,965 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-configuration-persistence/2.5.0-b42/hk2-configuration-persistence-2.5.0-b42.pom
+2018-02-13 10:18:59,980 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-configuration/2.5.0-b42/hk2-configuration-2.5.0-b42.pom
+2018-02-13 10:18:59,996 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-configuration/2.5.0-b42/hk2-configuration-2.5.0-b42.pom
+2018-02-13 10:19:00,012 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-config/2.5.0-b42/hk2-config-2.5.0-b42.pom
+2018-02-13 10:19:00,105 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-config/2.5.0-b42/hk2-config-2.5.0-b42.pom
+2018-02-13 10:19:00,136 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-core/2.5.0-b42/hk2-core-2.5.0-b42.pom
+2018-02-13 10:19:00,152 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-core/2.5.0-b42/hk2-core-2.5.0-b42.pom
+2018-02-13 10:19:00,168 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/jvnet/tiger-types/1.4/tiger-types-1.4.pom
+2018-02-13 10:19:00,277 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/jvnet/tiger-types/1.4/tiger-types-1.4.pom
+2018-02-13 10:19:00,292 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/hibernate/hibernate-validator/5.2.4.Final/hibernate-validator-5.2.4.Final.pom
+2018-02-13 10:19:00,324 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/hibernate/hibernate-validator/5.2.4.Final/hibernate-validator-5.2.4.Final.pom
+2018-02-13 10:19:00,339 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/hibernate/hibernate-validator-parent/5.2.4.Final/hibernate-validator-parent-5.2.4.Final.pom
+2018-02-13 10:19:00,355 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/hibernate/hibernate-validator-parent/5.2.4.Final/hibernate-validator-parent-5.2.4.Final.pom
+2018-02-13 10:19:00,370 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.1.9.Final/arquillian-bom-1.1.9.Final.pom
+2018-02-13 10:19:00,386 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.1.9.Final/arquillian-bom-1.1.9.Final.pom
+2018-02-13 10:19:00,402 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.2/shrinkwrap-bom-1.2.2.pom
+2018-02-13 10:19:00,417 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/1.2.2/shrinkwrap-bom-1.2.2.pom
+2018-02-13 10:19:00,433 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.1.1/shrinkwrap-resolver-bom-2.1.1.pom
+2018-02-13 10:19:00,448 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/resolver/shrinkwrap-resolver-bom/2.1.1/shrinkwrap-resolver-bom-2.1.1.pom
+2018-02-13 10:19:00,464 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-7/shrinkwrap-descriptors-bom-2.0.0-alpha-7.pom
+2018-02-13 10:19:00,480 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0-alpha-7/shrinkwrap-descriptors-bom-2.0.0-alpha-7.pom
+2018-02-13 10:19:00,495 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.pom
+2018-02-13 10:19:00,511 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.pom
+2018-02-13 10:19:00,526 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.1.0/classmate-1.1.0.pom
+2018-02-13 10:19:00,542 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.1.0/classmate-1.1.0.pom
+2018-02-13 10:19:00,636 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-runlevel/2.5.0-b42/hk2-runlevel-2.5.0-b42.pom
+2018-02-13 10:19:00,651 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-runlevel/2.5.0-b42/hk2-runlevel-2.5.0-b42.pom
+2018-02-13 10:19:00,667 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/class-model/2.5.0-b42/class-model-2.5.0-b42.pom
+2018-02-13 10:19:00,682 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/class-model/2.5.0-b42/class-model-2.5.0-b42.pom
+2018-02-13 10:19:00,698 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/asm-all-repackaged/2.5.0-b42/asm-all-repackaged-2.5.0-b42.pom
+2018-02-13 10:19:00,714 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/asm-all-repackaged/2.5.0-b42/asm-all-repackaged-2.5.0-b42.pom
+2018-02-13 10:19:00,729 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/spring-bridge/2.5.0-b42/spring-bridge-2.5.0-b42.pom
+2018-02-13 10:19:00,838 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/spring-bridge/2.5.0-b42/spring-bridge-2.5.0-b42.pom
+2018-02-13 10:19:00,854 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-context/4.3.9.RELEASE/spring-context-4.3.9.RELEASE.pom
+2018-02-13 10:19:00,870 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-context/4.3.9.RELEASE/spring-context-4.3.9.RELEASE.pom
+2018-02-13 10:19:00,870 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.9.RELEASE/spring-aop-4.3.9.RELEASE.pom
+2018-02-13 10:19:00,885 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.9.RELEASE/spring-aop-4.3.9.RELEASE.pom
+2018-02-13 10:19:00,901 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.3.9.RELEASE/spring-expression-4.3.9.RELEASE.pom
+2018-02-13 10:19:00,916 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.3.9.RELEASE/spring-expression-4.3.9.RELEASE.pom
+2018-02-13 10:19:00,932 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.4.RELEASE/spring-aop-4.3.4.RELEASE.pom
+2018-02-13 10:19:01,041 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.4.RELEASE/spring-aop-4.3.4.RELEASE.pom
+2018-02-13 10:19:01,057 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-core/4.1.0.RELEASE/spring-core-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,072 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-core/4.1.0.RELEASE/spring-core-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,088 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+2018-02-13 10:19:01,119 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+2018-02-13 10:19:01,135 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-context/4.1.0.RELEASE/spring-context-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,150 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-context/4.1.0.RELEASE/spring-context-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,150 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.1.0.RELEASE/spring-aop-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,166 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.1.0.RELEASE/spring-aop-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,182 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.1.0.RELEASE/spring-beans-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,197 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.1.0.RELEASE/spring-beans-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,213 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.1.0.RELEASE/spring-expression-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,228 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.1.0.RELEASE/spring-expression-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,228 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-web/4.1.0.RELEASE/spring-web-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,244 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-web/4.1.0.RELEASE/spring-web-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,260 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.1.0.RELEASE/spring-webmvc-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,275 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.1.0.RELEASE/spring-webmvc-4.1.0.RELEASE.pom
+2018-02-13 10:19:01,384 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-spring4/2.26/jersey-spring4-2.26.jar
+2018-02-13 10:19:01,478 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-spring4/2.26/jersey-spring4-2.26.jar
+2018-02-13 10:19:01,494 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-server/2.26/jersey-server-2.26.jar
+2018-02-13 10:19:01,618 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-server/2.26/jersey-server-2.26.jar
+2018-02-13 10:19:01,634 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-client/2.26/jersey-client-2.26.jar
+2018-02-13 10:19:01,665 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-client/2.26/jersey-client-2.26.jar
+2018-02-13 10:19:01,696 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-jaxb/2.26/jersey-media-jaxb-2.26.jar
+2018-02-13 10:19:01,712 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-jaxb/2.26/jersey-media-jaxb-2.26.jar
+2018-02-13 10:19:01,712 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/javax.inject/2.5.0-b42/javax.inject-2.5.0-b42.jar
+2018-02-13 10:19:01,728 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/javax.inject/2.5.0-b42/javax.inject-2.5.0-b42.jar
+2018-02-13 10:19:01,743 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/inject/jersey-hk2/2.26/jersey-hk2-2.26.jar
+2018-02-13 10:19:01,759 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/inject/jersey-hk2/2.26/jersey-hk2-2.26.jar
+2018-02-13 10:19:01,759 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-locator/2.5.0-b42/hk2-locator-2.5.0-b42.jar
+2018-02-13 10:19:01,806 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-locator/2.5.0-b42/hk2-locator-2.5.0-b42.jar
+2018-02-13 10:19:01,806 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b42/aopalliance-repackaged-2.5.0-b42.jar
+2018-02-13 10:19:01,821 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b42/aopalliance-repackaged-2.5.0-b42.jar
+2018-02-13 10:19:01,837 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2.jar
+2018-02-13 10:19:01,930 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/javassist/javassist/3.22.0-CR2/javassist-3.22.0-CR2.jar
+2018-02-13 10:19:01,930 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/jersey-container-servlet-core/2.26/jersey-container-servlet-core-2.26.jar
+2018-02-13 10:19:01,946 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/jersey-container-servlet-core/2.26/jersey-container-servlet-core-2.26.jar
+2018-02-13 10:19:01,962 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2/2.5.0-b42/hk2-2.5.0-b42.jar
+2018-02-13 10:19:02,071 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2/2.5.0-b42/hk2-2.5.0-b42.jar
+2018-02-13 10:19:02,071 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-utils/2.5.0-b42/hk2-utils-2.5.0-b42.jar
+2018-02-13 10:19:02,102 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-utils/2.5.0-b42/hk2-utils-2.5.0-b42.jar
+2018-02-13 10:19:02,118 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-api/2.5.0-b42/hk2-api-2.5.0-b42.jar
+2018-02-13 10:19:02,149 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-api/2.5.0-b42/hk2-api-2.5.0-b42.jar
+2018-02-13 10:19:02,149 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/config-types/2.5.0-b42/config-types-2.5.0-b42.jar
+2018-02-13 10:19:02,180 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/config-types/2.5.0-b42/config-types-2.5.0-b42.jar
+2018-02-13 10:19:02,180 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-core/2.5.0-b42/hk2-core-2.5.0-b42.jar
+2018-02-13 10:19:02,211 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-core/2.5.0-b42/hk2-core-2.5.0-b42.jar
+2018-02-13 10:19:02,227 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-config/2.5.0-b42/hk2-config-2.5.0-b42.jar
+2018-02-13 10:19:02,258 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-config/2.5.0-b42/hk2-config-2.5.0-b42.jar
+2018-02-13 10:19:02,258 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/jvnet/tiger-types/1.4/tiger-types-1.4.jar
+2018-02-13 10:19:02,289 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/jvnet/tiger-types/1.4/tiger-types-1.4.jar
+2018-02-13 10:19:02,289 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/hibernate/hibernate-validator/5.2.4.Final/hibernate-validator-5.2.4.Final.jar
+2018-02-13 10:19:02,367 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/hibernate/hibernate-validator/5.2.4.Final/hibernate-validator-5.2.4.Final.jar
+2018-02-13 10:19:02,383 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.jar
+2018-02-13 10:19:02,398 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.jar
+2018-02-13 10:19:02,414 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.1.0/classmate-1.1.0.jar
+2018-02-13 10:19:02,430 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.1.0/classmate-1.1.0.jar
+2018-02-13 10:19:02,445 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-runlevel/2.5.0-b42/hk2-runlevel-2.5.0-b42.jar
+2018-02-13 10:19:02,461 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/hk2-runlevel/2.5.0-b42/hk2-runlevel-2.5.0-b42.jar
+2018-02-13 10:19:02,476 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/class-model/2.5.0-b42/class-model-2.5.0-b42.jar
+2018-02-13 10:19:02,492 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/class-model/2.5.0-b42/class-model-2.5.0-b42.jar
+2018-02-13 10:19:02,523 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/asm-all-repackaged/2.5.0-b42/asm-all-repackaged-2.5.0-b42.jar
+2018-02-13 10:19:02,726 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/external/asm-all-repackaged/2.5.0-b42/asm-all-repackaged-2.5.0-b42.jar
+2018-02-13 10:19:02,726 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/hk2/spring-bridge/2.5.0-b42/spring-bridge-2.5.0-b42.jar
+2018-02-13 10:19:02,742 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/hk2/spring-bridge/2.5.0-b42/spring-bridge-2.5.0-b42.jar
+2018-02-13 10:19:02,757 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.4.RELEASE/spring-aop-4.3.4.RELEASE.jar
+2018-02-13 10:19:02,804 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.4.RELEASE/spring-aop-4.3.4.RELEASE.jar
+2018-02-13 10:19:02,820 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar
+2018-02-13 10:19:02,835 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar
+2018-02-13 10:19:02,851 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-core/4.1.0.RELEASE/spring-core-4.1.0.RELEASE.jar
+2018-02-13 10:19:02,960 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-core/4.1.0.RELEASE/spring-core-4.1.0.RELEASE.jar
+2018-02-13 10:19:02,960 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar
+2018-02-13 10:19:02,991 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar
+2018-02-13 10:19:02,991 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-context/4.1.0.RELEASE/spring-context-4.1.0.RELEASE.jar
+2018-02-13 10:19:03,116 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-context/4.1.0.RELEASE/spring-context-4.1.0.RELEASE.jar
+2018-02-13 10:19:03,116 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.1.0.RELEASE/spring-beans-4.1.0.RELEASE.jar
+2018-02-13 10:19:03,194 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.1.0.RELEASE/spring-beans-4.1.0.RELEASE.jar
+2018-02-13 10:19:03,210 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.1.0.RELEASE/spring-expression-4.1.0.RELEASE.jar
+2018-02-13 10:19:03,241 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.1.0.RELEASE/spring-expression-4.1.0.RELEASE.jar
+2018-02-13 10:19:03,256 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-web/4.1.0.RELEASE/spring-web-4.1.0.RELEASE.jar
+2018-02-13 10:19:03,350 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-web/4.1.0.RELEASE/spring-web-4.1.0.RELEASE.jar
+2018-02-13 10:19:03,350 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.1.0.RELEASE/spring-webmvc-4.1.0.RELEASE.jar
+2018-02-13 10:19:03,459 [Worker-21] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.1.0.RELEASE/spring-webmvc-4.1.0.RELEASE.jar
+2018-02-13 10:19:04,567 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:19:04,567 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:19:04,567 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:19:04,567 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:19:04,567 [Worker-21] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of GestiBankBrijanavi
+2018-02-13 10:19:04,567 [Worker-21] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for GestiBankBrijanavi
+2018-02-13 10:19:04,582 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:19:05,846 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 10:19:06,408 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:19:06,423 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:19:06,423 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:19:06,423 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:19:06,423 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-02-13 10:19:06,454 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 10:19:07,000 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GestiBankBrijanavi/src
+2018-02-13 10:19:07,000 [Worker-3] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /GestiBankBrijanavi/src/test/java because it overlaps with /GestiBankBrijanavi/src
+2018-02-13 10:19:07,437 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 10:19:07,780 [Worker-3] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for GestiBankBrijanavi
+2018-02-13 10:19:07,796 [Worker-3] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-02-13 10:19:08,790 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:19:08,790 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:19:08,790 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:19:08,790 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:24:04,125 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:24:04,125 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:24:04,125 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:24:04,125 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:25:54,178 [Worker-28] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 10:25:54,693 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:25:54,693 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:25:54,693 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:25:54,693 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:25:54,693 [Worker-28] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of GestiBankBrijanavi
+2018-02-13 10:25:54,693 [Worker-28] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for GestiBankBrijanavi
+2018-02-13 10:25:54,693 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:25:56,042 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:25:56,042 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:25:56,042 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:25:56,042 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:26:17,443 [Worker-32] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2018-02-13 10:26:17,474 [Worker-32] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 10:26:17,989 [Worker-32] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /GestiBankBrijanavi/src
+2018-02-13 10:26:17,989 [Worker-32] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /GestiBankBrijanavi/src/test/java because it overlaps with /GestiBankBrijanavi/src
+2018-02-13 10:26:18,457 [Worker-32] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 10:26:18,831 [Worker-32] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for GestiBankBrijanavi
+2018-02-13 10:26:18,831 [Worker-32] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2018-02-13 10:26:19,892 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:26:19,892 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:26:19,892 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:26:19,892 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:28:00,332 [Worker-35] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: GestiBankBrijanavi:GestiBankBrijanavi:0.0.1-SNAPSHOT @ C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\pom.xml.
+2018-02-13 10:28:00,456 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/jersey-container-servlet/2.26/jersey-container-servlet-2.26.pom
+2018-02-13 10:28:00,472 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/jersey-container-servlet/2.26/jersey-container-servlet-2.26.pom
+2018-02-13 10:28:00,472 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-moxy/2.26/jersey-media-moxy-2.26.pom
+2018-02-13 10:28:00,488 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-moxy/2.26/jersey-media-moxy-2.26.pom
+2018-02-13 10:28:00,503 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-entity-filtering/2.26/jersey-entity-filtering-2.26.pom
+2018-02-13 10:28:00,519 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-entity-filtering/2.26/jersey-entity-filtering-2.26.pom
+2018-02-13 10:28:00,534 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.4/org.eclipse.persistence.moxy-2.6.4.pom
+2018-02-13 10:28:00,566 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.4/org.eclipse.persistence.moxy-2.6.4.pom
+2018-02-13 10:28:00,581 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.core/2.6.4/org.eclipse.persistence.core-2.6.4.pom
+2018-02-13 10:28:00,581 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.core/2.6.4/org.eclipse.persistence.core-2.6.4.pom
+2018-02-13 10:28:00,597 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.4/org.eclipse.persistence.asm-2.6.4.pom
+2018-02-13 10:28:00,612 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.4/org.eclipse.persistence.asm-2.6.4.pom
+2018-02-13 10:28:00,659 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/jersey-container-servlet/2.26/jersey-container-servlet-2.26.jar
+2018-02-13 10:28:00,690 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/containers/jersey-container-servlet/2.26/jersey-container-servlet-2.26.jar
+2018-02-13 10:28:00,706 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-common/2.26/jersey-common-2.26.jar
+2018-02-13 10:28:00,893 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/core/jersey-common/2.26/jersey-common-2.26.jar
+2018-02-13 10:28:00,893 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-moxy/2.26/jersey-media-moxy-2.26.jar
+2018-02-13 10:28:00,909 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/media/jersey-media-moxy/2.26/jersey-media-moxy-2.26.jar
+2018-02-13 10:28:00,924 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-entity-filtering/2.26/jersey-entity-filtering-2.26.jar
+2018-02-13 10:28:00,940 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/glassfish/jersey/ext/jersey-entity-filtering/2.26/jersey-entity-filtering-2.26.jar
+2018-02-13 10:28:00,956 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.4/org.eclipse.persistence.moxy-2.6.4.jar
+2018-02-13 10:28:01,018 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.4/org.eclipse.persistence.moxy-2.6.4.jar
+2018-02-13 10:28:01,034 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.core/2.6.4/org.eclipse.persistence.core-2.6.4.jar
+2018-02-13 10:28:01,533 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.core/2.6.4/org.eclipse.persistence.core-2.6.4.jar
+2018-02-13 10:28:01,533 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.4/org.eclipse.persistence.asm-2.6.4.jar
+2018-02-13 10:28:01,580 [Worker-35] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.4/org.eclipse.persistence.asm-2.6.4.jar
+2018-02-13 10:28:02,001 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:28:02,001 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:28:02,001 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:28:02,001 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:28:02,001 [Worker-35] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of GestiBankBrijanavi
+2018-02-13 10:28:02,001 [Worker-35] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for GestiBankBrijanavi
+2018-02-13 10:28:02,001 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:28:03,514 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:28:03,514 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:28:03,514 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:28:03,514 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:38:37,518 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:38:37,518 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:38:37,518 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:38:37,518 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:38:50,790 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:38:50,790 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:38:50,790 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:38:50,790 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:40:41,396 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:40:41,396 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:40:41,396 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:40:41,396 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:42:57,849 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:42:57,849 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:42:57,849 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:42:57,849 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:43:01,283 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:01,283 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:43:01,283 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:01,283 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:43:08,272 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:08,272 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:43:08,272 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:08,272 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:43:23,820 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:23,820 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:43:23,820 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:23,820 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:43:56,787 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:56,787 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:43:56,787 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:56,787 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:43:59,627 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:59,627 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:43:59,627 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:43:59,627 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:45:33,978 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:45:33,978 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:45:33,978 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:45:33,978 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:45:45,579 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:45:45,579 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:45:45,579 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:45:45,579 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:45:56,306 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:45:56,306 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:45:56,321 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:45:56,321 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:46:01,729 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:46:01,729 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:46:01,729 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:46:01,729 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:46:11,448 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:46:11,448 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:46:11,448 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:46:11,448 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:46:22,430 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:46:22,430 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:46:22,430 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:46:22,430 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:47:15,037 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:47:15,037 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:47:15,037 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:47:15,037 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:53:44,249 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:53:44,249 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:53:44,249 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:53:44,249 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:56:10,285 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:56:10,285 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:56:10,285 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:56:10,285 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:56:42,425 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:56:42,425 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:56:42,425 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:56:42,425 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 10:58:27,332 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:58:27,332 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 10:58:27,332 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 10:58:27,332 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:05:00,250 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:05:00,250 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:05:00,250 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:05:00,250 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:08:54,149 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:08:54,149 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:08:54,149 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:08:54,165 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:10:31,494 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:10:31,494 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:10:31,494 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:10:31,494 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:13:16,204 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:13:16,204 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:13:16,204 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:13:16,204 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:18:40,512 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:18:40,512 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:18:40,512 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:18:40,512 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:19:20,941 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:19:20,941 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:19:20,941 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:19:20,941 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:19:51,618 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:19:51,634 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:19:51,634 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:19:51,634 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:22:33,536 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:22:33,536 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:22:33,536 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:22:33,536 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:23:38,446 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:23:38,446 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:23:38,446 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:23:38,446 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:24:34,836 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:24:34,836 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:24:34,836 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:24:34,836 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:25:03,150 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:25:03,150 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:25:03,150 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:25:03,150 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:25:17,413 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:25:17,413 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:25:17,428 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:25:17,428 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 11:25:34,076 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:25:34,076 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 11:25:34,076 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 11:25:34,076 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:26:36,784 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:26:36,784 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:26:36,784 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:26:36,784 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:27:59,568 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:27:59,568 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:27:59,568 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:27:59,568 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:28:09,497 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:28:09,497 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:28:09,497 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:28:09,497 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:28:38,669 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:28:38,669 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:28:38,669 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:28:38,669 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:29:40,318 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:29:40,318 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:29:40,318 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:29:40,318 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:30:04,138 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:30:04,138 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:30:04,138 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:30:04,138 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:30:59,870 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:30:59,870 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:30:59,870 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:30:59,870 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:31:15,401 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:31:15,401 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:31:15,401 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:31:15,401 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:31:31,309 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:31:31,309 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:31:31,309 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:31:31,309 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:34:25,186 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:34:25,186 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:34:25,186 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:34:25,186 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:34:51,933 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:34:51,933 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:34:51,933 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:34:51,933 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:35:30,508 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:35:30,508 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:35:30,508 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:35:30,508 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:36:13,170 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:36:13,170 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:36:13,170 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:36:13,170 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:36:44,596 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:36:44,596 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:36:44,596 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:36:44,596 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:37:06,213 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:37:06,213 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:37:06,213 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:37:06,213 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:37:44,347 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:37:44,347 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:37:44,347 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:37:44,347 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:38:27,267 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:38:27,267 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:38:27,267 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:38:27,267 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:39:13,175 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:39:13,175 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:39:13,175 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:39:13,175 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:40:35,807 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:40:35,807 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:40:35,807 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:40:35,807 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:58:44,771 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:58:44,771 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:58:44,771 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:58:44,771 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 12:59:56,575 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:59:56,575 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 12:59:56,575 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 12:59:56,575 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:05:13,254 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:05:13,254 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:05:13,254 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:05:13,254 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:06:01,546 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:06:01,546 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:06:01,546 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:06:01,546 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:06:10,475 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:06:10,475 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:06:10,475 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:06:10,475 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:07:29,319 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:07:29,319 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:07:29,319 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:07:29,319 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:08:18,714 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:08:18,714 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:08:18,714 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:08:18,714 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:08:48,338 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:08:48,338 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:08:48,338 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:08:48,338 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:04,601 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:04,601 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:04,601 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:04,601 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:14,923 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:14,923 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:14,923 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:14,923 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:20,819 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:20,819 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:20,819 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:20,819 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:26,172 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:26,172 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:26,172 [Worker-26] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:26,172 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:32,809 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:32,809 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:32,809 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:32,809 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:37,632 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:37,632 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:37,632 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:37,647 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:43,797 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:43,797 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:43,797 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:43,797 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:48,789 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:48,789 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:48,789 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:48,789 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:54,897 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:54,897 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:54,897 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:54,897 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:09:59,496 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:59,496 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:09:59,496 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:09:59,496 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:10:05,349 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:10:05,349 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:10:05,349 [Worker-2] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:10:05,349 [Worker-2] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:10:14,468 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:10:14,468 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:10:14,468 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:10:14,468 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:10:20,772 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:10:20,772 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:10:20,772 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:10:20,772 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-13 13:10:32,130 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:10:32,130 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-13 13:10:32,130 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-13 13:10:32,130 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources

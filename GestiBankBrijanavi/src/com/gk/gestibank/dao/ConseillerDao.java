@@ -14,7 +14,8 @@ public interface ConseillerDao {
 	public void createConseiller(Conseiller conseiller);
 	public void updateConseiller(Conseiller conseiller);
 	public void deleteConseiller(String matricule);
-	public Conseiller getConseillerByNameOrMatricule(String recherche);
+	public Conseiller getConseillerByMatricule(String matricule);
+	public List<Conseiller> getConseillerByNameOrMatricule(String recherche);
 	public List<Client> getClientsFromConseiller(String matricule);
 	public void addClientToConseiller(Client client, String matricule);
 	public void deleteClientFromConseiller(int idClient, String matricule);

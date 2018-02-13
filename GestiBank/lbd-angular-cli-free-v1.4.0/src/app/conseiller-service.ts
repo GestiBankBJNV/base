@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
@@ -11,10 +12,18 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
 
   delayMs = 500;
 
-  // Fake server get; assume nothing can go wrong
-  getConseillers(): Observable<Conseiller[]> {
-    return of(conseillers).delay(this.delayMs); // simulate latency with delay
+  constructor(private http : Http) {}
+
+  getConseillers() : Observable<Conseiller[]>{
+    return this.http.get("http://localhost:8080/conseillers")
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
+
+  // Fake server get; assume nothing can go wrong
+ /* getConseillers(): Observable<Conseiller[]> {
+    return of(conseillers).delay(this.delayMs); // simulate latency with delay
+  }*/
 
   // Fake server update; assume nothing can go wrong
   updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
@@ -71,7 +80,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     return of(temp).delay(this.delayMs);
   }
 
-  getConseillersByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
+  /*getConseillersByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
     var temp=[];
     for(var i=0; i<conseillers.length; i++){
       // mettre dans temp les conseillers ayant le nom recherché
@@ -80,6 +89,12 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
       }
     }
     return of(temp).delay(this.delayMs);
+  }*/
+//TODO
+  getConseillersByNameAndID(name : string, id: string){
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + name)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   getConseillerWithClient(client: Client){
