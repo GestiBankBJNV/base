@@ -132,7 +132,7 @@ export class AdminAffectationsComponent implements OnInit {
     this.isLoading = true;  
     this.isSearching = true;
     this.getConseillers(); // Récupérer tous les conseillers
-    this.conseillers = this.conseillerService.getConseillersByNameAndID(this.conseillerRecherche, this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule TODO: ne mettre qu'un seul paramètre dans cette méthode
+    this.conseillers = this.conseillerService.getConseillersByNameOrMatricule(this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule TODO: ne mettre qu'un seul paramètre dans cette méthode
                         // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }
@@ -192,7 +192,7 @@ export class AdminAffectationsComponent implements OnInit {
     this.conseillersDataSource = Observable.create((observer: any) => {
       // Runs on every search
       observer.next(this.conseillerRecherche);
-    }).mergeMap((token: string) => this.conseillerService.getConseillersByNameAndID(token, token));
+    }).mergeMap((token: string) => this.conseillerService.getConseillersByNameOrMatricule(token));
 
     this.clientsDataSource = Observable.create((observer: any) => {
       // Runs on every search

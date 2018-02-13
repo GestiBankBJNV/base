@@ -40,6 +40,11 @@ public class WSConseiller {
 		return conseillerService.getConseillerByNameOrMatricule(recherche);
 	}
 	
-	
+	@GET
+	@Path("/hello/{id}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String sayHello(@PathParam("id") String id){
+		return "hello! " + id;
+	}
 
 }

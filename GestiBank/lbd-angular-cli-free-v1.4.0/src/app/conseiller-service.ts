@@ -20,30 +20,12 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  // Fake server get; assume nothing can go wrong
- /* getConseillers(): Observable<Conseiller[]> {
-    return of(conseillers).delay(this.delayMs); // simulate latency with delay
-  }*/
-
   // Fake server update; assume nothing can go wrong
   updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
   	/*console.log('updateConseiller()');*/
     const oldConseiller = conseillers.find(c => c.matricule === conseiller.matricule);
     const newConseiller = Object.assign(oldConseiller, conseiller); // Demo: mutate cached hero
     return of(newConseiller).delay(this.delayMs); // simulate latency with delay
-  }
-
-  getConseillersByName(nom: string): Observable<Conseiller[]> {
-    var temp=[];
-
-    for(var i=0; i<conseillers.length; i++){
-      // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].nom.startsWith(nom, 0)) {
-         temp.push(conseillers[i]);
-         /*console.log('conseillers trouvé : ' + conseillers[i].nom);*/
-      }
-    }
-    return of(temp).delay(this.delayMs);
   }
 
    getConseillersByIdSimple(id: string): Conseiller{
@@ -63,36 +45,10 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
   getListeClientsFromConseiller(id : string){
     let conseiller: Conseiller = this.getConseillersByIdSimple(id);
     return conseiller.clients;    
-
-
   }
 
-  getConseillersByID(id: string): Observable<Conseiller[]> {
-    
-    var temp=[];
-
-    for(var i=0; i<conseillers.length; i++){
-      // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].matricule === id) {
-         temp.push(conseillers[i]);
-      }
-    }
-    return of(temp).delay(this.delayMs);
-  }
-
-  /*getConseillersByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
-    var temp=[];
-    for(var i=0; i<conseillers.length; i++){
-      // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].nom.toUpperCase().startsWith(name.toUpperCase(), 0) || conseillers[i].matricule === id) {
-         temp.push(conseillers[i]);         
-      }
-    }
-    return of(temp).delay(this.delayMs);
-  }*/
-//TODO
-  getConseillersByNameAndID(name : string, id: string){
-    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + name)
+  getConseillersByNameOrMatricule(recherche : string){
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + recherche)
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
@@ -141,4 +97,22 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     return demandes;
 
   }
+
+
+  /* ***************** Ancien Code ***************** */
+  // Fake server get; assume nothing can go wrong
+ /* getConseillers(): Observable<Conseiller[]> {
+    return of(conseillers).delay(this.delayMs); // simulate latency with delay
+  }*/
+
+  /*getConseillersByNameAndID(name: string, id: string) { // A améliorer pour éviter copié/collé
+    var temp=[];
+    for(var i=0; i<conseillers.length; i++){
+      // mettre dans temp les conseillers ayant le nom recherché
+      if(conseillers[i].nom.toUpperCase().startsWith(name.toUpperCase(), 0) || conseillers[i].matricule === id) {
+         temp.push(conseillers[i]);         
+      }
+    }
+    return of(temp).delay(this.delayMs);
+  }*/
 }

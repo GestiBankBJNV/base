@@ -45,7 +45,7 @@ export class AdminConseillersComponent implements OnInit {
     this.getConseillers(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
                            /* il n'y en a pas beaucoup donc c'est pas si grave, après ce code changera pour chercher les infos dans une BDD de toute façon */
     this.isLoading = true;
-    this.conseillers = this.conseillerService.getConseillersByNameAndID(this.conseillerRecherche, this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule
+    this.conseillers = this.conseillerService.getConseillersByNameOrMatricule(this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule
                     		// Normalement à faire : error handling
                     		.finally(() => this.isLoading = false);
 	}
