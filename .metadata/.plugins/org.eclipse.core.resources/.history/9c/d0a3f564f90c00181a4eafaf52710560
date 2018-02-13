@@ -1,0 +1,9 @@
+package com.gk.gestibank.dao;
+
+public class CompteDao {
+
+	public CompteDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

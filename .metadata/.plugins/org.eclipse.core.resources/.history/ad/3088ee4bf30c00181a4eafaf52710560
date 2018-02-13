@@ -1,0 +1,14 @@
+import java.util.Date;
+
+
+public class Operation {
+
+	private int numero;
+	private Date dateOperation;
+	private double montant;
+	private String type;
+	
+	public Operation() {
+	}
+
+}

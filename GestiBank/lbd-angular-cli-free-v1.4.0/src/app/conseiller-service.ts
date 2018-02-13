@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Conseiller, conseillers, Client, Demande } from './data-model';
+import { Conseiller, conseillers, Client, DemandeInscription } from './data-model';
 
 @Injectable()
 export class ConseillerService { // Correspond finalement aux méthodes de l'admin, mais je ne vais pas modifier le nom maintenant...
@@ -102,7 +102,11 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
 
   addConseiller(conseiller: Conseiller) {
     // TODO : changer matricule
-    conseiller.matricule = conseillers[conseillers.length-1].matricule + 1;
+    conseiller.matricule = ((conseiller.dateDebutContrat.getMonth() + 1) < 10 ? 
+                                "0" + (conseiller.dateDebutContrat.getMonth() + 1) : (conseiller.dateDebutContrat.getMonth() + 1))
+                            + (Math.random()*1000).toFixed(0)
+                            + conseiller.prenom.charAt(0).toUpperCase() 
+                            + conseiller.nom.charAt(0).toUpperCase();
     conseillers.push(conseiller);    
   }
 
@@ -117,7 +121,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
 
     let conseiller: Conseiller = this.getConseillersByIdSimple(id);
 
-    let demandes: Demande[] = conseiller.demandes;
+    let demandes: DemandeInscription[] = conseiller.demandesInscription;
 
     return demandes;
 

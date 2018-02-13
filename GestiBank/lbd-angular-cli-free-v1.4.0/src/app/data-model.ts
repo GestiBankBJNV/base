@@ -5,7 +5,7 @@
 
 /* *********** Classes *********** */
 
-export class Personne {  // ajouter password (dans java)
+export class Utilisateur {  // ajouter password (dans java)
   id: number;  
   prenom: string;
   nom: string;  
@@ -13,55 +13,55 @@ export class Personne {  // ajouter password (dans java)
   password: string;
   email: string;  
   numTel: String;
+  statut: String;
 }
 
-export class Adresse { // dans java on a ajouté le numéro : inutile, je pense ça va avec rue
-    rue = "";
-    ville = "";
-    cp = "";   // à changer dans java
-}
-
-export class SuperAdmin extends Personne { 
-  conseillers: Conseiller[]; // est-ce nécessaire ? ils sont déjà dans la banque...
-  demandesInscriptions: DemandeInscription[]; // todo: actuellement, les demandes ne sont pas enregistrées dans l'admin
-}
-
-export class Conseiller extends Personne {
+export class Conseiller extends Utilisateur {
   matricule: string;
   dateDebutContrat: Date;
   clients: Client[];
+<<<<<<< HEAD
   demandes: Demande[];
 }
 
 export class Client extends Personne {  
   /*demandes: DemandeClient[];*/
   adresse: Adresse;
+=======
+  demandesInscription: DemandeInscription[];  
+}
+
+export class Client extends Utilisateur {  
+  demandes: DemandeClient[];
+  adresse = "";
+  ville = "";
+  cp = "";
+>>>>>>> master
   nbEnfants: number;
   situationMatrimoniale: string;
   comptes: Compte[];
-  //conseiller : Conseiller;
+  isClient: boolean;
 }
 
 export class Compte {
   code: number;
   solde: number;
   operations: Operation[];
+  decouvert: number;
 }
 
 export class CompteEpargne extends Compte {
   taux: number;
 }
 
-export class CompteCourant extends Compte {
-  decouvert: number;
-}
-
 export class Operation {
   numero: number;
   dateOperation: Date;
   montant: number;
+  type: string;
 }
 
+<<<<<<< HEAD
 export class Retrait extends Operation {  
 }
 
@@ -74,21 +74,23 @@ export class Virement extends Operation {
 export class Demande { // manque le statut et la date d'affectation dans java
   id: number; // à changer dans java
   date: Date;
+=======
+export class DemandeInscription { // = Inscription dans java (à modifier)
+  id: number;
+  date: Date = new Date();
+>>>>>>> master
   dateAffectation: Date;
   statut: string;
   libelle: string;
-}
-
-
-export class DemandeInscription extends Demande { // = Inscription dans java (à modifier)
   coordonnees: Client;
 }
 
-export class DemandeClient extends Demande {
-}
-
-export class DemandeChequier extends DemandeClient {
-  libelle = 'Demande de chéquier'; 
+export class DemandeClient {
+  id: number;
+  date: Date = new Date();
+  dateAffectation: Date;
+  statut: string = "en cours";
+  libelle: string;
 }
 
 export class DemandeModif extends DemandeClient {
@@ -107,12 +109,6 @@ export class Notification {
   message: string;
   type: string;
   //isRead : boolean;//A rajouter dans Java
-}
-
-export class Banque {
-  clients: Client[];
-  conseillers: Conseiller[]; // enlever la majuscule dans java
-  superAdmin: SuperAdmin;
 }
 
 /* *********** Variables *********** */
@@ -145,12 +141,19 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     nomUtilisateur: 'ADupont', 
     password: '',
     email: 'Antoine@email.com',
-    adresse: {rue: '23 rue Gambetta',  ville: 'Lille', cp: '59000'},
+    statut: 'client',
+    adresse: '23 rue Gambetta',  ville: 'Lille', cp: '59000',
     numTel: '0683657416',
     nbEnfants: 0,
     situationMatrimoniale: 'célibataire',
+<<<<<<< HEAD
     comptes: []
     //demandes: []
+=======
+    comptes: [],
+    demandes: [],
+    isClient: true
+>>>>>>> master
   },
   {
     id: 2,
@@ -159,12 +162,19 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     nomUtilisateur: 'MCassel', 
     password: '',
     email: 'Mathieu@email.com',  
-    adresse: {rue: '3 rue des accacias',  ville: 'Massy', cp: '91000'},
+    statut: 'client',
+    adresse: '3 rue des accacias',  ville: 'Massy', cp: '91000',
     numTel: '0616582364',
     nbEnfants: 2,
     situationMatrimoniale: 'marié',
+<<<<<<< HEAD
     comptes: []
     //demandes: [demandeCompteEpargne]
+=======
+    comptes: [],
+    demandes: [],
+    isClient: true
+>>>>>>> master
   },
   {
     id: 3,    
@@ -172,13 +182,20 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     nom: 'Despres',  
     nomUtilisateur: 'LDespres',
     password: '', 
-    email: 'Lydie@email.com',     
-    adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
+    email: 'Lydie@email.com',   
+    statut: 'client',  
+    adresse: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000',
     numTel: '0683657416',
     nbEnfants: 0,
     situationMatrimoniale: 'pacsé',
+<<<<<<< HEAD
     comptes: []
     //demandes: [new DemandeChequier()]
+=======
+    comptes: [],
+    demandes: [],
+    isClient: true
+>>>>>>> master
   },
   {
     id: 4,    
@@ -187,12 +204,19 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     nomUtilisateur: 'ACardin', 
     password: '',
     email: 'Aude@email.com',  
-    adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
+    statut: 'client',
+    adresse: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000',
     numTel: '0683657416',
     nbEnfants: 3,
     situationMatrimoniale: 'marié',
+<<<<<<< HEAD
     comptes: []
     //demandes: []
+=======
+    comptes: [],
+    demandes: [],
+    isClient: true
+>>>>>>> master
   },
   {
     id: 5,    
@@ -201,12 +225,19 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     nomUtilisateur: 'CMachin',
     password: '',
     email: 'Coralie@email.com',
-    adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
+    statut: 'client',
+    adresse: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000',
     numTel: '0683657416',
     nbEnfants: 1,
     situationMatrimoniale: 'marié',
+<<<<<<< HEAD
     comptes: []
     //demandes: []
+=======
+    comptes: [],
+    demandes: [],
+    isClient: true
+>>>>>>> master
   },
   {
     id: 6,    
@@ -215,12 +246,19 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     nomUtilisateur: 'DSully',  
     password: '',
     email: 'Omar@email.com',
-    adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
+    statut: 'client',
+    adresse: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000',
     numTel: '0683657416',
     nbEnfants: 0,
     situationMatrimoniale: 'célibataire',
+<<<<<<< HEAD
     comptes: []
     //demandes: []
+=======
+    comptes: [],
+    demandes: [],
+    isClient: true
+>>>>>>> master
   },
   {
     id: 7,    
@@ -229,12 +267,70 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     nomUtilisateur: 'ABergstein', 
     password: '',
     email: 'Adrien@email.com',
-    adresse: {rue: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000'},
+    statut: 'client',
+    adresse: '65 rue des Pandas',  ville: 'Pandacity', cp: '23000',
     numTel: '0683657416',
     nbEnfants: 2,
     situationMatrimoniale: 'marié',
+<<<<<<< HEAD
     comptes: []
     //demandes: []
+=======
+    comptes: [],
+    demandes: [],
+    isClient: true
+  },
+];
+
+export const demandesInscription: DemandeInscription[] = [
+  {
+    id: 1,
+    date: new Date(2018,0,15),
+    dateAffectation: undefined,
+    statut: '',
+    libelle: "inscription",
+    coordonnees: {id: 101, email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", nomUtilisateur: 'DRice', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+  },
+  {
+    id: 2,
+    date: new Date(2017,11,5),
+    dateAffectation: new Date(2017,6,12),
+    statut: 'traitée',
+    libelle: "inscription",
+    coordonnees: {id: 102, email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", nomUtilisateur: 'MHooper', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+  },
+  {
+    id: 3,
+    date: new Date(2018,0,7),
+    dateAffectation: undefined,
+    statut: '',
+    libelle: "inscription",
+    coordonnees: {id: 103, email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", nomUtilisateur: 'SRodriguez', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+  },
+  {
+    id: 4,
+    date: new Date(2018,0,9),
+    dateAffectation: new Date(2018,0,11),
+    statut: 'en cours',
+    libelle: "inscription",
+    coordonnees: {id: 104, email:"philip@truc.com", prenom: "Philip", nom: "Chaney", nomUtilisateur: 'PChaney', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0,situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+  },
+  {
+    id: 5,
+    date: new Date(2018,0,13),
+    dateAffectation: undefined,
+    statut: '',
+    libelle: "inscription",
+    coordonnees: {id: 105, email:"doris@truc.com", prenom: "Doris", nom: "Greene", nomUtilisateur: 'DGreen', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+  },
+  {
+    id: 6,
+    date: new Date(2018,0,10),
+    dateAffectation: undefined,
+    statut: '',
+    libelle: "inscription",
+    coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+>>>>>>> master
   },
 ];
 
@@ -247,10 +343,11 @@ export const conseillers: Conseiller[] = [
     nom: 'Dupont',  
     nomUtilisateur: 'MDupont',  
     password: '',
+    statut: 'conseiller',
     numTel: '0625364859',
     dateDebutContrat: new Date(2018, 0, 1),
     clients: [clients[0], clients[1]],
-    demandes: []
+    demandesInscription: []
   },
   {
     id: 2,
@@ -260,10 +357,16 @@ export const conseillers: Conseiller[] = [
     nom: 'Martin',   
     nomUtilisateur: 'RMartin', 
     password: '',
+    statut: 'conseiller',
     numTel: '0625364859',
     dateDebutContrat: new Date(2018, 0, 5),
+<<<<<<< HEAD
     clients: [clients[2]],
     demandes: []
+=======
+    clients: [clients[2], clients[6]],
+    demandesInscription: [demandesInscription[0], demandesInscription[2], demandesInscription[3], demandesInscription[4]]
+>>>>>>> master
   },
   {
     id: 3,
@@ -273,10 +376,11 @@ export const conseillers: Conseiller[] = [
     nom: 'Pommier',    
     nomUtilisateur: 'APommier',
     password: '',
+    statut: 'conseiller',
     numTel: '0625364859',
     dateDebutContrat: new Date(2017, 11, 15),
     clients: [clients[3], clients[4], clients[5]],
-    demandes: []
+    demandesInscription: []
   },
   {
     id: 4,
@@ -286,10 +390,11 @@ export const conseillers: Conseiller[] = [
     nom: 'Cardin',   
     nomUtilisateur: 'ECardin', 
     password: '',
+    statut: 'conseiller',
     numTel: '0625364859',
     dateDebutContrat: new Date(2018, 0, 23),
     clients: [clients[6]],
-    demandes: []
+    demandesInscription: []
   },
   {
     id: 5,
@@ -299,10 +404,11 @@ export const conseillers: Conseiller[] = [
     nom: 'Gris',   
     nomUtilisateur: 'YGris', 
     password: '',
+    statut: 'conseiller',
     numTel: '0625364859',
     dateDebutContrat: new Date(2018, 0, 3),
     clients: [],
-    demandes: []
+    demandesInscription: []
   },
   {
     id: 6,
@@ -312,13 +418,15 @@ export const conseillers: Conseiller[] = [
     nom: 'Malin',    
     nomUtilisateur: 'JPMalin',
     password: '',
+    statut: 'conseiller',
     numTel: '0625364859',
     dateDebutContrat: new Date(2018, 0, 7),
     clients: [],
-    demandes: []
+    demandesInscription: []
   },
 ];
 
+<<<<<<< HEAD
 export const demandesInscription: DemandeInscription[] = [
   {
     id: 1,
@@ -383,3 +491,6 @@ export const admin: SuperAdmin = {
 }
 
               
+=======
+
+>>>>>>> master

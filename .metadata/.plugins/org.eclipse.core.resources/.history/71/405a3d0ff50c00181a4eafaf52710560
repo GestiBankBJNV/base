@@ -1,0 +1,17 @@
+import java.util.Date;
+
+
+public class DemandeModif extends DemandeClient {
+
+	private Client coordonnees;
+	
+	public DemandeModif() {
+	}
+
+	public DemandeModif(int id, Date date, Date dateAffectation, String statut,
+			String libelle, Client coordonnees) {
+		super(id, date, dateAffectation, statut, libelle);
+		this.coordonnees = coordonnees;
+	}
+
+}

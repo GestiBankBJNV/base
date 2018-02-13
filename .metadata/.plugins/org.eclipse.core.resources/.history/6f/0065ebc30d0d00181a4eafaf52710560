@@ -1,0 +1,7 @@
+package com.gk.gestibank.conseiller.service.impl.txt;
+
+import com.gk.gestibank.conseiller.service.IChargerConseiller;
+
+public class ChargeurConseillerFichierTxt implements IChargerConseiller {
+
+}

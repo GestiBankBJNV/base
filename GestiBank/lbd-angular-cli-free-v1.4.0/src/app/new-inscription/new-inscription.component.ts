@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
-import { Conseiller, Client, Demande, Personne } from '../data-model';
+import { Conseiller, Client, DemandeInscription, Utilisateur } from '../data-model';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
 })
 export class NewInscriptionComponent implements OnInit {
 
-	demandes: Demande[];
+	demandes: DemandeInscription[];
 
   constructor(private cs: ConseillerService) { }
 
@@ -20,9 +20,9 @@ export class NewInscriptionComponent implements OnInit {
   	this.demandes = this.cs.getListDemandeInscriptionByConseiller("0002");
   }
 
-  verifInscription(d: Demande){
+  verifInscription(d: DemandeInscription){
 
-  	let coordonnee: Personne;
+  	let coordonnee: Utilisateur;
 
 
   }

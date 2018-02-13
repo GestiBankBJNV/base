@@ -1,0 +1,14 @@
+
+public class Conseiller extends Utilisateur {
+
+	public Conseiller() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Conseiller(int id, String prenom, String nom, String nomUtilisateur,
+			String password, String email, String numTel, String statut) {
+		super(id, prenom, nom, nomUtilisateur, password, email, numTel, statut);
+		// TODO Auto-generated constructor stub
+	}
+
+}

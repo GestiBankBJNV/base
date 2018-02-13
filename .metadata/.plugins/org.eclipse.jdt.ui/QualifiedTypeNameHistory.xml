@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.gk.gestibank.model.Compte"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.dao.ConseillerDao"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.dao.impl.ConseillerDaoImpl"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.service.conseiller.GestionnaireConseiller"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.model.Conseiller"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+</qualifiedTypeNameHistroy>
