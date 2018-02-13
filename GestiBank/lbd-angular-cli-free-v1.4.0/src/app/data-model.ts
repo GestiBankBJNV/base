@@ -1,8 +1,6 @@
-
 // TODO : mettre à jour les classes avec diagramme de classe
 // Pourquoi dans java on a : EspaceAdmin, Espace... , Guest ?
 // Je n'ai pas mis de méthodes dans les classes car ce n'est pas vraiment utile en typescript (et il va falloir tout refaire en java de toute façon...)
-
 /* *********** Classes *********** */
 
 export class Utilisateur {  // ajouter password (dans java)
@@ -20,14 +18,6 @@ export class Conseiller extends Utilisateur {
   matricule: string;
   dateDebutContrat: Date;
   clients: Client[];
-<<<<<<< HEAD
-  demandes: Demande[];
-}
-
-export class Client extends Personne {  
-  /*demandes: DemandeClient[];*/
-  adresse: Adresse;
-=======
   demandesInscription: DemandeInscription[];  
 }
 
@@ -36,7 +26,6 @@ export class Client extends Utilisateur {
   adresse = "";
   ville = "";
   cp = "";
->>>>>>> master
   nbEnfants: number;
   situationMatrimoniale: string;
   comptes: Compte[];
@@ -61,26 +50,11 @@ export class Operation {
   type: string;
 }
 
-<<<<<<< HEAD
-export class Retrait extends Operation {  
-}
-
-export class Versement extends Operation {  
-}
-
-export class Virement extends Operation {
-}
-
-export class Demande { // manque le statut et la date d'affectation dans java
-  id: number; // à changer dans java
-  date: Date;
-=======
 export class DemandeInscription { // = Inscription dans java (à modifier)
   id: number;
   date: Date = new Date();
->>>>>>> master
   dateAffectation: Date;
-  statut: string;
+  statut: string = "en cours";
   libelle: string;
   coordonnees: Client;
 }
@@ -146,14 +120,9 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     numTel: '0683657416',
     nbEnfants: 0,
     situationMatrimoniale: 'célibataire',
-<<<<<<< HEAD
-    comptes: []
-    //demandes: []
-=======
     comptes: [],
     demandes: [],
     isClient: true
->>>>>>> master
   },
   {
     id: 2,
@@ -167,14 +136,9 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     numTel: '0616582364',
     nbEnfants: 2,
     situationMatrimoniale: 'marié',
-<<<<<<< HEAD
-    comptes: []
-    //demandes: [demandeCompteEpargne]
-=======
     comptes: [],
     demandes: [],
     isClient: true
->>>>>>> master
   },
   {
     id: 3,    
@@ -188,14 +152,9 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     numTel: '0683657416',
     nbEnfants: 0,
     situationMatrimoniale: 'pacsé',
-<<<<<<< HEAD
-    comptes: []
-    //demandes: [new DemandeChequier()]
-=======
     comptes: [],
     demandes: [],
     isClient: true
->>>>>>> master
   },
   {
     id: 4,    
@@ -209,14 +168,9 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     numTel: '0683657416',
     nbEnfants: 3,
     situationMatrimoniale: 'marié',
-<<<<<<< HEAD
-    comptes: []
-    //demandes: []
-=======
     comptes: [],
     demandes: [],
     isClient: true
->>>>>>> master
   },
   {
     id: 5,    
@@ -230,14 +184,9 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     numTel: '0683657416',
     nbEnfants: 1,
     situationMatrimoniale: 'marié',
-<<<<<<< HEAD
-    comptes: []
-    //demandes: []
-=======
     comptes: [],
     demandes: [],
     isClient: true
->>>>>>> master
   },
   {
     id: 6,    
@@ -251,14 +200,9 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     numTel: '0683657416',
     nbEnfants: 0,
     situationMatrimoniale: 'célibataire',
-<<<<<<< HEAD
-    comptes: []
-    //demandes: []
-=======
     comptes: [],
     demandes: [],
     isClient: true
->>>>>>> master
   },
   {
     id: 7,    
@@ -272,10 +216,6 @@ export const clients: Client[] = [ // todo : rajouter des comptes
     numTel: '0683657416',
     nbEnfants: 2,
     situationMatrimoniale: 'marié',
-<<<<<<< HEAD
-    comptes: []
-    //demandes: []
-=======
     comptes: [],
     demandes: [],
     isClient: true
@@ -330,7 +270,6 @@ export const demandesInscription: DemandeInscription[] = [
     statut: '',
     libelle: "inscription",
     coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
->>>>>>> master
   },
 ];
 
@@ -360,13 +299,8 @@ export const conseillers: Conseiller[] = [
     statut: 'conseiller',
     numTel: '0625364859',
     dateDebutContrat: new Date(2018, 0, 5),
-<<<<<<< HEAD
-    clients: [clients[2]],
-    demandes: []
-=======
     clients: [clients[2], clients[6]],
     demandesInscription: [demandesInscription[0], demandesInscription[2], demandesInscription[3], demandesInscription[4]]
->>>>>>> master
   },
   {
     id: 3,
@@ -425,72 +359,3 @@ export const conseillers: Conseiller[] = [
     demandesInscription: []
   },
 ];
-
-<<<<<<< HEAD
-export const demandesInscription: DemandeInscription[] = [
-  {
-    id: 1,
-    date: new Date(2018,0,15),
-    dateAffectation: undefined,
-    statut: '',
-    libelle: "inscription",
-    coordonnees: {id: 101, email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", nomUtilisateur: 'DRice', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
-  },
-  {
-    id: 2,
-    date: new Date(2017,11,5),
-    dateAffectation: new Date(2017,6,12),
-    statut: 'traitée',
-    libelle: "inscription",
-    coordonnees: {id: 102, email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", nomUtilisateur: 'MHooper', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
-  },
-  {
-    id: 3,
-    date: new Date(2018,0,7),
-    dateAffectation: undefined,
-    statut: '',
-    libelle: "inscription",
-    coordonnees: {id: 103, email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", nomUtilisateur: 'SRodriguez', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
-  },
-  {
-    id: 4,
-    date: new Date(2018,0,9),
-    dateAffectation: new Date(2018,0,11),
-    statut: 'en cours',
-    libelle: "inscription",
-    coordonnees: {id: 104, email:"philip@truc.com", prenom: "Philip", nom: "Chaney", nomUtilisateur: 'PChaney', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0,situationMatrimoniale:"célibataire", comptes: []}
-  },
-  {
-    id: 5,
-    date: new Date(2018,0,13),
-    dateAffectation: undefined,
-    statut: '',
-    libelle: "inscription",
-    coordonnees: {id: 105, email:"doris@truc.com", prenom: "Doris", nom: "Greene", nomUtilisateur: 'DGreen', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
-  },
-  {
-    id: 6,
-    date: new Date(2018,0,10),
-    dateAffectation: undefined,
-    statut: '',
-    libelle: "inscription",
-    coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', password: '', adresse: {rue: "2 rue machinchose", ville: "Uneville", cp:"56480"}, numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: []}
-  },
-];
-
-export const admin: SuperAdmin = {
-  id: 0,
-  prenom: "admin",
-  nom: "admin",
-  nomUtilisateur: "admin",
-  password: "admin",
-  email:"",
-  numTel: "",
-  conseillers: undefined,
-  demandesInscriptions: demandesInscription
-}
-
-              
-=======
-
->>>>>>> master

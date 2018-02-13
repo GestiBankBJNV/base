@@ -1,24 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { ConseillerService } from '../conseiller-service';
 import { DatePipe } from '@angular/common';
 import { Conseiller, Client, DemandeClient } from '../data-model';
 import { Observable } from 'rxjs/Observable';
->>>>>>> master
 
 @Component({
   selector: 'app-conseiller-accueil',
   templateUrl: './conseiller-accueil.component.html',
   styleUrls: ['./conseiller-accueil.component.scss']
 })
-export class ConseillerAccueilComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-
-  ngOnInit() {
-=======
 export class ConseillerAccueilComponent implements OnInit {	
 
 
@@ -83,7 +74,6 @@ export class ConseillerAccueilComponent implements OnInit {
       this.isDetailDemande = false;
       this.idSelectionne = null;
       this.indexClient = null;
->>>>>>> master
   }
 
 }
