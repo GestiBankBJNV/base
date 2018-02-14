@@ -4,10 +4,7 @@ import { Client } from '../classes/client';
 import { CLIENT } from '../classes/FAKES';
 import { Operation } from '../classes/operation';
 import { showNotification } from '../data-model';
-<<<<<<< HEAD
-=======
 import { DecimalPipe, DatePipe } from '@angular/common';
->>>>>>> victorien
 
 declare var $:any;
 
@@ -40,13 +37,10 @@ export class ClientComptesComponent implements OnInit {
   displayedCount : number = 20;                   //Nombre d'éléments à afficher par page  
   currentPage : number = 0;                       //Index de la page actuelle
   pageCount : number = 10;                        //Nombre de pages (recalculé en fonction des critères)
-<<<<<<< HEAD
   
-
-=======
   amounts : number[] = [];                        //Soldes restant pour les opérations selectionnées.
   displayedAmounts : number[];                    //soldes affichés
->>>>>>> victorien
+
   //CONSTRUCTEUR
   constructor() { }
 

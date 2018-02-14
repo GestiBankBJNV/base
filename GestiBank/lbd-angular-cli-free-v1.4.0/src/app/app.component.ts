@@ -14,15 +14,11 @@ export class AppComponent implements OnInit {
        // this language will be used as a fallback when a translation isn't found in the current language
        translate.setDefaultLang(translate.getBrowserLang());
        // the lang to use, if the lang isn't available, it will use the current loader to get them
-<<<<<<< HEAD
-       translate.use('fr');
-=======
-       //this.setLanguage('fr');
+       this.setLanguage('fr');
      }
 
      setLanguage(lang : string){
        this.translate.use(lang);
->>>>>>> victorien
      }
 
     ngOnInit(){
