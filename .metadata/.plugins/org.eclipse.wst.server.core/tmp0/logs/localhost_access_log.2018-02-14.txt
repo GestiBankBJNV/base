@@ -40,3 +40,7 @@
 127.0.0.1 - - [14/Feb/2018:10:06:59 +0100] "GET / HTTP/1.1" 404 1005
 0:0:0:0:0:0:0:1 - - [14/Feb/2018:10:06:59 +0100] "GET /GestiBankBrijanavi/ HTTP/1.1" 404 1021
 0:0:0:0:0:0:0:1 - - [14/Feb/2018:10:07:06 +0100] "GET /GestiBankBrijanavi/conseillers/425A/clients HTTP/1.1" 200 96
+127.0.0.1 - - [14/Feb/2018:10:10:37 +0100] "GET / HTTP/1.1" 404 1005
+0:0:0:0:0:0:0:1 - - [14/Feb/2018:10:10:37 +0100] "GET /GestiBankBrijanavi/ HTTP/1.1" 404 1021
+0:0:0:0:0:0:0:1 - - [14/Feb/2018:10:11:27 +0100] "GET /GestiBankBrijanavi/conseillers/425A/clients HTTP/1.1" 200 96
+0:0:0:0:0:0:0:1 - - [14/Feb/2018:10:11:38 +0100] "GET /GestiBankBrijanavi/conseillers/425A/clients HTTP/1.1" 200 96
