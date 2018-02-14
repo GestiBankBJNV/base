@@ -1,0 +1,6 @@
+package com.gk.gestibank.dao;
+
+public interface ClientDao {
+
+	public List<Client> getAll();
+}

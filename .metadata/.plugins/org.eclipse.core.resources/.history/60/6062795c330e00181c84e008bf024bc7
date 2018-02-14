@@ -1,0 +1,47 @@
+package com.gk.gestibank.service.conseiller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.gk.gestibank.dao.ConseillerDao;
+import com.gk.gestibank.dao.impl.ConseillerDaoImpl;
+import com.gk.gestibank.model.Conseiller;
+
+@Component(value="GestionnaireConseiller")
+public class GestionnaireConseiller implements IGererConseillers {
+	
+	@Autowired
+	private ConseillerDao conseillerDao = new ConseillerDaoImpl();
+	
+	@Override
+	public List<Conseiller> getAll() {
+		return conseillerDao.getAll();
+	}
+
+	@Override
+	public void createConseiller(Conseiller conseiller) {
+		conseillerDao.createConseiller(conseiller);
+	}
+
+	@Override
+	public void deleteConseiller(String matricule) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateConseiller(Conseiller conseiller) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Conseiller getConseillerByNameOrMatricule(String recherche) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

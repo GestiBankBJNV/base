@@ -1,0 +1,10 @@
+package com.gk.gestibank.conseiller.service;
+
+import java.util.List;
+
+import com.gk.gestibank.model.Conseiller;
+
+public interface IChargerConseiller {
+	
+	public List<Conseiller> chargerConseillers(); 
+}

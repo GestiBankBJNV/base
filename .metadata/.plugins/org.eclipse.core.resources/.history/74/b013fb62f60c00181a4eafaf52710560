@@ -1,0 +1,27 @@
+import java.util.Date;
+import java.util.Set;
+
+
+public class Conseiller extends Utilisateur {
+
+	private int matricule;
+	private Date dateDebutContrat;
+	private Set<Client> clients;
+	private Set<DemandeInscription> demandesInscription;
+	
+	public Conseiller() {
+	}
+
+	public Conseiller(int id, String prenom, String nom, String nomUtilisateur,
+			String password, String email, String numTel, String statut, int matricule, Date dateDebutContrat,
+			Set<Client> clients, Set<DemandeInscription> demandesInscription) {
+		super(id, prenom, nom, nomUtilisateur, password, email, numTel, statut);
+		this.matricule = matricule;
+		this.dateDebutContrat = dateDebutContrat;
+		this.clients = clients;
+		this.demandesInscription = demandesInscription;
+	}
+
+	
+	
+}

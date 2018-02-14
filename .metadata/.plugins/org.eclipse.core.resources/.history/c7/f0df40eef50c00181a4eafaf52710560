@@ -1,0 +1,15 @@
+import java.util.Date;
+
+
+public class DemandeInscription {
+
+	private int id;
+	private Client coordonnees;
+	private Date dateInscription;
+	private Date dateAffectation;
+	private String statut;
+	private String libelle;
+	public DemandeInscription() {
+	}
+
+}

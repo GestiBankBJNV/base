@@ -1,0 +1,6 @@
+package main.java;
+
+public class Snippet {
+	createConseiller(in conseiller:Conseiller)
+}
+

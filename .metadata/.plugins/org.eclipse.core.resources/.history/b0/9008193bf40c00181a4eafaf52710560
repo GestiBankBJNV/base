@@ -1,0 +1,11 @@
+
+public class Client extends Utilisateur {
+	
+	private int nbEnfants;
+	private String situationMatrimoniale;
+	
+	
+	public Client() {
+	}
+
+}

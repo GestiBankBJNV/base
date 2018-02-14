@@ -1,0 +1,27 @@
+package com.gk.gestibank.test.dao.conseiller;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.gk.gestibank.dao.impl.ConseillerDaoImpl;
+import com.gk.gestibank.model.Client;
+import com.gk.gestibank.model.Conseiller;
+import com.gk.gestibank.model.DemandeInscription;
+
+public class ConseillerDaoTestAll {
+
+	public ConseillerDaoTestAll() {
+
+		Conseiller c1 = new Conseiller(1, "Jeanne", "Grelier", "Jaja", "1234", 
+										"j@email.com", "0658654236", "conseiller", 
+										"425A", new Date(), new ArrayList<Client>(), 
+										new ArrayList<DemandeInscription>());
+		Conseiller c2 = new Conseiller();
+		Conseiller c3 = new Conseiller();
+		
+		ConseillerDaoImpl dao = new ConseillerDaoImpl();
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+import java.util.Date;
+
+
+public class DemandeCreationCompte extends DemandeClient {
+
+	public DemandeCreationCompte() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public DemandeCreationCompte(int id, Date date, Date dateAffectation,
+			String statut, String libelle) {
+		super(id, date, dateAffectation, statut, libelle);
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,12 @@
+
+public class Utilisateur {
+
+	private int id;
+	private String prenom;
+	private String nom;
+	private String nomUtilisateur;
+	private String password;
+	private String email;
+	private String numTel;
+	private String statut;
+}
