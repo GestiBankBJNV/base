@@ -26,6 +26,8 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		List<Client> clients = new ArrayList<Client>();
 		Client cl = new Client();
 		cl.setNom("Test");
+		cl.setPrenom("Prenom");
+		cl.setEmail("test@email.com");
 		cl.setId(1);
 		clients.add(cl);
 		
@@ -77,7 +79,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	@Override
 	public Conseiller getConseillerByMatricule(String matricule) {
 		for(Conseiller c : conseillers){
-			if(c.getMatricule() == matricule){
+			if(c.getMatricule().equals(matricule)){
 				return c;
 			}
 		}
@@ -88,7 +90,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
 		List<Conseiller> l = new ArrayList<Conseiller>();
 		for(Conseiller c : conseillers){
-			if(c.getNom().matches(recherche) || c.getMatricule() == recherche ){
+			if(c.getNom().matches(recherche) || c.getMatricule().equals(recherche)){
 				l.add(c);
 			}
 		}

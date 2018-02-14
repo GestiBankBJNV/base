@@ -13,11 +13,19 @@
       </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
       <tr *ngFor="let client of clients" (click)="voirDemande(client, clients.indexOf(client))">
       	<td>{{client.prenom}}</td>
       	<td>{{client.nom}}</td>
       	<td>{{client.email}}</td>
       	<td>{{client.demandes.length}}</td>
+=======
+      <tr *ngFor="let client of clients | async" (click)="voirDemande(client, clients.indexOf(client))">
+      	<td>{{client.prenom}}</td>
+      	<td>{{client.nom}}</td>
+      	<td>{{client.email}}</td>
+      	<!-- <td>{{client.demandes.length}}</td> -->
+>>>>>>> Jeanne
         <td><button type="button" class="btn btn-info btn-sm">Editer</button></td>
       </tr>      
     </tbody>
