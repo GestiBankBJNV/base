@@ -12,10 +12,18 @@ export class AppComponent implements OnInit {
     
      constructor(public location: Location, public translate : TranslateService) {
        // this language will be used as a fallback when a translation isn't found in the current language
+<<<<<<< HEAD
        translate.setDefaultLang('en');
        location
+=======
+       translate.setDefaultLang(translate.getBrowserLang());
+>>>>>>> master
        // the lang to use, if the lang isn't available, it will use the current loader to get them
-       translate.use('en');
+       this.setLanguage('fr');
+     }
+
+     setLanguage(lang : string){
+       this.translate.use(lang);
      }
 
     ngOnInit(){

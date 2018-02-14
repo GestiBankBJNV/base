@@ -18,7 +18,7 @@ public class ConseillerServiceTestAddClient {
 
 	public static void main(String[] args) {		
 				
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		ConseillerService gestionConseillers = (ConseillerService) context.getBean("conseillerService");
 		
 		Client client = new Client();
@@ -33,4 +33,4 @@ public class ConseillerServiceTestAddClient {
 	}
 
 }
-// 10/02/2018 Test ok
+// 13/02/2018 Test ok

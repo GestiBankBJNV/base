@@ -18,7 +18,7 @@ public class ConseillerServiceTestAll {
 
 	public static void main(String[] args) {		
 				
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		ConseillerService gestionConseillers = (ConseillerService) context.getBean("conseillerService");
 				
 		List<Conseiller> conseillers = gestionConseillers.getAll();
@@ -29,4 +29,4 @@ public class ConseillerServiceTestAll {
 	}
 
 }
-// 09/02/2018 Test ok
+// 13/02/2018 Test ok

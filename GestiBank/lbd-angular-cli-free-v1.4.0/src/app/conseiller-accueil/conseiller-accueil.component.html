@@ -13,11 +13,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let client of clients" (click)="voirDemande(client, clients.indexOf(client))">
+      <tr *ngFor="let client of clients | async" (click)="voirDemande(client, clients.indexOf(client))">
       	<td>{{client.prenom}}</td>
       	<td>{{client.nom}}</td>
       	<td>{{client.email}}</td>
-      	<td>{{client.demandes.length}}</td>
+      	<!-- <td>{{client.demandes.length}}</td> -->
         <td><button type="button" class="btn btn-info btn-sm">Editer</button></td>
       </tr>      
     </tbody>
@@ -49,5 +49,4 @@
       </tr>      
     </tbody>
   </table>
-</div>
 </div>

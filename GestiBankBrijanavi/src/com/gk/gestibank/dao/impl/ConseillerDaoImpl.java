@@ -26,6 +26,8 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		List<Client> clients = new ArrayList<Client>();
 		Client cl = new Client();
 		cl.setNom("Test");
+		cl.setPrenom("Prenom");
+		cl.setEmail("test@email.com");
 		cl.setId(1);
 		clients.add(cl);
 		
@@ -73,19 +75,31 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		}
 	}
 
+
 	@Override
-	public Conseiller getConseillerByNameOrMatricule(String recherche) {
+	public Conseiller getConseillerByMatricule(String matricule) {
 		for(Conseiller c : conseillers){
-			if(c.getNom() == recherche || c.getMatricule() == recherche ){
+			if(c.getMatricule().equals(matricule)){
 				return c;
 			}
 		}
 		return null;
+	}	
+	
+	@Override
+	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
+		List<Conseiller> l = new ArrayList<Conseiller>();
+		for(Conseiller c : conseillers){
+			if(c.getNom().matches(recherche) || c.getMatricule().equals(recherche)){
+				l.add(c);
+			}
+		}
+		return l;
 	}
 
 	@Override
 	public List<Client> getClientsFromConseiller(String matricule) {
-		Conseiller c = getConseillerByNameOrMatricule(matricule);
+		Conseiller c = getConseillerByMatricule(matricule);
 		return c.getClients();
 	}
 
@@ -93,8 +107,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	public void addClientToConseiller(Client client, String matricule) {
 		List<Client> clients = getClientsFromConseiller(matricule);
 		clients.add(client);
-		
-		getConseillerByNameOrMatricule(matricule).setClients(clients);		
+		getConseillerByMatricule(matricule).setClients(clients);		
 	}
 
 	@Override
@@ -103,14 +116,12 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		Client client = new Client();
 		client.setId(idClient);
 		clients.remove(client);
-		
-		getConseillerByNameOrMatricule(matricule).setClients(clients);
-		
+		getConseillerByMatricule(matricule).setClients(clients);
 	}
 
 	@Override
 	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule) {
-		Conseiller c = getConseillerByNameOrMatricule(matricule);
+		Conseiller c = getConseillerByMatricule(matricule);
 		return c.getDemandesInscription();
 	}
 	
@@ -118,8 +129,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule) {
 		List<DemandeInscription> inscription = getInscriptionsFromConseiller(matricule);
 		inscription.add(demandeInscription);
-		
-		getConseillerByNameOrMatricule(matricule).setDemandesInscription(inscription);		
-	}	
+		getConseillerByMatricule(matricule).setDemandesInscription(inscription);		
+	}
 
 }

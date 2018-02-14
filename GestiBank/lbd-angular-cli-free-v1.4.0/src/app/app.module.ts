@@ -61,7 +61,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-import { NewInscriptionComponent } from './new-inscription/new-inscription.component'; /*****/
 
 @NgModule({
   declarations: [
@@ -87,8 +86,7 @@ import { NewInscriptionComponent } from './new-inscription/new-inscription.compo
     UserComponent,
     TablesComponent,
     TypographyComponent,
-    ClientPaginationComponent,
-    NewInscriptionComponent
+    ClientPaginationComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,35 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
 import { DatePipe } from '@angular/common';
-import { Conseiller, Client, Demande } from '../data-model';
+import { Conseiller, Client, DemandeClient } from '../data-model';
 import { Observable } from 'rxjs/Observable';
 import { NotificationsComponent } from '../notifications/notifications.component';
 
 @Component({
   selector: 'app-conseiller-accueil',
   templateUrl: './conseiller-accueil.component.html',
-  styleUrls: ['./conseiller-accueil.component.scss'],
-  providers:[ConseillerService]
+  styleUrls: ['./conseiller-accueil.component.scss']
 })
 
 export class ConseillerAccueilComponent implements OnInit {	
 
 
-	clients: Client[];// récuperation des clients
-  demandes: Demande[]; //récuperation des demandes par client
+	clients: Observable<Client[]>;// récuperation des clients
+  demandes: DemandeClient[]; //récuperation des demandes par client
   nomDemande: String;//recuperation du nom de la demande
   indexClient: number;//recuperation de l'index du client
   idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
   isDetailDemande: boolean = false;//initialisation de la vue des demande sur false
   notif: NotificationsComponent = new NotificationsComponent();
 
+  isLoading = false;
+
   constructor(private conseillerService: ConseillerService) { }
 
   ngOnInit() {
 
-
+    this.isLoading = true;
   	//initiatlisation pour l'affichage dans le tableau des différents clients.
-  	this.clients = this.conseillerService.getListeClientsFromConseiller("0002");
+  	this.clients = this.conseillerService.getListeClientsFromConseiller("425A")    
+                         // Normalement à faire : error handling
+                        .finally(() => this.isLoading = false);
+
+    console.log(this.clients);
+    this.clients
 
   }
 
@@ -53,7 +59,7 @@ export class ConseillerAccueilComponent implements OnInit {
   }
 
   //validation d'une demande
-  demandeTraite(d: Demande){
+  demandeTraite(d: DemandeClient){
 
     //recupération de l'index de la liste des demandes
     let indexToRemove = this.demandes.indexOf(d);
