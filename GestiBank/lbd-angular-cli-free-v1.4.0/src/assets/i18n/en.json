@@ -101,5 +101,6 @@
 	"admin_affectations_infos" : "Indicate the client whose assignment is to be changed, as well as the new advisor to whom the client is assigned",
 	"admin_affectation_erreur_no_conseiller" : "Error : please enter an agent",
 	"admin_affectation_notif_demande_affectee" : "Request sent to agent : ",
-	"public_devises_title" : "Currencies converter"
+	"public_devises_title" : "Currencies converter",
+	"navbar_notification_title" : "New notifications."
 }
