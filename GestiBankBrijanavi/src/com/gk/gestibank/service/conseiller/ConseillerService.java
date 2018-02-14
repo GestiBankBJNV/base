@@ -73,4 +73,10 @@ public class ConseillerService implements IConseillerService {
 		conseillerDao.addInscriptionToConseiller(demandeInscription, matricule);
 	}
 
+	@Override
+	public List<Client> getClientsFromConseiller(String matricule) {
+		// vérifs ?
+		return conseillerDao.getClientsFromConseiller(matricule);
+	}
+
 }

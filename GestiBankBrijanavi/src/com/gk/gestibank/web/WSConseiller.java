@@ -11,10 +11,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
 import com.gk.gestibank.service.conseiller.ConseillerService;
 
@@ -48,6 +47,14 @@ public class WSConseiller {
 	public Conseiller updateConseiller(Conseiller conseiller){
 		conseillerService.updateConseiller(conseiller);
 		return conseiller;
+	}
+	
+	@GET	
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/{ matricule }/clients")
+	public List<Client> getClientsFromConseiller(@PathParam("matricule") String matricule) {
+		System.out.println(matricule);
+		return conseillerService.getClientsFromConseiller(matricule);	
 	}
 
 }

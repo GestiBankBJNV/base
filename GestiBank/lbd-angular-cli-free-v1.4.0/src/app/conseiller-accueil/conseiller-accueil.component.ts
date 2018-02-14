@@ -13,20 +13,24 @@ import { Observable } from 'rxjs/Observable';
 export class ConseillerAccueilComponent implements OnInit {	
 
 
-	clients: Client[];// récuperation des clients
+	clients: Observable<Client[]>;// récuperation des clients
   demandes: DemandeClient[]; //récuperation des demandes par client
   nomDemande: String;//recuperation du nom de la demande
   indexClient: number;//recuperation de l'index du client
   idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
   isDetailDemande: boolean = false;//initialisation de la vue des demande sur false
 
+  isLoading = false;
+
   constructor(private conseillerService: ConseillerService) { }
 
   ngOnInit() {
 
-
+    this.isLoading = true;
   	//initiatlisation pour l'affichage dans le tableau des différents clients.
-  	this.clients = this.conseillerService.getListeClientsFromConseiller("0002");
+  	this.clients = this.conseillerService.getListeClientsFromConseiller("0002")    
+                         // Normalement à faire : error handling
+                        .finally(() => this.isLoading = false);
 
   }
 

@@ -46,12 +46,16 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     return temp;
   }
 
-  getListeClientsFromConseiller(id : string){
+  /*getListeClientsFromConseiller(id : string){
     let conseiller: Conseiller = this.getConseillersByIdSimple(id);
     return conseiller.clients;    
-  }
+  }*/
 
-  
+  getListeClientsFromConseiller(matricule : string): Observable<Client[]>{
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/clients")
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));   
+  }
 
   getConseillerWithClient(client: Client){
     for(var i=0; i<conseillers.length; i++){
