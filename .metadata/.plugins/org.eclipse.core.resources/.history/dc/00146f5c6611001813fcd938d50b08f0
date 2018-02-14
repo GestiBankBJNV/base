@@ -26,8 +26,6 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		List<Client> clients = new ArrayList<Client>();
 		Client cl = new Client();
 		cl.setNom("Test");
-		cl.setPrenom("Prenom");
-		cl.setEmail("test@email.com");
 		cl.setId(1);
 		clients.add(cl);
 		

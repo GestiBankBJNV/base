@@ -28,9 +28,12 @@ export class ConseillerAccueilComponent implements OnInit {
 
     this.isLoading = true;
   	//initiatlisation pour l'affichage dans le tableau des différents clients.
-  	this.clients = this.conseillerService.getListeClientsFromConseiller("0002")    
+  	this.clients = this.conseillerService.getListeClientsFromConseiller("425A")    
                          // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
+
+    console.log(this.clients);
+    this.clients
 
   }
 

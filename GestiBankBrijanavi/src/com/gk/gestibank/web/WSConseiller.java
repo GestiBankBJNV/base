@@ -53,7 +53,6 @@ public class WSConseiller {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{ matricule }/clients")
 	public List<Client> getClientsFromConseiller(@PathParam("matricule") String matricule) {
-		System.out.println(matricule);
 		return conseillerService.getClientsFromConseiller(matricule);	
 	}
 
