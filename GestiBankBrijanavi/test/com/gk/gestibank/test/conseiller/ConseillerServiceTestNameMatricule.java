@@ -18,7 +18,7 @@ public class ConseillerServiceTestNameMatricule {
 
 	public static void main(String[] args) {		
 				
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		ConseillerService gestionConseillers = (ConseillerService) context.getBean("conseillerService");
 		
 		System.out.println(gestionConseillers.getConseillerByNameOrMatricule("426A"));
@@ -26,4 +26,4 @@ public class ConseillerServiceTestNameMatricule {
 	}
 
 }
-// 10/02/2018 Test ok
+// 13/02/2018 Test ok

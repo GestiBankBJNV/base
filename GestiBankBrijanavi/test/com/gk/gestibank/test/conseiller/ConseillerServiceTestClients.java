@@ -14,23 +14,16 @@ import com.gk.gestibank.model.Conseiller;
 import com.gk.gestibank.model.DemandeInscription;
 import com.gk.gestibank.service.conseiller.ConseillerService;
 
-public class ConseillerServiceTestAddClient {
+public class ConseillerServiceTestClients {
 
 	public static void main(String[] args) {		
 				
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		ConseillerService gestionConseillers = (ConseillerService) context.getBean("conseillerService");
 		
-		Client client = new Client();
-		client.setId(10);
-		client.setPrenom("Jean");
-		client.setNom("Dupont");
-		client.setEmail("jean@email.com");
-		gestionConseillers.addClientToConseiller(client, "427A");
-		
-		System.out.println(gestionConseillers.getConseillerByNameOrMatricule("427A"));
+		System.out.println(gestionConseillers.getClientsFromConseiller("425A"));
 		
 	}
 
 }
-// 13/02/2018 Test ok
+// 14/02/2018 Test ok

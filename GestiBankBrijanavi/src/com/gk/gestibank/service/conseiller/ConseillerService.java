@@ -45,7 +45,7 @@ public class ConseillerService implements IConseillerService {
 	}
 
 	@Override
-	public Conseiller getConseillerByNameOrMatricule(String recherche) {
+	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
 		return conseillerDao.getConseillerByNameOrMatricule(recherche);
 	}
 
@@ -71,6 +71,12 @@ public class ConseillerService implements IConseillerService {
 	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule) {
 		// vérifs ?
 		conseillerDao.addInscriptionToConseiller(demandeInscription, matricule);
+	}
+
+	@Override
+	public List<Client> getClientsFromConseiller(String matricule) {
+		// vérifs ?
+		return conseillerDao.getClientsFromConseiller(matricule);
 	}
 
 }
