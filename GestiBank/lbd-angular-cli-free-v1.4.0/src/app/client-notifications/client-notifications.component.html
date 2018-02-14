@@ -14,7 +14,7 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let notif of client.notifications" (click)="notif.isRead = true" class='{{ (notif.isRead) ? "" : "unreadNotif" }}'><!--classe unreadNotif redéfinie dans le css-->
-						<td>{{ notif.libelle }}</td><td>{{ notif.date | date : "dd/MM/yy hh:mm" }}</td>
+						<td>{{ notif.libelle }}</td><td>{{ notif.date | date : "dd/MM/yy hh:mm a" }}</td><td></td>
 					</tr>
 				</tbody>
 			</table>

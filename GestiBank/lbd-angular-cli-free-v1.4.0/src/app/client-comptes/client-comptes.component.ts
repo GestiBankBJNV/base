@@ -4,7 +4,7 @@ import { Client } from '../classes/client';
 import { CLIENT } from '../classes/FAKES';
 import { Operation } from '../classes/operation';
 import { showNotification } from '../data-model';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, DatePipe } from '@angular/common';
 
 declare var $:any;
 
