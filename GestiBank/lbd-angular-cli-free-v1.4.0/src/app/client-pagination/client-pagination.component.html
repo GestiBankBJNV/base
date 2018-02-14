@@ -8,5 +8,9 @@
 	<a *ngFor="let pageNum of getPages()" (click)='onPage(pageNum)'>{{ pageNum + 1}}</a>
 	<!-- Suivant -->
 	<button class="btn btn-primary" (click)="onNext()" [disabled]="lastPage()">{{ 'client_pagination_next' | translate }}</button>
+<<<<<<< HEAD
 	<span>-- {{ count }} {{ client_pagination_operations | translate }}</span>
+=======
+	<span>-- {{ count }} {{ 'client_pagination_operations' | translate }}</span>
+>>>>>>> victorien
 </div>

@@ -4,6 +4,10 @@ import { Client } from '../classes/client';
 import { CLIENT } from '../classes/FAKES';
 import { Operation } from '../classes/operation';
 import { showNotification } from '../data-model';
+<<<<<<< HEAD
+=======
+import { DecimalPipe, DatePipe } from '@angular/common';
+>>>>>>> victorien
 
 declare var $:any;
 
@@ -36,8 +40,13 @@ export class ClientComptesComponent implements OnInit {
   displayedCount : number = 20;                   //Nombre d'éléments à afficher par page  
   currentPage : number = 0;                       //Index de la page actuelle
   pageCount : number = 10;                        //Nombre de pages (recalculé en fonction des critères)
+<<<<<<< HEAD
   
 
+=======
+  amounts : number[] = [];                        //Soldes restant pour les opérations selectionnées.
+  displayedAmounts : number[];                    //soldes affichés
+>>>>>>> victorien
   //CONSTRUCTEUR
   constructor() { }
 
@@ -143,6 +152,22 @@ export class ClientComptesComponent implements OnInit {
 
   //Rafraichir la liste des operations affichées
   refreshOperations(startIndex : number) {
+
+    //RECUPERATION DU SOLDE A UNE DATE DONNEE
+    this.amounts = [ this.selectedCompte.solde ];
+    this.displayedAmounts = [];
+    var amount = this.selectedCompte.solde;
+    for (let i = 0; i < this.selectedCompte.operations.length; i++){
+      if ("operation_type_credit" == this.selectedCompte.operations[i].type){
+        amount -= this.selectedCompte.operations[i].montant;
+      }
+      else{
+        amount += this.selectedCompte.operations[i].montant; 
+      }
+      this.amounts[i + 1] = amount;
+      //console.log("A : " + amount);
+    }
+
     this.displayedOperations = [];
     for (let i = 0; i < this.displayedCount; i++){
       let j = i + startIndex;
@@ -150,6 +175,7 @@ export class ClientComptesComponent implements OnInit {
 
       if ((this.selectedCompte.operations[j].date >= this.startDate) && (this.selectedCompte.operations[j].date <= this.endDate)){
         this.displayedOperations[i] = this.selectedCompte.operations[j];
+        this.displayedAmounts[i] = this.amounts[j];
       }
     }
     //console.log("count " + this.displayedOperations.length);

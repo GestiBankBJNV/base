@@ -17,7 +17,11 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let compte of client.comptes" (click)="selectCompte(compte)">
+<<<<<<< HEAD
 						<td>{{ compte.iban }}</td><td>{{ compte.type | translate }}</td><td>{{ compte.solde }} €</td>
+=======
+						<td>{{ compte.iban }}</td><td>{{ compte.type | translate }}</td><td>{{ compte.solde | number: '.1-2' : 'fr' }} €</td>
+>>>>>>> victorien
 					</tr>
 				</tbody>
 			</table>
@@ -92,8 +96,13 @@
 				</thead>
 				<!-- Liste des opérations -->
 				<tbody>
+<<<<<<< HEAD
 					<tr *ngFor="let operation of displayedOperations" class="{{ operation.type }}">
 						<td>{{ operation.type | translate }}</td><td>{{ operation.libelle }}</td><td>{{ operation.montant }} €</td><td>{{ operation.date | date : "dd/MM/yy hh:mm" }}</td><td>€</td>
+=======
+					<tr *ngFor="let operation of displayedOperations; let i = index">
+						<td>{{ operation.type | translate }}</td><td>{{ operation.libelle }}</td><td>{{ operation.montant }} €</td><td>{{ operation.date | date : "dd/MM/yyyy hh:mm" }}</td><td class="{{ operation.type }}">{{ displayedAmounts[i] |  number:'.1-2' : 'fr' }}€</td>
+>>>>>>> victorien
 					</tr>
 				</tbody>
 			</table>
