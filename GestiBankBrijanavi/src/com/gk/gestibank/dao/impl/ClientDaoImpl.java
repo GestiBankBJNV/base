@@ -2,9 +2,12 @@ package com.gk.gestibank.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.gk.gestibank.dao.ClientDao;
 import com.gk.gestibank.model.Client;
 
+@Repository
 public class ClientDaoImpl implements ClientDao {
 
 	public ClientDaoImpl() {
@@ -39,6 +42,11 @@ public class ClientDaoImpl implements ClientDao {
 	public void getClientByName(String nom) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public Client getClientById(String clientId){
+		return new Client();
 	}
 
 }

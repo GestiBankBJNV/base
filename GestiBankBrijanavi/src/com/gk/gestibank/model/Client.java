@@ -18,14 +18,14 @@ public class Client extends Utilisateur {
 	@Autowired
 	private Set<DemandeClient> demandes;
 	@Autowired
-	private Set<Notification> notifications;
+	private List<Notification> notifications;
 	
 	public Client() {
 	}
 
 	public Client(int nbEnfants, String situationMatrimoniale,
 			Set<Compte> comptes, String adresse, String ville, String cp,
-			Set<DemandeClient> demandes, Set<Notification> notifications) {
+			Set<DemandeClient> demandes, List<Notification> notifications) {
 		super();
 		this.nbEnfants = nbEnfants;
 		this.situationMatrimoniale = situationMatrimoniale;
@@ -93,11 +93,11 @@ public class Client extends Utilisateur {
 		this.demandes = demandes;
 	}
 
-	public Set<Notification> getNotifications() {
+	public List<Notification> getNotifications() {
 		return notifications;
 	}
 
-	public void setNotifications(Set<Notification> notifications) {
+	public void setNotifications(List<Notification> notifications) {
 		this.notifications = notifications;
 	}
 
