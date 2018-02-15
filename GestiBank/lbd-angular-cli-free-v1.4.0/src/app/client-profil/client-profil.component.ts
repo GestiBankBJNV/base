@@ -1,8 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
-
+import { showNotification } from '../data-model';
 import { Client } from '../classes/client';
 import { CLIENT } from '../classes/FAKES';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 declare var $:any;
 
@@ -14,90 +16,69 @@ declare var $:any;
 })
 export class ClientProfilComponent implements OnInit {
 
+  //Client (bouchon)
 	client : Client = CLIENT;
-	//Client temporaire pour stocker les infos en attendant confirmation
-	fakeClient;
 
-	//Boolean utilisé lors de la validation du formulaire
-	waitConfirm = false;
+  //Formulaire
+  userForm: FormGroup;
 
-  constructor() { 
-  }
+  //CONSTRUCTEUR
+  constructor(private fb: FormBuilder, private router : Router) { }
 
-  //On rafraichit la variable temporaire au chargement du formulaire
   ngOnInit() {
-	this.initFakeClient();
+    //this.sub = this.route.params.subscribe(params => { this.id = params['id']; })//Récupérer l'id du client depuis l'url?
+
+    this.userForm = new FormGroup({
+      username : new FormControl({value: '',disabled: true}, Validators.required),//non-modifiables
+      password : new FormControl({value: '',disabled: true}, Validators.required),
+      lastname : new FormControl({value: '',disabled: true}, Validators.required),
+      firstname : new FormControl({value: '',disabled: true}, Validators.required),
+      company : new FormControl(''),//Optionel
+      address : new FormControl('', Validators.required),
+      city : new FormControl('', Validators.required),
+      zipcode : new FormControl('', Validators.required),
+      country : new FormControl('', Validators.required),
+      phone : new FormControl(''),//Optionel
+      email : new FormControl('', [Validators.required, Validators.pattern("[^@]*@[^@]*")])
+    });
+
+    //if (this.id){
+      //this.userService.findById(this.id).subscribe(
+        //user => {
+          //this.id = user.id;
+          this.userForm.patchValue({
+            username: this.client.username,
+            password: this.client.password,
+            lastname: this.client.nom,
+            firstname: this.client.prenom,
+            company: this.client.entreprise,
+            address: this.client.adresse,
+            city: this.client.ville,
+            zipcode: this.client.codePostal,
+            country: this.client.pays,
+            phone: "0606060606",
+            email: this.client.mail,
+          });
+        //}, error => {
+          //console.log(error);
+        //}
+      //);
+    //}
+
+
   }
+  
+  onSubmit(){
+    let msg = "Une demande de modification de profil a été envoyée à votre conseiller. Elle sera traitée dès que possible";
 
-  //Initialiser le client temporaire
-  initFakeClient(){
-  	this.fakeClient = {
-		username : this.client.username,
-		password : this.client.password,
-		nom : this.client.nom,
-		prenom : this.client.prenom,
-		mail : this.client.mail,
-		entreprise : this.client.entreprise,
-		adresse : this.client.adresse,
-		ville : this.client.ville,
-		cp : this.client.codePostal,
-		pays : this.client.pays
-	};
+    //TODO: Update Client
+    //Ajouter notification
+    this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});
+    showNotification('top','center',msg, 'info', "pe-7s-mail-open-file");
+    this.redirectUserPage();
   }
-
-  //Remettre la variable waitConfirm a false (utilisé lors de la modification d'un champ)
-  resetWait(){
-  	this.waitConfirm = false;
-  }
-
-  //Validation du formulaire
-  validForm(){
-  	//l'utilisateur devra cliquer deux fois sur le bouton pour confirmer les nouvelles informations
-  	if (!this.waitConfirm){
-  		this.waitConfirm = true;
-  	}
-  	//mise à jour des infos du client depuis la variable temporaire
-  	else{
-  		this.client.password = this.fakeClient.password;
-  		this.client.adresse = this.fakeClient.adresse;
-  		this.client.codePostal = this.fakeClient.cp;
-  		this.client.entreprise = this.fakeClient.entreprise;
-  		this.client.ville = this.fakeClient.ville;
-  		this.client.mail = this.fakeClient.mail;
-  		this.client.pays = this.fakeClient.pays;
-  		
-  		//On attend une nouvelle confirmation après la validation d'un formulaire
-  		this.resetWait();
-  		//console.log(this.client.mail);
-      let msg = "Une demande de modification de profil a été envoyée à votre conseiller. Elle sera traitée dès que possible";
-      this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});
-      this.showNotification('top','center', msg);
-  	}
-  }
-
-  //Texte du bouton, en fonction de l'état de validation
-  getConfirmBTText(){
-  	if (this.waitConfirm){  		
-  		return "Confirmer";
-  	}
-  	return "Mettre à jour";
-  }
-
-  //Afficher une notification à la validation du formulaire
-  showNotification(from, align, msg){
-      //const type = ['','info','success','warning','danger'];
-
-      //var color = Math.floor((Math.random() * 4) + 1);
-      $.notify({
-          icon: "pe-7s-mail-open-file",
-          message: msg
-      },{
-          type: 'info',
-          timer: 1000,
-          placement: {
-              from: from,
-              align: align
-          }
-      });
+  
+  redirectUserPage(){
+    this.router.navigate(['/client_accueil']);
   }
 }

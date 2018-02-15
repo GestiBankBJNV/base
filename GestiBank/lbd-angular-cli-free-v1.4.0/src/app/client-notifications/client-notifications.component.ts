@@ -28,4 +28,8 @@ export class ClientNotificationsComponent implements OnInit {
 		return this.getUnreadNotifications().length;
 	}
 
+	deleteNotification(notif : Notification){
+		console.log("Delete notification");
+	}
+
 }

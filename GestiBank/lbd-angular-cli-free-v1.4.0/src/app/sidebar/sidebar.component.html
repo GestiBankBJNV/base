@@ -26,8 +26,8 @@
         <div *ngIf="isMobileMenu()">
             <li class="separator hidden-lg hidden-md"></li>
             <li>
-                <a>
-                    <p>Se deconnecter</p>
+                <a routerLinkActive="active">
+                    <p routerLink="#">{{'logout' | translate}}</p>
                 </a>
             </li>
         </div>
