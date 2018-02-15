@@ -68,7 +68,8 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	@Override
 	public void deleteConseiller(String matricule) {
 		for(Conseiller c : conseillers){
-			if(c.getMatricule() == matricule){
+			if(c.getMatricule().equals(matricule)){
+				System.out.println("delete trouvé");
 				conseillers.remove(c);
 				break;
 			}

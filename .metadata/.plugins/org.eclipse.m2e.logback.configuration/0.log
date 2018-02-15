@@ -3406,3 +3406,79 @@
 2018-02-15 13:17:27,123 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
 2018-02-15 13:17:27,123 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2018-02-15 13:17:27,123 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:20:44,690 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:20:44,690 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:20:44,690 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:20:44,690 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:26:06,722 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:26:06,722 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:26:06,722 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:26:06,722 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:37:53,840 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:37:53,840 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:37:53,840 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:37:53,840 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:38:20,186 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:38:20,186 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:38:20,186 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:38:20,186 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:42:51,547 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:42:51,547 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:42:51,547 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:42:51,547 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:45:29,582 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:45:29,582 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:45:29,582 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:45:29,598 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:47:30,850 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:47:30,850 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:47:30,850 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:47:30,850 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:48:16,022 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:48:16,022 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:48:16,022 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:48:16,022 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:49:17,793 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:49:17,793 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:49:17,793 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:49:17,793 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:49:56,899 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:49:56,899 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:49:56,899 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:49:56,899 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:50:30,993 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:50:30,993 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:50:30,993 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:50:30,993 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:51:14,931 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:51:14,947 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:51:14,947 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:51:14,947 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:51:50,059 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:51:50,059 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:51:50,059 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:51:50,059 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:54:02,918 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:54:02,918 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:54:02,918 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:54:02,918 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:54:52,215 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:54:52,231 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:54:52,231 [Worker-36] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:54:52,231 [Worker-36] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:55:18,091 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:55:18,091 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:55:18,091 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:55:18,091 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:55:28,562 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:55:28,562 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:55:28,562 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:55:28,562 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:56:22,327 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:56:22,327 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:56:22,327 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:56:22,327 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources
+2018-02-15 13:56:31,562 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:56:31,562 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\main\resources
+2018-02-15 13:56:31,562 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-15 13:56:31,562 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\gk\Documents\GitHub\base\GestiBankBrijanavi\src\test\resources

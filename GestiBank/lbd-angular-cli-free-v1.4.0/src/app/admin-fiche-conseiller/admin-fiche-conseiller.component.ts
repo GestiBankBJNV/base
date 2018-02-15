@@ -128,7 +128,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   /* Méthode pour supprimer un conseiller */
   supprConseiller() {
     var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
-    this.conseillerService.deleteConseiller(this.conseiller);
+    this.conseillerService.deleteConseiller(this.conseiller.matricule);
     // enlever la fiche
     this.onDelete.emit();
     // Notifier la suppression

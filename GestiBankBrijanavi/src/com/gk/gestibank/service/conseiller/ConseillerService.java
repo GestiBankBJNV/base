@@ -32,7 +32,8 @@ public class ConseillerService implements IConseillerService {
 
 	@Override
 	public void deleteConseiller(String matricule) {
-		// On doit vérifier si la liste de client est nulle avant de supprimer
+		// TODO : On doit vérifier si la liste de client est nulle avant de supprimer
+		// Attention : nullPointerException si matricule ne correspond à aucun conseiller
 		if(conseillerDao.getClientsFromConseiller(matricule).isEmpty()){
 			conseillerDao.deleteConseiller(matricule);
 		}

@@ -38,17 +38,14 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     .subscribe();
   }
 
-  /*addConseiller(conseiller: Conseiller) {
-    // TODO : changer matricule
-    conseiller.matricule = ((conseiller.dateDebutContrat.getMonth() + 1) < 10 ? 
-                                "0" + (conseiller.dateDebutContrat.getMonth() + 1) : (conseiller.dateDebutContrat.getMonth() + 1))
-                            + (Math.random()*1000).toFixed(0)
-                            + conseiller.prenom.charAt(0).toUpperCase() 
-                            + conseiller.nom.charAt(0).toUpperCase();
-    conseillers.push(conseiller);    
-  }*/
+  deleteConseiller(matricule: string) {
+    return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule, matricule)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
+    .subscribe();
+  }
 
-   getConseillersByIdSimple(id: string): Conseiller{
+  getConseillersByIdSimple(id: string): Conseiller{
     var temp: Conseiller;
 
     for(var i=0; i<conseillers.length; i++){
@@ -86,9 +83,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     conseiller.clients = clients;
   }
 
-  deleteConseiller(conseiller: Conseiller) {
-    conseillers.splice(conseillers.indexOf(conseiller), 1);
-  }
+  
 
   getClientFromConseiller(conseiller: Conseiller){
   }
@@ -131,5 +126,19 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
   /*getListeClientsFromConseiller(id : string){
     let conseiller: Conseiller = this.getConseillersByIdSimple(id);
     return conseiller.clients;    
+  }*/
+
+  /*addConseiller(conseiller: Conseiller) {
+    // TODO : changer matricule
+    conseiller.matricule = ((conseiller.dateDebutContrat.getMonth() + 1) < 10 ? 
+                                "0" + (conseiller.dateDebutContrat.getMonth() + 1) : (conseiller.dateDebutContrat.getMonth() + 1))
+                            + (Math.random()*1000).toFixed(0)
+                            + conseiller.prenom.charAt(0).toUpperCase() 
+                            + conseiller.nom.charAt(0).toUpperCase();
+    conseillers.push(conseiller);    
+  }*/
+
+  /*deleteConseiller(conseiller: Conseiller) {
+    conseillers.splice(conseillers.indexOf(conseiller), 1);
   }*/
 }

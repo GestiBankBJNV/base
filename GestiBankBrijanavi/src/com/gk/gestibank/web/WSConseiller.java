@@ -3,6 +3,7 @@ package com.gk.gestibank.web;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -63,4 +64,9 @@ public class WSConseiller {
 		conseillerService.createConseiller(conseiller);
 	}
 
+	@DELETE
+	@Path("/{ matricule }")
+	public void deleteConseiller(@PathParam("matricule") String matricule){
+		conseillerService.deleteConseiller(matricule);
+	}
 }
