@@ -6,6 +6,8 @@ import 'rxjs/add/operator/delay';
 
 import { DemandeInscription, demandesInscription } from './data-model';
 
+/* ******** Gestion des demandes d'inscription ******** */
+
 @Injectable()
 export class DemandeService {
 
@@ -31,15 +33,15 @@ export class DemandeService {
       	} // plutôt que de copier le tableau, on pourrait utiliser un push, mais il faudrait repenser aux conditions  
 
        	for (var i=demandesInscription.length -1; i>=0; i--){         
-	         if(filtre == 'affectee' && demandesInscription[i].dateAffectation == undefined){           
-	           temp.splice(i, 1);           
-	         } else if (filtre == 'nonAffectee' && demandesInscription[i].dateAffectation != undefined){         
-	           temp.splice(i, 1);   
-	         } else if (filtre == 'enCours' && demandesInscription[i].statut != 'en cours') {
-	           temp.splice(i, 1);
-	         } else if (filtre == 'traitee' && demandesInscription[i].statut != 'traitée') {
-	           temp.splice(i, 1);
-	         }
+         	if(filtre == 'affectee' && demandesInscription[i].dateAffectation == undefined){           
+           		temp.splice(i, 1);           
+         	} else if (filtre == 'nonAffectee' && demandesInscription[i].dateAffectation != undefined){         
+           		temp.splice(i, 1);   
+         	} else if (filtre == 'enCours' && demandesInscription[i].statut != 'en cours') {
+           		temp.splice(i, 1);
+         	} else if (filtre == 'traitee' && demandesInscription[i].statut != 'traitée') {
+           		temp.splice(i, 1);
+         	}
         }
        	return of(temp).delay(this.delayMs); // simulate latency with delay
     }
@@ -72,13 +74,13 @@ export class DemandeService {
     }
 
     dateStringify(date : Date){
-      if(date == undefined){
-        return '00000000';
-      }
+        if(date == undefined){
+        	return '00000000';
+      	}
 
-      var month = date.getMonth() < 10 ? '0' + date.getMonth() : '' + date.getMonth();
-      var day = date.getDate() < 10 ? '0' + date.getDate() : '' + date.getDate();
-      console.log('' + date.getFullYear() + month + day);
-      return '' + date.getFullYear() + month + day;
+      	var month = date.getMonth() < 10 ? '0' + date.getMonth() : '' + date.getMonth();
+      	var day = date.getDate() < 10 ? '0' + date.getDate() : '' + date.getDate();
+      	console.log('' + date.getFullYear() + month + day);
+      	return '' + date.getFullYear() + month + day;
     }
 }
