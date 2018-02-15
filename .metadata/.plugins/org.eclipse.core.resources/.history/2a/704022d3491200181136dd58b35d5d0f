@@ -58,7 +58,6 @@ public class WSConseiller {
 	}
 	
 	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
 	public void addConseiller(Conseiller conseiller){
 		conseillerService.createConseiller(conseiller);
 	}

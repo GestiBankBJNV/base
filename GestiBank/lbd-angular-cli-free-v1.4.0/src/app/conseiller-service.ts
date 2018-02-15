@@ -32,6 +32,22 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
+  addConseiller(conseiller: Conseiller) {
+    return this.http.post("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller)
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
+    .subscribe();
+  }
+
+  /*addConseiller(conseiller: Conseiller) {
+    // TODO : changer matricule
+    conseiller.matricule = ((conseiller.dateDebutContrat.getMonth() + 1) < 10 ? 
+                                "0" + (conseiller.dateDebutContrat.getMonth() + 1) : (conseiller.dateDebutContrat.getMonth() + 1))
+                            + (Math.random()*1000).toFixed(0)
+                            + conseiller.prenom.charAt(0).toUpperCase() 
+                            + conseiller.nom.charAt(0).toUpperCase();
+    conseillers.push(conseiller);    
+  }*/
+
    getConseillersByIdSimple(id: string): Conseiller{
     var temp: Conseiller;
 
@@ -45,11 +61,6 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     }
     return temp;
   }
-
-  /*getListeClientsFromConseiller(id : string){
-    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
-    return conseiller.clients;    
-  }*/
 
   getListeClientsFromConseiller(matricule : string): Observable<Client[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/clients")
@@ -73,16 +84,6 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     var clients = conseiller.clients;
     clients.splice(clients.indexOf(client), 1);
     conseiller.clients = clients;
-  }
-
-  addConseiller(conseiller: Conseiller) {
-    // TODO : changer matricule
-    conseiller.matricule = ((conseiller.dateDebutContrat.getMonth() + 1) < 10 ? 
-                                "0" + (conseiller.dateDebutContrat.getMonth() + 1) : (conseiller.dateDebutContrat.getMonth() + 1))
-                            + (Math.random()*1000).toFixed(0)
-                            + conseiller.prenom.charAt(0).toUpperCase() 
-                            + conseiller.nom.charAt(0).toUpperCase();
-    conseillers.push(conseiller);    
   }
 
   deleteConseiller(conseiller: Conseiller) {
@@ -125,5 +126,10 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     const oldConseiller = conseillers.find(c => c.matricule === conseiller.matricule);
     const newConseiller = Object.assign(oldConseiller, conseiller); // Demo: mutate cached hero
     return of(newConseiller).delay(this.delayMs); // simulate latency with delay
+  }*/
+
+  /*getListeClientsFromConseiller(id : string){
+    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
+    return conseiller.clients;    
   }*/
 }
