@@ -402,20 +402,17 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
+
 											"left": 469,
 											"top": 415,
-=======
-											"left": 621,
-											"top": 399,
->>>>>>> master:Model.mdj
+
 											"width": 234.45068359375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
+
 											"text": "-notifications: List<Notification>",
-=======
+
 											"text": "-notifications: Set<Notification>",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
@@ -446,7 +443,6 @@
 											"autoResize": false,
 											"underline": false,
 											"text": "-isClient: boolean",
->>>>>>> master:Model.mdj
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -464,11 +460,7 @@
 									"left": 616,
 									"top": 289,
 									"width": 244.45068359375,
-<<<<<<< HEAD:GestiBank/Model.mdj
-									"height": 128,
-=======
 									"height": 143,
->>>>>>> master:Model.mdj
 									"autoResize": false
 								},
 								{
@@ -483,7 +475,6 @@
 									"subViews": [
 										{
 											"_type": "UMLOperationView",
-<<<<<<< HEAD:GestiBank/Model.mdj
 											"_id": "AAAAAAFg+TOy/pckQlQ=",
 											"_parent": {
 												"$ref": "AAAAAAFg+SqHI5TAxoA="
@@ -513,8 +504,6 @@
 										},
 										{
 											"_type": "UMLOperationView",
-=======
->>>>>>> master:Model.mdj
 											"_id": "AAAAAAFg+Tgeg5dPuaA=",
 											"_parent": {
 												"$ref": "AAAAAAFg+SqHI5TAxoA="
@@ -531,13 +520,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-											"left": 469,
-											"top": 453,
-=======
 											"left": 621,
 											"top": 437,
->>>>>>> master:Model.mdj
 											"width": 234.45068359375,
 											"height": 13,
 											"autoResize": false,
@@ -565,13 +549,8 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-											"left": 469,
-											"top": 468,
-=======
 											"left": 621,
 											"top": 452,
->>>>>>> master:Model.mdj
 											"width": 234.45068359375,
 											"height": 13,
 											"autoResize": false,
@@ -591,13 +570,8 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-									"left": 464,
-									"top": 433,
-=======
 									"left": 616,
 									"top": 432,
->>>>>>> master:Model.mdj
 									"width": 244.45068359375,
 									"height": 38,
 									"autoResize": false
@@ -7684,11 +7658,7 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-											"left": -1056,
-=======
 											"left": -976,
->>>>>>> master:Model.mdj
 											"top": 832,
 											"width": 0,
 											"height": 13,
@@ -7713,11 +7683,7 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-											"left": 573,
-=======
 											"left": 613,
->>>>>>> master:Model.mdj
 											"top": 567,
 											"width": 126,
 											"height": 13,
@@ -7743,11 +7709,7 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-											"left": -1056,
-=======
 											"left": -976,
->>>>>>> master:Model.mdj
 											"top": 832,
 											"width": 73.67724609375,
 											"height": 13,
@@ -7773,11 +7735,7 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-											"left": -1056,
-=======
 											"left": -976,
->>>>>>> master:Model.mdj
 											"top": 832,
 											"width": 0,
 											"height": 13,
@@ -7797,11 +7755,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-									"left": 568,
-=======
 									"left": 608,
->>>>>>> master:Model.mdj
 									"top": 560,
 									"width": 136,
 									"height": 25,
@@ -7818,7 +7772,6 @@
 									"propertyLabel": {
 										"$ref": "AAAAAAFhdf7sadwOhNo="
 									}
-<<<<<<< HEAD:GestiBank/Model.mdj
 								},
 								{
 									"_type": "UMLAttributeCompartmentView",
@@ -7953,7 +7906,6 @@
 									"autoResize": false
 								},
 								{
-=======
 								},
 								{
 									"_type": "UMLAttributeCompartmentView",
@@ -8146,7 +8098,6 @@
 									"autoResize": false
 								},
 								{
->>>>>>> master:Model.mdj
 									"_type": "UMLTemplateParameterCompartmentView",
 									"_id": "AAAAAAFhdf7satwSFww=",
 									"_parent": {
@@ -8164,11 +8115,7 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-									"left": -528,
-=======
 									"left": -488,
->>>>>>> master:Model.mdj
 									"top": 416,
 									"width": 10,
 									"height": 10,
@@ -8184,11 +8131,7 @@
 							"showShadow": true,
 							"containerChangeable": true,
 							"containerExtending": false,
-<<<<<<< HEAD:GestiBank/Model.mdj
-							"left": 568,
-=======
 							"left": 608,
->>>>>>> master:Model.mdj
 							"top": 560,
 							"width": 136,
 							"height": 104,
@@ -8200,7 +8143,6 @@
 							"showType": true,
 							"nameCompartment": {
 								"$ref": "AAAAAAFhdf7saNwK2Jw="
-<<<<<<< HEAD:GestiBank/Model.mdj
 							},
 							"wordWrap": false,
 							"suppressAttributes": false,
@@ -8752,8 +8694,6 @@
 								"isUnique": false,
 								"isDerived": false,
 								"isID": false
-=======
->>>>>>> master:Model.mdj
 							},
 							"wordWrap": false,
 							"suppressAttributes": false,
@@ -8780,7 +8720,6 @@
 							"_parent": {
 								"$ref": "AAAAAAFF+qBtyKM79qY="
 							},
-<<<<<<< HEAD:GestiBank/Model.mdj
 							"end1": {
 								"_type": "UMLAssociationEnd",
 								"_id": "AAAAAAFhdd8aNtTRqLU=",
@@ -9019,10 +8958,8 @@
 							"_id": "AAAAAAFg+TOy0Zchfeg=",
 							"_parent": {
 								"$ref": "AAAAAAFg+SqHIZS3Aq0="
-=======
 							"model": {
 								"$ref": "AAAAAAFhdgHaV+F6VMI="
->>>>>>> master:Model.mdj
 							},
 							"subViews": [
 								{
