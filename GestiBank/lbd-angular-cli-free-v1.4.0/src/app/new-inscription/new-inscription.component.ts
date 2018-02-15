@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
 import { Conseiller, Client, DemandeInscription, Utilisateur } from '../data-model';
 import { DatePipe } from '@angular/common';
+import { Observable }        from 'rxjs/Observable';
 
 @Component({
   selector: 'app-new-inscription',
@@ -11,13 +12,13 @@ import { DatePipe } from '@angular/common';
 })
 export class NewInscriptionComponent implements OnInit {
 
-	demandes: DemandeInscription[];
+	demandes: Observable<DemandeInscription[]>;
 
   constructor(private cs: ConseillerService) { }
 
   ngOnInit() {
 
-  	this.demandes = this.cs.getListDemandeInscriptionByConseiller("0002");
+  	this.demandes = this.cs.getDemandesInscriptionFromConseiller("425A");
   }
 
   verifInscription(d: DemandeInscription){

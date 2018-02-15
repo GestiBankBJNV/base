@@ -69,6 +69,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	public void deleteConseiller(String matricule) {
 		for(Conseiller c : conseillers){
 			if(c.getMatricule().equals(matricule)){
+				System.out.println("delete trouvé");
 				conseillers.remove(c);
 				break;
 			}

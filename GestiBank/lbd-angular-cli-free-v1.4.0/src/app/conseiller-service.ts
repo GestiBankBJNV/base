@@ -20,7 +20,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  getConseillersByNameOrMatricule(recherche : string){
+  getConseillersByNameOrMatricule(recherche : string): Observable<Conseiller[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + recherche)
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
@@ -45,18 +45,10 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     .subscribe();
   }
 
-  getConseillersByIdSimple(id: string): Conseiller{
-    var temp: Conseiller;
-
-    for(var i=0; i<conseillers.length; i++){
-      // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].matricule === id) {
-         temp = conseillers[i];
-         break;
-         /*console.log('conseillers trouvé : ' + conseillers[i].nom);*/
-      }
-    }
-    return temp;
+  getDemandesInscriptionFromConseiller(matricule: string): Observable<DemandeInscription[]> {
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule +"/inscriptions")
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   getListeClientsFromConseiller(matricule : string): Observable<Client[]>{
@@ -88,15 +80,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
   getClientFromConseiller(conseiller: Conseiller){
   }
 
-  getListDemandeInscriptionByConseiller(id: string){
-
-    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
-
-    let demandes: DemandeInscription[] = conseiller.demandesInscription;
-
-    return demandes;
-
-  }
+  
 
 
   /* ***************** Ancien Code ***************** */
@@ -141,4 +125,29 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
   /*deleteConseiller(conseiller: Conseiller) {
     conseillers.splice(conseillers.indexOf(conseiller), 1);
   }*/
+
+  /*getListDemandeInscriptionByConseiller(id: string){
+
+    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
+
+    let demandes: DemandeInscription[] = conseiller.demandesInscription;
+
+    return demandes;
+
+  }*/
+
+  /*getConseillersByIdSimple(id: string): Conseiller{
+    var temp: Conseiller;
+
+    for(var i=0; i<conseillers.length; i++){
+      // mettre dans temp les conseillers ayant le nom recherché
+      if(conseillers[i].matricule === id) {
+         temp = conseillers[i];
+         break;
+         //console.log('conseillers trouvé : ' + conseillers[i].nom);
+      }
+    }
+    return temp;
+  }*/
+
 }
