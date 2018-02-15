@@ -1,6 +1,9 @@
 package com.gk.gestibank.service.conseiller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +30,15 @@ public class ConseillerService implements IConseillerService {
 	@Override
 	public void createConseiller(Conseiller conseiller) {
 		// Aucune véfification : le formulaire a déjà validé les champs
+		// On génère un matricule pour le conseiller
+		conseiller.setMatricule(generateMatricule(conseiller));
 		conseillerDao.createConseiller(conseiller);
+	}
+	
+	public String generateMatricule(Conseiller conseiller) {			
+		SimpleDateFormat sdate = new SimpleDateFormat("MMYY");				
+		String matricule = conseiller.getNom().toUpperCase().charAt(0) + sdate.format(conseiller.getDateDebutContrat()) + "A";
+		return matricule;
 	}
 
 	@Override
@@ -78,6 +89,17 @@ public class ConseillerService implements IConseillerService {
 	public List<Client> getClientsFromConseiller(String matricule) {
 		// vérifs ?
 		return conseillerDao.getClientsFromConseiller(matricule);
+	}
+	
+	public Conseiller getConseillerWithClient(int idClient){
+		for(Conseiller c : conseillerDao.getAll()) {
+			for(Client cl : c.getClients()) {
+				if(cl.getId() == idClient) {
+					return c;
+				}
+			}
+		}
+		return null;
 	}
 
 }

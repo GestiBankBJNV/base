@@ -59,26 +59,20 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));   
   }
 
-  getConseillerWithClient(client: Client){
-    for(var i=0; i<conseillers.length; i++){
-      for(var j=0; j<conseillers[i].clients.length; j++){
-        if(conseillers[i].clients[j] == client){
-          return conseillers[i];
-        }
-      }
-    }
-    return undefined;
+  getConseillerWithClient(idClient: number){
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/client/" + idClient)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  deleteClient(client: Client){
-    var conseiller = this.getConseillerWithClient(client);
-    var clients = conseiller.clients;
-    clients.splice(clients.indexOf(client), 1);
-    conseiller.clients = clients;
+  deleteClient(idClient: number, matricule: string){
+    return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/clients/" + idClient)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
+    .subscribe();
   }
-
   
-
+  // todo ?
   getClientFromConseiller(conseiller: Conseiller){
   }
 
@@ -150,6 +144,24 @@ export class ConseillerService {
       }
     }
     return temp;
+  }*/
+
+  /*getConseillerWithClient(client: Client){
+    for(var i=0; i<conseillers.length; i++){
+      for(var j=0; j<conseillers[i].clients.length; j++){
+        if(conseillers[i].clients[j] == client){
+          return conseillers[i];
+        }
+      }
+    }
+    return undefined;
+  }*/
+
+  /*deleteClient(client: Client){
+    let conseiller = this.getConseillerWithClient(client);
+    let clients = conseiller.clients;
+    clients.splice(clients.indexOf(client), 1);
+    conseiller.clients = clients;
   }*/
 
 }

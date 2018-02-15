@@ -1,8 +1,0 @@
-package com.gk.gestibank.dao;
-
-public interface CompteDao {
-
-	public void crediter(double montant);
-	public void debiter(double montant);
-	public List<Operation> getAllOperations();
-}

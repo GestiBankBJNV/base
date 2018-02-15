@@ -77,4 +77,17 @@ public class WSConseiller {
 	public List<DemandeInscription> getInscriptionsFromConseiller(@PathParam("matricule") String matricule){
 		return getInscriptionsFromConseiller(matricule);
 	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/client/{ idClient }")
+	public Conseiller getConseillerWithClient(@PathParam("idClient") int idClient) {
+		return conseillerService.getConseillerWithClient(idClient);
+	}
+	
+	@DELETE
+	@Path("/{ matricule }/clients/{ idClient }")
+	public void deleteClientFromConseiller(@PathParam("idClient") int idClient, @PathParam("matricule") String matricule) {
+		conseillerService.deleteClientFromConseiller(idClient, matricule);
+	}
 }
