@@ -69,6 +69,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label>{{ 'client_account_display' | translate }} :</label>
+                    <!--S'il y a changement, on rafraichit la liste à partir de la première page (index 0)-->
 					<select [(ngModel)]="displayedCount" (change)="refreshOperations(0)" class="btn dropdown-toggle form-control">
 						<option>1</option>
 						<option>10</option>
@@ -85,6 +86,7 @@
 		<!-- OPERATIONS -->
 		<div *ngIf="(!transfer)" class="content table-responsive table-full-width">
 			<table class="table table-hover">
+				<!--Header-->
 				<thead>
 					<tr>
 						<th>{{ 'client_account_type' | translate }}</th><th>{{ 'client_account_details' | translate }}</th><th>{{ 'client_account_amount' | translate }}</th><th>{{ 'client_account_date' | translate }}</th><th>{{ 'client_account_total' | translate }}</th>
@@ -142,7 +144,7 @@
 		<div class="content">			
 			<div class="row">
 				<select [(ngModel)]="accountType" class="btn dropdown-toggle col-md-3 col-md-offset-1">
-					<option selected>{{ 'client_account_type_current' | translate }}</option>
+					<option [ngValue]="accountType" selected>{{ 'client_account_type_current' | translate }}</option>
 					<option>{{ 'client_account_type_saving' | translate }}</option>
 				</select>
                 <button type="submit" class="btn btn-info btn-fill col-md-3 col-md-offset-4" (click)="validOpenAccount()">{{ (awaitingConfirm) ? ('client_account_confirm' | translate) : ('client_account_openAccount' | translate) }}</button>

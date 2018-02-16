@@ -52,6 +52,7 @@ import { LoginComponent } from './login/login.component';
 import { ConseillerService } from './conseiller-service'; /*****/
 import { ClientService } from './client-service'; /*****/
 import { DemandeService } from './demande-service';
+import { CompteService } from './compte-service';
 
 //Fonctions utilisées par le module de traduction
 // AoT requires an exported function for factories
@@ -112,7 +113,7 @@ export function createTranslateLoader(http: HttpClient) {
     TypeaheadModule.forRoot(),
     DateValueAccessorModule
   ],
-  providers: [ ConseillerService, ClientService, DemandeService ],
+  providers: [ ConseillerService, ClientService, DemandeService, CompteService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
