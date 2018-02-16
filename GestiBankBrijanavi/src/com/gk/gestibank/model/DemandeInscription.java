@@ -1,14 +1,19 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Entity
 public class DemandeInscription {
 
+	@Id
+	@GeneratedValue
 	private int id;
-	@Autowired
 	private Client coordonnees;
 	private Date dateInscription;
 	private Date dateAffectation;

@@ -1,11 +1,12 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
 
-@Component
+@Entity
 public class Notification {
 
+	// todo : id ?
 	private String libelle;
 	private Date date;
 	

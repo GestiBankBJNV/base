@@ -1,9 +1,6 @@
 package com.gk.gestibank.model;
-import java.util.Set;
+import java.util.List;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class CompteEpargne extends Compte {
 
 	private float taux;
@@ -11,7 +8,7 @@ public class CompteEpargne extends Compte {
 	public CompteEpargne() {
 	}
 
-	public CompteEpargne(int code, double solde, Set<Operation> operations,
+	public CompteEpargne(int code, double solde, List<Operation> operations,
 			double decouvert, float taux) {
 		super(code, solde, operations, decouvert);
 		this.taux = taux;

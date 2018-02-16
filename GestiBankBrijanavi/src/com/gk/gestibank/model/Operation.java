@@ -1,11 +1,15 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-@Component
+@Entity
 public class Operation {
 
+	@Id
+	@GeneratedValue
 	private int numero;
 	private Date dateOperation;
 	private double montant;

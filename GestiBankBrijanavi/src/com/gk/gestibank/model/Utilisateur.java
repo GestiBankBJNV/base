@@ -1,10 +1,14 @@
 package com.gk.gestibank.model;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-@Component
+@Entity
 public class Utilisateur {
 
+	@Id
+	@GeneratedValue
 	private int id;
 	private String prenom;
 	private String nom;

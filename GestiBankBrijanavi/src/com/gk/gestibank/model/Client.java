@@ -1,31 +1,23 @@
 package com.gk.gestibank.model;
 import java.util.List;
-import java.util.Set;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
-public class Client extends Utilisateur {
+public class Client extends Utilisateur {	
 	
 	private int nbEnfants;
 	private String situationMatrimoniale;
-	@Autowired
-	private Set<Compte> comptes;
+	private List<Compte> comptes;
 	private String adresse;
 	private String ville;
 	private String cp;
-	@Autowired
-	private Set<DemandeClient> demandes;
-	@Autowired
-	private Set<Notification> notifications;
+	private List<DemandeClient> demandes;
+	private List<Notification> notifications;
 	
 	public Client() {
 	}
 
 	public Client(int nbEnfants, String situationMatrimoniale,
-			Set<Compte> comptes, String adresse, String ville, String cp,
-			Set<DemandeClient> demandes, Set<Notification> notifications) {
+			List<Compte> comptes, String adresse, String ville, String cp,
+			List<DemandeClient> demandes, List<Notification> notifications) {
 		super();
 		this.nbEnfants = nbEnfants;
 		this.situationMatrimoniale = situationMatrimoniale;
@@ -53,11 +45,11 @@ public class Client extends Utilisateur {
 		this.situationMatrimoniale = situationMatrimoniale;
 	}
 
-	public Set<Compte> getComptes() {
+	public List<Compte> getComptes() {
 		return comptes;
 	}
 
-	public void setComptes(Set<Compte> comptes) {
+	public void setComptes(List<Compte> comptes) {
 		this.comptes = comptes;
 	}
 
@@ -85,19 +77,19 @@ public class Client extends Utilisateur {
 		this.cp = cp;
 	}
 
-	public Set<DemandeClient> getDemandes() {
+	public List<DemandeClient> getDemandes() {
 		return demandes;
 	}
 
-	public void setDemandes(Set<DemandeClient> demandes) {
+	public void setDemandes(List<DemandeClient> demandes) {
 		this.demandes = demandes;
 	}
 
-	public Set<Notification> getNotifications() {
+	public List<Notification> getNotifications() {
 		return notifications;
 	}
 
-	public void setNotifications(Set<Notification> notifications) {
+	public void setNotifications(List<Notification> notifications) {
 		this.notifications = notifications;
 	}
 
