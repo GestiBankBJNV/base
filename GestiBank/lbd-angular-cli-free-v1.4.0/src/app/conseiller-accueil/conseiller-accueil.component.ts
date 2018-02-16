@@ -3,6 +3,7 @@ import { ConseillerService } from '../conseiller-service';
 import { DatePipe } from '@angular/common';
 import { Conseiller, Client, DemandeClient } from '../data-model';
 import { Observable } from 'rxjs/Observable';
+import { NotificationsComponent } from '../notifications/notifications.component';
 
 @Component({
   selector: 'app-conseiller-accueil',
@@ -19,6 +20,7 @@ export class ConseillerAccueilComponent implements OnInit {
   indexClient: number;//recuperation de l'index du client
   idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
   isDetailDemande: boolean = false;//initialisation de la vue des demande sur false
+  notif: NotificationsComponent = new NotificationsComponent();
 
   isLoading = false;
 
@@ -73,6 +75,9 @@ export class ConseillerAccueilComponent implements OnInit {
       this.idSelectionne = null;
       this.indexClient = null;
     }
+
+    this.notif.showNotificationMessage("top", "right", "Chèquier envoyé", "success", 'pe-7s-magic-wand');
+
   }
 
   //fermeture d'une demande sans la supprimer 
@@ -82,5 +87,4 @@ export class ConseillerAccueilComponent implements OnInit {
       this.idSelectionne = null;
       this.indexClient = null;
   }
-
 }

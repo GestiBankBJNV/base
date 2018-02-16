@@ -1,17 +1,19 @@
 package com.gk.gestibank.service.conseiller;
 
+<<<<<<< HEAD
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+=======
+>>>>>>> Nassim
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
 import org.springframework.stereotype.Service;
 
 import com.gk.gestibank.dao.ConseillerDao;
-import com.gk.gestibank.dao.impl.ConseillerDaoImpl;
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
 import com.gk.gestibank.model.DemandeInscription;

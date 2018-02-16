@@ -10,7 +10,12 @@ public interface ClientDao {
 	public void createClient(Client client);
 	public void updateClient(Client client);
 	public void deleteClient(int id);
+<<<<<<< HEAD
 	public void getClientByName(String nom);
 	public Client getClientById(String clientId);
+=======
+	public Client getClientByName(String nom);
+	public Client getClientById(String id);
+>>>>>>> Nassim
 
 }

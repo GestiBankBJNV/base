@@ -1,6 +1,8 @@
 package com.gk.gestibank.web;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -17,7 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
+<<<<<<< HEAD
 import com.gk.gestibank.model.DemandeInscription;
+=======
+import com.gk.gestibank.model.DemandeClient;
+>>>>>>> Nassim
 import com.gk.gestibank.service.conseiller.ConseillerService;
 
 @RestController
@@ -26,6 +32,7 @@ public class WSConseiller {
 
 	@Autowired
 	ConseillerService conseillerService;
+	
 
 	public WSConseiller() {
 	}
@@ -58,11 +65,23 @@ public class WSConseiller {
 		return conseillerService.getClientsFromConseiller(matricule);	
 	}
 	
+<<<<<<< HEAD
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void addConseiller(Conseiller conseiller){
 		conseillerService.createConseiller(conseiller);
 	}
+=======
+//	// Création du service client au préalable
+//	@GET
+//	@Produces(MediaType.APPLICATION_JSON)
+//	@Path("/clients/{id}")
+//	public Set<DemandeClient> getDemandeClientsFromClient(@PathParam("id") String id){
+//				
+//		return null;
+//	}
+	
+>>>>>>> Nassim
 
 	@DELETE
 	@Path("/{ matricule }")

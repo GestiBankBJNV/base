@@ -1,0 +1,58 @@
+package com.gk.gestibank.dao.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.gk.gestibank.dao.ClientDao;
+import com.gk.gestibank.model.Client;
+
+@Repository
+public class ClientDaoImpl implements ClientDao {
+	
+	List<Client> clients = new ArrayList<Client>();
+	
+	
+
+	public ClientDaoImpl() {
+		Client c1 = new Client(2, "mariée", null,"125 rue de la paix","lille", "59000", null, null);
+		clients.add(c1);
+	}
+
+	@Override
+	public List<Client> getAll() {
+		
+		return clients;
+	}
+
+	@Override
+	public void updateClient(Client client) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void createClient(Client client) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteClient(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Client getClientByName(String nom) {
+		// TODO Auto-generated method stub
+		return null;
+		
+	}
+	
+	public Client getClientById(String id){
+		return null;
+	}
+
+}

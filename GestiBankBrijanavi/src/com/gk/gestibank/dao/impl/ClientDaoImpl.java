@@ -1,7 +1,12 @@
 package com.gk.gestibank.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
+=======
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
+>>>>>>> Nassim
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ClientDao;
@@ -9,15 +14,20 @@ import com.gk.gestibank.model.Client;
 
 @Repository
 public class ClientDaoImpl implements ClientDao {
+	
+	List<Client> clients = new ArrayList<Client>();
+	
+	
 
 	public ClientDaoImpl() {
-		// TODO Auto-generated constructor stub
+		Client c1 = new Client(2, "mariée", null,"125 rue de la paix","lille", "59000", null, null);
+		clients.add(c1);
 	}
 
 	@Override
 	public List<Client> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return clients;
 	}
 
 	@Override
@@ -39,8 +49,20 @@ public class ClientDaoImpl implements ClientDao {
 	}
 
 	@Override
-	public void getClientByName(String nom) {
+	public Client getClientByName(String nom) {
 		// TODO Auto-generated method stub
+		return null;
+		
+	}
+	
+	public Client getClientById(String id){
+		Client client = new Client();
+		for(Client c: clients){
+			if(id.equals(c.getId())){
+				client = c;
+			}
+		}
+		return client;
 		
 	}
 	
