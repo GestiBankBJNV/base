@@ -1,9 +1,0 @@
-package com.gk.gestibank.test.dao.conseiller;
-
-public class ConseillerDaoTestAll {
-
-	public ConseillerDaoTestAll() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

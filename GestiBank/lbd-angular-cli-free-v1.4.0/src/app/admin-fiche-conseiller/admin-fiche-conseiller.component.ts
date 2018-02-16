@@ -89,7 +89,7 @@ export class AdminFicheConseillerComponent implements OnInit {
         this.conseillerService.addConseiller(this.conseiller);
         this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
         // Notifier la création
-        this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + temp, 'success', 'pe-7s-add-user');  
+        this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + this.conseiller.prenom + ' ' + this.conseiller.nom, 'success', 'pe-7s-add-user');  
       }
       this.ngOnChanges(); 
     } else if(this.formulaire.get('email').invalid) {

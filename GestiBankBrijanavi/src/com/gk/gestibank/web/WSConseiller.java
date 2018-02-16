@@ -28,7 +28,6 @@ public class WSConseiller {
 	ConseillerService conseillerService;
 
 	public WSConseiller() {
-
 	}
 
 	@GET

@@ -1,5 +1,0 @@
-package com.gk.gestibank.conseiller.service.impl.txt;
-
-public class ChargeurConseillerFichierTxt {
-
-}
