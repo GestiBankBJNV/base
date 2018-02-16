@@ -1,5 +1,6 @@
 #Tomcat publish data
-#Wed Feb 14 10:10:32 CET 2018
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\gk\\.m2\\repository\\org\\apache\\tomcat\\tomcat-jasper\\8.0.23\\tomcat-jasper-8.0.23.jar=WEB-INF/lib/tomcat-jasper-8.0.23.jar
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\gk\\.m2\\repository\\org\\apache\\tomcat\\tomcat-websocket\\8.0.23\\tomcat-websocket-8.0.23.jar=WEB-INF/lib/tomcat-websocket-8.0.23.jar
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\gk\\.m2\\repository\\org\\springframework\\spring-web\\4.1.0.RELEASE\\spring-web-4.1.0.RELEASE.jar=WEB-INF/lib/spring-web-4.1.0.RELEASE.jar
+#Fri Feb 16 09:46:41 CET 2018
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\gk\\.m2\\repository\\org\\apache\\tomcat\\tomcat-jasper\\8.0.23\\tomcat-jasper-8.0.23.jar=C\:\\instal\\apache-tomcat-8.0.23-windows-x64\\apache-tomcat-8.0.23\\wtpwebapps\\GestiBankBrijanavi\\WEB-INF\\lib\\tomcat-jasper-8.0.23.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\gk\\.m2\\repository\\org\\apache\\tomcat\\tomcat-websocket\\8.0.23\\tomcat-websocket-8.0.23.jar=C\:\\instal\\apache-tomcat-8.0.23-windows-x64\\apache-tomcat-8.0.23\\wtpwebapps\\GestiBankBrijanavi\\WEB-INF\\lib\\tomcat-websocket-8.0.23.jar
+org.eclipse.jst.jee.server\:GestiBankBrijanavi=C\:\\instal\\apache-tomcat-8.0.23-windows-x64\\apache-tomcat-8.0.23\\wtpwebapps\\GestiBankBrijanavi
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\gk\\.m2\\repository\\org\\springframework\\spring-web\\4.1.0.RELEASE\\spring-web-4.1.0.RELEASE.jar=C\:\\instal\\apache-tomcat-8.0.23-windows-x64\\apache-tomcat-8.0.23\\wtpwebapps\\GestiBankBrijanavi\\WEB-INF\\lib\\spring-web-4.1.0.RELEASE.jar
