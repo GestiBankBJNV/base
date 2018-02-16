@@ -1,9 +1,11 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
+import javax.persistence.Entity;
+
 import org.springframework.stereotype.Component;
 
-@Component
+@Entity
 public class Operation {
 
 	private int numero;

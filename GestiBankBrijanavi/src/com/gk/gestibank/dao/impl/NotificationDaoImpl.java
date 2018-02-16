@@ -23,13 +23,15 @@ public class NotificationDaoImpl implements NotificationDao {
 	}
 	
 	@Override
-	public void delete(Notification notification){
+	public boolean delete(String notificationId){
 		//TODO
+		return true;
 	}
 	
 	@Override
-	public void addToClient(String clientId, Notification notification){
+	public boolean addToClient(String clientId, Notification notification){
 		//TODO
+		return true;
 	}
 
 }

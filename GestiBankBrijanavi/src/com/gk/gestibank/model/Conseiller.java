@@ -3,17 +3,19 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.Entity;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Entity
 public class Conseiller extends Utilisateur {
 
 	private String matricule;
 	private Date dateDebutContrat;
-	@Autowired
+
 	private List<Client> clients;
-	@Autowired
+
 	private List<DemandeInscription> demandesInscription;
 	
 	public Conseiller() {

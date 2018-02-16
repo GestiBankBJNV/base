@@ -5,19 +5,22 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Client extends Utilisateur {
 	
 	private int nbEnfants;
 	private String situationMatrimoniale;
-	@Autowired
 	private Set<Compte> comptes;
 	private String adresse;
 	private String ville;
 	private String cp;
-	@Autowired
 	private Set<DemandeClient> demandes;
-	@Autowired
 	private List<Notification> notifications;
 	
 	public Client() {

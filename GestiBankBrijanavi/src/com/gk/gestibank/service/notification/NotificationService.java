@@ -27,13 +27,13 @@ public class NotificationService implements INotificationService {
 	}
 
 	@Override
-	public void delete(Notification notification){
-		notificationDao.delete(notification);
+	public boolean delete(String notificationId){
+		return notificationDao.delete(notificationId);
 	}
 	
 	@Override
-	public void addToClient(String clientId, Notification notification){
-		notificationDao.addToClient(clientId, notification);		
+	public boolean addToClient(String clientId, Notification notification){
+		return notificationDao.addToClient(clientId, notification);
 	}
 	
 }

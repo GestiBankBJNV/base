@@ -1,11 +1,15 @@
 package com.gk.gestibank.model;
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Entity
 public class Compte {
+	@Id
 	private int code;
 	private double solde;
 	@Autowired

@@ -1,13 +1,23 @@
 package com.gk.gestibank.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.UniqueConstraint;
+
 import org.springframework.stereotype.Component;
 
-@Component
+@Entity
 public class Utilisateur {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String prenom;
 	private String nom;
+	@Column(unique=true)
 	private String nomUtilisateur;
 	private String password;
 	private String email;
