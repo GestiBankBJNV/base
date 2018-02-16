@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
@@ -13,16 +14,18 @@ export class DemandeService {
 
 	delayMs = 500;
 
-  	// Fake server get; assume nothing can go wrong
-  	getDemandesInscription(): Observable<DemandeInscription[]> {
-    	return of(demandesInscription).delay(this.delayMs); // simulate latency with delay
+	constructor(private http : Http) {}
+
+	getDemandesInscription(): Observable<DemandeInscription[]> {
+    	return this.http.get("http://localhost:8080/GestiBankBrijanavi/demandes/inscriptions")
+    	.map((res : Response) => res.json())
+    	.catch((error : any) => Observable.throw(error.json().error || 'Error'));
   	}
 
-  	// Fake server update; assume nothing can go wrong
-  	updateDemandeInscription(demande: DemandeInscription): Observable<DemandeInscription>  {
-	    const oldDemande = demandesInscription.find(d => d.id === demande.id);
-	    const newDemande = Object.assign(oldDemande, demande); // Demo: mutate cached hero
-	    return of(newDemande).delay(this.delayMs); // simulate latency with delay
+  	updateDemandeInscription(demande: DemandeInscription) {
+	    return this.http.put("http://localhost:8080/GestiBankBrijanavi/demandes/inscriptions", demande)
+    	.map((res : Response) => res.json())
+    	.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}
 
 	filtrerDemandes(filtre: string){
@@ -49,8 +52,8 @@ export class DemandeService {
     trierDate(typeDate : string, isCroissant: boolean){
 	    var tableTemp = [];
 	    for (var i=0; i<demandesInscription.length; i++){ 
-	        if(typeDate == 'demande') {  // pour la performance : sortir le if de la boucle
-	          tableTemp[i] = [this.dateStringify(demandesInscription[i].date), demandesInscription[i].id];
+	        if(typeDate == 'demande') { 
+	          tableTemp[i] = [this.dateStringify(demandesInscription[i].dateInscription), demandesInscription[i].id];
 	        } else if(typeDate == 'affectation') {
 	          tableTemp[i] = [this.dateStringify(demandesInscription[i].dateAffectation), demandesInscription[i].id];
 	        }
@@ -83,4 +86,17 @@ export class DemandeService {
       	console.log('' + date.getFullYear() + month + day);
       	return '' + date.getFullYear() + month + day;
     }
+
+    /* ***************** Ancien Code ***************** */
+      // Fake server get; assume nothing can go wrong
+  	/*getDemandesInscription(): Observable<DemandeInscription[]> {
+    	return of(demandesInscription).delay(this.delayMs); // simulate latency with delay
+  	}*/
+
+  	// Fake server update; assume nothing can go wrong
+  	/*updateDemandeInscription(demande: DemandeInscription): Observable<DemandeInscription>  {
+	    const oldDemande = demandesInscription.find(d => d.id === demande.id);
+	    const newDemande = Object.assign(oldDemande, demande); // Demo: mutate cached hero
+	    return of(newDemande).delay(this.delayMs); // simulate latency with delay
+	}*/
 }

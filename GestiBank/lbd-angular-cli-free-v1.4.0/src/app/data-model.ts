@@ -52,7 +52,7 @@ export class Operation {
 
 export class DemandeInscription { // = Inscription dans java (à modifier)
   id: number;
-  date: Date = new Date();
+  dateInscription: Date;
   dateAffectation: Date;
   statut: string = "en cours";
   libelle: string;
@@ -225,7 +225,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
 export const demandesInscription: DemandeInscription[] = [
   {
     id: 1,
-    date: new Date(2018,0,15),
+    dateInscription: new Date(2018,0,15),
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
@@ -233,7 +233,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 2,
-    date: new Date(2017,11,5),
+    dateInscription: new Date(2017,11,5),
     dateAffectation: new Date(2017,6,12),
     statut: 'traitée',
     libelle: "inscription",
@@ -241,7 +241,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 3,
-    date: new Date(2018,0,7),
+    dateInscription: new Date(2018,0,7),
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
@@ -249,7 +249,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 4,
-    date: new Date(2018,0,9),
+    dateInscription: new Date(2018,0,9),
     dateAffectation: new Date(2018,0,11),
     statut: 'en cours',
     libelle: "inscription",
@@ -257,7 +257,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 5,
-    date: new Date(2018,0,13),
+    dateInscription: new Date(2018,0,13),
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
@@ -265,7 +265,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 6,
-    date: new Date(2018,0,10),
+    dateInscription: new Date(2018,0,10),
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",

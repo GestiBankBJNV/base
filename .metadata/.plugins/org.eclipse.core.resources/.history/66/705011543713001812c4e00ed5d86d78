@@ -1,0 +1,24 @@
+package com.gk.gestibank.dao.impl;
+
+import java.util.List;
+
+import com.gk.gestibank.dao.DemandeInscriptionDao;
+import com.gk.gestibank.model.DemandeInscription;
+
+public class DemandeInscriptionDaoImpl implements DemandeInscriptionDao {
+	
+	private List<DemandeInscription> demInscriptions = new List<DemandeInscription>();
+
+	@Override
+	public List<DemandeInscription> getDemandesInscription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DemandeInscription updateDemandeInscription(DemandeInscription demandeInscr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -3,7 +3,6 @@ import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class CompteEpargne extends Compte {
 
 	private float taux;

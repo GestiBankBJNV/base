@@ -4,11 +4,9 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
 public class Compte {
 	private int code;
 	private double solde;
-	@Autowired
 	private Set<Operation> operations;
 	private double decouvert;
 

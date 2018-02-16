@@ -2,7 +2,6 @@ package com.gk.gestibank.model;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Utilisateur {
 
 	private int id;

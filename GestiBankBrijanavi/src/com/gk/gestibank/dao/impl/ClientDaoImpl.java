@@ -12,8 +12,6 @@ import com.gk.gestibank.model.Client;
 public class ClientDaoImpl implements ClientDao {
 	
 	List<Client> clients = new ArrayList<Client>();
-	
-	
 
 	public ClientDaoImpl() {
 		Client c1 = new Client(2, "mariée", null,"125 rue de la paix","lille", "59000", null, null);

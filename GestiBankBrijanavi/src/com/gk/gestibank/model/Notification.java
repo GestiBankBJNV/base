@@ -1,11 +1,8 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
-import org.jvnet.hk2.config.InjectionTarget;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
 public class Notification {
 
 	//Variables

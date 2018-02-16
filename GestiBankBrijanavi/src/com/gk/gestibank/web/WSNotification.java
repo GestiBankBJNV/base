@@ -2,8 +2,6 @@ package com.gk.gestibank.web;
 
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.inject.Qualifier;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -13,12 +11,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.glassfish.jersey.server.model.ParamQualifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Notification;
-import com.gk.gestibank.service.notification.NotificationService;
+import com.gk.gestibank.service.impl.NotificationService;
 
 @RestController
 @Path("/notifications")

@@ -1,5 +1,11 @@
 package com.gk.gestibank.dao;
 
-public interface DemandeInscriptionDao {
+import java.util.List;
 
+import com.gk.gestibank.model.DemandeInscription;
+
+public interface DemandeInscriptionDao {
+	List<DemandeInscription> getDemandesInscription();
+	DemandeInscription getDemandeInscrById(int id);
+	void updateDemandeInscription(DemandeInscription demandeInscr);
 }

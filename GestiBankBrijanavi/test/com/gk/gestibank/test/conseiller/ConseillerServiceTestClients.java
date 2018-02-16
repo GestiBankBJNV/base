@@ -12,7 +12,7 @@ import com.gk.gestibank.dao.impl.ConseillerDaoImpl;
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
 import com.gk.gestibank.model.DemandeInscription;
-import com.gk.gestibank.service.conseiller.ConseillerService;
+import com.gk.gestibank.service.impl.ConseillerService;
 
 public class ConseillerServiceTestClients {
 

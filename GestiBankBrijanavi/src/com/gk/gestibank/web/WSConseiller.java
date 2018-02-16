@@ -1,9 +1,6 @@
 package com.gk.gestibank.web;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -21,10 +18,7 @@ import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
 
 import com.gk.gestibank.model.DemandeInscription;
-
-import com.gk.gestibank.model.DemandeClient;
-
-import com.gk.gestibank.service.conseiller.ConseillerService;
+import com.gk.gestibank.service.impl.ConseillerService;
 
 @RestController
 @Path("/conseillers")
@@ -32,7 +26,6 @@ public class WSConseiller {
 
 	@Autowired
 	ConseillerService conseillerService;
-	
 
 	public WSConseiller() {
 	}

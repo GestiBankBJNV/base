@@ -1,19 +1,15 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class DemandeInscription {
 
 	private int id;
-	@Autowired
 	private Client coordonnees;
 	private Date dateInscription;
 	private Date dateAffectation;
 	private String statut;
-	private String libelle;
+	// inutile...
+	//private String libelle;
 	
 	public DemandeInscription() {
 	}
@@ -26,7 +22,7 @@ public class DemandeInscription {
 		this.dateInscription = dateInscription;
 		this.dateAffectation = dateAffectation;
 		this.statut = statut;
-		this.libelle = libelle;
+		//this.libelle = libelle;
 	}
 
 	public int getId() {
@@ -69,20 +65,19 @@ public class DemandeInscription {
 		this.statut = statut;
 	}
 
-	public String getLibelle() {
-		return libelle;
-	}
-
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
+//	public String getLibelle() {
+//		return libelle;
+//	}
+//
+//	public void setLibelle(String libelle) {
+//		this.libelle = libelle;
+//	}
 
 	@Override
 	public String toString() {
 		return "DemandeInscription [id=" + id + ", coordonnees=" + coordonnees
 				+ ", dateInscription=" + dateInscription + ", dateAffectation="
-				+ dateAffectation + ", statut=" + statut + ", libelle="
-				+ libelle + "]";
+				+ dateAffectation + ", statut=" + statut + "]";
 	}
 
 }

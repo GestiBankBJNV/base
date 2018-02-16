@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Client;
-import com.gk.gestibank.service.conseiller.ClientService;
+import com.gk.gestibank.service.impl.ClientService;
 
 @RestController
 @Path("/clients")
