@@ -13,13 +13,23 @@ import com.gk.gestibank.model.Notification;
 public class NotificationDaoImpl implements NotificationDao {
 	
 	@Autowired
-	ClientDao clientDao;
+	ClientDao clientDao;	
 	
 	public NotificationDaoImpl(){}	
 	
 	@Override
 	public List<Notification> getByClient(String clientId) {
 		return clientDao.getClientById(clientId).getNotifications();		
+	}
+	
+	@Override
+	public void delete(Notification notification){
+		//TODO
+	}
+	
+	@Override
+	public void addToClient(String clientId, Notification notification){
+		//TODO
 	}
 
 }

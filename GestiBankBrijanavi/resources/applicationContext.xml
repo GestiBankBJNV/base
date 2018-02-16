@@ -17,7 +17,7 @@
                 p:url="jdbc:mysql://localhost/AnnuaireExpertise"
                 p:username="CompteAnnuaire"
                 p:password="CompteAnnuaire"
-        />
+        /> 
 
         <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
                 p:dataSource-ref="dataSource"
