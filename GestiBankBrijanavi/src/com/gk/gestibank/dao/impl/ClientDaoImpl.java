@@ -3,10 +3,6 @@ package com.gk.gestibank.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-=======
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
->>>>>>> Nassim
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ClientDao;
@@ -66,9 +62,4 @@ public class ClientDaoImpl implements ClientDao {
 		
 	}
 	
-	@Override
-	public Client getClientById(String clientId){
-		return new Client();
-	}
-
 }
