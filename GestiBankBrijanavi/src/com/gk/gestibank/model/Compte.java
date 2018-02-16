@@ -1,25 +1,21 @@
 package com.gk.gestibank.model;
-import java.util.List;
+import java.util.Set;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-
-@Entity
+@Component
 public class Compte {
-	
-	@Id
-	@GeneratedValue
 	private int code;
 	private double solde;
-	private List<Operation> operations;
+	@Autowired
+	private Set<Operation> operations;
 	private double decouvert;
 
 	public Compte() {
 	}
 
-	public Compte(int code, double solde, List<Operation> operations,
+	public Compte(int code, double solde, Set<Operation> operations,
 			double decouvert) {
 		super();
 		this.code = code;
@@ -44,11 +40,11 @@ public class Compte {
 		this.solde = solde;
 	}
 
-	public List<Operation> getOperations() {
+	public Set<Operation> getOperations() {
 		return operations;
 	}
 
-	public void setOperations(List<Operation> operations) {
+	public void setOperations(Set<Operation> operations) {
 		this.operations = operations;
 	}
 

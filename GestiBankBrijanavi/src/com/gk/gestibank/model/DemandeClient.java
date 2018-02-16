@@ -1,15 +1,11 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.stereotype.Component;
 
-@Entity
+@Component
 public class DemandeClient {
 
-	@Id
-	@GeneratedValue
 	private int id;
 	private Date date;
 	private Date dateAffectation;

@@ -1,22 +1,14 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
-<<<<<<< HEAD
-import javax.persistence.Entity;
-=======
 import org.jvnet.hk2.config.InjectionTarget;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
->>>>>>> master
 
-@Entity
+@Component
 public class Notification {
 
-<<<<<<< HEAD
-	// todo : id ?
-=======
 	//Variables
->>>>>>> master
 	private String libelle;
 	private Date date;
 	private boolean isRead;

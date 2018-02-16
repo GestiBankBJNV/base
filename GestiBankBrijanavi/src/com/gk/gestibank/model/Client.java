@@ -1,34 +1,31 @@
 package com.gk.gestibank.model;
 import java.util.List;
+import java.util.Set;
 
-public class Client extends Utilisateur {	
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Client extends Utilisateur {
 	
 	private int nbEnfants;
 	private String situationMatrimoniale;
-	private List<Compte> comptes;
+	@Autowired
+	private Set<Compte> comptes;
 	private String adresse;
 	private String ville;
 	private String cp;
-<<<<<<< HEAD
-	private List<DemandeClient> demandes;
-=======
 	@Autowired
 	private Set<DemandeClient> demandes;
 	@Autowired
->>>>>>> master
 	private List<Notification> notifications;
 	
 	public Client() {
 	}
 
 	public Client(int nbEnfants, String situationMatrimoniale,
-<<<<<<< HEAD
-			List<Compte> comptes, String adresse, String ville, String cp,
-			List<DemandeClient> demandes, List<Notification> notifications) {
-=======
 			Set<Compte> comptes, String adresse, String ville, String cp,
 			Set<DemandeClient> demandes, List<Notification> notifications) {
->>>>>>> master
 		super();
 		this.nbEnfants = nbEnfants;
 		this.situationMatrimoniale = situationMatrimoniale;
@@ -56,11 +53,11 @@ public class Client extends Utilisateur {
 		this.situationMatrimoniale = situationMatrimoniale;
 	}
 
-	public List<Compte> getComptes() {
+	public Set<Compte> getComptes() {
 		return comptes;
 	}
 
-	public void setComptes(List<Compte> comptes) {
+	public void setComptes(Set<Compte> comptes) {
 		this.comptes = comptes;
 	}
 
@@ -88,11 +85,11 @@ public class Client extends Utilisateur {
 		this.cp = cp;
 	}
 
-	public List<DemandeClient> getDemandes() {
+	public Set<DemandeClient> getDemandes() {
 		return demandes;
 	}
 
-	public void setDemandes(List<DemandeClient> demandes) {
+	public void setDemandes(Set<DemandeClient> demandes) {
 		this.demandes = demandes;
 	}
 
