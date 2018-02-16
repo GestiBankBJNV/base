@@ -7,8 +7,10 @@ import 'rxjs/add/operator/delay';
 
 import { Conseiller, conseillers, Client, DemandeInscription } from './data-model';
 
+  /* ************************************** Ancien Code tout en bas !!! ************************************ */
+
 @Injectable()
-export class ConseillerService { // Correspond finalement aux méthodes de l'admin, mais je ne vais pas modifier le nom maintenant...
+export class ConseillerService { 
 
   delayMs = 500;
 
@@ -20,7 +22,7 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  getConseillersByNameOrMatricule(recherche : string){
+  getConseillersByNameOrMatricule(recherche : string): Observable<Conseiller[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + recherche)
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
@@ -32,24 +34,24 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-   getConseillersByIdSimple(id: string): Conseiller{
-    var temp: Conseiller;
-
-    for(var i=0; i<conseillers.length; i++){
-      // mettre dans temp les conseillers ayant le nom recherché
-      if(conseillers[i].matricule === id) {
-         temp = conseillers[i];
-         break;
-         /*console.log('conseillers trouvé : ' + conseillers[i].nom);*/
-      }
-    }
-    return temp;
+  addConseiller(conseiller: Conseiller) {
+    return this.http.post("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller)
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
+    .subscribe();
   }
 
-  /*getListeClientsFromConseiller(id : string){
-    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
-    return conseiller.clients;    
-  }*/
+  deleteConseiller(matricule: string) {
+    return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule, matricule)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
+    .subscribe();
+  }
+
+  getDemandesInscriptionFromConseiller(matricule: string): Observable<DemandeInscription[]> {
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule +"/inscriptions")
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+  }
 
   getListeClientsFromConseiller(matricule : string): Observable<Client[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/clients")
@@ -57,50 +59,24 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));   
   }
 
-  getConseillerWithClient(client: Client){
-    for(var i=0; i<conseillers.length; i++){
-      for(var j=0; j<conseillers[i].clients.length; j++){
-        if(conseillers[i].clients[j] == client){
-          return conseillers[i];
-        }
-      }
-    }
-    return undefined;
+  getConseillerWithClient(idClient: number){
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/client/" + idClient)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  deleteClient(client: Client){
-    var conseiller = this.getConseillerWithClient(client);
-    var clients = conseiller.clients;
-    clients.splice(clients.indexOf(client), 1);
-    conseiller.clients = clients;
+  deleteClient(idClient: number, matricule: string){
+    return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/clients/" + idClient)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
+    .subscribe();
   }
-
-  addConseiller(conseiller: Conseiller) {
-    // TODO : changer matricule
-    conseiller.matricule = ((conseiller.dateDebutContrat.getMonth() + 1) < 10 ? 
-                                "0" + (conseiller.dateDebutContrat.getMonth() + 1) : (conseiller.dateDebutContrat.getMonth() + 1))
-                            + (Math.random()*1000).toFixed(0)
-                            + conseiller.prenom.charAt(0).toUpperCase() 
-                            + conseiller.nom.charAt(0).toUpperCase();
-    conseillers.push(conseiller);    
-  }
-
-  deleteConseiller(conseiller: Conseiller) {
-    conseillers.splice(conseillers.indexOf(conseiller), 1);
-  }
-
+  
+  // todo ?
   getClientFromConseiller(conseiller: Conseiller){
   }
 
-  getListDemandeInscriptionByConseiller(id: string){
-
-    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
-
-    let demandes: DemandeInscription[] = conseiller.demandesInscription;
-
-    return demandes;
-
-  }
+  
 
 
   /* ***************** Ancien Code ***************** */
@@ -126,4 +102,66 @@ export class ConseillerService { // Correspond finalement aux méthodes de l'adm
     const newConseiller = Object.assign(oldConseiller, conseiller); // Demo: mutate cached hero
     return of(newConseiller).delay(this.delayMs); // simulate latency with delay
   }*/
+
+  /*getListeClientsFromConseiller(id : string){
+    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
+    return conseiller.clients;    
+  }*/
+
+  /*addConseiller(conseiller: Conseiller) {
+    // TODO : changer matricule
+    conseiller.matricule = ((conseiller.dateDebutContrat.getMonth() + 1) < 10 ? 
+                                "0" + (conseiller.dateDebutContrat.getMonth() + 1) : (conseiller.dateDebutContrat.getMonth() + 1))
+                            + (Math.random()*1000).toFixed(0)
+                            + conseiller.prenom.charAt(0).toUpperCase() 
+                            + conseiller.nom.charAt(0).toUpperCase();
+    conseillers.push(conseiller);    
+  }*/
+
+  /*deleteConseiller(conseiller: Conseiller) {
+    conseillers.splice(conseillers.indexOf(conseiller), 1);
+  }*/
+
+  /*getListDemandeInscriptionByConseiller(id: string){
+
+    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
+
+    let demandes: DemandeInscription[] = conseiller.demandesInscription;
+
+    return demandes;
+
+  }*/
+
+  /*getConseillersByIdSimple(id: string): Conseiller{
+    var temp: Conseiller;
+
+    for(var i=0; i<conseillers.length; i++){
+      // mettre dans temp les conseillers ayant le nom recherché
+      if(conseillers[i].matricule === id) {
+         temp = conseillers[i];
+         break;
+         //console.log('conseillers trouvé : ' + conseillers[i].nom);
+      }
+    }
+    return temp;
+  }*/
+
+  /*getConseillerWithClient(client: Client){
+    for(var i=0; i<conseillers.length; i++){
+      for(var j=0; j<conseillers[i].clients.length; j++){
+        if(conseillers[i].clients[j] == client){
+          return conseillers[i];
+        }
+      }
+    }
+    return undefined;
+  }*/
+
+  /*deleteClient(client: Client){
+    let conseiller = this.getConseillerWithClient(client);
+    let clients = conseiller.clients;
+    clients.splice(clients.indexOf(client), 1);
+    conseiller.clients = clients;
+  }*/
+
 }

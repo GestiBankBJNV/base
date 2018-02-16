@@ -1,6 +1,0 @@
-package com.gk.gestibank.dao.copy;
-
-public interface ConseillerDao {
-	public void validerDemande();
-	// todo : autres méthodes ?
-}

@@ -1,6 +1,0 @@
-package com.gk.gestibank.dao;
-
-public interface CompteDao {
-
-	public crediter(double montant);
-}

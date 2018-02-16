@@ -216,7 +216,8 @@ export class AdminAffectationsComponent implements OnInit {
     this.selectedConseiller.clients.push(this.selectedClient);
     this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
     // Supprimer le client de la liste de son ancien conseiller
-    this.conseillerService.deleteClient(this.selectedClient);
+    // todo : il faudra utiliser le webservice client pour modifier le conseiller
+    // this.conseillerService.deleteClient(this.selectedClient);
     // Notifier les modifs
     this.notif.showNotificationMessage('top', 'right', 'Client : ' + this.selectedClient.prenom + ' ' + this.selectedClient.nom + ' affecté au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
   }
