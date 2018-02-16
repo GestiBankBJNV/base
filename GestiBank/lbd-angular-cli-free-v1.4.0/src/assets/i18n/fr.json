@@ -38,6 +38,7 @@
 	"client_pagination_operations" : "opérations",
 	"client_pagination_previous" : "Précédent",
 	"client_profile_address" : "Adresse",
+	"client_profile_cancel" : "Annuler",
 	"client_profile_city" : "Ville",
 	"client_profile_company" : "Entreprise",
 	"client_profile_confirm" : "Confirmer",
@@ -47,6 +48,7 @@
 	"client_profile_mail" : "Adresse email",
 	"client_profile_title" : "Modifier mon profil",
 	"client_profile_optional" : "Facultatif",
+	"client_profile_phone" : "Téléphone",
 	"client_profile_update" : "Mettre à jour",
 	"client_profile_username" : "Nom d'utilisateur",
 	"client_profile_zipcode" : "Code postal",
@@ -91,6 +93,7 @@
 	"loading" : "Chargement...",
 	"valider" : "Valider",
 	"affecter" : "Affecter",
+	"logout" : "Déconnexion",
 	"nomUtilisateur" : "Nom d'utilisateur",
 	"mdp" : "Mot de passe",
 	"dateDebutContrat" : "Date de début de contrat",
@@ -101,5 +104,6 @@
 	"admin_affectations_infos" : "Indiquer le client dont l'affectation doit être modifiée, ainsi que le nouveau conseiller auquel on affecte le client",
 	"admin_affectation_erreur_no_conseiller" : "Erreur : veuillez entrer un conseiller",
 	"admin_affectation_notif_demande_affectee" : "Demande affectée au conseiller : ",
-	"public_devises_title" : "Conversion de devises"
+	"public_devises_title" : "Conversion de devises",
+	"navbar_notification_title" : "Nouvelles notifications."
 }

@@ -9,15 +9,26 @@ public class Client extends Utilisateur {
 	private String adresse;
 	private String ville;
 	private String cp;
+<<<<<<< HEAD
 	private List<DemandeClient> demandes;
+=======
+	@Autowired
+	private Set<DemandeClient> demandes;
+	@Autowired
+>>>>>>> master
 	private List<Notification> notifications;
 	
 	public Client() {
 	}
 
 	public Client(int nbEnfants, String situationMatrimoniale,
+<<<<<<< HEAD
 			List<Compte> comptes, String adresse, String ville, String cp,
 			List<DemandeClient> demandes, List<Notification> notifications) {
+=======
+			Set<Compte> comptes, String adresse, String ville, String cp,
+			Set<DemandeClient> demandes, List<Notification> notifications) {
+>>>>>>> master
 		super();
 		this.nbEnfants = nbEnfants;
 		this.situationMatrimoniale = situationMatrimoniale;

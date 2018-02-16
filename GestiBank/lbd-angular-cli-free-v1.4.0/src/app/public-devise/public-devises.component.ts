@@ -48,7 +48,7 @@ export class PublicDevisesComponent implements OnInit {
   //rafraichir la valeur convertie
   refreshConvertedValue(){
   	let rate : number = this.rates[this.currencyTo];
-  	if(this.currencyFrom == this.currencyTo){ rate = 1; }
+  	if(this.currencyFrom == this.currencyTo){ rate = 1; }//éviter un NaN
   	this.convertedValue = this.inputValue * rate;
   }
 
