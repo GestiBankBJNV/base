@@ -2,7 +2,9 @@ package com.gk.gestibank.dao.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.gk.gestibank.dao.ConseillerDao;
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
+import com.gk.gestibank.model.DemandeClient;
 import com.gk.gestibank.model.DemandeInscription;
 
 @Repository
@@ -24,12 +27,27 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	
 	public void chargerConseillers(){
 		List<Client> clients = new ArrayList<Client>();
+		Set<DemandeClient> demandes = new HashSet<DemandeClient>();
+		
+		DemandeClient demande = new DemandeClient();
+		
+		demande.setDate(new Date());
+		demande.setDateAffectation(new Date());
+		demande.setId(1);
+		demande.setLibelle("Chequier");
+		demande.setStatut("en cours");
+		
+		demandes.add(demande) ;
+		
 		Client cl = new Client();
 		cl.setNom("Test");
 		cl.setPrenom("Prenom");
 		cl.setEmail("test@email.com");
 		cl.setId(1);
+		cl.setDemandes(demandes);
 		clients.add(cl);
+		
+		
 		
 		Conseiller c1 = new Conseiller(1, "Jeanne", "Grelier", "Jaja", "1234", 
 				"j@email.com", "0658654236", "conseiller", 
