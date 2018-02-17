@@ -9,6 +9,8 @@ import { Conseiller, conseillers, Client, DemandeInscription } from './data-mode
 
   /* ************************************** Ancien Code tout en bas !!! ************************************ */
 
+  /* Todo : problème d'accents...*/
+
 @Injectable()
 export class ConseillerService { 
 

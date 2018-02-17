@@ -1,4 +1,5 @@
 package com.gk.gestibank.model;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +9,8 @@ public class Conseiller extends Utilisateur {
 
 	private String matricule;
 	private Date dateDebutContrat;
-	private List<Client> clients;
-	private List<DemandeInscription> demandesInscription;
+	private List<Client> clients = new ArrayList<Client>();
+	private List<DemandeInscription> demandesInscription = new ArrayList<DemandeInscription>();
 	
 	public Conseiller() {
 	}

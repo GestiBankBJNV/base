@@ -78,7 +78,11 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	@Override
 	public void updateConseiller(Conseiller conseiller) {	
 		int i = conseillers.indexOf(conseiller);
-		conseillers.set(i, conseiller);
+		try {
+			conseillers.set(i, conseiller);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("L'index " + i + " ne fait pas partie de la liste conseillers");
+		}	
 	}
 
 	@Override

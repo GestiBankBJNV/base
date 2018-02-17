@@ -100,7 +100,7 @@ export class AdminAffectationsComponent implements OnInit {
     this.derouler = false;
   }
 
-  /* Méthode utilisée au clic sur le nom d'un conseiller */
+  /* Méthode utilisée au clic sur le nom d'un conseiller et validation du choix */
   select(/*conseiller: Conseiller*/) { 
     if(this.selectedConseiller) {
       this.affecter = false;
@@ -111,6 +111,7 @@ export class AdminAffectationsComponent implements OnInit {
       this.demandeService.updateDemandeInscription(this.selectedDemande).subscribe();
       // Ajouter la demande à la liste du conseiller
       this.selectedConseiller.demandesInscription.push(this.selectedDemande);
+      debugger;
       this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
       // Notifier l'affectation
       let note: string;
@@ -142,7 +143,7 @@ export class AdminAffectationsComponent implements OnInit {
   filtrerDemandes(filtre: string){      
     this.getDemandes(); 
     this.isLoading = true;
-    this.demandes = this.demandeService.filtrerDemandes(filtre) // ce champ contient soit un nom, soit un matricule
+    this.demandes = this.demandeService.filtrerDemandes(filtre) 
                         // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }

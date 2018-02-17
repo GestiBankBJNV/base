@@ -71,7 +71,7 @@
 		                </thead>
 		                <!-- Contenu des lignes récupéré depuis une liste de demandes -->
 		              	<tbody>
-		                  	<tr *ngFor="let demande of demandes | async">
+		                  	<tr *ngFor="let demande of demandes | async"> <!-- todo : filtres et tri -->
 		                  		<td class="text-right">{{ demande.id }}</td>
 		                      	<td>{{ demande.coordonnees.prenom }}</td>
 		                      	<td>{{ demande.coordonnees.nom }}</td>							                      
