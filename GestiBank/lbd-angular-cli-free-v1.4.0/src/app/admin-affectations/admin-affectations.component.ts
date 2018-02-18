@@ -40,6 +40,8 @@ export class AdminAffectationsComponent implements OnInit {
   selectedConseiller: Conseiller; // Pour l'onglet modifs
   derouler: boolean = true; // Pour l'accordion
   orderColumn = "id";
+  filtre = ['id'];
+  search: any;
 
 /* traduction https://stackoverflow.com/questions/45870513/angular-ngx-translate-usage-in-typescript*/
 	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService, private translate: TranslateService) { 
@@ -151,31 +153,9 @@ export class AdminAffectationsComponent implements OnInit {
   }*/
 
   // todo
-  filtrerDemandes(filtre: string){
-    /*this.getDemandes();
-    //On parcours la table en decroissance pour eviter l auto modification des index
-    let temp = [];
-    let tabDemandes: DemandeInscription[] = [];
-    this.demandes.subscribe(res => {  // todo : ne fonctionne pas
-      for(let i=0; i<res.length; i++){
-        tabDemandes.push(res[i]); 
-        temp.push(res[i]); // plutôt que de copier le tableau, on pourrait utiliser un push ensuite au lieu de splice, mais il faudrait repenser aux conditions 
-      }           
-
-      for (let i=tabDemandes.length -1; i>=0; i--){         
-        if(filtre == 'affectee' && tabDemandes[i].dateAffectation == undefined){           
-          temp.splice(i, 1);           
-        } else if (filtre == 'nonAffectee' && tabDemandes[i].dateAffectation != undefined){         
-          temp.splice(i, 1);   
-        } else if (filtre == 'enCours' && tabDemandes[i].statut != 'en cours'){
-          temp.splice(i, 1);
-        } else if (filtre == 'traitee' && tabDemandes[i].statut != 'traitée'){
-          temp.splice(i, 1);
-        }
-      }
-    });
-      
-    this.demandes = Observable.from(temp); */      
+  filtrerDemandes(filtre: string, search: any){
+    this.filtre = [filtre];      
+    this.search = search;
   }
 
   /* Méthode appelée lors du clic sur l'entete du tableau "Date de demande" */
