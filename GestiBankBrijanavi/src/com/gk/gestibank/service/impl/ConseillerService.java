@@ -1,9 +1,7 @@
 package com.gk.gestibank.service.impl;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -36,7 +34,7 @@ public class ConseillerService implements IConseillerService {
 	public String generateMatricule(Conseiller conseiller) {
 		SimpleDateFormat sdate = new SimpleDateFormat("MMYY");
 		String matricule = conseiller.getNom().toUpperCase().charAt(0) + sdate.format(conseiller.getDateDebutContrat())
-				+ "A";
+				+ conseiller.hashCode() + "A";
 		return matricule;
 	}
 
@@ -79,7 +77,7 @@ public class ConseillerService implements IConseillerService {
 				}
 			}
 		}
-		if(matricule != "") {
+		if (matricule != "") {
 			conseillerDao.deleteClientFromConseiller(idClient, matricule);
 		}
 	}

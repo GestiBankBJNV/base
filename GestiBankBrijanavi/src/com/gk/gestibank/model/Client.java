@@ -1,9 +1,6 @@
 package com.gk.gestibank.model;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 public class Client extends Utilisateur {
 	
 	private int nbEnfants;

@@ -1,8 +1,6 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
-import org.springframework.stereotype.Component;
-
 public class DemandeClient {
 
 	private int id;

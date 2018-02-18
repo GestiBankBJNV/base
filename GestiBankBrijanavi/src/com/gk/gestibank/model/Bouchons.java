@@ -27,13 +27,20 @@ public class Bouchons {
 		demandes.add(demande) ;
 		
 		Client cl = new Client();
-		cl.setNom("Test");
-		cl.setPrenom("Prenom");
-		cl.setEmail("test@email.com");
+		cl.setNom("Hautefeuille");
+		cl.setPrenom("Annie");
+		cl.setEmail("annie@email.com");
 		cl.setId(1);
 		cl.setDemandes(demandes);
 		
+		Client cl4 = new Client();
+		cl4.setNom("Rucci");
+		cl4.setPrenom("Monique");
+		cl4.setEmail("monique@email.com");
+		cl4.setId(4);
+		
 		clients.add(cl);		
+		clients.add(cl4);		
 		
 		// Conseillers
 		Conseiller c1 = new Conseiller(1, "Jeanne", "Grelier", "Jaja", "1234", 
@@ -82,11 +89,13 @@ public class Bouchons {
 		d1.setCoordonnees(cl1);
 		d1.setDateInscription(date1);
 		d1.setId(1);
+		d1.setStatut("non affectée");
 		
 		DemandeInscription d2 = new DemandeInscription();
 		d2.setCoordonnees(cl2);
 		d2.setDateInscription(date2);
 		d2.setId(2);
+		d2.setStatut("non affectée");
 		
 		DemandeInscription d3 = new DemandeInscription();
 		d3.setCoordonnees(cl3);

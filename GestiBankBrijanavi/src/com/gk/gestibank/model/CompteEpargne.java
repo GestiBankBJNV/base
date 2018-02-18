@@ -1,8 +1,6 @@
 package com.gk.gestibank.model;
 import java.util.Set;
 
-import org.springframework.stereotype.Component;
-
 public class CompteEpargne extends Compte {
 
 	private float taux;

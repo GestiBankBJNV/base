@@ -1,17 +1,8 @@
 package com.gk.gestibank.test.conseiller;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import com.gk.gestibank.dao.impl.ConseillerDaoImpl;
-import com.gk.gestibank.model.Client;
-import com.gk.gestibank.model.Conseiller;
-import com.gk.gestibank.model.DemandeInscription;
 import com.gk.gestibank.service.impl.ConseillerService;
 
 public class ConseillerServiceTestDeleteClient {
@@ -23,11 +14,11 @@ public class ConseillerServiceTestDeleteClient {
 		
 		System.out.println(gestionConseillers.getConseillerByNameOrMatricule("425A"));
 		
-		gestionConseillers.deleteClientFromConseiller(1, "425A");
+		gestionConseillers.deleteClientFromConseiller(1);
 		
 		System.out.println(gestionConseillers.getConseillerByNameOrMatricule("425A"));
 		
 	}
 
 }
-// 13/02/2018 Test ok
+// 18/02/2018 Test ok
