@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ClientDao;
+import com.gk.gestibank.model.Bouchons;
 import com.gk.gestibank.model.Client;
 
 @Repository
@@ -14,8 +15,12 @@ public class ClientDaoImpl implements ClientDao {
 	List<Client> clients = new ArrayList<Client>();
 
 	public ClientDaoImpl() {
-		Client c1 = new Client(2, "mariée", null,"125 rue de la paix","lille", "59000", null, null);
-		clients.add(c1);
+		chargerClients();
+	}
+	
+	public void chargerClients(){
+		Bouchons b = new Bouchons();
+		clients = b.getClients();
 	}
 
 	@Override
@@ -43,10 +48,13 @@ public class ClientDaoImpl implements ClientDao {
 	}
 
 	@Override
-	public Client getClientByName(String nom) {
-		// TODO Auto-generated method stub
-		return null;
-		
+	public List<Client> getClientByNameOrId(String recherche) {
+		for(Client c: clients){
+			if(recherche.matches(c.getNom()) || recherche.equals(c.getId())){
+				clients.add(c);
+			}
+		}
+		return clients;		
 	}
 	
 	public Client getClientById(String id){

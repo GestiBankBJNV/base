@@ -53,4 +53,10 @@ public class ClientService implements IClientService {
 		return clientDao.getClientById(id);
 	}
 
+	@Override
+	public List<Client> getClientByNameOrId(String recherche) {
+		
+		return clientDao.getClientByNameOrId(recherche);
+	}
+
 }

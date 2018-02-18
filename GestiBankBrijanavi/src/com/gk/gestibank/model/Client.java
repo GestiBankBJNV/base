@@ -95,6 +95,10 @@ public class Client extends Utilisateur {
 	public void setNotifications(List<Notification> notifications) {
 		this.notifications = notifications;
 	}
+	
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	}
 
 	@Override
 	public String toString() {

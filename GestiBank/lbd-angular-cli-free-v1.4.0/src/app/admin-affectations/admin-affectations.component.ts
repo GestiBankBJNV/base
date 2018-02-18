@@ -192,7 +192,7 @@ export class AdminAffectationsComponent implements OnInit {
     this.clientsDataSource = Observable.create((observer: any) => {
       // Runs on every search
       observer.next(this.clientRecherche);
-    }).mergeMap((token: string) => this.clientService.getClientByNameAndID(token, token));
+    }).mergeMap((token: string) => this.clientService.getClientByNameOrId(token));
   }
  
   /* Méthode utilisée lors du clic sur un conseiller */
@@ -211,8 +211,7 @@ export class AdminAffectationsComponent implements OnInit {
     this.selectedConseiller.clients.push(this.selectedClient);
     this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
     // Supprimer le client de la liste de son ancien conseiller
-    // todo : il faudra utiliser le webservice client pour modifier le conseiller
-    // this.conseillerService.deleteClient(this.selectedClient);
+    this.conseillerService.deleteClient(this.selectedClient.id);
     // Notifier les modifs
     this.notif.showNotificationMessage('top', 'right', 'Client : ' + this.selectedClient.prenom + ' ' + this.selectedClient.nom + ' affecté au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
   }

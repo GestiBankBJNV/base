@@ -70,8 +70,8 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  deleteClient(idClient: number, matricule: string){
-    return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/clients/" + idClient)
+  deleteClient(idClient: number){
+    return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/clients/" + idClient)
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'))
     .subscribe();

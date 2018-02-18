@@ -31,11 +31,17 @@ public class WSClient {
 		return clientService.getAll();
 	}
 	
+//	@GET
+//	@Produces(MediaType.APPLICATION_JSON)
+//	@Path("/{id}")
+//	public Client getClientById(@PathParam("id")String id){
+//		return clientService.getClientById(id);
+//	}
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/{id}")
-	public Client getClientById(@PathParam("id")String id){
-		return clientService.getClientById(id);
+	@Path("/{recherche}")
+	public List<Client> getClientByNameOrId(@PathParam("recherche")String recherche){
+		return clientService.getClientByNameOrId(recherche);
 	}
-	
 }

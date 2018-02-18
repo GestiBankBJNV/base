@@ -14,7 +14,7 @@ public interface IConseillerService {
 	public void updateConseiller(Conseiller conseiller);
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche);
 	public void addClientToConseiller(Client client, String matricule);
-	public void deleteClientFromConseiller(int idClient, String matricule);
+	public void deleteClientFromConseiller(int idClient);
 	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule);
 	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule);
 	public List<Client> getClientsFromConseiller(String matricule);

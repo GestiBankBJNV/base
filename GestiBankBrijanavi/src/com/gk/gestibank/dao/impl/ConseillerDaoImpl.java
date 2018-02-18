@@ -8,6 +8,7 @@ import java.util.Set;
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ConseillerDao;
+import com.gk.gestibank.model.Bouchons;
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
 import com.gk.gestibank.model.DemandeClient;
@@ -23,44 +24,8 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	}
 	
 	public void chargerConseillers(){
-		List<Client> clients = new ArrayList<Client>();
-		List<DemandeClient> demandes = new ArrayList<DemandeClient>();
-		
-		DemandeClient demande = new DemandeClient();
-		
-		demande.setDate(new Date());
-		demande.setDateAffectation(new Date());
-		demande.setId(1);
-		demande.setLibelle("Chequier");
-		demande.setStatut("en cours");
-		
-		demandes.add(demande) ;
-		
-		Client cl = new Client();
-		cl.setNom("Test");
-		cl.setPrenom("Prenom");
-		cl.setEmail("test@email.com");
-		cl.setId(1);
-		cl.setDemandes(demandes);
-		
-		clients.add(cl);		
-		
-		Conseiller c1 = new Conseiller(1, "Jeanne", "Grelier", "Jaja", "1234", 
-				"j@email.com", "0658654236", "conseiller", 
-				"425A", new Date(), clients, 
-				new ArrayList<DemandeInscription>());
-		Conseiller c2 = new Conseiller(2, "JD", "Eymann", "Jdeon", "1234", 
-				"jd@email.com", "0657894236", "conseiller", 
-				"426A", new Date(), new ArrayList<Client>(), 
-				new ArrayList<DemandeInscription>());
-		Conseiller c3 = new Conseiller(3, "Mélanie", "Desvaux", "Mèl", "1234", 
-				"jo@email.com", "0658656546", "conseiller", 
-				"427A", new Date(), new ArrayList<Client>(), 
-				new ArrayList<DemandeInscription>());
-		
-		conseillers.add(c1);
-		conseillers.add(c2);
-		conseillers.add(c3);
+		Bouchons b = new Bouchons();
+		conseillers = b.getConseillers();
 	}
 
 	@Override
@@ -118,7 +83,10 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	@Override
 	public List<Client> getClientsFromConseiller(String matricule) {
 		Conseiller c = getConseillerByMatricule(matricule);
-		return c.getClients();
+		if(c != null) {
+			return c.getClients();
+		}
+		return new ArrayList<Client>();
 	}
 
 	@Override

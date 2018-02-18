@@ -85,8 +85,8 @@ public class WSConseiller {
 	}
 	
 	@DELETE
-	@Path("/{ matricule }/clients/{ idClient }")
-	public void deleteClientFromConseiller(@PathParam("idClient") int idClient, @PathParam("matricule") String matricule) {
-		conseillerService.deleteClientFromConseiller(idClient, matricule);
+	@Path("/clients/{ idClient }")
+	public void deleteClientFromConseiller(@PathParam("idClient") int idClient) {
+		conseillerService.deleteClientFromConseiller(idClient);
 	}
 }
