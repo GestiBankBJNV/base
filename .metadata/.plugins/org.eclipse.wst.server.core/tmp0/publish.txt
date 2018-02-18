@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Sun Feb 18 16:41:52 CET 2018
+#Sun Feb 18 16:53:31 CET 2018
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Jeanne\\.m2\\repository\\org\\springframework\\spring-web\\4.1.0.RELEASE\\spring-web-4.1.0.RELEASE.jar=WEB-INF/lib/spring-web-4.1.0.RELEASE.jar
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Jeanne\\.m2\\repository\\org\\apache\\tomcat\\tomcat-websocket\\8.0.23\\tomcat-websocket-8.0.23.jar=WEB-INF/lib/tomcat-websocket-8.0.23.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Jeanne\\.m2\\repository\\org\\apache\\tomcat\\tomcat-jasper\\8.0.23\\tomcat-jasper-8.0.23.jar=WEB-INF/lib/tomcat-jasper-8.0.23.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Jeanne\\.m2\\repository\\org\\apache\\tomcat\\tomcat-websocket\\8.0.23\\tomcat-websocket-8.0.23.jar=WEB-INF/lib/tomcat-websocket-8.0.23.jar

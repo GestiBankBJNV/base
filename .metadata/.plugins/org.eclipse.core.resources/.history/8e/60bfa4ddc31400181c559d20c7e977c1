@@ -1,14 +1,12 @@
 package com.gk.gestibank.dao.impl;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ConseillerDao;
+import com.gk.gestibank.model.Bouchons;
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
 import com.gk.gestibank.model.DemandeInscription;
@@ -23,28 +21,8 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	}
 	
 	public void chargerConseillers(){
-		List<Client> clients = new ArrayList<Client>();
-		Client cl = new Client();
-		cl.setNom("Test");
-		cl.setId(1);
-		clients.add(cl);
-		
-		Conseiller c1 = new Conseiller(1, "Jeanne", "Grelier", "Jaja", "1234", 
-				"j@email.com", "0658654236", "conseiller", 
-				"425A", new Date(), clients, 
-				new ArrayList<DemandeInscription>());
-		Conseiller c2 = new Conseiller(2, "JD", "Eymann", "Jdeon", "1234", 
-				"jd@email.com", "0657894236", "conseiller", 
-				"426A", new Date(), new ArrayList<Client>(), 
-				new ArrayList<DemandeInscription>());
-		Conseiller c3 = new Conseiller(3, "Jojo", "Lapin", "Jojo", "1234", 
-				"jo@email.com", "0658656546", "conseiller", 
-				"427A", new Date(), new ArrayList<Client>(), 
-				new ArrayList<DemandeInscription>());
-		
-		conseillers.add(c1);
-		conseillers.add(c2);
-		conseillers.add(c3);
+		Bouchons b = new Bouchons();
+		conseillers = b.getConseillers();
 	}
 
 	@Override
@@ -60,24 +38,39 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	@Override
 	public void updateConseiller(Conseiller conseiller) {	
 		int i = conseillers.indexOf(conseiller);
-		conseillers.set(i, conseiller);
+		try {
+			conseillers.set(i, conseiller);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("L'index " + i + " ne fait pas partie de la liste conseillers");
+		}	
 	}
 
 	@Override
 	public void deleteConseiller(String matricule) {
 		for(Conseiller c : conseillers){
-			if(c.getMatricule() == matricule){
+			if(c.getMatricule().equals(matricule)){
 				conseillers.remove(c);
 				break;
 			}
 		}
 	}
 
+
+	@Override
+	public Conseiller getConseillerByMatricule(String matricule) {
+		for(Conseiller c : conseillers){
+			if(c.getMatricule().equals(matricule)){
+				return c;
+			}
+		}
+		return null;
+	}	
+	
 	@Override
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
 		List<Conseiller> l = new ArrayList<Conseiller>();
 		for(Conseiller c : conseillers){
-			if(c.getNom() == recherche || c.getMatricule() == recherche ){
+			if(c.getNom().matches(recherche) || c.getMatricule().equals(recherche)){
 				l.add(c);
 			}
 		}
@@ -86,18 +79,18 @@ public class ConseillerDaoImpl implements ConseillerDao {
 
 	@Override
 	public List<Client> getClientsFromConseiller(String matricule) {
-		/*Conseiller c = getConseillerByNameOrMatricule(matricule);
-		return c.getClients();*/
-		//TODO
-		return null;
+		Conseiller c = getConseillerByMatricule(matricule);
+		if(c != null) {
+			return c.getClients();
+		}
+		return new ArrayList<Client>();
 	}
 
 	@Override
 	public void addClientToConseiller(Client client, String matricule) {
 		List<Client> clients = getClientsFromConseiller(matricule);
 		clients.add(client);
-		//TODO
-		//getConseillerByNameOrMatricule(matricule).setClients(clients);		
+		getConseillerByMatricule(matricule).setClients(clients);		
 	}
 
 	@Override
@@ -106,14 +99,12 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		Client client = new Client();
 		client.setId(idClient);
 		clients.remove(client);
-		
-		getConseillerByNameOrMatricule(matricule).setClients(clients);
-		
+		getConseillerByMatricule(matricule).setClients(clients);
 	}
 
 	@Override
 	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule) {
-		Conseiller c = getConseillerByNameOrMatricule(matricule);
+		Conseiller c = getConseillerByMatricule(matricule);
 		return c.getDemandesInscription();
 	}
 	
@@ -121,8 +112,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule) {
 		List<DemandeInscription> inscription = getInscriptionsFromConseiller(matricule);
 		inscription.add(demandeInscription);
-		//TODO
-		//getConseillerByNameOrMatricule(matricule).setDemandesInscription(inscription);		
-	}	
+		getConseillerByMatricule(matricule).setDemandesInscription(inscription);		
+	}
 
 }

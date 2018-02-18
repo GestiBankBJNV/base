@@ -4897,3 +4897,12 @@ java.io.InvalidClassException: org.eclipse.m2e.core.internal.project.registry.Ba
 2018-02-18 16:41:51,137 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Github\base\GestiBankBrijanavi\src\main\resources
 2018-02-18 16:41:51,138 [Worker-43] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2018-02-18 16:41:51,139 [Worker-43] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Github\base\GestiBankBrijanavi\src\test\resources
+2018-02-18 16:49:35,283 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-02-18 16:49:51,579 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-18 16:49:51,582 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Github\base\GestiBankBrijanavi\src\main\resources
+2018-02-18 16:49:51,584 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-18 16:49:51,585 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Github\base\GestiBankBrijanavi\src\test\resources
+2018-02-18 16:53:30,731 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-18 16:53:30,733 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Github\base\GestiBankBrijanavi\src\main\resources
+2018-02-18 16:53:30,734 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-02-18 16:53:30,735 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Github\base\GestiBankBrijanavi\src\test\resources

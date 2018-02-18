@@ -70,7 +70,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
 		List<Conseiller> l = new ArrayList<Conseiller>();
 		for(Conseiller c : conseillers){
-			if(c.getNom().matches(recherche) || c.getMatricule().equals(recherche)){
+			if(c.getNom().contains(recherche) || c.getMatricule().equals(recherche)){
 				l.add(c);
 			}
 		}
