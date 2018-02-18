@@ -9,8 +9,6 @@ import { Conseiller, conseillers, Client, DemandeInscription } from './data-mode
 
   /* ************************************** Ancien Code tout en bas !!! ************************************ */
 
-  /* Todo : problème d'accents...*/
-
 @Injectable()
 export class ConseillerService { 
 
@@ -52,12 +50,6 @@ export class ConseillerService {
     .subscribe();
   }
 
-  getDemandesInscriptionFromConseiller(matricule: string): Observable<DemandeInscription[]> {
-    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule +"/inscriptions")
-    .map((res : Response) => res.json())
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
-  }
-
   getListeClientsFromConseiller(matricule : string): Observable<Client[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/clients")
     .map((res : Response) => res.json())
@@ -76,13 +68,6 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'))
     .subscribe();
   }
-  
-  // todo ?
-  getClientFromConseiller(conseiller: Conseiller){
-  }
-
-  
-
 
   /* ***************** Ancien Code ***************** */
   // Fake server get; assume nothing can go wrong
@@ -114,7 +99,7 @@ export class ConseillerService {
   }*/
 
   /*addConseiller(conseiller: Conseiller) {
-    // TODO : changer matricule
+    // changer matricule
     conseiller.matricule = ((conseiller.dateDebutContrat.getMonth() + 1) < 10 ? 
                                 "0" + (conseiller.dateDebutContrat.getMonth() + 1) : (conseiller.dateDebutContrat.getMonth() + 1))
                             + (Math.random()*1000).toFixed(0)

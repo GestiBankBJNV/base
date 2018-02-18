@@ -61,13 +61,13 @@
                         <div *ngIf="creer" class="col-md-4">
                             <div class="form-group">
                                 <label>{{ 'dateDebutContrat' | translate }}</label>
-                                <input type="date" class="form-control" formControlName="dateDebutContrat" required> <!-- todo : useValueAsDate ne fonctionne plus -->
+                                <input type="date" class="form-control" formControlName="dateDebutContrat" required> <!-- todo : useValueAsDate ne fonctionne plus + translation -->
                             </div>
                         </div>
                         <div *ngIf="!creer" class="col-md-4">
                             <div class="form-group">
                                 <label>{{ 'dateDebutContrat' | translate }}</label>
-                                <input type="date" class="form-control" disabled placeholder="{{ this.conseiller.dateDebutContrat }}" formControlName="dateDebutContrat" required> <!-- todo : useValueAsDate ne fonctionne plus -->
+                                <input type="date" class="form-control" disabled placeholder="{{ this.conseiller.dateDebutContrat }}" formControlName="dateDebutContrat" required> <!-- todo : useValueAsDate ne fonctionne plus + translation -->
                             </div>
                         </div>
                     </div>

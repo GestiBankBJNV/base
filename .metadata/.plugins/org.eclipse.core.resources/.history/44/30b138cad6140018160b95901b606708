@@ -69,13 +69,13 @@ public class WSConseiller {
 	public void deleteConseiller(@PathParam("matricule") String matricule){
 		conseillerService.deleteConseiller(matricule);
 	}
-//	
-//	@GET
-//	@Produces(MediaType.APPLICATION_JSON)
-//	@Path("/{ matricule }/inscriptions")
-//	public List<DemandeInscription> getInscriptionsFromConseiller(@PathParam("matricule") String matricule){
-//		return getInscriptionsFromConseiller(matricule);
-//	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/{ matricule }/inscriptions")
+	public List<DemandeInscription> getInscriptionsFromConseiller(@PathParam("matricule") String matricule){
+		return getInscriptionsFromConseiller(matricule);
+	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

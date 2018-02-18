@@ -136,7 +136,7 @@ export class AdminAffectationsComponent implements OnInit {
     this.isLoading = true;  
     this.isSearching = true;
     this.getConseillers(); // Récupérer tous les conseillers
-    this.conseillers = this.conseillerService.getConseillersByNameOrMatricule(this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule TODO: ne mettre qu'un seul paramètre dans cette méthode
+    this.conseillers = this.conseillerService.getConseillersByNameOrMatricule(this.conseillerRecherche) // ce champ contient soit un nom, soit un matricule
                         // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
   }
@@ -144,7 +144,6 @@ export class AdminAffectationsComponent implements OnInit {
   /* ***** Méthodes pour le filtrage et le tri du tableau ***** */
 
   /* Méthode de filtrage */
-  // todo : probleme de undefined
   filtrerDemandes(filtre: string, filterArg: string){
     this.filtre = [filtre];      
     this.filterArg = filterArg;

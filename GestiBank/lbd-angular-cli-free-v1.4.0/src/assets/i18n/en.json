@@ -105,5 +105,7 @@
 	"admin_affectation_erreur_no_conseiller" : "Error : please enter an agent",
 	"admin_affectation_notif_demande_affectee" : "Request sent to agent : ",
 	"public_devises_title" : "Currencies converter",
-	"navbar_notification_title" : "New notifications."
+	"navbar_notification_title" : "New notifications.",
+	"admin_affectations_association_header1" : "Associate request n°",
+	"au_conseiller" : "to agent"
 }

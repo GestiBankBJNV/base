@@ -84,7 +84,7 @@ public class ConseillerService implements IConseillerService {
 
 	@Override
 	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule) {
-		// vérifier si matricule existe
+		// vérifs ?
 		return conseillerDao.getInscriptionsFromConseiller(matricule);
 	}
 
