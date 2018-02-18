@@ -49,8 +49,8 @@
 							<li role="presentation"><a role="menuitem" tabindex="-1"  (click)="filtrerDemandes('dateAffectation', '')">Demandes non affectées</a></li>
 							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('dateAffectation', undefined)">Demandes affectées</a></li>			
 							<li role="presentation" class="divider"></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('enCours')">En cours</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('traitee')">Traitée</a></li>				
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('statut', 'en cours')">En cours</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('statut', 'traitée')">Traitée</a></li>				
 						</ul>
 					</div>										
 				</div>
@@ -71,7 +71,7 @@
 		                </thead>
 		                <!-- Contenu des lignes récupéré depuis une liste de demandes -->
 		              	<tbody>
-		                  	<tr *ngFor="let demande of demandes | async | orderBy: orderColumn | filterBy: filtre: search"> <!-- todo : filtres et tri -->
+		                  	<tr *ngFor="let demande of demandes | async | orderBy: orderColumn | filterBy: filtre: filterArg"> <!-- todo : filtres et tri -->
 		                  		<td class="text-right">{{ demande.id }}</td>
 		                      	<td>{{ demande.coordonnees.prenom }}</td>
 		                      	<td>{{ demande.coordonnees.nom }}</td>							                      

@@ -61,6 +61,7 @@ public class DemandeInscriptionDaoImpl implements DemandeInscriptionDao {
 		d3.setCoordonnees(cl3);
 		d3.setDateInscription(date3);
 		d3.setDateAffectation(date4);
+		d3.setStatut("traitée");
 		d3.setId(3);
 		
 		demInscriptions.add(d1);

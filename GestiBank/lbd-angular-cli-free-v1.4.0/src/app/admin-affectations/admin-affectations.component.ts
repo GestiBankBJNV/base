@@ -41,7 +41,7 @@ export class AdminAffectationsComponent implements OnInit {
   derouler: boolean = true; // Pour l'accordion
   orderColumn = "id";
   filtre = ['id'];
-  search: any;
+  filterArg: string;
 
 /* traduction https://stackoverflow.com/questions/45870513/angular-ngx-translate-usage-in-typescript*/
 	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService, private translate: TranslateService) { 
@@ -142,44 +142,26 @@ export class AdminAffectationsComponent implements OnInit {
   }
 
   /* ***** Méthodes pour le filtrage et le tri du tableau ***** */
-  /* Méthode de filtrage */
-/*  filtrerDemandes(filtre: string){      
-    this.getDemandes(); 
-    this.isLoading = true;
-    this.demandes = this.demandeService.filtrerDemandes(filtre) 
-                        // Normalement à faire : error handling
-                        .finally(() => this.isLoading = false);
-    
-  }*/
 
-  // todo
-  filtrerDemandes(filtre: string, search: any){
+  /* Méthode de filtrage */
+  // todo : probleme de undefined
+  filtrerDemandes(filtre: string, filterArg: string){
     this.filtre = [filtre];      
-    this.search = search;
+    this.filterArg = filterArg;
   }
 
   /* Méthode appelée lors du clic sur l'entete du tableau "Date de demande" */
   trierDateDemande(){
-    //this.trierDate('demande', this.trieCroissantDemande);
+    //this.trierDate('demande', this.trieCroissantDemande); // ancien code
     this.orderColumn = (this.trieCroissantDemande ? "":"-") + "dateInscription";
     this.trieCroissantDemande = !this.trieCroissantDemande;
   }
 
   /* Méthode appelée lors du clic sur l'entete du tableau "Date d'affectation" */
   trierDateAffectation(){
-    //this.trierDate('affectation', this.trieCroissantAffectation);
+    //this.trierDate('affectation', this.trieCroissantAffectation); // ancien code
     this.orderColumn = (this.trieCroissantAffectation ? "":"-") + "dateAffectation";
     this.trieCroissantAffectation = !this.trieCroissantAffectation;
-  }
-
-  /* Méthode appelée par les méthodes de tri de dates */
-  trierDate(typeDate : string, isCroissant: boolean){      
-    this.getDemandes(); /* Récupérer tous les conseillers : à modifier pour le faire seulement dans le init */
-                           /* il n'y en a pas beaucoup donc c'est pas si grave */
-    this.isLoading = true;
-    this.demandes = this.demandeService.trierDate(typeDate, isCroissant) // ce champ contient soit un nom, soit un matricule
-                        // Normalement à faire : error handling
-                        .finally(() => this.isLoading = false);
   }
 
   /**********************************************************************************************************************************************/
@@ -235,6 +217,8 @@ export class AdminAffectationsComponent implements OnInit {
     this.notif.showNotificationMessage('top', 'right', 'Client : ' + this.selectedClient.prenom + ' ' + this.selectedClient.nom + ' affecté au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
   }
 
+  /* *********** Ancien code ************* */
+
   /* Ancienne méthode qui était utilisée pour rechercher le client dont on souhaite modifier l'affectation */
   /*clicRechercherClient() {
     this.getClient(); // Récupérer tous les conseillers
@@ -242,6 +226,26 @@ export class AdminAffectationsComponent implements OnInit {
     this.clients = this.clientService.getClientByNameAndID(this.clientRecherche, this.clientRecherche) // ce champ contient soit un nom, soit un matricule
                         // Normalement à faire : error handling
                         .finally(() => this.isLoadingClient = false);
+  }*/
+
+   /* Méthode de filtrage */
+  /*  filtrerDemandes(filtre: string){      
+    this.getDemandes(); 
+    this.isLoading = true;
+    this.demandes = this.demandeService.filtrerDemandes(filtre) 
+                        // Normalement à faire : error handling
+                        .finally(() => this.isLoading = false);
+    
+  }*/
+
+    /* Méthode appelée par les méthodes de tri de dates */
+  /*trierDate(typeDate : string, isCroissant: boolean){      
+    this.getDemandes(); // Récupérer tous les conseillers : à modifier pour le faire seulement dans le init 
+                           // il n'y en a pas beaucoup donc c'est pas si grave 
+    this.isLoading = true;
+    this.demandes = this.demandeService.trierDate(typeDate, isCroissant) // ce champ contient soit un nom, soit un matricule
+                        // Normalement à faire : error handling
+                        .finally(() => this.isLoading = false);
   }*/
 }
 
