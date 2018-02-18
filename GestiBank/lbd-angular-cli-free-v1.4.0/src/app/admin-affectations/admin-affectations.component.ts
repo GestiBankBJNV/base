@@ -39,6 +39,7 @@ export class AdminAffectationsComponent implements OnInit {
   selectedClient: Client; // Pour l'onglet modifs
   selectedConseiller: Conseiller; // Pour l'onglet modifs
   derouler: boolean = true; // Pour l'accordion
+  orderColumn = "id";
 
 /* traduction https://stackoverflow.com/questions/45870513/angular-ngx-translate-usage-in-typescript*/
 	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService, private translate: TranslateService) { 
@@ -106,7 +107,6 @@ export class AdminAffectationsComponent implements OnInit {
     if(this.selectedConseiller) {
       this.affecter = false;
       this.isSearching = false;
-      debugger;
       // Modifier le statut et la date d'affectation
       this.selectedDemande.dateAffectation = new Date();
       this.selectedDemande.statut = "en cours";
@@ -152,42 +152,43 @@ export class AdminAffectationsComponent implements OnInit {
 
   // todo
   filtrerDemandes(filtre: string){
-        //On parcours la table en decroissance pour eviter l auto modification des index
+    /*this.getDemandes();
+    //On parcours la table en decroissance pour eviter l auto modification des index
     let temp = [];
-    let tabDemandes: DemandeInscription[];
+    let tabDemandes: DemandeInscription[] = [];
     this.demandes.subscribe(res => {  // todo : ne fonctionne pas
       for(let i=0; i<res.length; i++){
-        tabDemandes[i] = res[i]; 
+        tabDemandes.push(res[i]); 
+        temp.push(res[i]); // plutôt que de copier le tableau, on pourrait utiliser un push ensuite au lieu de splice, mais il faudrait repenser aux conditions 
+      }           
+
+      for (let i=tabDemandes.length -1; i>=0; i--){         
+        if(filtre == 'affectee' && tabDemandes[i].dateAffectation == undefined){           
+          temp.splice(i, 1);           
+        } else if (filtre == 'nonAffectee' && tabDemandes[i].dateAffectation != undefined){         
+          temp.splice(i, 1);   
+        } else if (filtre == 'enCours' && tabDemandes[i].statut != 'en cours'){
+          temp.splice(i, 1);
+        } else if (filtre == 'traitee' && tabDemandes[i].statut != 'traitée'){
+          temp.splice(i, 1);
+        }
       }
     });
-    console.log(tabDemandes);
-    for(let i=0; i<tabDemandes.length; i++){          
-           temp.push(tabDemandes[i]);
-    } // plutôt que de copier le tableau, on pourrait utiliser un push, mais il faudrait repenser aux conditions  
-
-     for (let i=tabDemandes.length -1; i>=0; i--){         
-       if(filtre == 'affectee' && tabDemandes[i].dateAffectation == undefined){           
-           temp.splice(i, 1);           
-       } else if (filtre == 'nonAffectee' && tabDemandes[i].dateAffectation != undefined){         
-           temp.splice(i, 1);   
-       } else if (filtre == 'enCours' && tabDemandes[i].statut != 'en cours'){
-           temp.splice(i, 1);
-       } else if (filtre == 'traitee' && tabDemandes[i].statut != 'traitée'){
-           temp.splice(i, 1);
-       }
-    }
-    this.demandes = Observable.from(temp);
+      
+    this.demandes = Observable.from(temp); */      
   }
 
   /* Méthode appelée lors du clic sur l'entete du tableau "Date de demande" */
   trierDateDemande(){
-    this.trierDate('demande', this.trieCroissantDemande);
+    //this.trierDate('demande', this.trieCroissantDemande);
+    this.orderColumn = (this.trieCroissantDemande ? "":"-") + "dateInscription";
     this.trieCroissantDemande = !this.trieCroissantDemande;
   }
 
   /* Méthode appelée lors du clic sur l'entete du tableau "Date d'affectation" */
   trierDateAffectation(){
-    this.trierDate('affectation', this.trieCroissantAffectation);
+    //this.trierDate('affectation', this.trieCroissantAffectation);
+    this.orderColumn = (this.trieCroissantAffectation ? "":"-") + "dateAffectation";
     this.trieCroissantAffectation = !this.trieCroissantAffectation;
   }
 

@@ -2,7 +2,6 @@ package com.gk.gestibank.dao.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -25,7 +24,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	
 	public void chargerConseillers(){
 		List<Client> clients = new ArrayList<Client>();
-		Set<DemandeClient> demandes = new HashSet<DemandeClient>();
+		List<DemandeClient> demandes = new ArrayList<DemandeClient>();
 		
 		DemandeClient demande = new DemandeClient();
 		
@@ -43,9 +42,8 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		cl.setEmail("test@email.com");
 		cl.setId(1);
 		cl.setDemandes(demandes);
-		clients.add(cl);
 		
-		
+		clients.add(cl);		
 		
 		Conseiller c1 = new Conseiller(1, "Jeanne", "Grelier", "Jaja", "1234", 
 				"j@email.com", "0658654236", "conseiller", 
