@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Compte } from '../classes/compte';
+import { Compte, Operation } from '../data-model';
+import { CompteService } from '../compte-service';
 import { Client } from '../classes/client';
 import { CLIENT } from '../classes/FAKES';
-import { Operation } from '../classes/operation';
 import { showNotification } from '../data-model';
 import { DecimalPipe, DatePipe } from '@angular/common';
+import { Subscription } from 'rxjs/Subscription';
 
 declare var $:any;
 
 @Component({
   selector: 'app-client-comptes',
   templateUrl: './client-comptes.component.html',
-  styleUrls: ['./client-comptes.component.scss']
+  styleUrls: ['./client-comptes.component.scss'],
+  providers: [CompteService]
 })
 export class ClientComptesComponent implements OnInit {
 
 	client : Client = CLIENT;                       //Bouchon
+  accounts : Compte[] = [];
 	selectedCompte : Compte;                        //Compte selectionné
 
   openAccount : Boolean = false;                  //Affichage de l'onglet "ouvrir un compte"
@@ -33,6 +36,7 @@ export class ClientComptesComponent implements OnInit {
   //AFFICHAGE OPERATIONS / PAGINATION
   startDate : Date;                               //Opérations à partir du
   endDate : Date;                                 //Jusqu'au
+  operations : Operation[] = [];
   displayedOperations : Operation[] = [];         //Operations triées selon les critères
   displayedCount : number = 20;                   //Nombre d'éléments à afficher par page  
   currentPage : number = 0;                       //Index de la page actuelle
@@ -42,24 +46,38 @@ export class ClientComptesComponent implements OnInit {
   displayedAmounts : number[];                    //soldes affichés
 
   //CONSTRUCTEUR
-  constructor() { }
+  constructor(private compteService : CompteService) { }
 
   //INITIALISATION
   ngOnInit() {
+    this.refreshAccounts();
+  }
+
+  //Rafraichir la liste de comptes
+  refreshAccounts(){
+    this.accounts = [];
+    let sub : Subscription = this.compteService.getComptesByClient("1").subscribe(accounts => {  
+      this.accounts = accounts;
+    });
   }
 
 
   //Selectionner un compte
   selectCompte(compte) {
-  	//console.log("Compte selectionné");
-  	this.selectedCompte = compte;
-    this.openAccount = false;
-    this.transfer = false;
-    this.confirmTransfer = false;
-    this.awaitingConfirm = false;
-    this.startDate = compte.operations[0].date;
-    this.endDate = compte.operations[compte.operations.length - 1].date;
-    this.refreshOperations(0);
+  	//console.log("Compte selectionné");  	
+    let sub : Subscription = this.compteService.getCompteOperations(compte.code).subscribe(operations => {  
+      this.operations = operations;
+      if (operations.length > 0){
+        this.startDate = operations[0].dateOperation;
+        this.endDate = operations[operations.length - 1].dateOperation;
+      }
+      this.selectedCompte = compte;
+      this.openAccount = false;
+      this.transfer = false;
+      this.confirmTransfer = false;
+      this.awaitingConfirm = false;
+      this.refreshOperations(0);
+    });    
   }
 
   //Choisir le type de compte à ouvrir
@@ -95,7 +113,7 @@ export class ClientComptesComponent implements OnInit {
     if (this.awaitingConfirm){
       this.awaitingConfirm = false;
       //console.log("chequier");
-      let msg : String = "Votre commande de chèquier pour le compte " + this.selectedCompte.iban + " a bien été enregistrée";
+      let msg : String = "Votre commande de chèquier pour le compte " + this.selectedCompte.code + " a bien été enregistrée";
       this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté cliet.
       //TODO : envoyer une demande au conseiller
       showNotification('top','center',msg, 'info', "pe-7s-mail-open-file");//On affiche une notif sur la page
@@ -111,7 +129,7 @@ export class ClientComptesComponent implements OnInit {
       this.confirmTransfer = false;
       return;
     }
-    //On effectue kle traitement après kle clic de confirmation
+    //On effectue le traitement après le clic de confirmation
     if (this.confirmTransfer){
       this.confirmTransfer = false;
       //console.log("chequier");
@@ -151,31 +169,30 @@ export class ClientComptesComponent implements OnInit {
     this.amounts = [ this.selectedCompte.solde ];
     this.displayedAmounts = [];
     var amount = this.selectedCompte.solde;
-    for (let i = 0; i < this.selectedCompte.operations.length; i++){
-      if ("operation_type_credit" == this.selectedCompte.operations[i].type){
-        amount -= this.selectedCompte.operations[i].montant;
+    for (let i = 0; i < this.operations.length; i++){
+      if ("operation_type_credit" == this.operations[i].type){
+        amount -= this.operations[i].montant;
       }
       else{
-        amount += this.selectedCompte.operations[i].montant; 
+        amount += this.operations[i].montant; 
       }
       this.amounts[i + 1] = amount;
-      //console.log("A : " + amount);
     }
 
     this.displayedOperations = [];
     for (let i = 0; i < this.displayedCount; i++){
       let j = i + startIndex;
-      if (j >= this.selectedCompte.operations.length) { break ;}
+      if (j >= this.operations.length) { break ;}
 
-      if ((this.selectedCompte.operations[j].date >= this.startDate) && (this.selectedCompte.operations[j].date <= this.endDate)){
-        this.displayedOperations[i] = this.selectedCompte.operations[j];
+      if ((this.operations[j].dateOperation >= this.startDate) && (this.operations[j].dateOperation <= this.endDate)){
+        this.displayedOperations[i] = this.operations[j];
         this.displayedAmounts[i] = this.amounts[j];
       }
     }
     //console.log("count " + this.displayedOperations.length);
   }
 
-  //
+  //Virement
   toggleTransfer(){
     this.transfer = (!this.transfer);
     this.awaitingConfirm = false;    

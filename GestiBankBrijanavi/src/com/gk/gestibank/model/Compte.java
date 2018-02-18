@@ -15,6 +15,7 @@ public class Compte {
 	@Autowired
 	private Set<Operation> operations;
 	private double decouvert;
+	private String type;
 
 	public Compte() {
 	}
@@ -26,6 +27,15 @@ public class Compte {
 		this.solde = solde;
 		this.operations = operations;
 		this.decouvert = decouvert;
+		this.type = "account_type_current";
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public int getCode() {

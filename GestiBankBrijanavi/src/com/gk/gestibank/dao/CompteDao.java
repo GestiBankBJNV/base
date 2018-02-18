@@ -1,6 +1,7 @@
 package com.gk.gestibank.dao;
 
 import java.util.List;
+import java.util.Set;
 
 import com.gk.gestibank.model.Compte;
 import com.gk.gestibank.model.Operation;
@@ -13,4 +14,5 @@ public interface CompteDao {
 	public void updateMontant(double montant);
 	public List<Operation> getAllOperationsFromCompte(int code);
 	public Compte getCompteByCode(int code);
+	public List<Compte> getByClient(int clientId);
 }

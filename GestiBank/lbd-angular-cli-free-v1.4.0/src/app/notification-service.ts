@@ -12,21 +12,26 @@ export class NotificationService{
 	constructor(private http : Http) {}
 
 	//Retourne la liste des notifications d'un client
-	getNotificationsByClient(clientID : string) : Observable<Notification[]>{
+	getNotificationsByClient(clientID : number) : Observable<Notification[]>{
 		return this.http.get(this.apiUrl + "/" + clientID)
 		.map((res : Response) => res.json())
 		.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}
 
 
-	deleteNotification(notificationID : string) : Observable<Boolean> {
-		return this.http.delete(this.apiUrl + "/" + notificationID)
+	deleteNotification(notif : Notification) : Observable<Boolean> {
+		return this.http.delete(this.apiUrl + "/" + notif.id)
 		.map((res : Response) => res.json())
 		.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}
 
-	addNotificationToClient(clientID : string, notification : Notification) : Observable<Notification>{
+	addNotificationToClient(clientID : number, notification : Notification) : Observable<Notification>{
 		return this.http.post(this.apiUrl, notification)
+		.catch((error : any) => Observable.throw(error.json().error || 'Server error'));
+	}
+
+	update(notification : Notification) : Observable<Boolean> {
+		return this.http.put(this.apiUrl + "/" + notification.id, notification)
 		.catch((error : any) => Observable.throw(error.json().error || 'Server error'));
 	}
 }

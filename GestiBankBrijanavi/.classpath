@@ -28,10 +28,10 @@
 	<classpathentry kind="lib" path="lib/spring-tx-3.2.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-web-3.2.9.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-webmvc-3.2.9.RELEASE.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/instal/apache-tomcat-8.0.23-windows-x64/apache-tomcat-8.0.23"/>
+	<classpathentry kind="lib" path="D:/Sources/apache-tomcat-8.0.23/apache-tomcat-8.0.23-windows-x64.zip"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>

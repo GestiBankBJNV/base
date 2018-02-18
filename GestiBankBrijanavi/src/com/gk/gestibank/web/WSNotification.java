@@ -9,6 +9,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -38,9 +39,9 @@ public class WSNotification {
 	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/client/{clientId}")
-	public List<Notification> getByClient(@PathParam("clientId") String clientId){
-		dbgLog("Get by client");
+	@Path("/{clientId}")
+	public List<Notification> getByClient(@PathParam("clientId") int clientId){
+		dbgLog("Get by client" + clientId);
 		return notificationService.getByClient(clientId);
 	}
 	
@@ -48,9 +49,9 @@ public class WSNotification {
 	 * Supprimer une notification
 	 */
 	@DELETE
-	@Path("/{notificationId}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public boolean delete(String notificationId){
+	@Path("/{notificationId}")
+	public boolean delete(@PathParam("notificationId") int notificationId){
 		dbgLog("Delete");
 		return notificationService.delete(notificationId);
 	}
@@ -63,9 +64,22 @@ public class WSNotification {
 	@POST
 	@Path("/{clientId}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public boolean addToClient(@PathParam("clientId") String clientId, Notification notification){
+	public boolean addToClient(@PathParam("clientId") int clientId, Notification notification){
 		dbgLog("Add to client");
 		return notificationService.addToClient(clientId, notification);
+	}
+	
+	/**
+	 * Marquer la notification comme lue
+	 * @param notificationId
+	 * @return
+	 */
+	@PUT
+	@Path("/{notificationId}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public boolean update(@PathParam("notificationId") int notificationId, Notification notification) {
+		dbgLog("Update");
+		return notificationService.update(notificationId, notification);
 	}
 	
 	//DEBUG (juste pour vérifier qu'on passe bien par les fonctions)

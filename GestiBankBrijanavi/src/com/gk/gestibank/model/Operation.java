@@ -2,13 +2,16 @@ package com.gk.gestibank.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
 @Entity
 public class Operation {
 
+	@Id
 	private int numero;
+	private String libelle;
 	private Date dateOperation;
 	private double montant;
 	private String type;
@@ -16,9 +19,10 @@ public class Operation {
 	public Operation() {
 	}
 
-	public Operation(int numero, Date dateOperation, double montant, String type) {
+	public Operation(int numero, String libelle,  Date dateOperation, double montant, String type) {
 		super();
 		this.numero = numero;
+		this.libelle = libelle;
 		this.dateOperation = dateOperation;
 		this.montant = montant;
 		this.type = type;
@@ -54,6 +58,14 @@ public class Operation {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getLibelle() {
+		return libelle;
+	}
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
 	}
 
 	@Override

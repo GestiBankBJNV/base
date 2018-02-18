@@ -17,6 +17,7 @@ public class CompteEpargne extends Compte {
 			double decouvert, float taux) {
 		super(code, solde, operations, decouvert);
 		this.taux = taux;
+		this.setType("account_type_saving");
 	}
 
 	public float getTaux() {

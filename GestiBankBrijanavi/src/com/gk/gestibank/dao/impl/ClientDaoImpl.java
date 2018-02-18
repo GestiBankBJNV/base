@@ -45,8 +45,11 @@ public class ClientDaoImpl implements ClientDao {
 	}
 	
 	@Override
-	public Client getClientById(String clientId){
+	public Client getClientById(int clientId){
+		Client c = new Client();
+		c.setId(clientId);
 		return new Client();
+		
 	}
 
 }

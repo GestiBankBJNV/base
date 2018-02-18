@@ -22,18 +22,22 @@ public class NotificationService implements INotificationService {
 	private NotificationDao notificationDao;
 	
 	@Override
-	public List<Notification> getByClient(String clientId){
+	public List<Notification> getByClient(int clientId){
 		return notificationDao.getByClient(clientId);
 	}
 
 	@Override
-	public boolean delete(String notificationId){
+	public boolean delete(int notificationId){
 		return notificationDao.delete(notificationId);
 	}
 	
 	@Override
-	public boolean addToClient(String clientId, Notification notification){
+	public boolean addToClient(int clientId, Notification notification){
 		return notificationDao.addToClient(clientId, notification);
 	}
 	
+	@Override
+	public boolean update(int notificationId, Notification notification) {
+		return notificationDao.update(notificationId, notification);
+	}
 }
