@@ -48,7 +48,7 @@ public class WSConseiller {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Conseiller updateConseiller(Conseiller conseiller){
 		conseillerService.updateConseiller(conseiller);
-		return conseiller; // à retirer...
+		return conseiller;
 	}
 	
 	@GET	

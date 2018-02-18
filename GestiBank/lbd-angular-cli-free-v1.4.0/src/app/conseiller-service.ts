@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
@@ -16,6 +16,9 @@ export class ConseillerService {
 
   delayMs = 500;
 
+  headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
+  options = new RequestOptions({ headers: this.headers });
+
   constructor(private http : Http) {}
 
   getConseillers() : Observable<Conseiller[]>{
@@ -31,13 +34,13 @@ export class ConseillerService {
   }
 
   updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
-    return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller)
+    return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller, this.options)
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   addConseiller(conseiller: Conseiller) {
-    return this.http.post("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller)
+    return this.http.post("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller, this.options)
     .catch((error : any) => Observable.throw(error.json().error || 'Error'))
     .subscribe();
   }

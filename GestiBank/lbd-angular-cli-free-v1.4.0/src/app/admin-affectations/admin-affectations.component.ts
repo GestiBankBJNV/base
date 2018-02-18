@@ -43,10 +43,11 @@ export class AdminAffectationsComponent implements OnInit {
 /* traduction https://stackoverflow.com/questions/45870513/angular-ngx-translate-usage-in-typescript*/
 	constructor(private demandeService: DemandeService, private conseillerService: ConseillerService, private clientService: ClientService, private translate: TranslateService) { 
     this.constructorSelect();
+    this.getDemandes(); 
   }
 
 	ngOnInit() {
-	  this.getDemandes();   
+	  this.getDemandes();           
 	}
 
   /* Récuperation de toutes les demandes via le service */
@@ -105,13 +106,13 @@ export class AdminAffectationsComponent implements OnInit {
     if(this.selectedConseiller) {
       this.affecter = false;
       this.isSearching = false;
+      debugger;
       // Modifier le statut et la date d'affectation
       this.selectedDemande.dateAffectation = new Date();
       this.selectedDemande.statut = "en cours";
       this.demandeService.updateDemandeInscription(this.selectedDemande).subscribe();
       // Ajouter la demande à la liste du conseiller
       this.selectedConseiller.demandesInscription.push(this.selectedDemande);
-      debugger;
       this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
       // Notifier l'affectation
       let note: string;
@@ -140,12 +141,42 @@ export class AdminAffectationsComponent implements OnInit {
 
   /* ***** Méthodes pour le filtrage et le tri du tableau ***** */
   /* Méthode de filtrage */
-  filtrerDemandes(filtre: string){      
+/*  filtrerDemandes(filtre: string){      
     this.getDemandes(); 
     this.isLoading = true;
     this.demandes = this.demandeService.filtrerDemandes(filtre) 
                         // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
+    
+  }*/
+
+  // todo
+  filtrerDemandes(filtre: string){
+        //On parcours la table en decroissance pour eviter l auto modification des index
+    let temp = [];
+    let tabDemandes: DemandeInscription[];
+    this.demandes.subscribe(res => {  // todo : ne fonctionne pas
+      for(let i=0; i<res.length; i++){
+        tabDemandes[i] = res[i]; 
+      }
+    });
+    console.log(tabDemandes);
+    for(let i=0; i<tabDemandes.length; i++){          
+           temp.push(tabDemandes[i]);
+    } // plutôt que de copier le tableau, on pourrait utiliser un push, mais il faudrait repenser aux conditions  
+
+     for (let i=tabDemandes.length -1; i>=0; i--){         
+       if(filtre == 'affectee' && tabDemandes[i].dateAffectation == undefined){           
+           temp.splice(i, 1);           
+       } else if (filtre == 'nonAffectee' && tabDemandes[i].dateAffectation != undefined){         
+           temp.splice(i, 1);   
+       } else if (filtre == 'enCours' && tabDemandes[i].statut != 'en cours'){
+           temp.splice(i, 1);
+       } else if (filtre == 'traitee' && tabDemandes[i].statut != 'traitée'){
+           temp.splice(i, 1);
+       }
+    }
+    this.demandes = Observable.from(temp);
   }
 
   /* Méthode appelée lors du clic sur l'entete du tableau "Date de demande" */

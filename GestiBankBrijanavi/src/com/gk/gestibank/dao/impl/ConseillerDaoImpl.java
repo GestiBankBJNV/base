@@ -55,7 +55,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 				"jd@email.com", "0657894236", "conseiller", 
 				"426A", new Date(), new ArrayList<Client>(), 
 				new ArrayList<DemandeInscription>());
-		Conseiller c3 = new Conseiller(3, "Jojo", "Lapin", "Jojo", "1234", 
+		Conseiller c3 = new Conseiller(3, "Mélanie", "Desvaux", "Mèl", "1234", 
 				"jo@email.com", "0658656546", "conseiller", 
 				"427A", new Date(), new ArrayList<Client>(), 
 				new ArrayList<DemandeInscription>());

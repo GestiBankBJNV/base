@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
@@ -14,6 +14,9 @@ export class DemandeService {
 
 	delayMs = 500;
 
+	headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
+  	options = new RequestOptions({ headers: this.headers });
+
 	constructor(private http : Http) {}
 
 	getDemandesInscription(): Observable<DemandeInscription[]> {
@@ -23,7 +26,7 @@ export class DemandeService {
   	}
 
   	updateDemandeInscription(demande: DemandeInscription) {
-	    return this.http.put("http://localhost:8080/GestiBankBrijanavi/demandes/inscriptions", demande)
+	    return this.http.put("http://localhost:8080/GestiBankBrijanavi/demandes/inscriptions", demande, this.options)
     	.map((res : Response) => res.json())
     	.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}
