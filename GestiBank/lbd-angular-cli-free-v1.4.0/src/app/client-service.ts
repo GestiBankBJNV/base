@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
-
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Client, clients } from './data-model';
+import { Client, clients, DemandeClient } from './data-model';
 
 @Injectable()
 export class ClientService {
 
 	delayMs = 500;
+
+  constructor(private http: Http){}
 
     // Fake server get; assume nothing can go wrong
     getClients(): Observable<Client[]> {
@@ -35,4 +37,12 @@ export class ClientService {
       }
       return of(temp).delay(this.delayMs);
   }
+
+
+    getAllDemandeClientById(idClient: number): Observable<DemandeClient[]>{
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/clients/"+idClient+"/demandes")
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Error'))
+  }
+
 }

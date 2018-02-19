@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Fri Feb 16 10:42:10 CET 2018
+#Mon Feb 19 12:31:17 CET 2018
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\gk\\.m2\\repository\\org\\apache\\tomcat\\tomcat-jasper\\8.0.23\\tomcat-jasper-8.0.23.jar=C\:\\instal\\apache-tomcat-8.0.23-windows-x64\\apache-tomcat-8.0.23\\wtpwebapps\\GestiBankBrijanavi\\WEB-INF\\lib\\tomcat-jasper-8.0.23.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\gk\\.m2\\repository\\org\\apache\\tomcat\\tomcat-websocket\\8.0.23\\tomcat-websocket-8.0.23.jar=C\:\\instal\\apache-tomcat-8.0.23-windows-x64\\apache-tomcat-8.0.23\\wtpwebapps\\GestiBankBrijanavi\\WEB-INF\\lib\\tomcat-websocket-8.0.23.jar
 org.eclipse.jst.jee.server\:GestiBankBrijanavi=C\:\\instal\\apache-tomcat-8.0.23-windows-x64\\apache-tomcat-8.0.23\\wtpwebapps\\GestiBankBrijanavi

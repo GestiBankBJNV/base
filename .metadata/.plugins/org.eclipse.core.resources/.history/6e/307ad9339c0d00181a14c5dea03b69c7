@@ -1,5 +1,0 @@
-package com.gk.gestibank.service.conseiller;
-
-public interface IChargerConseiller {
-
-}

@@ -16,7 +16,7 @@ public class Client extends Utilisateur {
 	private String ville;
 	private String cp;
 	@Autowired
-	private Set<DemandeClient> demandes;
+	private List<DemandeClient> demandes;
 	@Autowired
 	private List<Notification> notifications;
 	
@@ -25,7 +25,7 @@ public class Client extends Utilisateur {
 
 	public Client(int nbEnfants, String situationMatrimoniale,
 			Set<Compte> comptes, String adresse, String ville, String cp,
-			Set<DemandeClient> demandes, List<Notification> notifications) {
+			List<DemandeClient> demandes, List<Notification> notifications) {
 		super();
 		this.nbEnfants = nbEnfants;
 		this.situationMatrimoniale = situationMatrimoniale;
@@ -85,11 +85,11 @@ public class Client extends Utilisateur {
 		this.cp = cp;
 	}
 
-	public Set<DemandeClient> getDemandes() {
+	public List<DemandeClient> getDemandes() {
 		return demandes;
 	}
 
-	public void setDemandes(Set<DemandeClient> demandes) {
+	public void setDemandes(List<DemandeClient> demandes) {
 		this.demandes = demandes;
 	}
 

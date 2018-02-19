@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
+import { ClientService } from '../client-service';
 import { DatePipe } from '@angular/common';
 import { Conseiller, Client, DemandeClient } from '../data-model';
 import { Observable } from 'rxjs/Observable';
@@ -15,7 +16,7 @@ export class ConseillerAccueilComponent implements OnInit {
 
 
 	clients: Observable<Client[]>;// récuperation des clients
-  demandes: DemandeClient[]; //récuperation des demandes par client
+  demandes: Observable<DemandeClient[]>; //récuperation des demandes par client
   nomDemande: String;//recuperation du nom de la demande
   indexClient: number;//recuperation de l'index du client
   idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
@@ -24,7 +25,7 @@ export class ConseillerAccueilComponent implements OnInit {
 
   isLoading = false;
 
-  constructor(private conseillerService: ConseillerService) { }
+  constructor(private conseillerService: ConseillerService, private clientService: ClientService) { }
 
   ngOnInit() {
 
@@ -39,16 +40,18 @@ export class ConseillerAccueilComponent implements OnInit {
 
   }
 
-  voirDemande(c: Client, indexC: number){
+  voirDemande(c: Client){
 
     //si l'id cliqué est différent de l'ancien id et qu'il y a
     //au moins une demande le tableau des demandes clients s'ouvrent
     if (c.id != this.idSelectionne && c.demandes.length != 0) {
       this.isDetailDemande = true;
-      this.demandes = c.demandes;
+      this.demandes = this.clientService.getAllDemandeClientById(c.id)
+                          .finally(() => this.isLoading = false);
+      console.log("id du conseiller : "+c.id);
+      console.log(this.demandes);
       this.nomDemande = c.nom;
       this.idSelectionne = c.id;
-      this.indexClient = indexC;
     }else{// on réinitialise les varaibles lors de la fermeture du tableau
       this.isDetailDemande = false;  
       this.idSelectionne = null;
@@ -62,21 +65,21 @@ export class ConseillerAccueilComponent implements OnInit {
   demandeTraite(d: DemandeClient){
 
     //recupération de l'index de la liste des demandes
-    let indexToRemove = this.demandes.indexOf(d);
+    //let indexToRemove = this.demandes.
 
     //remove de la demande en recupérant l'indice du client et l'indice de la demande
     //quand le conseiller valide la demande
-    this.clients[this.indexClient].demandes.splice(indexToRemove, 1);
+    //this.clients[this.indexClient].demandes.splice(indexToRemove, 1);
 
     //si le client n'a plus de demande après la validation d'une demande
     //on réinitilise le tableau pour le fermer.
-    if (this.demandes.length === 0) {
+    if (this.demandes) {
       this.isDetailDemande = false;
       this.idSelectionne = null;
       this.indexClient = null;
     }
 
-    this.notif.showNotificationMessage("top", "right", "Chèquier envoyé", "success", 'pe-7s-magic-wand');
+    this.notif.showNotificationMessage("top", "right", d.libelle +" envoyé", "success", 'pe-7s-magic-wand');
 
   }
 

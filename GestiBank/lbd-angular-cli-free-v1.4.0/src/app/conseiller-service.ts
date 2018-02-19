@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
@@ -71,6 +72,7 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'))
     .subscribe();
   }
+
   
   // todo ?
   getClientFromConseiller(conseiller: Conseiller){
