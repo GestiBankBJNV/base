@@ -31,7 +31,7 @@ export class NotificationService{
 	}
 
 	update(notification : Notification) : Observable<Boolean> {
-		return this.http.put(this.apiUrl + "/" + notification.id, notification)
+		return this.http.put(this.apiUrl, notification)
 		.catch((error : any) => Observable.throw(error.json().error || 'Server error'));
 	}
 }

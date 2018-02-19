@@ -36,7 +36,7 @@ public class NotificationDaoImpl implements NotificationDao {
 	}
 	
 	@Override
-	public boolean delete(Notification notification){
+	public boolean delete(int notificationId){
 		//TODO
 		return true;
 	}

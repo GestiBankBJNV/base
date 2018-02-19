@@ -25,8 +25,8 @@ public class NotificationService implements INotificationService {
 	}
 
 	@Override
-	public boolean delete(Notification notification){
-		return notificationDao.delete(notification);
+	public boolean delete(int notificationId){
+		return notificationDao.delete(notificationId);
 	}
 	
 	@Override
