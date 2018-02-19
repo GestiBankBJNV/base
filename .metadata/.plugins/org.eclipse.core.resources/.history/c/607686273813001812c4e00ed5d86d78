@@ -1,0 +1,46 @@
+package com.gk.gestibank.dao.impl;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.gk.gestibank.dao.DemandeInscriptionDao;
+import com.gk.gestibank.model.DemandeInscription;
+
+public class DemandeInscriptionDaoImpl implements DemandeInscriptionDao {
+	
+	private List<DemandeInscription> demInscriptions = new ArrayList<DemandeInscription>();
+
+	public DemandeInscriptionDaoImpl() {
+		
+	}
+
+	public void chargerDemandes() {
+		
+		DemandeInscription d1 = new DemandeInscription();
+		d1.setDateInscription(new Date());
+		d1.setId(1);
+		
+		DemandeInscription d2 = new DemandeInscription();
+		d2.setDateInscription(new Date());
+		d2.setId(2);
+		
+		demInscriptions.add(d1);
+		demInscriptions.add(d2);
+	}
+	
+	@Override
+	public List<DemandeInscription> getDemandesInscription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DemandeInscription updateDemandeInscription(DemandeInscription demandeInscr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

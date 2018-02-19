@@ -1,0 +1,22 @@
+package com.gk.gestibank.service.impl;
+
+import java.util.List;
+
+import com.gk.gestibank.model.DemandeInscription;
+import com.gk.gestibank.service.IDemandeService;
+
+public class DemandeService implements IDemandeService {
+
+	@Override
+	public List<DemandeInscription> getDemandesInscription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public DemandeInscription updateDemandeInscription(DemandeInscription demandeInscr) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
