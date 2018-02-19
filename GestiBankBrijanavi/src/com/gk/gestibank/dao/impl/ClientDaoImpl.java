@@ -57,15 +57,22 @@ public class ClientDaoImpl implements ClientDao {
 		return clients;		
 	}
 	
+	
 	public Client getClientById(String id){
+		return getClientById(Integer.valueOf(id));		
+	}
+	
+	@Override
+	public Client getClientById(int clientId){
 		Client client = new Client();
 		for(Client c: clients){
-			if(id.equals(c.getId())){
+			if(clientId == c.getId()){
 				client = c;
 			}
 		}
 		return client;
 		
 	}
+	
 	
 }

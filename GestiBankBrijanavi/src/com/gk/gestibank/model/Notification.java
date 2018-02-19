@@ -1,37 +1,56 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import org.jvnet.hk2.config.InjectionTarget;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Entity
 public class Notification {
 
 	//Variables
-	private String libelle;
+	@Id
+	private int id;
 	private Date date;
-	private boolean isRead;
-	
+	private String message;
+	private String type;
+	private boolean read;
+
 	//Constructeurs
 	public Notification() {
 	}
-	public Notification(String libelle, Date date, boolean isRead) {
+	public Notification(Date date, String message, String type, boolean read) {
 		super();
-		this.libelle = libelle;
+		this.message = message;
+		this.type = type;
 		this.date = date;
-		this.isRead = isRead;
+		this.read = read;
 	}
-
 	//GET/SETTERS
-	//isRead
-	public boolean isRead() {
-		return isRead;
+	//Id
+	public int getId() {
+		return id;
 	}
-	public void setRead(boolean isRead) {
-		this.isRead = isRead;
+	public void setId(int id) {
+		this.id = id;
 	}
-	//libelle	
-	public String getLibelle() {
-		return libelle;
+	//Message
+	public String getMessage() {
+		return message;
 	}
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	//Type
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	//date
 	public Date getDate() {
@@ -40,11 +59,16 @@ public class Notification {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
-	//ToString
+	//isRead
+	public boolean getRead() {
+		return read;
+	}
+	public void setRead(boolean read) {
+		this.read = read;
+	}
 	@Override
 	public String toString() {
-		return "Notification [getLibelle()=" + getLibelle() + ", getDate()="
-				+ getDate() + "]";
+		return "Notification [id=" + id + ", date=" + date + ", message=" + message + ", type=" + type + ", read="
+				+ read + "]";
 	}
 }

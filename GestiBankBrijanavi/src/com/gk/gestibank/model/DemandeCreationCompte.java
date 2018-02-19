@@ -1,6 +1,11 @@
 package com.gk.gestibank.model;
 import java.util.Date;
 
+import javax.persistence.Entity;
+
+import org.springframework.stereotype.Component;
+
+@Entity
 public class DemandeCreationCompte extends DemandeClient {
 
 	private String type;

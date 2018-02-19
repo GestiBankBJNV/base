@@ -48,7 +48,7 @@ public class ClientService implements IClientService {
 	}
 	
 	@Override
-	public Client getClientById(String id){
+	public Client getClientById(int id){
 		
 		return clientDao.getClientById(id);
 	}

@@ -13,7 +13,7 @@ public interface IClientService {
 	public void deleteClient(int id);
 	public void updateClient(Client client);
 	public Set<DemandeClient> getDemandeClientById(String id);
-	public Client getClientById(String id);
+	public Client getClientById(int id);
 	public List<Client> getClientByNameOrId(String recherche);
 	
 }

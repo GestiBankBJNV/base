@@ -1,38 +1,40 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
-
+import { NotificationService } from '../../notification-service';
 import {Client} from '../../classes/client';
 import { CLIENT } from '../../classes/FAKES';
-import { Notification } from '../../classes/notification';
+import { Notification } from '../../data-model';
 
 
 
 @Component({
     // moduleId: module.id,
     selector: 'navbar-cmp',
-    templateUrl: 'navbar.component.html'
+    templateUrl: 'navbar.component.html',
+    providers: [NotificationService]
 })
 
 export class NavbarComponent implements OnInit{
 
     user : any = CLIENT;
 
-
     private listTitles: any[];
     location: Location;
     private toggleButton: any;
     private sidebarVisible: boolean;
 
+    notifications : Notification[] = []; //Ne contiendra que les notifications non lues.
 
 
 
-    constructor(location: Location,  private element: ElementRef) {
+    constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService) {      
       this.location = location;
           this.sidebarVisible = false;
     }
 
     ngOnInit(){
+      this.refreshNotifications();
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
@@ -102,5 +104,11 @@ export class NavbarComponent implements OnInit{
       return "Aucune nouvelle notification."
     }
 
+    refreshNotifications(){
+      this.notifications = [];
+      this.notificationService.getNotificationsByClient(1).subscribe(notifications => {  
+        this.notifications = notifications.filter(notif => !notif.read);
+      });
+    }
     
 }

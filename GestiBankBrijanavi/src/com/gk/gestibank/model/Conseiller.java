@@ -3,13 +3,23 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
+import javax.persistence.Entity;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Entity
+
 public class Conseiller extends Utilisateur {
 
 	private String matricule;
 	private Date dateDebutContrat;
+
 	private List<Client> clients = new ArrayList<Client>();
 	private List<DemandeInscription> demandesInscription = new ArrayList<DemandeInscription>();
-	
+
+
 	public Conseiller() {
 	}
 

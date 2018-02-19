@@ -1,32 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { Notification } from '../classes/notification';
-import { Client } from '../classes/client';
-import { Compte } from '../classes/compte';
-import { CLIENT } from '../classes/FAKES';
+import { Notification } from '../data-model';
+import { NotificationService } from '../notification-service';
+import { CompteService } from '../compte-service';
+import { Compte } from '../data-model';
+import { DecimalPipe, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-client-accueil',
   templateUrl: './client-accueil.component.html',
-  styleUrls: ['./client-accueil.component.scss']
+  styleUrls: ['./client-accueil.component.scss'],
+  providers: [CompteService, NotificationService]
 })
 export class ClientAccueilComponent implements OnInit {
-	client : Client = CLIENT;
   
-  constructor() {
-     
-  }
+  notifications : Notification[] = [];
+  comptes : Compte[] = [];
+  constructor(private compteService : CompteService, private notificationService : NotificationService) {}
 
   ngOnInit() {
+    this.refreshUnreadNotifications();
+    this.refreshAccounts();
   }
 
-
-  //Renvoie une liste de notifications
-  getUnreadNotifications() : Notification[] {
-      return this.client.notifications.filter(notif => !notif.isRead);
+  //Récupérer la liste des notifications
+  refreshUnreadNotifications() {
+    this.notifications = [];
+    this.notificationService.getNotificationsByClient(1).subscribe(notifications => {  
+      this.notifications = notifications.filter(notif => !notif.read);
+    });
   }
 
-  //Renvoie le nombre de notification non lues
-  getUnreadNotificationsCount() {
-    return this.getUnreadNotifications().length;
+  //Rafraichir la liste de comptes
+  refreshAccounts(){
+    this.comptes = [];
+    this.compteService.getComptesByClient("1").subscribe(comptes => {  
+      this.comptes = comptes;
+    });
   }
 }

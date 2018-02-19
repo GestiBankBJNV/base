@@ -1,16 +1,30 @@
 package com.gk.gestibank.model;
 import java.util.List;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Client extends Utilisateur {
 	
 	private int nbEnfants;
 	private String situationMatrimoniale;
+
 	private List<Compte> comptes;
 	private String adresse;
 	private String ville;
 	private String cp;
 	private List<DemandeClient> demandes;
 	private List<Notification> notifications;
+	
+	
 	
 	public Client() {
 	}

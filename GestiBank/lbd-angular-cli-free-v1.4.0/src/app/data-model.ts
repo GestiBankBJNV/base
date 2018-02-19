@@ -34,6 +34,7 @@ export class Compte {
   solde: number;
   operations: Operation[];
   decouvert: number;
+  type: string;
 }
 
 export class CompteEpargne extends Compte {
@@ -42,6 +43,7 @@ export class CompteEpargne extends Compte {
 
 export class Operation {
   numero: number;
+  libelle : string;
   dateOperation: Date;
   montant: number;
   type: string;
@@ -79,7 +81,7 @@ export class Notification {
   date: Date;
   message: string;
   type: string;
-  //isRead : boolean;//A rajouter dans Java
+  read : boolean;//A rajouter dans Java
 }
 
 /* *********** Variables *********** */
