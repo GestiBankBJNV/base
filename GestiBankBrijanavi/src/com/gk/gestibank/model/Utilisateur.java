@@ -1,5 +1,6 @@
 package com.gk.gestibank.model;
 
+
 public class Utilisateur {
 
 	private int id;
