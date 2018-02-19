@@ -69,6 +69,22 @@ export class ConseillerService {
     .subscribe();
   }
 
+  getDemandesInscriptionFromConseiller(matricule: string){
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/inscriptions")
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+  }
+
+ /*getDemandesInscriptionFromConseiller(id: string){
+
+    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
+
+    let demandes: DemandeInscription[] = conseiller.demandesInscription;
+
+    return demandes;
+
+  }*/
+
   /* ***************** Ancien Code ***************** */
   // Fake server get; assume nothing can go wrong
  /* getConseillers(): Observable<Conseiller[]> {
@@ -110,16 +126,6 @@ export class ConseillerService {
 
   /*deleteConseiller(conseiller: Conseiller) {
     conseillers.splice(conseillers.indexOf(conseiller), 1);
-  }*/
-
-  /*getListDemandeInscriptionByConseiller(id: string){
-
-    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
-
-    let demandes: DemandeInscription[] = conseiller.demandesInscription;
-
-    return demandes;
-
   }*/
 
   /*getConseillersByIdSimple(id: string): Conseiller{
