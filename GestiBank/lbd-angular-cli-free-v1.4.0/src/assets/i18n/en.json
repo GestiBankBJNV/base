@@ -93,6 +93,7 @@
 	"loading" : "Is loading...",
 	"valider" : "Validate",
 	"affecter" : "Affect",
+	"login" : "Log in",
 	"logout" : "Log out",
 	"nomUtilisateur" : "Username",
 	"mdp" : "Password",

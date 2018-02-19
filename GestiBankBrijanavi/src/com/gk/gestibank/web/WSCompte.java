@@ -3,6 +3,7 @@ package com.gk.gestibank.web;
 import java.util.List;
 
 
+
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -17,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Compte;
+import com.gk.gestibank.model.CompteEpargne;
 import com.gk.gestibank.model.Notification;
 import com.gk.gestibank.model.Operation;
 import com.gk.gestibank.service.compte.CompteService;

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.gk.gestibank.model.Compte;
+import com.gk.gestibank.model.CompteEpargne;
 import com.gk.gestibank.model.Operation;
 
 public interface ICompteService {

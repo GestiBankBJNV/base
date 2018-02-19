@@ -93,6 +93,7 @@
 	"loading" : "Chargement...",
 	"valider" : "Valider",
 	"affecter" : "Affecter",
+	"login" : "Connexion",
 	"logout" : "Déconnexion",
 	"nomUtilisateur" : "Nom d'utilisateur",
 	"mdp" : "Mot de passe",
