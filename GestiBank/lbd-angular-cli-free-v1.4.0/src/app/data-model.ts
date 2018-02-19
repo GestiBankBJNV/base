@@ -7,8 +7,8 @@ export class Utilisateur {  // ajouter password (dans java)
   nomUtilisateur: string; // à changer dans java
   password: string;
   email: string;  
-  numTel: String;
-  statut: String;
+  numTel: string;
+  statut: string;
 }
 
 export class Conseiller extends Utilisateur {

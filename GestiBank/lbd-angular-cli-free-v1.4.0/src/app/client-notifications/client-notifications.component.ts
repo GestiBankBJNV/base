@@ -39,7 +39,8 @@ export class ClientNotificationsComponent implements OnInit {
 	updateNotificationRead(notif : Notification){
 		if (!notif.read){
 			notif.read = true;		
-			this.notificationService.update(notif).subscribe();		
+			this.notificationService.update(notif).subscribe();
+			this.unreadNotifications = this.notifications.filter(notif => !notif.read).length		
 		}
 	}
 	
