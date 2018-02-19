@@ -54,16 +54,16 @@ export class AdminFicheConseillerComponent implements OnInit {
 
   /* Modification du formulaire contenant les données du conseiller */
   ngOnChanges(){
-      this.formulaire.reset({
-        matricule: this.conseiller.matricule,
-        prenom: this.conseiller.prenom,
-        nom: this.conseiller.nom,
-        nomUtilisateur: this.conseiller.nomUtilisateur,
-        mdp: this.conseiller.password,
-        email: this.conseiller.email, 
-        numTel: this.conseiller.numTel,
-        dateDebutContrat: this.conseiller.dateDebutContrat/*.toLocaleDateString()*/      
-      }); 
+    this.formulaire.reset({
+      matricule: this.conseiller.matricule,
+      prenom: this.conseiller.prenom,
+      nom: this.conseiller.nom,
+      nomUtilisateur: this.conseiller.nomUtilisateur,
+      mdp: this.conseiller.password,
+      email: this.conseiller.email, 
+      numTel: this.conseiller.numTel,
+      dateDebutContrat: this.conseiller.dateDebutContrat/*.toLocaleDateString()*/      
+    });
   }
 
   // Modifier la fiche

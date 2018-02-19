@@ -13,7 +13,7 @@ export class Utilisateur {  // ajouter password (dans java)
 
 export class Conseiller extends Utilisateur {
   matricule: string;
-  dateDebutContrat: Date;
+  dateDebutContrat: Date = new Date();
   clients: Client[];
   demandesInscription: DemandeInscription[];  
 }

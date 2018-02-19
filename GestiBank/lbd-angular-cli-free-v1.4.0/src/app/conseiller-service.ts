@@ -21,14 +21,22 @@ export class ConseillerService {
 
   getConseillers() : Observable<Conseiller[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers")
-    .map((res : Response) => res.json())
+    .map(this.extractData)
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   getConseillersByNameOrMatricule(recherche : string): Observable<Conseiller[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + recherche)
-    .map((res : Response) => res.json())
+    .map(this.extractData)
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+  }
+
+  private extractData(res: Response) {
+    var data = res.json() || [];
+    data.forEach((d) => {
+      d.dateDebutContrat = new Date(d.dateDebutContrat);
+    });
+    return data;
   }
 
   updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
