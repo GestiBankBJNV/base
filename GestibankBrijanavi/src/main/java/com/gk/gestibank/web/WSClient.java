@@ -1,6 +1,7 @@
 package com.gk.gestibank.web;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.services.impl.ClientService;
+import com.gk.gestibank.model.DemandeClient;
 
 @RestController
 @Path("/clients")
@@ -31,12 +33,12 @@ public class WSClient {
 		return clientService.getAll();
 	}
 	
-//	@GET
-//	@Produces(MediaType.APPLICATION_JSON)
-//	@Path("/{id}")
-//	public Client getClientById(@PathParam("id")String id){
-//		return clientService.getClientById(id);
-//	}
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/{id}/demandes")
+	public List<DemandeClient> getDemandeByClientid(@PathParam("id")int id){
+		return clientService.getDemandeClientById(id);
+	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

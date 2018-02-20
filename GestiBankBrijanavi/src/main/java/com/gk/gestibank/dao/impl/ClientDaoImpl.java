@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.gk.gestibank.dao.ClientDao;
 import com.gk.gestibank.model.Bouchons;
 import com.gk.gestibank.model.Client;
+import com.gk.gestibank.model.DemandeClient;
 
 @Repository
 public class ClientDaoImpl implements ClientDao {
@@ -70,6 +71,10 @@ public class ClientDaoImpl implements ClientDao {
 		}
 		return client;
 		
+	}
+
+	public List<DemandeClient> getDemandeByClientId(int id) {
+		return clients.get(id).getDemandes();
 	}
 	
 	

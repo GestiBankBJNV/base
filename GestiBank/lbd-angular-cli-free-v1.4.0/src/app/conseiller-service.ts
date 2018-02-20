@@ -70,16 +70,16 @@ export class ConseillerService {
     .subscribe();
   }
 
-<<<<<<< HEAD
+
   
   // todo ?
-  getClientFromConseiller(conseiller: Conseiller){
-=======
+  getClientFromConseiller(conseiller: Conseiller){}
+
   getDemandesInscriptionFromConseiller(matricule: string){
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/inscriptions")
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
->>>>>>> master
+
   }
 
  /*getDemandesInscriptionFromConseiller(id: string){

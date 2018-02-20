@@ -16,6 +16,7 @@ public class Bouchons {
 		// Clients
 		List<DemandeClient> demandes = new ArrayList<DemandeClient>();
 		
+		// Demande de client.
 		DemandeClient demande = new DemandeClient();
 		
 		demande.setDate(new Date());
@@ -30,7 +31,7 @@ public class Bouchons {
 		cl.setNom("Hautefeuille");
 		cl.setPrenom("Annie");
 		cl.setEmail("annie@email.com");
-		cl.setId(1);
+		cl.setId(0);
 		cl.setDemandes(demandes);
 		
 		Client cl4 = new Client();

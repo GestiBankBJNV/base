@@ -12,7 +12,7 @@ public interface IClientService {
 	public void createClient(Client client);
 	public void deleteClient(int id);
 	public void updateClient(Client client);
-	public Set<DemandeClient> getDemandeClientById(String id);
+	public List<DemandeClient> getDemandeClientById(int id);
 	public Client getClientById(int id);
 	public List<Client> getClientByNameOrId(String recherche);
 	

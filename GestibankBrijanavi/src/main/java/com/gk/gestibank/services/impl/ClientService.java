@@ -40,12 +40,6 @@ public class ClientService implements IClientService {
 		clientDao.updateClient(client);
 
 	}
-
-	
-	public Set<DemandeClient> getDemandeClientById(String id) {
-		// ajouter la fonction de recherche des demande dans le ClientDao
-		return null;
-	}
 	
 	
 	public Client getClientById(int id){
@@ -57,6 +51,11 @@ public class ClientService implements IClientService {
 	public List<Client> getClientByNameOrId(String recherche) {
 		
 		return clientDao.getClientByNameOrId(recherche);
+	}
+
+
+	public List<DemandeClient> getDemandeClientById(int id) {
+		return clientDao.getDemandeByClientId(id);
 	}
 
 }

@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-import { Http, Response } from '@angular/http';
-=======
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
->>>>>>> master
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
@@ -15,19 +11,6 @@ import { Client, clients, DemandeClient } from './data-model';
 export class ClientService {
 
 	delayMs = 500;
-
-<<<<<<< HEAD
-  constructor(private http: Http){}
-
-    // Fake server get; assume nothing can go wrong
-    getClients(): Observable<Client[]> {
-	  	console.log('getConseiller()');
-	    return of(clients).delay(this.delayMs); // simulate latency with delay
-    }
-=======
-  headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
-  options = new RequestOptions({ headers: this.headers });
->>>>>>> master
 
   constructor(private http : Http) {}
 
@@ -51,7 +34,7 @@ export class ClientService {
     return of(newClient).delay(this.delayMs); // simulate latency with delay
   }
 
-<<<<<<< HEAD
+
 
     getAllDemandeClientById(idClient: number): Observable<DemandeClient[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/clients/"+idClient+"/demandes")
@@ -59,7 +42,6 @@ export class ClientService {
     .catch((error: any) => Observable.throw(error.json().error || 'Error'))
   }
 
-=======
   /* *********** Ancien code ************* */
 
   /*// Fake server get; assume nothing can go wrong
@@ -77,5 +59,4 @@ export class ClientService {
     }
     return of(temp).delay(this.delayMs);
   }*/
->>>>>>> master
 }
