@@ -95,10 +95,12 @@
 
                             </div>                             
                             <div class="row">
-                                <!--Valider-->
-                                <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">{{'client_profile_update' | translate}}</button>
-                                <!--Annuler (redirection vers accueil)-->
-                                <button type="button" class="btn btn-warning" (click)="redirectUserPage()">{{'client_profile_cancel' | translate}}</button>
+                                <div class="col-md-12">
+                                    <!--Valider-->
+                                    <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">{{'client_profile_update' | translate}}</button>
+                                    <!--Annuler (redirection vers accueil)-->
+                                    <button type="button" class="btn btn-warning" (click)="redirectUserPage()">{{'client_profile_cancel' | translate}}</button>
+                                </div>
                             </div>
                         </form>
                     </div>
