@@ -89,10 +89,4 @@ public class WSConseiller {
 	public void deleteClientFromConseiller(@PathParam("idClient") int idClient) {
 		conseillerService.deleteClientFromConseiller(idClient);
 	}
-	
-	@PUT
-	@Path("/{idConseiller}/clients/{idClient}")
-	public void changerConseiller(@PathParam("idClient") int idClient, @PathParam("idConseiller") int idConseiller){
-		conseillerService.changerConseiller(idClient, idConseiller);
-	}
 }

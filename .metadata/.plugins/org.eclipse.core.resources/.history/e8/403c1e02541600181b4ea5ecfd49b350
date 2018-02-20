@@ -118,7 +118,7 @@ public class ConseillerService implements IConseillerService {
 	@Transactional
 	public void changerConseiller(int idClient, int idConseiller) {
 		// TODO Auto-generated method stub
-		conseillerDao.changerConseiller(idClient, idConseiller);
+		conseillerDao.changerConseiller(int idClient, int idConseiller);
 	}
 
 }

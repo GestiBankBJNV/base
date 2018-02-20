@@ -19,4 +19,5 @@ public interface IConseillerService {
 	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule);
 	public List<Client> getClientsFromConseiller(String matricule);
 	public Conseiller getConseillerWithClient(int idClient);
+	public void changerConseiller(int idClient, int idConseiller);
 }

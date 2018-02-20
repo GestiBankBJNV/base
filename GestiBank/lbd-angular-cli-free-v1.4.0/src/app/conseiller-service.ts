@@ -83,6 +83,11 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
+  changerConseiller(idClient: number, idConseiller: number){
+    return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers/" + idConseiller + "clients/" + idClient, "{}", this.options)
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+  }
+
  /*getDemandesInscriptionFromConseiller(id: string){
 
     let conseiller: Conseiller = this.getConseillersByIdSimple(id);

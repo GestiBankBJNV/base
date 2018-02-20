@@ -19,5 +19,4 @@ public interface ConseillerDao {
 	public void deleteClientFromConseiller(int idClient, String matricule);
 	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule);
 	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule);
-	public void changerConseiller(int idClient, int idConseiller);
 }

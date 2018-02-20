@@ -207,10 +207,14 @@ export class AdminAffectationsComponent implements OnInit {
   /* Affectation du client au conseiller, au clic sur le bouton 'Valider' */
   validerModifConseiller(){ 
     // Ajouter le client à la liste du conseiller
-    this.selectedConseiller.clients.push(this.selectedClient);
-    this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
+    //this.selectedConseiller.clients.push(this.selectedClient);
+    //this.conseillerService.updateConseiller(this.selectedConseiller).subscribe();  
     // Supprimer le client de la liste de son ancien conseiller
-    this.conseillerService.deleteClient(this.selectedClient.id);
+    //this.conseillerService.deleteClient(this.selectedClient.id);
+
+    // On fait autrement
+    this.conseillerService.changerConseiller(this.selectedClient.id, this.selectedConseiller.id);
+
     // Notifier les modifs
     this.notif.showNotificationMessage('top', 'right', 'Client : ' + this.selectedClient.prenom + ' ' + this.selectedClient.nom + ' affecté au conseiller : ' + this.selectedConseiller.prenom + ' ' + this.selectedConseiller.nom, 'success', 'pe-7s-magic-wand');
   }

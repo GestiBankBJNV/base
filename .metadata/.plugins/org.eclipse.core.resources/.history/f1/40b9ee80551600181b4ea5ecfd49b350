@@ -92,7 +92,7 @@ public class WSConseiller {
 	
 	@PUT
 	@Path("/{idConseiller}/clients/{idClient}")
-	public void changerConseiller(@PathParam("idClient") int idClient, @PathParam("idConseiller") int idConseiller){
+	public void changerConseiller(@PathParam("idClient") int idClient, @PathParam("idClient") int idConseiller){
 		conseillerService.changerConseiller(idClient, idConseiller);
 	}
 }

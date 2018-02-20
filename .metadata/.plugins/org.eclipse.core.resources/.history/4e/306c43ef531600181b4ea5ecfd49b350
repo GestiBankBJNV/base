@@ -80,6 +80,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		return (Conseiller)query.getResultList(); // todo : à revoir
 	}	
 	
+	
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
 //		List<Conseiller> l = new ArrayList<Conseiller>();
 //		for(Conseiller c : conseillers){
@@ -95,6 +96,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		return (List<Conseiller>)query.getResultList();
 	}
 
+	
 	public List<Client> getClientsFromConseiller(String matricule) {
 		Conseiller c = getConseillerByMatricule(matricule);
 		if(c != null) {
@@ -103,12 +105,14 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		return new ArrayList<Client>();
 	}
 
+	
 	public void addClientToConseiller(Client client, String matricule) {
 		List<Client> clients = getClientsFromConseiller(matricule);
 		clients.add(client);
 		getConseillerByMatricule(matricule).setClients(clients);		
 	}
 
+	
 	public void deleteClientFromConseiller(int idClient, String matricule) {
 //		List<Client> clients = getClientsFromConseiller(matricule);
 //		Client client = new Client();
@@ -123,21 +127,17 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		query.executeUpdate();
 	}
 
+	
 	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule) {
 		Conseiller c = getConseillerByMatricule(matricule);
 		return c.getDemandesInscription();
 	}
 	
+	
 	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule) {
 		List<DemandeInscription> inscription = getInscriptionsFromConseiller(matricule);
 		inscription.add(demandeInscription);
 		getConseillerByMatricule(matricule).setDemandesInscription(inscription);		
-	}
-
-	
-	public void changerConseiller(int idClient, int idConseiller) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
