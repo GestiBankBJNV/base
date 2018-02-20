@@ -1,5 +1,22 @@
 <div class="main-content" >
-	<p>
-	  espace-public works!
-	</p>
+
+	<div class="row">
+        <div class="col-md-10">
+
+			<div class="card">
+				<div class="row">
+			        <div class="col-md-10">
+						<button class="btn btn-primary btn-lg" (click)="inscription=true">Inscription</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+		
+	
+	<div *ngIf="inscription">			
+		<public-fiche-inscription (onCreate)="onCreate($event)"></public-fiche-inscription>
+	</div>
+
 </div>

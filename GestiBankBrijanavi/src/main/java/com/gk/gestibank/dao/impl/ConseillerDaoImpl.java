@@ -69,23 +69,28 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	}
 	
 	public Conseiller getConseillerByMatricule(String matricule) {
-		for(Conseiller c : conseillers){
-			if(c.getMatricule().equals(matricule)){
-				return c;
-			}
-		}
+//		for(Conseiller c : conseillers){
+//			if(c.getMatricule().equals(matricule)){
+//				return c;
+//			}
+//		}
 		return null;
 	}	
 	
 	
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
-		List<Conseiller> l = new ArrayList<Conseiller>();
-		for(Conseiller c : conseillers){
-			if(c.getNom().contains(recherche) || c.getMatricule().equals(recherche)){
-				l.add(c);
-			}
-		}
-		return l;
+//		List<Conseiller> l = new ArrayList<Conseiller>();
+//		for(Conseiller c : conseillers){
+//			if(c.getNom().contains(recherche) || c.getMatricule().equals(recherche)){
+//				l.add(c);
+//			}
+//		}
+//		return l;
+		
+		Query query = em.createQuery("SELECT c FROM Conseiller as c WHERE c.matricule = :recherche OR c.nom LIKE :rechercheLike");
+		query.setParameter("recherche", recherche);
+		query.setParameter("rechercheLike", recherche + "%");
+		return (List<Conseiller>)query.getResultList();
 	}
 
 	

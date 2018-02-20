@@ -54,7 +54,6 @@ export class DemandeInscription { // = Inscription dans java (à modifier)
   dateInscription: Date;
   dateAffectation: Date;
   statut: string = "en cours";
-  libelle: string;
   coordonnees: Client;
 }
 
@@ -227,7 +226,6 @@ export const demandesInscription: DemandeInscription[] = [
     dateInscription: new Date(2018,0,15),
     dateAffectation: undefined,
     statut: '',
-    libelle: "inscription",
     coordonnees: {id: 101, email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", nomUtilisateur: 'DRice', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
   },
   {
@@ -235,7 +233,6 @@ export const demandesInscription: DemandeInscription[] = [
     dateInscription: new Date(2017,11,5),
     dateAffectation: new Date(2017,6,12),
     statut: 'traitée',
-    libelle: "inscription",
     coordonnees: {id: 102, email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", nomUtilisateur: 'MHooper', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
   },
   {
@@ -243,7 +240,6 @@ export const demandesInscription: DemandeInscription[] = [
     dateInscription: new Date(2018,0,7),
     dateAffectation: undefined,
     statut: '',
-    libelle: "inscription",
     coordonnees: {id: 103, email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", nomUtilisateur: 'SRodriguez', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
   },
   {
@@ -251,7 +247,6 @@ export const demandesInscription: DemandeInscription[] = [
     dateInscription: new Date(2018,0,9),
     dateAffectation: new Date(2018,0,11),
     statut: 'en cours',
-    libelle: "inscription",
     coordonnees: {id: 104, email:"philip@truc.com", prenom: "Philip", nom: "Chaney", nomUtilisateur: 'PChaney', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0,situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
   },
   {
@@ -259,7 +254,6 @@ export const demandesInscription: DemandeInscription[] = [
     dateInscription: new Date(2018,0,13),
     dateAffectation: undefined,
     statut: '',
-    libelle: "inscription",
     coordonnees: {id: 105, email:"doris@truc.com", prenom: "Doris", nom: "Greene", nomUtilisateur: 'DGreen', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
   },
   {
@@ -267,7 +261,6 @@ export const demandesInscription: DemandeInscription[] = [
     dateInscription: new Date(2018,0,10),
     dateAffectation: undefined,
     statut: '',
-    libelle: "inscription",
     coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
   },
 ];

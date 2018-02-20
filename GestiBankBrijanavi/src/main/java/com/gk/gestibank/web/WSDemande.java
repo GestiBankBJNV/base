@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -14,14 +15,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.DemandeInscription;
-import com.gk.gestibank.services.impl.DemandeService;
+import com.gk.gestibank.services.IDemandeService;
 
 @RestController
 @Path("/demandes")
 public class WSDemande {
 	
 	@Autowired
-	DemandeService demandeService;
+	IDemandeService demandeService;
 
 	@GET
 	@Path("/inscriptions")
@@ -42,5 +43,12 @@ public class WSDemande {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void updateDemandeInscription(DemandeInscription demandeInscr) {
 		demandeService.updateDemandeInscription(demandeInscr);
+	}
+	
+	@POST
+	@Path("/inscriptions")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void addDemandeInscription(DemandeInscription demandeInscr) {
+		demandeService.addDemandeInscription(demandeInscr);
 	}
 }

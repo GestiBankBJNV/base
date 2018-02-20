@@ -57,7 +57,7 @@ public class ConseillerService implements IConseillerService {
 		conseillerDao.updateConseiller(conseiller);
 	}
 
-	
+	@Transactional
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
 		return conseillerDao.getConseillerByNameOrMatricule(recherche);
 	}

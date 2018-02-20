@@ -3,6 +3,8 @@ package com.gk.gestibank.services.impl;
 import java.util.List;
 import java.util.Set;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +25,7 @@ public class ClientService implements IClientService {
 		return clientDao.getAll();
 	}
 
-	
+	@Transactional
 	public void createClient(Client client) {
 		clientDao.createClient(client);
 

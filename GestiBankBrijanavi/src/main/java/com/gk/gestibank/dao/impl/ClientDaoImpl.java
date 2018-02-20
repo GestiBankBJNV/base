@@ -3,6 +3,9 @@ package com.gk.gestibank.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ClientDao;
@@ -13,6 +16,9 @@ import com.gk.gestibank.model.Client;
 public class ClientDaoImpl implements ClientDao {
 	
 	List<Client> clients = new ArrayList<Client>();
+	
+	@PersistenceContext
+	private EntityManager em;
 
 	public ClientDaoImpl() {
 		chargerClients();
@@ -36,8 +42,7 @@ public class ClientDaoImpl implements ClientDao {
 	}
 
 	public void createClient(Client client) {
-		// TODO Auto-generated method stub
-		
+		em.persist(client);		
 	}
 
 

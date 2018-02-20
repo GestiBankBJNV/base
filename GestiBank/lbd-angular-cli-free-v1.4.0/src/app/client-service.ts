@@ -37,6 +37,11 @@ export class ClientService {
     return of(newClient).delay(this.delayMs); // simulate latency with delay
   }
 
+  addClient(client: Client){
+    /*TODO*/
+  }
+
+
   /* *********** Ancien code ************* */
 
   /*// Fake server get; assume nothing can go wrong
