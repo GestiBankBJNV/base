@@ -18,44 +18,36 @@ public class ClientService implements IClientService {
 	
 	@Autowired
 	private ClientDao clientDao;
-
 	
-	public List<Client> getAll() {
-		
+	@Transactional
+	public List<Client> getAll() {		
 		return clientDao.getAll();
 	}
 
 	@Transactional
 	public void createClient(Client client) {
 		clientDao.createClient(client);
-
 	}
-
 	
 	public void deleteClient(int id) {
 		clientDao.deleteClient(id);
-
 	}
-
 	
 	public void updateClient(Client client) {
 		clientDao.updateClient(client);
 
 	}
-
 	
 	public Set<DemandeClient> getDemandeClientById(String id) {
 		// ajouter la fonction de recherche des demande dans le ClientDao
 		return null;
 	}
 	
-	
 	public Client getClientById(int id){
 		
 		return clientDao.getClientById(id);
 	}
 
-	
 	public List<Client> getClientByNameOrId(String recherche) {
 		
 		return clientDao.getClientByNameOrId(recherche);

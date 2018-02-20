@@ -5,12 +5,14 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ClientDao;
 import com.gk.gestibank.model.Bouchons;
 import com.gk.gestibank.model.Client;
+import com.gk.gestibank.model.Conseiller;
 
 @Repository
 public class ClientDaoImpl implements ClientDao {
@@ -21,36 +23,31 @@ public class ClientDaoImpl implements ClientDao {
 	private EntityManager em;
 
 	public ClientDaoImpl() {
-		chargerClients();
+		//chargerClients();
 	}
 	
 	public void chargerClients(){
 		Bouchons b = new Bouchons();
 		clients = b.getClients();
 	}
-
 	
-	public List<Client> getAll() {
-		
-		return clients;
+	public List<Client> getAll() {		
+		//return clients;
+		Query query = em.createQuery("SELECT c FROM Client as c WHERE isClient=1");
+		return (List<Client>)query.getResultList();
 	}
-
 	
 	public void updateClient(Client client) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
 	public void createClient(Client client) {
 		em.persist(client);		
 	}
 
-
 	public void deleteClient(int id) {
 		// TODO Auto-generated method stub
-		
 	}
-
 
 	public List<Client> getClientByNameOrId(String recherche) {
 		for(Client c: clients){

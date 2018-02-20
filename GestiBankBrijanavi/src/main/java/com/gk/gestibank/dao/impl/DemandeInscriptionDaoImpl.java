@@ -23,7 +23,7 @@ public class DemandeInscriptionDaoImpl implements DemandeInscriptionDao {
 	private EntityManager em;
 
 	public DemandeInscriptionDaoImpl() {
-		chargerDemandes();
+		//chargerDemandes();
 	}
 
 	public void chargerDemandes() {
@@ -40,17 +40,19 @@ public class DemandeInscriptionDaoImpl implements DemandeInscriptionDao {
 	
 	
 	public DemandeInscription getDemandeInscrById(int id) {
-		for(DemandeInscription d : demInscriptions) {
-			if(d.getId() == id) {
-				return d;
-			}
-		}
-		return null;
+//		for(DemandeInscription d : demInscriptions) {
+//			if(d.getId() == id) {
+//				return d;
+//			}
+//		}
+//		return null;
+		return em.find(DemandeInscription.class, id);
 	}
 	
 	public void updateDemandeInscription(DemandeInscription demandeInscr) {
-		int i = demInscriptions.indexOf(demandeInscr);
-		demInscriptions.set(i, demandeInscr);
+//		int i = demInscriptions.indexOf(demandeInscr);
+//		demInscriptions.set(i, demandeInscr);
+		em.merge(demandeInscr);
 	}
 
 	public void addDemandeInscription(DemandeInscription demandeInscr) {
