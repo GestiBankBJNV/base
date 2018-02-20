@@ -4,6 +4,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/map';
 
 import { Conseiller, conseillers, Client, DemandeInscription } from './data-model';
 
@@ -39,9 +40,8 @@ export class ConseillerService {
     return data;
   }
 
-  updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
+  updateConseiller(conseiller: Conseiller) { 
     return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller, this.options)
-    .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 

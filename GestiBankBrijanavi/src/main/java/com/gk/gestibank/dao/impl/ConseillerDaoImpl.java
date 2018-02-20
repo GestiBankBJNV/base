@@ -3,7 +3,13 @@ package com.gk.gestibank.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.gk.gestibank.dao.ConseillerDao;
 import com.gk.gestibank.model.Bouchons;
@@ -14,48 +20,53 @@ import com.gk.gestibank.model.DemandeInscription;
 @Repository
 public class ConseillerDaoImpl implements ConseillerDao {
 	
-	public ArrayList<Conseiller> conseillers = new ArrayList<Conseiller>() ; // todo : remplacer par SessionFactory... (accès à la BDD)
+	public ArrayList<Conseiller> conseillers = new ArrayList<Conseiller>() ; 
+	
+	@PersistenceContext
+	private EntityManager em;
 	
 	public ConseillerDaoImpl() {
-		chargerConseillers();
+		//chargerConseillers();
 	}
 	
 	public void chargerConseillers(){
 		Bouchons b = new Bouchons();
 		conseillers = b.getConseillers();
 	}
-
 	
 	public List<Conseiller> getAll() {
-		return conseillers;
+		//return conseillers;
+		Query query = em.createQuery("SELECT c FROM Conseiller as c");
+		return (List<Conseiller>)query.getResultList();
 	}
 
-	
 	public void createConseiller(Conseiller conseiller) {
-		conseillers.add(conseiller);
+		//conseillers.add(conseiller);
+		em.persist(conseiller);
 	}
-
 	
 	public void updateConseiller(Conseiller conseiller) {	
-		int i = conseillers.indexOf(conseiller);
-		try {
-			conseillers.set(i, conseiller);
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("L'index " + i + " ne fait pas partie de la liste conseillers");
-		}	
+//		int i = conseillers.indexOf(conseiller);
+//		try {
+//			conseillers.set(i, conseiller);
+//		} catch (ArrayIndexOutOfBoundsException e) {
+//			System.out.println("L'index " + i + " ne fait pas partie de la liste conseillers");
+//		}	
+		em.merge(conseiller);
 	}
-
 	
 	public void deleteConseiller(String matricule) {
-		for(Conseiller c : conseillers){
-			if(c.getMatricule().equals(matricule)){
-				conseillers.remove(c);
-				break;
-			}
-		}
+//		for(Conseiller c : conseillers){
+//			if(c.getMatricule().equals(matricule)){
+//				conseillers.remove(c);
+//				break;
+//			}
+//		}
+		
+		Query query = em.createQuery("DELETE FROM Conseiller as c WHERE c.matricule = :matricule");
+		query.setParameter("matricule", matricule);
+		query.executeUpdate();
 	}
-
-
 	
 	public Conseiller getConseillerByMatricule(String matricule) {
 		for(Conseiller c : conseillers){

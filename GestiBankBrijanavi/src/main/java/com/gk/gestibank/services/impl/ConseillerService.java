@@ -2,9 +2,10 @@ package com.gk.gestibank.services.impl;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.gk.gestibank.dao.ConseillerDao;
 import com.gk.gestibank.model.Client;
@@ -23,22 +24,24 @@ public class ConseillerService implements IConseillerService {
 		return conseillerDao.getAll();
 	}
 
-	
+	@Transactional
 	public void createConseiller(Conseiller conseiller) {
 		// Aucune véfification : le formulaire a déjà validé les champs
+		System.out.println("conseillerService createConseiller()");
 		// On génère un matricule pour le conseiller
 		conseiller.setMatricule(generateMatricule(conseiller));
 		conseillerDao.createConseiller(conseiller);
 	}
 
 	public String generateMatricule(Conseiller conseiller) {
-		SimpleDateFormat sdate = new SimpleDateFormat("MMYY");
+		SimpleDateFormat sdate = new SimpleDateFormat("ddMMYY");
+		int nb = (int) (100 + (Math.random() * (999 - 100)));
 		String matricule = conseiller.getNom().toUpperCase().charAt(0) + sdate.format(conseiller.getDateDebutContrat())
-				+ conseiller.hashCode() + "A";
+				+ nb + "A";
 		return matricule;
 	}
-
 	
+	@Transactional
 	public void deleteConseiller(String matricule) {
 		// TODO : On doit vérifier si la liste de client est nulle avant de supprimer
 		// Attention : nullPointerException si matricule ne correspond à aucun
@@ -48,7 +51,7 @@ public class ConseillerService implements IConseillerService {
 		}
 	}
 
-	
+	@Transactional
 	public void updateConseiller(Conseiller conseiller) {
 		// Aucune véfification : le formulaire a déjà validé les champs
 		conseillerDao.updateConseiller(conseiller);
@@ -64,7 +67,6 @@ public class ConseillerService implements IConseillerService {
 		// vérifs ?
 		conseillerDao.addClientToConseiller(client, matricule);
 	}
-
 	
 	public void deleteClientFromConseiller(int idClient) {
 		// trouver le matricule du conseiller
