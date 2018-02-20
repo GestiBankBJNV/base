@@ -1,10 +1,15 @@
 package com.gk.gestibank.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 
 
+
+
+
+import javax.persistence.Query;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -16,6 +21,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Compte;
@@ -27,6 +33,7 @@ import com.gk.gestibank.services.impl.CompteService;
 
 @RestController
 @Path("/comptes")
+@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 public class WSCompte {
 	
 	//Service
@@ -43,18 +50,31 @@ public class WSCompte {
 	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/client/{clientId}")
-	public List<Compte> getComptesByClient(@PathParam("clientId") int clientId){
-		dbgLog("Get by client" + clientId);
-		return compteService.getByClient(clientId);
+	@Path("/current/{clientId}")
+	public List<Compte> getComptesCourantByClient(@PathParam("clientId") int clientId){
+		dbgLog("Get current by client " + clientId);
+		return compteService.getCurrentByClient(clientId);
+	}
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/saving/{clientId}")
+	public List<CompteEpargne> getComptesEpargneByClient(@PathParam("clientId") int clientId){
+		dbgLog("Get current by client " + clientId);
+		return compteService.getSavingByClient(clientId);
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/operations/{compteId}")
 	public List<Operation> getOperationsByCompte(@PathParam("compteId") int compteId){
-		dbgLog("Get operations by compte" + compteId);
+		dbgLog("Get operations by compte " + compteId);
 		return compteService.getOperationsByCompte(compteId);
+	}
+	
+	@GET
+	@Path("/createDummy")
+	public void createDummyAccount(){
+		dbgLog("Create dummy Account");
 	}
 	
 	
@@ -62,5 +82,7 @@ public class WSCompte {
 	//DEBUG (juste pour vérifier qu'on passe bien par les fonctions)
 	private void dbgLog(String log){
 		System.out.println("SERVICE COMPTE - " + log);
+		compteService.create(new Compte(19999,1500d, new ArrayList<Operation>(), -150d));
+		compteService.create(new CompteEpargne(199919,1500d, new ArrayList<Operation>(), -150d, 1.5f));
 	}
 }

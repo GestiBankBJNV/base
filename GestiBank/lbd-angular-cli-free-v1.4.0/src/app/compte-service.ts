@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Compte, Operation } from './data-model';
+import { Compte, CompteEpargne, Operation } from './data-model';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -11,9 +11,13 @@ export class CompteService{
 
 	constructor(private http : Http) {}
 
-	//Renvoie une liste de taux de conversion. base = EUR par défaut
-	getComptesByClient(clientID : string) : Observable<Compte[]>{
-		return this.http.get(this.apiUrl + "/client/" + clientID)
+	getComptesCourantByClient(clientID : string) : Observable<Compte[]>{
+		return this.http.get(this.apiUrl + "/current/" + clientID)
+		.map((res : Response) => res.json())
+		.catch((error : any) => Observable.throw(error.json().error || 'Error'));
+	}
+	getComptesEpargneByClient(clientID : string) : Observable<CompteEpargne[]>{
+		return this.http.get(this.apiUrl + "/saving/" + clientID)
 		.map((res : Response) => res.json())
 		.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}

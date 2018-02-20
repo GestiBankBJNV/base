@@ -108,5 +108,6 @@
 	"public_devises_title" : "Currencies converter",
 	"navbar_notification_title" : "New notifications.",
 	"admin_affectations_association_header1" : "Associate request n°",
-	"au_conseiller" : "to agent"
+	"au_conseiller" : "to agent",
+	"navbar_welcome" : "Welcome"
 }

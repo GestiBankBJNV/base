@@ -108,5 +108,6 @@
 	"public_devises_title" : "Conversion de devises",
 	"navbar_notification_title" : "Nouvelles notifications.",
 	"admin_affectations_association_header1" : "Associer la demande n°",
-	"au_conseiller" : "au conseiller"
+	"au_conseiller" : "au conseiller",
+	"navbar_welcome" : "Bienvenue"
 }

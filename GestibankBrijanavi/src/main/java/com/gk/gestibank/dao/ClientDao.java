@@ -12,5 +12,9 @@ public interface ClientDao {
 	public void deleteClient(int id);
 	public List<Client> getClientByNameOrId(String recherche);
 	public Client getClientById(int clientId);
+	
+	public void persist(Client client);
+	public void refresh(Client client);
+	public void merge(Client client);
 
 }

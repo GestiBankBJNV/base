@@ -5,7 +5,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.FlushModeType;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,37 +30,36 @@ public class NotificationDaoImpl implements NotificationDao {
 	public NotificationDaoImpl(){}	
 	
 	
-	public List<Notification> getByClient(int clientId) {
-		
-		//TODO : à remplacer
-		List<Notification> l = new ArrayList<Notification>(); 
-		
-		for (int i=0; i < 20; i++) {
-			Notification n = new Notification(new Date(),"Notification " + i, "notif", (i > 5));
-			n.setId(i);
-			l.add(n);
-		}
-		
-		return l;
-		//return clientDao.getClientById(clientId).getNotifications();		
+	@Transactional
+	public List<Notification> getByClient(int clientId) {		
+		Query q = em.createQuery("SELECT n FROM Notification n where client = " + clientId + " ORDER BY date DESC");
+		return (List<Notification>)q.getResultList();		
 	}
 	
 	@Transactional
-	public void delete(int notificationId){
-		Notification n = em.find(Notification.class, notificationId);
-		em.remove(n);
+	public void delete(int clientId, int notificationId){
+		//System.out.println("Count before: " + getByClient(clientId).size());				
+		Query q = em.createNamedQuery("Notification.delete").setParameter("id", notificationId);
+		q.executeUpdate();
 	}
 	
 	@Transactional
 	public void addToClient(int clientId, Notification notification){
-		Client c = clientDao.getClientById(clientId);
-		c.addNotification(notification);
-		em.persist(c);
+		List<Notification> l = getByClient(clientId);
+		System.out.println("Count before: " + l.size());
+		l.add(notification);
+		Client client = clientDao.getClientById(clientId);
+		client.setNotifications(l);
+		//em.merge(client);
+		clientDao.merge(client);
+		System.out.println("Count after: " + l.size());
 	}
 
-	
-	public boolean update(Notification notification) {
-		//TODO
-		return true;
+	@Transactional
+	public void update(int clientId, Notification notification) {			
+		em.merge(notification);
+		em.flush();
 	}
+	
+	
 }

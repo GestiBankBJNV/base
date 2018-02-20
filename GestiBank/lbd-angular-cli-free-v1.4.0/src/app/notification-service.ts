@@ -19,19 +19,19 @@ export class NotificationService{
 	}
 
 
-	deleteNotification(notif : Notification) : Observable<Boolean> {
-		return this.http.delete(this.apiUrl + "/" + notif.id)
+	deleteNotification(clientID : number, notif : Notification) : Observable<Boolean> {
+		return this.http.delete(this.apiUrl + "/" + clientID + "/" + notif.id)
 		.map((res : Response) => res.json())
 		.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}
 
 	addNotificationToClient(clientID : number, notification : Notification) : Observable<Notification>{
-		return this.http.post(this.apiUrl, notification)
+		return this.http.post(this.apiUrl + "/" + clientID, notification)
 		.catch((error : any) => Observable.throw(error.json().error || 'Server error'));
 	}
 
-	update(notification : Notification) : Observable<Boolean> {
-		return this.http.put(this.apiUrl, notification)
+	update(clientID : number, notification : Notification) {
+		return this.http.put(this.apiUrl + "/" + clientID, notification)
 		.catch((error : any) => Observable.throw(error.json().error || 'Server error'));
 	}
 }

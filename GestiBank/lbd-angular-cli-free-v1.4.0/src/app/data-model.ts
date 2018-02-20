@@ -81,7 +81,7 @@ export class Notification {
   date: Date;
   message: string;
   type: string;
-  read : boolean;//A rajouter dans Java
+  toggled : boolean;//Remplace "isRead" (mot clé SQL) A rajouter dans Java
 }
 
 /* *********** Variables *********** */

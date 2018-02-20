@@ -13,6 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Notification;
@@ -20,6 +21,7 @@ import com.gk.gestibank.services.impl.NotificationService;
 
 @RestController
 @Path("/notifications")
+@CrossOrigin(origins="http://localhost:4200", allowedHeaders="*")
 public class WSNotification {
 	
 	//Service
@@ -38,18 +40,18 @@ public class WSNotification {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{clientId}")
 	public List<Notification> getByClient(@PathParam("clientId") int clientId){
-		dbgLog("Get by client" + clientId);
+		dbgLog("Get by client " + clientId);
 		return notificationService.getByClient(clientId);
 	}
 	
 	/**
 	 * Supprimer une notification
 	 */
-	@DELETE	
-	@Path("/{notificationId}")
-	public void delete(@PathParam("notificationId") int notificationId){
+	@DELETE
+	@Path("/{clientId}/{notificationId}")
+	public void delete(@PathParam("clientId") int clientId, @PathParam("notificationId") int notificationId){
 		dbgLog("Delete");
-		notificationService.delete(notificationId);
+		notificationService.delete(clientId, notificationId);
 	}
 	
 	/**
@@ -61,7 +63,7 @@ public class WSNotification {
 	@Path("/{clientId}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void addToClient(@PathParam("clientId") int clientId, Notification notification){
-		dbgLog("Add to client");
+		dbgLog("Add to client ");
 		notificationService.addToClient(clientId, notification);
 	}
 	
@@ -71,10 +73,11 @@ public class WSNotification {
 	 * @return
 	 */
 	@PUT
+	@Path("/{clientId}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public boolean update(Notification notification) {
-		dbgLog("Update");
-		return notificationService.update(notification);
+	public void update(@PathParam("clientId") int clientId, Notification notification) {
+		dbgLog("Update for client " + clientId);
+		notificationService.update(clientId, notification);
 	}
 	
 	//DEBUG (juste pour vérifier qu'on passe bien par les fonctions)

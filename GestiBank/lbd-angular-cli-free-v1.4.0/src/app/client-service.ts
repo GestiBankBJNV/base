@@ -37,6 +37,12 @@ export class ClientService {
     return of(newClient).delay(this.delayMs); // simulate latency with delay
   }
 
+  getClientById(clientId : number) : Observable<Client>{
+     return this.http.get("http://localhost:8080/GestiBankBrijanavi/clients/id/" + clientId)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+  }
+
   /* *********** Ancien code ************* */
 
   /*// Fake server get; assume nothing can go wrong

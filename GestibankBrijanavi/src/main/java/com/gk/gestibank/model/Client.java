@@ -1,5 +1,9 @@
 package com.gk.gestibank.model;
+import java.util.ArrayList;
 import java.util.List;
+
+
+
 
 
 
@@ -19,6 +23,9 @@ import org.springframework.stereotype.Component;
 
 
 
+
+
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,6 +34,8 @@ import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -38,17 +47,17 @@ public class Client extends Utilisateur {
 	private String ville;
 	private String cp;
 	
-	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
+	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER, orphanRemoval=true)
 	@JoinColumn(name="client")
-	private List<Compte> comptes;
+	private List<Compte> comptes = new ArrayList<Compte>();
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name = "client")
-	private List<DemandeClient> demandes;
+	private List<DemandeClient> demandes = new ArrayList<DemandeClient>();
 	
-	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
+	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER, orphanRemoval=true)
 	@JoinColumn(name="client")
-	private List<Notification> notifications;
+	private List<Notification> notifications = new ArrayList<Notification>();
 	
 	
 	

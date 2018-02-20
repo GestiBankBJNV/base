@@ -20,7 +20,7 @@
 				</thead>
 				<!--Lignes-->
 				<tbody>
-					<tr *ngFor="let notif of notifications" class='{{ (notif.read) ? "" : "unreadNotif" }}'><!--classe unreadNotif redéfinie dans le css-->
+					<tr *ngFor="let notif of notifications" class='{{ (notif.toggled) ? "" : "unreadNotif" }}'><!--classe unreadNotif redéfinie dans le css-->
 						<td class="col-md-8" (click)="updateNotificationRead(notif)">{{ notif.message }}</td><td class="col-md-2">{{ notif.date | date : "dd/MM/yy hh:mm" }}</td><td class="col-md-2"><button (click)="deleteNotification(notif)" class="btn btn-danger btn-xs">{{ 'effacer' | translate }}</button></td>
 					</tr>
 				</tbody>

@@ -3,6 +3,9 @@ package com.gk.gestibank.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ClientDao;
@@ -11,6 +14,10 @@ import com.gk.gestibank.model.Client;
 
 @Repository
 public class ClientDaoImpl implements ClientDao {
+	
+	@PersistenceContext
+	EntityManager em;
+	
 	
 	List<Client> clients = new ArrayList<Client>();
 
@@ -61,16 +68,29 @@ public class ClientDaoImpl implements ClientDao {
 		return getClientById(Integer.valueOf(id));		
 	}
 
+	//TODO
 	public Client getClientById(int clientId){
 		Client client = new Client();
 		for(Client c: clients){
 			if(clientId == c.getId()){
 				client = c;
+				break;
 			}
 		}
 		return client;
 		
 	}
+	
+	public void persist(Client client){
+		em.persist(client);
+	}
+	public void refresh(Client client){
+		em.refresh(client);
+	}
+	public void merge(Client client){
+		em.merge(client);
+	}
+	
 	
 	
 }

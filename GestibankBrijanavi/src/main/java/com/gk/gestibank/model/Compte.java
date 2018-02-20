@@ -7,22 +7,31 @@ import java.util.Set;
 
 
 
+
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name="Compte.getAll", query="DELETE FROM Compte c"),
+	@NamedQuery(name="Compte.delete", query="DELETE FROM Compte c where c.code = :code"),
+	@NamedQuery(name="Compte.getByIBAN", query="SELECT c FROM Compte c where c.code = :code")
+})
 public class Compte {
 	@Id
 	private int code;
 	private double solde;
-	
+
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="compte")
 	private List<Operation> operations;
