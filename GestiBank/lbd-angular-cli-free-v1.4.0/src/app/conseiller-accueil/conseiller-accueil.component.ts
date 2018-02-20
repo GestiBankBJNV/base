@@ -50,6 +50,7 @@ export class ConseillerAccueilComponent implements OnInit {
                           .finally(() => this.isLoading = false);
       console.log("id du conseiller : "+c.id);
       console.log(this.demandes);
+      this.indexClient = c.id;
       this.nomDemande = c.nom;
       this.idSelectionne = c.id;
     }else{// on réinitialise les varaibles lors de la fermeture du tableau
@@ -80,7 +81,8 @@ export class ConseillerAccueilComponent implements OnInit {
     }
 
     this.notif.showNotificationMessage("top", "right", d.libelle +" envoyé", "success", 'pe-7s-magic-wand');
-
+    console.log("id du client ====>"+this.indexClient);
+    console.log("id de la demande ===> "+d.id);
   }
 
   //fermeture d'une demande sans la supprimer 

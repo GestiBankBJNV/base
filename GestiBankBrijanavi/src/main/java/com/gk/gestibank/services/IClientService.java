@@ -15,5 +15,6 @@ public interface IClientService {
 	public List<DemandeClient> getDemandeClientById(int id);
 	public Client getClientById(int id);
 	public List<Client> getClientByNameOrId(String recherche);
+	public void UpdateDemandeByClientId(int idclient, int iddemande);
 	
 }

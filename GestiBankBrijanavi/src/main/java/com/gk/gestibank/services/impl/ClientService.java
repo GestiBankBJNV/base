@@ -58,4 +58,12 @@ public class ClientService implements IClientService {
 		return clientDao.getDemandeByClientId(id);
 	}
 
+
+	public void UpdateDemandeByClientId(int idclient, int iddemande) {
+		// a faire clientDao.up
+		
+	}
+	
+	
+
 }

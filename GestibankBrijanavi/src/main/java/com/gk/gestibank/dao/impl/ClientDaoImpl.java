@@ -76,6 +76,11 @@ public class ClientDaoImpl implements ClientDao {
 	public List<DemandeClient> getDemandeByClientId(int id) {
 		return clients.get(id).getDemandes();
 	}
+
+	public void UpdateDemandeByClientId(int idclient, int iddemande) {
+		//a faire
+		
+	}
 	
 	
 }
