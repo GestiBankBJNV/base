@@ -46,6 +46,7 @@ public class WSNotification {
 	 * Supprimer une notification
 	 */
 	@DELETE
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{notificationId}")
 	public boolean delete(@PathParam("notificationId") int notificationId){
 		dbgLog("Delete");
