@@ -7,25 +7,25 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class CompteService{
-	private apiUrl = "http://localhost:8080/GestiBankBrijanavi/";
+	private apiUrl = "http://localhost:8080/GestiBankBrijanavi/comptes";
 
 	constructor(private http : Http) {}
 
 	//Renvoie une liste de taux de conversion. base = EUR par défaut
 	getComptesByClient(clientID : string) : Observable<Compte[]>{
-		return this.http.get(this.apiUrl + "comptes/" + clientID)
+		return this.http.get(this.apiUrl + "/client/" + clientID)
 		.map((res : Response) => res.json())
 		.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}
 
 	getCompteByID(compteID : number) : Observable<Compte> {
-		return this.http.get(this.apiUrl + "compte/" + compteID)
+		return this.http.get(this.apiUrl + "/" + compteID)
 		.map((res : Response) => res.json())
 		.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}
 
-	getCompteOperations(compteID : number) : Observable<Operation>{
-		return this.http.get(this.apiUrl + "operations/" + compteID)
+	getCompteOperations(compteId : number) : Observable<Operation[]>{
+		return this.http.get(this.apiUrl + "/operations/" + compteId)
 		.map((res : Response) => res.json())
 		.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}

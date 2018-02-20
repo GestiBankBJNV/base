@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="com.gk.gestibank.service.conseiller.GestionnaireConseiller"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-<fullyQualifiedTypeName name="com.gk.gestibank.model.Conseiller"/>
 <fullyQualifiedTypeName name="com.gk.gestibank.service.conseiller.ConseillerService"/>
 <fullyQualifiedTypeName name="javax.websocket.server.PathParam"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
@@ -22,8 +21,8 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.apache.jasper.tagplugins.jstl.core.ForEach"/>
-<fullyQualifiedTypeName name="com.gk.gestibank.model.Client"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
@@ -34,4 +33,13 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.gk.gestibank.model.DemandeClient"/>
+=======
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.model.Client"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.model.Bouchons"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.model.Conseiller"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+>>>>>>> master
 </qualifiedTypeNameHistroy>

@@ -37,6 +37,7 @@
 			    </div>
 
 				<!-- ============== Bouton de filtrage ============== -->
+				<!-- https://github.com/danrevah/ngx-pipes -->
 				<div class="content">
 					<div class="dropdown">
 						<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
@@ -44,13 +45,13 @@
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" role="menu">
-							<li role="presentation"><a role="menuitem" tabindex="-1" (click)='getDemandes()'>Toutes les demandes</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('id', undefined)">Toutes les demandes</a></li>
 							<li role="presentation" class="divider"></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1"  (click)="filtrerDemandes('nonAffectee')">Demandes non affectées</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('affectee')">Demandes affectées</a></li>			
+							<li role="presentation"><a role="menuitem" tabindex="-1"  (click)="filtrerDemandes('statut', 'non affectée')">Demandes non affectées</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('dateAffectation', undefined)">Demandes affectées</a></li>			
 							<li role="presentation" class="divider"></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('enCours')">En cours</a></li>
-							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('traitee')">Traitée</a></li>				
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('statut', 'en cours')">En cours</a></li>
+							<li role="presentation"><a role="menuitem" tabindex="-1" (click)="filtrerDemandes('statut', 'traitée')">Traitée</a></li>				
 						</ul>
 					</div>										
 				</div>
@@ -71,11 +72,11 @@
 		                </thead>
 		                <!-- Contenu des lignes récupéré depuis une liste de demandes -->
 		              	<tbody>
-		                  	<tr *ngFor="let demande of demandes | async">
+		                  	<tr *ngFor="let demande of demandes | async | orderBy: orderColumn | filterBy: filtre: filterArg"> <!-- todo : filtres et tri -->
 		                  		<td class="text-right">{{ demande.id }}</td>
 		                      	<td>{{ demande.coordonnees.prenom }}</td>
 		                      	<td>{{ demande.coordonnees.nom }}</td>							                      
-		                      	<td>{{ demande.date | date:'dd/MM/yyyy'}}</td>
+		                      	<td>{{ demande.dateInscription | date:'dd/MM/yyyy'}}</td>
 		                      	<td>{{ demande.dateAffectation | date:'dd/MM/yyyy'}}</td>
 		                      	<td>{{ demande.statut }}</td>
 		                      	<!-- bouton pour affecter la demande à un conseiller -->
@@ -95,7 +96,7 @@
 			<div *ngIf="(affecter)" id="association">
 				<!-- ============== Titre de la section pour indiquer la demande sélectionnée ============== -->
 				<div class="header">
-					<h4>Associer la demande n° {{ selectedDemande.id }} du {{ selectedDemande.date | date:'dd/MM/yyyy' }} ({{ selectedDemande.libelle }}) au conseiller : </h4> <!-- todo : traduction... -->
+					<h4>{{'admin_affectations_association_header1' | translate }} {{ selectedDemande.id }} ({{ selectedDemande.dateInscription | date:'dd/MM/yyyy' }}) {{'au_conseiller' | translate }} : </h4>
 				</div>
 
 				<!-- ============== Input pour rechercher un conseiller auquel affecter la demande ============== -->

@@ -93,6 +93,7 @@
 	"loading" : "Chargement...",
 	"valider" : "Valider",
 	"affecter" : "Affecter",
+	"login" : "Connexion",
 	"logout" : "Déconnexion",
 	"nomUtilisateur" : "Nom d'utilisateur",
 	"mdp" : "Mot de passe",
@@ -105,5 +106,7 @@
 	"admin_affectation_erreur_no_conseiller" : "Erreur : veuillez entrer un conseiller",
 	"admin_affectation_notif_demande_affectee" : "Demande affectée au conseiller : ",
 	"public_devises_title" : "Conversion de devises",
-	"navbar_notification_title" : "Nouvelles notifications."
+	"navbar_notification_title" : "Nouvelles notifications.",
+	"admin_affectations_association_header1" : "Associer la demande n°",
+	"au_conseiller" : "au conseiller"
 }

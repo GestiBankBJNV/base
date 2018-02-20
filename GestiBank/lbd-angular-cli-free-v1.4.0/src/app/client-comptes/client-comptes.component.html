@@ -16,8 +16,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let compte of client.comptes" (click)="selectCompte(compte)">
-						<td>{{ compte.iban }}</td><td>{{ compte.type | translate }}</td><td>{{ compte.solde | number: '.1-2' : 'fr' }} €</td>
+					<tr *ngFor="let compte of accounts" (click)="selectCompte(compte)">
+						<td>{{ compte.code }}</td><td>{{ compte.type | translate }}</td><td>{{ compte.solde | number: '.1-2' : 'fr' }} €</td>
 					</tr>
 				</tbody>
 			</table>
@@ -29,9 +29,9 @@
 		<div class="header">
 			<div class="row">
 				<!-- "Compte n° xxxxx" -->
-				<h4 class="title col-md-3">{{ 'client_account_account' | translate }} N° {{ selectedCompte.iban }}</h4>
+				<h4 class="title col-md-3">{{ 'client_account_account' | translate }} N° {{ selectedCompte.code }}</h4>
 				<!-- "Compte (type) - Dernières opérations" -->
-				<span class="category col-md-3">{{ 'client_account_account' | translate }} {{ selectedCompte.type | translate }} - {{ 'client_account_lastOp' | translate }}</span>
+				<span class="category col-md-6">{{ 'client_account_account' | translate }} {{ selectedCompte.type | translate }} - {{ 'client_account_lastOp' | translate }}</span>
 				<hr/>
 			</div>
 		</div>
@@ -54,14 +54,14 @@
                 <div class="form-group">
                     <label>{{ 'client_account_opFrom' | translate }} :</label>
                     <!--(passer la date dans ngModel provoque des problèmes de formatage)-->
-					<input type="date" #startDate class="form-control" value='{{ selectedCompte.operations[0].date | date : "yyyy-MM-dd"}}' (change)="refreshStart(startDate.value)"/>
+					<input type="date" #startDate class="form-control" value='{{ operations[0].dateOperation | date : "yyyy-MM-dd"}}' (change)="refreshStart(startDate.value)"/>
                 </div>
             </div>
 			<!--Selection date - fin -->
             <div class="col-md-3">
                 <div class="form-group">
                     <label>{{ 'client_account_opTo' | translate }} :</label>
-					<input type="date" #endDate class="form-control" value='{{ selectedCompte.operations[selectedCompte.operations.length - 1].date | date : "yyyy-MM-dd" }}' (change)="refreshEnd(endDate.value)"/>
+					<input type="date" #endDate class="form-control" value='{{ operations[operations.length - 1].dateOperation | date : "yyyy-MM-dd" }}' (change)="refreshEnd(endDate.value)"/>
 				</div>
             </div>
             
@@ -95,13 +95,13 @@
 				<!-- Liste des opérations -->
 				<tbody>
 					<tr *ngFor="let operation of displayedOperations; let i = index">
-						<td>{{ operation.type | translate }}</td><td>{{ operation.libelle }}</td><td>{{ operation.montant }} €</td><td>{{ operation.date | date : "dd/MM/yyyy hh:mm" }}</td><td class="{{ operation.type }}">{{ displayedAmounts[i] |  number:'.1-2' : 'fr' }}€</td>
+						<td>{{ operation.type | translate }}</td><td>{{ operation.libelle }}</td><td>{{ operation.montant }} €</td><td>{{ operation.dateOperation | date : "dd/MM/yyyy hh:mm" }}</td><td class="{{ operation.type }}">{{ displayedAmounts[i] |  number:'.1-2' : 'fr' }}€</td>
 					</tr>
 				</tbody>
 			</table>
 			<!-- Pagination (voir composant client-pagination) -->
 			<div class="row">
-				<app-client-pagination class="col-md-offset-3 col-md-6" (goPrev)='prevPage()' (goNext)='nextPage()' (goPage)='goPage($event)' [page]='currentPage + 1' [count]='selectedCompte.operations.length' [perPage]='displayedCount' [pagesToShow]='5'></app-client-pagination>
+				<app-client-pagination class="col-md-offset-3 col-md-6" (goPrev)='prevPage()' (goNext)='nextPage()' (goPage)='goPage($event)' [page]='currentPage + 1' [count]='operations.length' [perPage]='displayedCount' [pagesToShow]='5'></app-client-pagination>
 			</div>
 		</div>
 

@@ -1,6 +1,3 @@
-// TODO : mettre à jour les classes avec diagramme de classe
-// Pourquoi dans java on a : EspaceAdmin, Espace... , Guest ?
-// Je n'ai pas mis de méthodes dans les classes car ce n'est pas vraiment utile en typescript (et il va falloir tout refaire en java de toute façon...)
 /* *********** Classes *********** */
 
 export class Utilisateur {  // ajouter password (dans java)
@@ -10,8 +7,8 @@ export class Utilisateur {  // ajouter password (dans java)
   nomUtilisateur: string; // à changer dans java
   password: string;
   email: string;  
-  numTel: String;
-  statut: String;
+  numTel: string;
+  statut: string;
 }
 
 export class Conseiller extends Utilisateur {
@@ -37,6 +34,7 @@ export class Compte {
   solde: number;
   operations: Operation[];
   decouvert: number;
+  type: string;
 }
 
 export class CompteEpargne extends Compte {
@@ -45,6 +43,7 @@ export class CompteEpargne extends Compte {
 
 export class Operation {
   numero: number;
+  libelle : string;
   dateOperation: Date;
   montant: number;
   type: string;
@@ -52,7 +51,7 @@ export class Operation {
 
 export class DemandeInscription { // = Inscription dans java (à modifier)
   id: number;
-  date: Date = new Date();
+  dateInscription: Date;
   dateAffectation: Date;
   statut: string = "en cours";
   libelle: string;
@@ -82,7 +81,7 @@ export class Notification {
   date: Date;
   message: string;
   type: string;
-  //isRead : boolean;//A rajouter dans Java
+  read : boolean;//A rajouter dans Java
 }
 
 /* *********** Variables *********** */
@@ -107,7 +106,7 @@ export function showNotification(from, align, message, typeMessage, logo){
 }
 
 /* *********** Instances *********** */
-export const clients: Client[] = [ // todo : rajouter des comptes
+export const clients: Client[] = [ 
   {
     id: 1,    
     prenom: 'Antoine',
@@ -225,7 +224,7 @@ export const clients: Client[] = [ // todo : rajouter des comptes
 export const demandesInscription: DemandeInscription[] = [
   {
     id: 1,
-    date: new Date(2018,0,15),
+    dateInscription: new Date(2018,0,15),
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
@@ -233,7 +232,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 2,
-    date: new Date(2017,11,5),
+    dateInscription: new Date(2017,11,5),
     dateAffectation: new Date(2017,6,12),
     statut: 'traitée',
     libelle: "inscription",
@@ -241,7 +240,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 3,
-    date: new Date(2018,0,7),
+    dateInscription: new Date(2018,0,7),
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
@@ -249,7 +248,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 4,
-    date: new Date(2018,0,9),
+    dateInscription: new Date(2018,0,9),
     dateAffectation: new Date(2018,0,11),
     statut: 'en cours',
     libelle: "inscription",
@@ -257,7 +256,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 5,
-    date: new Date(2018,0,13),
+    dateInscription: new Date(2018,0,13),
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",
@@ -265,7 +264,7 @@ export const demandesInscription: DemandeInscription[] = [
   },
   {
     id: 6,
-    date: new Date(2018,0,10),
+    dateInscription: new Date(2018,0,10),
     dateAffectation: undefined,
     statut: '',
     libelle: "inscription",

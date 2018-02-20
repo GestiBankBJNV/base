@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
@@ -14,6 +14,9 @@ import { Conseiller, conseillers, Client, DemandeInscription } from './data-mode
 export class ConseillerService { 
 
   delayMs = 500;
+
+  headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
+  options = new RequestOptions({ headers: this.headers });
 
   constructor(private http : Http) {}
 
@@ -30,13 +33,13 @@ export class ConseillerService {
   }
 
   updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
-    return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller)
+    return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller, this.options)
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   addConseiller(conseiller: Conseiller) {
-    return this.http.post("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller)
+    return this.http.post("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller, this.options)
     .catch((error : any) => Observable.throw(error.json().error || 'Error'))
     .subscribe();
   }
@@ -46,12 +49,6 @@ export class ConseillerService {
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'))
     .subscribe();
-  }
-
-  getDemandesInscriptionFromConseiller(matricule: string): Observable<DemandeInscription[]> {
-    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule +"/inscriptions")
-    .map((res : Response) => res.json())
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   getListeClientsFromConseiller(matricule : string): Observable<Client[]>{
@@ -66,20 +63,34 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  deleteClient(idClient: number, matricule: string){
-    return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/clients/" + idClient)
+  deleteClient(idClient: number){
+    return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/clients/" + idClient)
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'))
     .subscribe();
   }
 
+<<<<<<< HEAD
   
   // todo ?
   getClientFromConseiller(conseiller: Conseiller){
+=======
+  getDemandesInscriptionFromConseiller(matricule: string){
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/inscriptions")
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+>>>>>>> master
   }
 
-  
+ /*getDemandesInscriptionFromConseiller(id: string){
 
+    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
+
+    let demandes: DemandeInscription[] = conseiller.demandesInscription;
+
+    return demandes;
+
+  }*/
 
   /* ***************** Ancien Code ***************** */
   // Fake server get; assume nothing can go wrong
@@ -111,7 +122,7 @@ export class ConseillerService {
   }*/
 
   /*addConseiller(conseiller: Conseiller) {
-    // TODO : changer matricule
+    // changer matricule
     conseiller.matricule = ((conseiller.dateDebutContrat.getMonth() + 1) < 10 ? 
                                 "0" + (conseiller.dateDebutContrat.getMonth() + 1) : (conseiller.dateDebutContrat.getMonth() + 1))
                             + (Math.random()*1000).toFixed(0)
@@ -122,16 +133,6 @@ export class ConseillerService {
 
   /*deleteConseiller(conseiller: Conseiller) {
     conseillers.splice(conseillers.indexOf(conseiller), 1);
-  }*/
-
-  /*getListDemandeInscriptionByConseiller(id: string){
-
-    let conseiller: Conseiller = this.getConseillersByIdSimple(id);
-
-    let demandes: DemandeInscription[] = conseiller.demandesInscription;
-
-    return demandes;
-
   }*/
 
   /*getConseillersByIdSimple(id: string): Conseiller{
