@@ -4,18 +4,26 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ClientDao;
 import com.gk.gestibank.dao.NotificationDao;
+import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Notification;
 
 @Repository
 public class NotificationDaoImpl implements NotificationDao {
 	
 	@Autowired
-	ClientDao clientDao;	
+	ClientDao clientDao;
+	
+	@PersistenceContext
+	EntityManager em;
 	
 	public NotificationDaoImpl(){}	
 	
@@ -35,16 +43,17 @@ public class NotificationDaoImpl implements NotificationDao {
 		//return clientDao.getClientById(clientId).getNotifications();		
 	}
 	
-	
-	public boolean delete(int notificationId){
-		//TODO
-		return true;
+	@Transactional
+	public void delete(int notificationId){
+		Notification n = em.find(Notification.class, notificationId);
+		em.remove(n);
 	}
 	
-	
-	public boolean addToClient(int clientId, Notification notification){
-		//TODO
-		return true;
+	@Transactional
+	public void addToClient(int clientId, Notification notification){
+		Client c = clientDao.getClientById(clientId);
+		c.addNotification(notification);
+		em.persist(c);
 	}
 
 	

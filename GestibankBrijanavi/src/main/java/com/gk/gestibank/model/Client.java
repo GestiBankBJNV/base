@@ -136,6 +136,10 @@ public class Client extends Utilisateur {
 	public boolean equals(Object obj) {
 		return super.equals(obj);
 	}
+	
+	public void addNotification(Notification notification){
+		this.notifications.add(notification);
+	}
 
 	@Override
 	public String toString() {

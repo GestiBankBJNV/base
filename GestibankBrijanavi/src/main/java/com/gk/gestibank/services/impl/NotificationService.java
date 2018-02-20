@@ -25,13 +25,13 @@ public class NotificationService implements INotificationService {
 	}
 
 	
-	public boolean delete(int notificationId){
-		return notificationDao.delete(notificationId);
+	public void delete(int notificationId){
+		notificationDao.delete(notificationId);
 	}
 	
 	
-	public boolean addToClient(int clientId, Notification notification){
-		return notificationDao.addToClient(clientId, notification);		
+	public void addToClient(int clientId, Notification notification){
+		notificationDao.addToClient(clientId, notification);		
 	}
 	
 	

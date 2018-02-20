@@ -45,11 +45,11 @@ public class WSNotification {
 	/**
 	 * Supprimer une notification
 	 */
-	@DELETE
+	@DELETE	
 	@Path("/{notificationId}")
-	public boolean delete(@PathParam("notificationId") int notificationId){
+	public void delete(@PathParam("notificationId") int notificationId){
 		dbgLog("Delete");
-		return notificationService.delete(notificationId);
+		notificationService.delete(notificationId);
 	}
 	
 	/**
@@ -60,9 +60,9 @@ public class WSNotification {
 	@POST
 	@Path("/{clientId}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public boolean addToClient(@PathParam("clientId") int clientId, Notification notification){
+	public void addToClient(@PathParam("clientId") int clientId, Notification notification){
 		dbgLog("Add to client");
-		return notificationService.addToClient(clientId, notification);
+		notificationService.addToClient(clientId, notification);
 	}
 	
 	/**
