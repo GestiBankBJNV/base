@@ -39,6 +39,7 @@ public class Bouchons {
 		cl4.setPrenom("Monique");
 		cl4.setEmail("monique@email.com");
 		cl4.setId(4);
+		cl4.setDemandes(new ArrayList<DemandeClient>());
 		
 		clients.add(cl);		
 		clients.add(cl4);		
