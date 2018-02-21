@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../../sidebar/sidebar.component';
+import { Router } from '@angular/router';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { NotificationService } from '../../notification-service';
 import {ClientService} from '../../client-service';
@@ -27,19 +28,19 @@ export class NavbarComponent implements OnInit{
 
 
 
-    constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService, private clientService : ClientService) {      
+    constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService, private clientService : ClientService, private router : Router) {      
       this.location = location;
           this.sidebarVisible = false;
     }
 
     ngOnInit(){
       let user : Utilisateur = JSON.parse(localStorage.getItem('loggedUser'));
-      this.clientID = user.id;
-      //this.refreshNotifications();
-      if (this.clientID >= 0){
+      if (user){
+        this.clientID = user.id;
         this.clientService.getClientById(this.clientID).subscribe(client => { this.client = client });
+        this.refreshNotifications();
       }
-      this.refreshNotifications();
+      //this.refreshNotifications();
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
@@ -103,9 +104,13 @@ export class NavbarComponent implements OnInit{
 
     refreshNotifications(){
       this.notifications = [];
-      this.notificationService.getNotificationsByClient(1).subscribe(notifications => {  
+      this.notificationService.getNotificationsByClient(this.clientID).subscribe(notifications => {  
         this.notifications = notifications.filter(notif => !notif.toggled);
       });
     }
-    
+
+    logout(){
+      localStorage.removeItem('loggedUser');
+      this.router.navigate(['public_connexion']);
+    }
 }
