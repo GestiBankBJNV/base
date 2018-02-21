@@ -4,12 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-
-
-
-
 import javax.persistence.Query;
+
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -28,6 +24,7 @@ import com.gk.gestibank.model.Compte;
 import com.gk.gestibank.model.CompteEpargne;
 import com.gk.gestibank.model.Notification;
 import com.gk.gestibank.model.Operation;
+import com.gk.gestibank.services.ICompteService;
 import com.gk.gestibank.services.impl.CompteService;
 
 
@@ -38,7 +35,7 @@ public class WSCompte {
 	
 	//Service
 	@Autowired
-	CompteService compteService;
+	ICompteService compteService;
 	
 	//Constructeur
 	public WSCompte(){}
@@ -69,12 +66,6 @@ public class WSCompte {
 	public List<Operation> getOperationsByCompte(@PathParam("compteId") int compteId){
 		dbgLog("Get operations by compte " + compteId);
 		return compteService.getOperationsByCompte(compteId);
-	}
-	
-	@GET
-	@Path("/createDummy")
-	public void createDummyAccount(){
-		dbgLog("Create dummy Account");
 	}
 	
 	

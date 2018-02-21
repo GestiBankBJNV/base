@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let client of clients | async" (click)="voirDemande(client, clients.indexOf(client))">
+      <tr *ngFor="let client of clients | async" (click)="voirDemande(client)">
       	<td>{{client.prenom}}</td>
       	<td>{{client.nom}}</td>
       	<td>{{client.email}}</td>
@@ -37,10 +37,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let demande of demandes">
+      <tr *ngFor="let demande of demandes | async">
         <td>{{demande.date | date:'dd/MM/yyyy'}}</td>
         <td>{{demande.dateAffectation | date:'dd/MM/yyyy'}}</td>
-        <td>{{demande.status}}</td>
+        <td>{{demande.statut}}</td>
         <td>{{demande.libelle}}</td>
         <td>
             <button type="button" class="btn btn-success" (click)="demandeTraite(demande)">Envoyer</button>

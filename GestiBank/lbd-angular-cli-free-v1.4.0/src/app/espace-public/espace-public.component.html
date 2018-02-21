@@ -1,5 +1,28 @@
 <div class="main-content" >
-	<p>
-	  espace-public works!
-	</p>
+
+	<div class="container justify-content-md-center">
+		<div class="row">
+	        <div class="col-md-10">
+				<div class="card">						        	
+				    <h1>Bienvenue sur GestiBank !</h1>
+				    <h2>Choisissez une option dans le menu ou inscrivez-vous pour accéder à vos comptes</h2>
+					<button class="btn btn-primary btn-lg" (click)="inscription=true">Inscription</button>
+				<div>
+			</div>
+		</div>
+	</div>
+		
+	
+	<div *ngIf="inscription">			
+		<public-fiche-inscription (onCreate)="onCreate($event)"></public-fiche-inscription>
+	</div>
+
+	<div class="container">
+		<div class="row justify-content-md-center">
+	        <div class="col-md-10 hidden-sm hidden-xs">	
+				<img src="./assets/img/money-reveil.jpg"></div>
+			</div>
+		</div>
+	</div>
+
 </div>

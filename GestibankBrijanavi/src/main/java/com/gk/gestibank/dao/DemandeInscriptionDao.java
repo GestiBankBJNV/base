@@ -8,4 +8,5 @@ public interface DemandeInscriptionDao {
 	List<DemandeInscription> getDemandesInscription();
 	DemandeInscription getDemandeInscrById(int id);
 	void updateDemandeInscription(DemandeInscription demandeInscr);
+	void addDemandeInscription(DemandeInscription demandeInscr);
 }

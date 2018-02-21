@@ -2,6 +2,7 @@ package com.gk.gestibank.model;
 import java.io.Serializable;
 import java.util.Date;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,10 @@ import org.springframework.stereotype.Component;
 
 @Produces("application/json")
 @Entity
+
+
 public class DemandeClient implements Serializable{
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

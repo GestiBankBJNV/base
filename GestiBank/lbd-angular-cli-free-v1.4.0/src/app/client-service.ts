@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Client, clients } from './data-model';
+import { Client, clients, DemandeClient } from './data-model';
 
 @Injectable()
 export class ClientService {
@@ -29,6 +29,13 @@ export class ClientService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
+  UpdateDemandeByClientId(idclient: number, demande: DemandeClient){
+    return this.http.put("http://localhost:8080/GestiBankBrijanavi/clients/"+ idclient + "/demande/", demande )
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Error'))
+    .subscribe();
+  }
+
   // Fake server update; assume nothing can go wrong
   updateClient(client: Client): Observable<Client>  {
   	/*console.log('updateConseiller()');*/
@@ -37,6 +44,13 @@ export class ClientService {
     return of(newClient).delay(this.delayMs); // simulate latency with delay
   }
 
+
+  getAllDemandeClientById(idClient: number): Observable<DemandeClient[]>{
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/clients/"+idClient+"/demandes")
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Error'));
+  }
+  
   getClientById(clientId : number) : Observable<Client>{
      return this.http.get("http://localhost:8080/GestiBankBrijanavi/clients/id/" + clientId)
     .map((res : Response) => res.json())

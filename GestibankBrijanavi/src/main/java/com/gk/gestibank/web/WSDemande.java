@@ -19,16 +19,20 @@ import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Compte;
 import com.gk.gestibank.model.DemandeClient;
 import com.gk.gestibank.model.DemandeInscription;
+
+import com.gk.gestibank.services.IDemandeService;
+
 import com.gk.gestibank.model.DemandeModif;
 import com.gk.gestibank.model.Notification;
 import com.gk.gestibank.services.impl.DemandeService;
+
 
 @RestController
 @Path("/demandes")
 public class WSDemande {
 	
 	@Autowired
-	DemandeService demandeService;
+	IDemandeService demandeService;
 
 	@GET
 	@Path("/inscriptions")
@@ -52,6 +56,13 @@ public class WSDemande {
 	public void updateDemandeInscription(DemandeInscription demandeInscr) {
 		dbgLog("Update inscription");
 		demandeService.updateDemandeInscription(demandeInscr);
+	}
+	
+	@POST
+	@Path("/inscriptions")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void addDemandeInscription(DemandeInscription demandeInscr) {
+		demandeService.addDemandeInscription(demandeInscr);
 	}
 	
 	@POST

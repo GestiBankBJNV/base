@@ -33,6 +33,7 @@ export class NavbarComponent implements OnInit{
     }
 
     ngOnInit(){
+      //this.refreshNotifications();
       if (this.clientID >= 0){
         this.clientService.getClientById(this.clientID).subscribe(client => { this.client = client });
       }

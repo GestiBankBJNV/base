@@ -1,4 +1,5 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Produces("application/json")
 @Entity
-public class DemandeModif extends DemandeClient {
+public class DemandeModif extends DemandeClient implements Serializable {
 	
 
 	private Client coordonnees;

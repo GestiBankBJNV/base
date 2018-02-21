@@ -1,0 +1,103 @@
+
+<div class="row">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="header">
+                <h3 class="title">{{ 'Formulaire d\'inscription' | translate }}</h3>
+            </div>
+            <div class="content">
+                <form [formGroup] = "formulaire" (ngSubmit)="onSubmit()" novalidate>
+
+                    <div class="row">
+                                                
+                        <div class="col-md-7">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">{{ 'admin_fiche_conseiller_form_email' | translate }}</label>
+                                <input type="email" class="form-control" placeholder="email@exemple.com" formControlName="email" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'prenom' | translate }}</label>
+                                <input type="text" class="form-control" placeholder="{{ 'prenom' | translate }}" formControlName="prenom" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'nom' | translate }}</label>
+                                <input type="text" class="form-control" placeholder="{{ 'nom' | translate }}" formControlName="nom" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'tel' | translate }}</label>
+                                <input type="text" class="form-control" placeholder="0000000000" formControlName="numTel" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'nomUtilisateur' | translate }}</label>
+                                <input type="text" class="form-control" placeholder="{{ 'nomUtilisateur' | translate }}" formControlName="nomUtilisateur" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'mdp' | translate }}</label>
+                                <input type="text" class="form-control" placeholder="{{ 'mdp' | translate }}" formControlName="mdp" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'adresse' | translate }}</label> <!-- todo -->
+                                <input type="text" class="form-control" placeholder="{{ 'adresse' | translate }}" formControlName="adresse" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'Code Postal' | translate }}</label>
+                                <input type="text" class="form-control" placeholder="{{ '00000' | translate }}" formControlName="cp" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'ville' | translate }}</label>
+                                <input type="text" class="form-control" placeholder="ville" formControlName="ville" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'Situation matrimoniale' | translate }}</label>
+                                <input type="text" class="form-control" placeholder="{{ 'Célibataire' | translate }}" formControlName="situationMatrimoniale" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'Nombre d\'enfants' | translate }}</label>
+                                <input type="number" class="form-control" placeholder="{{ '0' | translate }}" formControlName="nbEnfants" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-info btn-fill pull-right">Valider</button>   <!-- todo : traduction -->                       
+                    <button type="reset" (click)="revert()" [disabled]="formulaire.pristine" class="btn btn-danger">{{ 'effacer' | translate }}</button> 
+                    
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

@@ -54,6 +54,7 @@ import { ConseillerService } from './conseiller-service'; /*****/
 import { ClientService } from './client-service'; /*****/
 import { DemandeService } from './demande-service';
 import { CompteService } from './compte-service';
+import { PublicFicheInscriptionComponent } from './public-fiche-inscription/public-fiche-inscription.component';
 
 //Fonctions utilisées par le module de traduction
 // AoT requires an exported function for factories
@@ -88,7 +89,8 @@ export function createTranslateLoader(http: HttpClient) {
     UserComponent,
     TablesComponent,
     TypographyComponent,
-    ClientPaginationComponent
+    ClientPaginationComponent,
+    PublicFicheInscriptionComponent
   ],
   imports: [
     AppRoutingModule,

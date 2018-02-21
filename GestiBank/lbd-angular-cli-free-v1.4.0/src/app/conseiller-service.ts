@@ -1,11 +1,13 @@
+
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/map';
 
-import { Conseiller, conseillers, Client, DemandeInscription } from './data-model';
+import { Conseiller, conseillers, Client, DemandeInscription, Utilisateur } from './data-model';
 
   /* ************************************** Ancien Code tout en bas !!! ************************************ */
 
@@ -19,35 +21,46 @@ export class ConseillerService {
 
   constructor(private http : Http) {}
 
+  getUtilisateur(nomUtilisateur: string, mdp: string) : Observable<Utilisateur>{
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/utilisateurs/"+ nomUtilisateur + "/"+ mdp)
+    .map((res: Response) => res.json())
+    .catch((error: any) =>Observable.throw(error.json().error || 'Error'));
+  }
+
   getConseillers() : Observable<Conseiller[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers")
-    .map((res : Response) => res.json())
+    .map(this.extractData)
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   getConseillersByNameOrMatricule(recherche : string): Observable<Conseiller[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + recherche)
-    .map((res : Response) => res.json())
+    .map(this.extractData)
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  updateConseiller(conseiller: Conseiller): Observable<Conseiller>  {
+  private extractData(res: Response) {
+    var data = res.json() || [];
+    data.forEach((d) => {
+      d.dateDebutContrat = new Date(d.dateDebutContrat);
+    });
+    return data;
+  }
+
+  updateConseiller(conseiller: Conseiller) { 
     return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller, this.options)
-    .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   addConseiller(conseiller: Conseiller) {
     return this.http.post("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller, this.options)
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
-    .subscribe();
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   deleteConseiller(matricule: string) {
     return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule, matricule)
     .map((res : Response) => res.json())
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
-    .subscribe();
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   getListeClientsFromConseiller(matricule : string): Observable<Client[]>{
@@ -65,13 +78,24 @@ export class ConseillerService {
   deleteClient(idClient: number){
     return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/clients/" + idClient)
     .map((res : Response) => res.json())
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
-    .subscribe();
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
+
+
+  
+  // todo ?
+  getClientFromConseiller(conseiller: Conseiller){}
 
   getDemandesInscriptionFromConseiller(matricule: string){
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/inscriptions")
     .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+
+  }
+
+  changerConseiller(client: Client, idConseiller: number){
+    console.log("changerConseiller");
+    return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers/" + idConseiller + "/clients", client, this.options) ///GestiBankBrijanavi/conseillers/3/clients
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicFicheInscriptionComponent } from '../public-fiche-inscription/public-fiche-inscription.component';
 
 @Component({
   selector: 'app-espace-public',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EspacePublicComponent implements OnInit {
 
-  constructor() { }
+	inscription = false;
 
-  ngOnInit() {
-  }
+  	constructor() { }
+
+  	ngOnInit() {
+  	}
+
+  	onCreate() {
+    	this.inscription = false;
+  	}
 
 }

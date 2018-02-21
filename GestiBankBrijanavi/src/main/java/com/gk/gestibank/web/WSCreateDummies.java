@@ -19,6 +19,7 @@ import com.gk.gestibank.model.CompteEpargne;
 import com.gk.gestibank.model.DemandeClient;
 import com.gk.gestibank.model.Notification;
 import com.gk.gestibank.model.Operation;
+import com.gk.gestibank.services.IClientService;
 import com.gk.gestibank.services.impl.ClientService;
 
 @RestController
@@ -26,7 +27,7 @@ import com.gk.gestibank.services.impl.ClientService;
 public class WSCreateDummies {
 
 	@Autowired
-	ClientService clientService;
+	IClientService clientService;
 
 
 	/**
@@ -152,7 +153,7 @@ public class WSCreateDummies {
 		notifications.add(createRandomNotification());
 
 		//Création du client
-		Client client = new Client((int)(Math.random() * 5), ((Math.random() > 0.5)? "Marié" : "Célibataire"), comptes, "10 Rue de Menin", "Lille","59000", demandes, notifications);
+		Client client = new Client((int)(Math.random() * 5), ((Math.random() > 0.5)? "Marié" : "Célibataire"), comptes, "10 Rue de Menin", "Lille","59000", demandes, notifications, true);
 
 		//Assignation du prenom
 		String prenom = getPrenom();		

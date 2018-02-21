@@ -3,14 +3,6 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
-
-
-
-
-
-
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,6 +22,7 @@ import org.springframework.stereotype.Component;
 	@NamedQuery(name="Compte.getByIBAN", query="SELECT c FROM Compte c where c.code = :code")
 })
 public class Compte implements Serializable{
+
 	@Id
 	private int code;
 	private double solde;

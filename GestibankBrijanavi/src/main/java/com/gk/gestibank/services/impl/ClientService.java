@@ -3,6 +3,8 @@ package com.gk.gestibank.services.impl;
 import java.util.List;
 import java.util.Set;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,24 +18,20 @@ public class ClientService implements IClientService {
 	
 	@Autowired
 	private ClientDao clientDao;
-
 	
-	public List<Client> getAll() {
-		
+	@Transactional
+	public List<Client> getAll() {		
 		return clientDao.getAll();
 	}
 
-	
+	@Transactional
 	public void createClient(Client client) {
 		clientDao.createClient(client);
 	}
-
 	
 	public void deleteClient(int id) {
 		clientDao.deleteClient(id);
-
 	}
-
 	
 	public void updateClient(Client client) {
 		clientDao.updateClient(client);
@@ -45,16 +43,30 @@ public class ClientService implements IClientService {
 		// ajouter la fonction de recherche des demande dans le ClientDao
 		return null;
 	}
-	
+
 	
 	public Client getClientById(int id){		
 		return clientDao.getClientById(id);
 	}
 
-	
 	public List<Client> getClientByNameOrId(String recherche) {
 		
 		return clientDao.getClientByNameOrId(recherche);
 	}
+
+
+	public List<DemandeClient> getDemandeClientById(int id) {
+		return clientDao.getDemandeByClientId(id);
+	}
+
+
+
+
+	public void UpdateDemandeByClientId(int idclient, int iddemande) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 
 }
