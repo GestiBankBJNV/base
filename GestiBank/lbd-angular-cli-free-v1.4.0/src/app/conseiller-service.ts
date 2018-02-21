@@ -69,7 +69,7 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));   
   }
 
-  getConseillerWithClient(idClient: number){
+  getConseillerWithClient(idClient: number) : Observable<Conseiller>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/client/" + idClient)
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));

@@ -2,9 +2,9 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { NotificationService } from '../../notification-service';
-import {Client} from '../../classes/client';
 import { CLIENT } from '../../classes/FAKES';
-import { Notification, Utilisateur } from '../../data-model';
+import { Notification, Utilisateur, Client } from '../../data-model';
+import {ClientService} from '../../client-service';
 
 
 
@@ -12,13 +12,15 @@ import { Notification, Utilisateur } from '../../data-model';
     // moduleId: module.id,
     selector: 'navbar-cmp',
     templateUrl: 'navbar.component.html',
-    providers: [NotificationService]
+    providers: [ClientService, NotificationService]
 })
 
 export class NavbarComponent implements OnInit{
 
     user : any = CLIENT;
     user2: Utilisateur = JSON.parse(localStorage.getItem("user"));
+    client : Client                       //Bouchon
+    clientID : number = 1;                //Bouchon
     private listTitles: any[];
     location: Location;
     private toggleButton: any;
@@ -28,7 +30,7 @@ export class NavbarComponent implements OnInit{
 
 
 
-    constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService) {      
+    constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService, private clientService : ClientService) {      
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -36,10 +38,15 @@ export class NavbarComponent implements OnInit{
     ngOnInit(){
       console.log(this.user2);
       //this.refreshNotifications();
+      if (this.clientID >= 0){
+        this.clientService.getClientById(this.clientID).subscribe(client => { this.client = client });
+      }
+      this.refreshNotifications();
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
     }
+
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const body = document.getElementsByTagName('body')[0];
@@ -50,12 +57,14 @@ export class NavbarComponent implements OnInit{
 
         this.sidebarVisible = true;
     };
+
     sidebarClose() {
         const body = document.getElementsByTagName('body')[0];
         this.toggleButton.classList.remove('toggled');
         this.sidebarVisible = false;
         body.classList.remove('nav-open');
     };
+
     sidebarToggle() {
         // const toggleButton = this.toggleButton;
         // const body = document.getElementsByTagName('body')[0];
@@ -69,9 +78,7 @@ export class NavbarComponent implements OnInit{
     //Retourne le préfixe de l'url en fonction du type d'utilisateur
     //On teste si les variables existent, pour déterminer le type d'user
     getPrefix(){
-      if (this.user.matricule){ return "conseiller";}
-      if (this.user.conseillers){ return "admin";}//trouver un meilleur test pour les admins
-      if (this.user.adresse){ return "client";}
+      if(this.client){ return this.client.statut; }      
       return "public";
     }
 
@@ -83,19 +90,10 @@ export class NavbarComponent implements OnInit{
     //FONCTIONS -- CLIENT
     //Compte des notifications non lues (Client)
     getUnreadNotificationCount()
-    {
-      //s
-      if (this.user.notifications){
-        return this.getUnreadNotifications().length;
-      }
-      return 0;     
+    {      
+      return this.notifications.length;   
     }
-
-    //retourne les notifications non lues(Client)
-    getUnreadNotifications() : Notification[] {
-      return this.user.notifications.filter(notif => !notif.isRead);
-    }
-
+   
     //Titre du bouton "notification"
     getNotificationButtonTitle(){
       var c = this.getUnreadNotificationCount();
@@ -108,7 +106,7 @@ export class NavbarComponent implements OnInit{
     refreshNotifications(){
       this.notifications = [];
       this.notificationService.getNotificationsByClient(1).subscribe(notifications => {  
-        this.notifications = notifications.filter(notif => !notif.read);
+        this.notifications = notifications.filter(notif => !notif.toggled);
       });
     }
     

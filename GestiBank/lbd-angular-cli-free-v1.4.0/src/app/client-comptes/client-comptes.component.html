@@ -41,7 +41,7 @@
             <div class="col-md-3">
                 <div class="form-group">
 					<!-- Commander un chèquier -->
-					<button class="btn btn-default form-control" (click)="validOrderCheck()">{{ (awaitingConfirm) ? ('client_account_confirm' | translate) : ('client_account_orderCheck' | translate) }}</button>
+					<button *ngIf='(selectedCompte.type == "account_type_current")' class="btn btn-default form-control" (click)="validOrderCheck()">{{ (awaitingConfirm) ? ('client_account_confirm' | translate) : ('client_account_orderCheck' | translate) }}</button>
 					<!--Effecture un virement -->
 					<button class="btn btn-default form-control" (click)="toggleTransfer()">{{ (transfer) ? ('client_account_checkOp' | translate) : ('client_account_doTransfer' | translate) }}</button>
 					<!--Imprimer-->

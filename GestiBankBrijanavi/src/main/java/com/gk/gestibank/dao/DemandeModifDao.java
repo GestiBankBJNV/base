@@ -1,5 +1,7 @@
 package com.gk.gestibank.dao;
 
-public interface DemandeModifDao {
+import com.gk.gestibank.model.DemandeModif;
 
+public interface DemandeModifDao {
+	void addToClient(int clientId, DemandeModif demandeModif);
 }

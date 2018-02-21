@@ -85,8 +85,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <div *ngIf='(client)'>
             <!--On affiche le nom et le prénom de la personne si elle est connectée -->
             <a class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">Bienvenue {{user2.prenom}}   {{user2.nom}} </a>
+                <a class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">{{ 'navbar_welcome' | translate }}{{ (!startsWith("public"))  ? " " + client.prenom + " " + client.nom : "" }}</a>
+            </div>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">

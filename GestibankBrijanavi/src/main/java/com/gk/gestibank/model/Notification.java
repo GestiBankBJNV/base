@@ -2,16 +2,13 @@ package com.gk.gestibank.model;
 import java.io.Serializable;
 import java.util.Date;
 
-
-
-
-
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.ws.rs.Produces;
@@ -21,6 +18,7 @@ import org.springframework.stereotype.Component;
 
 @Produces("application/json")
 @Entity
+@NamedQuery(name="Notification.delete", query="DELETE FROM Notification n where n.id = :id")
 public class Notification implements Serializable {
 
 	//Variables
@@ -28,11 +26,12 @@ public class Notification implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	private String message;
 	private String type;
 	private boolean toggled;//remplace IsRead (qui correspond à un mot clé sql, et qui pose soucis)
+	
 
 	//Constructeurs
 	public Notification() {
@@ -44,6 +43,7 @@ public class Notification implements Serializable {
 		this.date = date;
 		this.toggled = toggled;
 	}
+	
 	//GET/SETTERS
 	//Id
 	public int getId() {

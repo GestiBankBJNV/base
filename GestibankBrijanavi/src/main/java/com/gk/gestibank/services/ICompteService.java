@@ -8,6 +8,7 @@ import com.gk.gestibank.model.CompteEpargne;
 import com.gk.gestibank.model.Operation;
 
 public interface ICompteService {
-	List<Compte> getByClient(int clientId);
+	List<Compte> getCurrentByClient(int clientId);
+	List<CompteEpargne> getSavingByClient(int clientId);
 	List<Operation> getOperationsByCompte(int compteId);
 }

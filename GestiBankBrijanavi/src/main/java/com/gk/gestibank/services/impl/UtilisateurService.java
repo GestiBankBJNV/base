@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.gk.gestibank.dao.UtilisateurDao;
 import com.gk.gestibank.model.Utilisateur;
-import com.gk.gestibank.services.IUtilisateur;
+import com.gk.gestibank.services.IUtilisateurService;
 
 @Service
-public class UtilisateurService implements IUtilisateur {
+public class UtilisateurService implements IUtilisateurService {
 
 	@Autowired
 	UtilisateurDao utilisateurDao;

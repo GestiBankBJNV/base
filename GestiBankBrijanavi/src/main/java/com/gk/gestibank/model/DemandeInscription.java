@@ -22,7 +22,7 @@ public class DemandeInscription implements Serializable {
 	@OneToOne(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	private Client coordonnees;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateInscription;
 
 	@Temporal(TemporalType.DATE)

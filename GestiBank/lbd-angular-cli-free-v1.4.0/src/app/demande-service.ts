@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { DemandeInscription, demandesInscription } from './data-model';
+import { Conseiller, DemandeClient, DemandeModif, DemandeInscription, demandesInscription } from './data-model';
 
 /* ******** Gestion des demandes d'inscription ******** */
 
@@ -17,19 +17,33 @@ export class DemandeService {
 	headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
   	options = new RequestOptions({ headers: this.headers });
 
+    apiUrl : string = "http://localhost:8080/GestiBankBrijanavi/demandes";
+
 	constructor(private http : Http) {}
 
 	getDemandesInscription(): Observable<DemandeInscription[]> {
-  	return this.http.get("http://localhost:8080/GestiBankBrijanavi/demandes/inscriptions")
+  	return this.http.get(this.apiUrl + "/inscriptions")
   	.map((res : Response) => res.json())
   	.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}
 
 	updateDemandeInscription(demande: DemandeInscription) {
-    return this.http.put("http://localhost:8080/GestiBankBrijanavi/demandes/inscriptions", demande, this.options)
+    return this.http.put(this.apiUrl + "/inscriptions", demande, this.options)
   	.map((res : Response) => res.json())
   	.catch((error : any) => Observable.throw(error.json().error || 'Error'));
-	}	
+	}
+
+  sendDemandeClient(clientID : number, demande : DemandeClient){
+    return this.http.post(this.apiUrl + "/client/" + clientID, demande)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Server error'));
+  } 
+
+  sendDemandeModif(clientID : number, demande : DemandeModif) {
+    return this.http.post(this.apiUrl + "/modif/" + clientID, demande)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Server error'));
+  }  
 
 
   addDemandeInscription(demande: DemandeInscription){

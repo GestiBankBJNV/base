@@ -4,12 +4,15 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.stereotype.Component;
 
 @Entity
+@NamedQuery(name="Operation.delete", query="DELETE FROM Operation o WHERE o.numero = :numero")
 public class Operation implements Serializable {
 
 	@Id
@@ -17,7 +20,7 @@ public class Operation implements Serializable {
 	
 	private String libelle;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateOperation;
 	
 	private double montant;

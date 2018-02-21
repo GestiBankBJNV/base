@@ -27,7 +27,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Entity
-
 public class Conseiller extends Utilisateur implements Serializable {
 
 	private String matricule;

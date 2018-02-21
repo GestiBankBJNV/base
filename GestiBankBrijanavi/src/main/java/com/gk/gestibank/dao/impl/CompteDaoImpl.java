@@ -5,32 +5,43 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.CompteDao;
+import com.gk.gestibank.dao.OperationDao;
 import com.gk.gestibank.model.Compte;
 import com.gk.gestibank.model.CompteEpargne;
 import com.gk.gestibank.model.Operation;
 
 @Repository
 public class CompteDaoImpl implements CompteDao {
-
+	
+	@Autowired
+	OperationDao operationDao;
+	
+	@PersistenceContext
+	EntityManager em;
 
 	public List<Compte> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		Query q = em.createNamedQuery("Compte.getAll");
+		return (List<Compte>)q.getResultList();
 	}
 
-
+	@Transactional
 	public void createCompte(Compte compte) {
-		// TODO Auto-generated method stub
-
+		em.persist(compte);
 	}
 
 
 	public void deleteCompte(int code) {
-		// TODO Auto-generated method stub
-
+		Query q = em.createNamedQuery("Compte.delete").setParameter("code", code);
+		q.executeUpdate();
 	}
 
 
@@ -41,25 +52,24 @@ public class CompteDaoImpl implements CompteDao {
 
 
 	public List<Operation> getAllOperationsFromCompte(int code) {
-		// TODO Auto-generated method stub
-		return null;
+		return operationDao.getByCompte(code);
 	}
 
 
 	public Compte getCompteByCode(int code) {
-		// TODO Auto-generated method stub
-		return null;
+		Query q = em.createNamedQuery("Compte.getByIBAN").setParameter("code", code);
+		return (Compte)q.getSingleResult();
 	}
 
 
-	public List<Compte> getByClient(int clientId) {
-		List<Compte> l = new ArrayList<Compte>();
-		List<Operation> o = new ArrayList<Operation>();
-		l.add(new Compte(123456789,1500d, o, 1d));
-		l.add(new Compte(10111213,2500d, o, 1d));
-		l.add(new CompteEpargne(14151617,500d, o, 1d,4.5f));
-		l.add(new Compte(18192021,500d, o, 1d));
-		return l;
+	public List<Compte> getCurrentByClient(int clientId) {
+		Query q = em.createQuery("SELECT c FROM Compte c WHERE client = " + clientId);
+		return (List<Compte>)q.getResultList();
+	}
+	
+	public List<CompteEpargne> getSavingByClient(int clientId) {
+		Query q = em.createQuery("SELECT c FROM Compte c WHERE client = " + clientId);
+		return (List<CompteEpargne>)q.getResultList();
 	}
 
 }

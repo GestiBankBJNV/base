@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Client } from '../classes/client';
 import { Compte } from '../classes/compte';
 import { CLIENT } from '../classes/FAKES';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { CLIENT } from '../classes/FAKES';
 })
 export class ClientNotificationsComponent implements OnInit {
 
-	client : Client = CLIENT;
+	clientID : number = 1; //Bouchon
 
 	notifications : Notification[] = [];
 
@@ -30,22 +31,22 @@ export class ClientNotificationsComponent implements OnInit {
 	//Récupérer la liste des notifications
 	refreshNotifications() {
 		this.notifications = [];
-		let sub : Subscription = this.notificationService.getNotificationsByClient(1).subscribe(notifications => {	
+		let sub : Subscription = this.notificationService.getNotificationsByClient(this.clientID).subscribe(notifications => {	
 			this.notifications = notifications;
-			this.unreadNotifications = this.notifications.filter(notif => !notif.read).length;
+			this.unreadNotifications = this.notifications.filter(notif => !notif.toggled).length;
 		});
 	}
 
 	updateNotificationRead(notif : Notification){
-		if (!notif.read){
-			notif.read = true;		
-			this.notificationService.update(notif).subscribe();
-			this.unreadNotifications = this.notifications.filter(notif => !notif.read).length		
+		if (!notif.toggled){
+			notif.toggled = true;					
+			this.notificationService.update(this.clientID, notif).subscribe();
+			this.unreadNotifications = this.notifications.filter(notif => !notif.toggled).length		
 		}
 	}
 	
 	deleteNotification(notif : Notification){
-		this.notificationService.deleteNotification(notif).subscribe(res => { 
+		this.notificationService.deleteNotification(this.clientID, notif).subscribe(res => { 
 			this.refreshNotifications();
 		});		
 	}

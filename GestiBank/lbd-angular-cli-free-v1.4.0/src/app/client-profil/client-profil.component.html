@@ -53,8 +53,11 @@
                                 <!--Entreprise-->
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>{{'client_profile_company' | translate}} ({{'client_profile_optional' | translate}})</label>
-                                        <input type="text" class="form-control" formControlName="company"/>
+                                        <label>{{'client_profile_mat' | translate}} ({{'client_profile_optional' | translate}})</label>
+                                        <select class="btn dropdown-toggle form-control" formControlName="mat">
+                                            <option>{{ 'client_profile_single' | translate }}</option>
+                                            <option>{{ 'client_profile_married' | translate }}</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

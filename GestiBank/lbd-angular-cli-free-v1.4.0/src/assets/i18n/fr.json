@@ -46,9 +46,12 @@
 	"client_profile_firstName" : "Prénom",
 	"client_profile_lastName" : "Nom",
 	"client_profile_mail" : "Adresse email",
+	"client_profile_mat" : "Situation matrimoniale",
+	"client_profile_married" : "Marié",
 	"client_profile_title" : "Modifier mon profil",
 	"client_profile_optional" : "Facultatif",
 	"client_profile_phone" : "Téléphone",
+	"client_profile_single" : "Célibataire",
 	"client_profile_update" : "Mettre à jour",
 	"client_profile_username" : "Nom d'utilisateur",
 	"client_profile_zipcode" : "Code postal",
@@ -108,5 +111,6 @@
 	"public_devises_title" : "Conversion de devises",
 	"navbar_notification_title" : "Nouvelles notifications.",
 	"admin_affectations_association_header1" : "Associer la demande n°",
-	"au_conseiller" : "au conseiller"
+	"au_conseiller" : "au conseiller",
+	"navbar_welcome" : "Bienvenue"
 }
