@@ -8,4 +8,9 @@
 <fullyQualifiedTypeName name="com.gk.gestibank.services.IClientService"/>
 <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
 <fullyQualifiedTypeName name="com.gk.gestibank.model.DemandeInscription"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.model.Conseiller"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.dao.ClientDao"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.model.Client"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.services.ICompteService"/>
+<fullyQualifiedTypeName name="com.gk.gestibank.services.INotificationService"/>
 </qualifiedTypeNameHistroy>

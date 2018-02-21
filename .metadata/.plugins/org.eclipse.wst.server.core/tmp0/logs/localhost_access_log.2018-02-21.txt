@@ -280,3 +280,5 @@
 0:0:0:0:0:0:0:1 - - [21/Feb/2018:14:09:08 +0100] "GET /GestiBankBrijanavi/demandes/inscriptions HTTP/1.1" 200 1748
 0:0:0:0:0:0:0:1 - - [21/Feb/2018:14:09:23 +0100] "GET /GestiBankBrijanavi/demandes/inscriptions HTTP/1.1" 200 1748
 0:0:0:0:0:0:0:1 - - [21/Feb/2018:14:10:04 +0100] "GET /GestiBankBrijanavi/demandes/inscriptions HTTP/1.1" 200 1748
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:14:30:01 +0100] "GET /GestiBankBrijanavi/demandes/inscriptions HTTP/1.1" 200 1748
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:14:30:08 +0100] "GET /GestiBankBrijanavi/demandes/inscriptions HTTP/1.1" 200 1748
