@@ -96,11 +96,21 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	}
 
 	public List<Client> getClientsFromConseiller(String matricule) {
-		Conseiller c = getConseillerByMatricule(matricule);
-		if(c != null) {
-			return c.getClients();
-		}
-		return new ArrayList<Client>();
+//		Conseiller c = getConseillerByMatricule(matricule);
+//		if(c != null) {
+//			return c.getClients();
+//		}
+//		return new ArrayList<Client>();
+		Query query = em.createQuery("SELECT c.clients FROM Conseiller AS c WHERE c.matricule = :matricule");
+		query.setParameter("matricule", matricule);
+		return (List<Client>)query.getResultList();
+	}
+	
+
+	public List<Client> getClientsFromConseillerWithId(int id) {
+		Query query = em.createQuery("SELECT c.clients FROM Conseiller AS c WHERE c.id = :id");
+		query.setParameter("id", id);
+		return (List<Client>)query.getResultList();
 	}
 
 	public void addClientToConseiller(Client client, String matricule) {
@@ -115,12 +125,6 @@ public class ConseillerDaoImpl implements ConseillerDao {
 //		client.setId(idClient);
 //		clients.remove(client);
 //		getConseillerByMatricule(matricule).setClients(clients);
-		
-		
-		Query query = em.createQuery("DELETE Client as cl FROM Conseiller as c WHERE cl.id = :id AND c.matricule = :matricule ");
-		query.setParameter("id", idClient);
-		query.setParameter("matricule", matricule);
-		query.executeUpdate();
 	}
 
 	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule) {
@@ -134,10 +138,30 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		getConseillerByMatricule(matricule).setDemandesInscription(inscription);		
 	}
 
-	
-	public void changerConseiller(int idClient, int idConseiller) {
-		// TODO Auto-generated method stub
-		
+	public Conseiller getConseillerWithClient(int  clientid) {
+		//Query query = em.createQuery("SELECT c FROM Conseiller AS c WHERE :client MEMBER OF c.clients"); //todo : vérifier
+		//query.setParameter("client", client);
+		Query query = em.createQuery("SELECT distinct c FROM Conseiller AS c inner join c.clients cl where cl.id = :id"); //todo : vérifier		
+		query.setParameter("id", clientid);
+
+		return (Conseiller)query.getSingleResult();
 	}
+	
+	
+
+	public void updateClientsFromConseillerWithId(List<Client> clients, int idConseiller) {
+		System.out.println("update");
+		Query query = em.createQuery("UPDATE Conseiller AS c SET c.clients = :clients WHERE c.id=:idConseiller"); //todo : vérifier
+		query.setParameter("clients", clients);
+		query.setParameter("idConseiller", idConseiller);
+		query.executeUpdate();
+	}
+
+	public Conseiller getById(int cid) {
+		return em.find(Conseiller.class, cid);
+		// TODO Auto-generated method stub
+	}
+	
+	
 
 }

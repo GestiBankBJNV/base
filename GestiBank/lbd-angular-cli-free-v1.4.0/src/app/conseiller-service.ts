@@ -47,15 +47,13 @@ export class ConseillerService {
 
   addConseiller(conseiller: Conseiller) {
     return this.http.post("http://localhost:8080/GestiBankBrijanavi/conseillers", conseiller, this.options)
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
-    .subscribe();
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   deleteConseiller(matricule: string) {
     return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule, matricule)
     .map((res : Response) => res.json())
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
-    .subscribe();
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   getListeClientsFromConseiller(matricule : string): Observable<Client[]>{
@@ -73,8 +71,7 @@ export class ConseillerService {
   deleteClient(idClient: number){
     return this.http.delete("http://localhost:8080/GestiBankBrijanavi/conseillers/clients/" + idClient)
     .map((res : Response) => res.json())
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
-    .subscribe();
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   getDemandesInscriptionFromConseiller(matricule: string){
@@ -83,8 +80,9 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
-  changerConseiller(idClient: number, idConseiller: number){
-    return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers/" + idConseiller + "clients/" + idClient, "{}", this.options)
+  changerConseiller(client: Client, idConseiller: number){
+    console.log("changerConseiller");
+    return this.http.put("http://localhost:8080/GestiBankBrijanavi/conseillers/" + idConseiller + "/clients", client, this.options) ///GestiBankBrijanavi/conseillers/3/clients
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 

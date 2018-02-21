@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Notification;
+import com.gk.gestibank.services.INotificationService;
 import com.gk.gestibank.services.impl.NotificationService;
 
 @RestController
@@ -24,7 +25,7 @@ public class WSNotification {
 	
 	//Service
 	@Autowired
-	NotificationService notificationService;
+	INotificationService notificationService;
 	
 	//Constructeur
 	public WSNotification(){}

@@ -91,8 +91,9 @@ public class WSConseiller {
 	}
 	
 	@PUT
-	@Path("/{idConseiller}/clients/{idClient}")
-	public void changerConseiller(@PathParam("idClient") int idClient, @PathParam("idConseiller") int idConseiller){
-		conseillerService.changerConseiller(idClient, idConseiller);
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/{idConseiller}/clients")
+	public void changerConseiller(@PathParam("idConseiller") int idConseiller, Client client){
+		conseillerService.changerConseiller(client.getId(), idConseiller);
 	}
 }

@@ -72,7 +72,7 @@ export class PublicFicheInscriptionComponent implements OnInit {
      		coordonnees: this.client,
      	};
 
-	    this.demandeService.addDemandeInscription(demandeInscr);
+	    this.demandeService.addDemandeInscription(demandeInscr).subscribe();
 	    this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
 	    // Notifier la création
 	    this.notif.showNotificationMessage('top', 'right', 'Inscription enregistrée !', 'success', 'pe-7s-add-user');  

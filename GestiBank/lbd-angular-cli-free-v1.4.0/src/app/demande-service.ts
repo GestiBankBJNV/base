@@ -34,8 +34,7 @@ export class DemandeService {
 
   addDemandeInscription(demande: DemandeInscription){
     return this.http.post("http://localhost:8080/GestiBankBrijanavi/demandes/inscriptions", demande, this.options)
-    .catch((error : any) => Observable.throw(error.json().error || 'Error'))
-    .subscribe();
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
 

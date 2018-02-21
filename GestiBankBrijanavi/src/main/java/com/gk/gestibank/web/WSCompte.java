@@ -5,6 +5,7 @@ import java.util.List;
 
 
 
+
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -22,6 +23,7 @@ import com.gk.gestibank.model.Compte;
 import com.gk.gestibank.model.CompteEpargne;
 import com.gk.gestibank.model.Notification;
 import com.gk.gestibank.model.Operation;
+import com.gk.gestibank.services.ICompteService;
 import com.gk.gestibank.services.impl.CompteService;
 
 
@@ -31,7 +33,7 @@ public class WSCompte {
 	
 	//Service
 	@Autowired
-	CompteService compteService;
+	ICompteService compteService;
 	
 	//Constructeur
 	public WSCompte(){}
