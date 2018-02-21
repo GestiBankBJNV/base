@@ -18,7 +18,7 @@ export class NewInscriptionComponent implements OnInit {
 
   ngOnInit() {
 
-  	this.demandes = this.cs.getDemandesInscriptionFromConseiller("425A");
+  	//this.demandes = this.cs.get;
   }
 
   verifInscription(d: DemandeInscription){

@@ -13,7 +13,11 @@ import javax.persistence.UniqueConstraint;
 import org.springframework.stereotype.Component;
 
 @Entity
+<<<<<<< HEAD
 public class Utilisateur implements Serializable {
+=======
+public class Utilisateur implements Serializable{
+>>>>>>> Nassim
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
