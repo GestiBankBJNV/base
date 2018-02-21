@@ -14,6 +14,6 @@ public interface ClientDao {
 	public List<Client> getClientByNameOrId(String recherche);
 	public Client getClientById(int clientId);
 	public List<DemandeClient> getDemandeByClientId(int id);
-	public void UpdateDemandeByClientId(int idclient, int iddemande);
+	public void UpdateDemandeByClientId(int idclient, DemandeClient demande);
 
 }

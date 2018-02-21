@@ -1,6 +1,8 @@
 package com.gk.gestibank.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,7 @@ import javax.persistence.UniqueConstraint;
 import org.springframework.stereotype.Component;
 
 @Entity
-public class Utilisateur {
+public class Utilisateur implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

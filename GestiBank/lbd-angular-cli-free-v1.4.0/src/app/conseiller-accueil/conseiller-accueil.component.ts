@@ -56,7 +56,7 @@ export class ConseillerAccueilComponent implements OnInit {
     }else{// on réinitialise les varaibles lors de la fermeture du tableau
       this.isDetailDemande = false;  
       this.idSelectionne = null;
-      this.indexClient = null;
+      //this.indexClient = null;
       
     }
 
@@ -77,7 +77,7 @@ export class ConseillerAccueilComponent implements OnInit {
     if (this.demandes) {
       this.isDetailDemande = false;
       this.idSelectionne = null;
-      this.indexClient = null;
+      //this.indexClient = null;
     }
 
     this.notif.showNotificationMessage("top", "right", d.libelle +" envoyé", "success", 'pe-7s-magic-wand');

@@ -123,5 +123,6 @@ public class Bouchons {
 	public List<DemandeInscription> getDemInscriptions() {
 		return demInscriptions;
 	}
+	
 
 }

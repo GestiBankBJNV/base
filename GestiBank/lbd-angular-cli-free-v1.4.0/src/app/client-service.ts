@@ -12,6 +12,9 @@ export class ClientService {
 
 	delayMs = 500;
 
+  headers = new Headers({ 'Content-Type': 'application/json; charset=UTF-8' });
+  options = new RequestOptions({ headers: this.headers });
+
   constructor(private http : Http) {}
 
   getClients(): Observable<Client[]> {
@@ -24,6 +27,13 @@ export class ClientService {
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/clients/" + nom)
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+  }
+
+  UpdateDemandeByClientId(idclient: number, demande: DemandeClient){
+    return this.http.put("http://localhost:8080/GestiBankBrijanavi/clients/"+ idclient + "/demande/", demande )
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Error'))
+    .subscribe();
   }
 
   // Fake server update; assume nothing can go wrong

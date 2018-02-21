@@ -59,8 +59,10 @@ public class ClientService implements IClientService {
 	}
 
 
+
+
 	public void UpdateDemandeByClientId(int idclient, int iddemande) {
-		// a faire clientDao.up
+		// TODO Auto-generated method stub
 		
 	}
 	

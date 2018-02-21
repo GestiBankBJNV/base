@@ -51,8 +51,9 @@ public class WSClient {
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("client/{idclient}/demande/{iddemande}")
-	public void demandeTraiter(@PathParam("idclient")int idclient, @PathParam("iddemande")int iddemande){
+	@Path("client/{idclient}/demande")
+	public void UpdateDemandeByClientId(@PathParam("idclient")int idclient, @PathParam("iddemande")int iddemande){
 		//a faire clientService.up
+		clientService.UpdateDemandeByClientId(idclient, iddemande);
 	}
 }

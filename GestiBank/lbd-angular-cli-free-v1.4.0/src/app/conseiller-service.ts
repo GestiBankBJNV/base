@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Conseiller, conseillers, Client, DemandeInscription } from './data-model';
+import { Conseiller, conseillers, Client, DemandeInscription, Utilisateur } from './data-model';
 
   /* ************************************** Ancien Code tout en bas !!! ************************************ */
 
@@ -19,6 +19,12 @@ export class ConseillerService {
   options = new RequestOptions({ headers: this.headers });
 
   constructor(private http : Http) {}
+
+  getUtilisateur(nomUtilisateur: string, mdp: string) : Observable<Utilisateur>{
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/utilisateurs/"+ nomUtilisateur + "/"+ mdp)
+    .map((res: Response) => res.json())
+    .catch((error: any) =>Observable.throw(error.json().error || 'Error'));
+  }
 
   getConseillers() : Observable<Conseiller[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers")
