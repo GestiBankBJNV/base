@@ -120,12 +120,13 @@ public class WSCreateDummies {
 	}
 
 	//Récupérer un prénom aléatoire
-	private static String[] prenoms = {"Gaspard", "Balthazar", "Melchior", "Bertrand", "Thierry", "Richard"};
+	private static String[] prenoms = {"Jean", "Philippe", "Michel", "Alain", "Patrick", "Nicolas", "Christophe", "Pierre", "Christian", "Éric", "Marie", "Nathalie", "Isabelle", "Sylvie", "Catherine", "Martine", "Christine", "Françoise", "Valérie", "Sandrine"};
 	String getPrenom(){
 		return prenoms[(int)(Math.random() * (prenoms.length - 1))];
 	}
+	
 	//Nom aléatoire
-	private static String[] noms = {"Lucas", "Dupont", "Sanchez", "Michel", "Durand", "Dubois"};
+	private static String[] noms = {"Martin", "Bernard", "Thomas", "Petit", "Robert", "Richard", "Durand", "Dubois", "Moreau", "Laurent", "Simon", "Michel", "Lefebvre", "Leroy", "Roux"};
 	String getNom(){
 		return noms[(int)(Math.random() * (noms.length - 1))];
 	}
@@ -153,13 +154,19 @@ public class WSCreateDummies {
 		notifications.add(createRandomNotification());
 
 		//Création du client
-		Client client = new Client((int)(Math.random() * 5), ((Math.random() > 0.5)? "Marié" : "Célibataire"), comptes, "10 Rue de Menin", "Lille","59000", demandes, notifications, true);
-
-		//Assignation du prenom
+		Client client = new Client((int)(Math.random() * 5), ((Math.random() > 0.5)? "Marié" : "Célibataire"), comptes, (int)(1 + (Math.random() * 100)) + " Rue de " + getNom(), "Lille","59000", demandes, notifications, true);
+		
+		//Situation matrimoniale
+		client.setSituationMatrimoniale(((Math.random() > 0.5) ? "Marié" : "Célibataire"));
+		
+		//Nb enfants
+		client.setNbEnfants((int)(Math.random() * 5));
+		
+		//Prenom
 		String prenom = getPrenom();		
 		client.setPrenom(prenom);
 
-		//Assignation du nom
+		//Nom
 		String nom = getNom();
 		client.setNom(nom);
 
