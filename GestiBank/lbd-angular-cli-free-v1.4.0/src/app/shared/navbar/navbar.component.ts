@@ -4,7 +4,7 @@ import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common'
 import { NotificationService } from '../../notification-service';
 import {Client} from '../../classes/client';
 import { CLIENT } from '../../classes/FAKES';
-import { Notification } from '../../data-model';
+import { Notification, Utilisateur } from '../../data-model';
 
 
 
@@ -18,7 +18,7 @@ import { Notification } from '../../data-model';
 export class NavbarComponent implements OnInit{
 
     user : any = CLIENT;
-
+    user2: Utilisateur = JSON.parse(localStorage.getItem("user"));
     private listTitles: any[];
     location: Location;
     private toggleButton: any;
@@ -34,6 +34,7 @@ export class NavbarComponent implements OnInit{
     }
 
     ngOnInit(){
+      console.log(this.user2);
       //this.refreshNotifications();
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;

@@ -86,7 +86,7 @@
                 <span class="icon-bar"></span>
             </button>
             <!--On affiche le nom et le prénom de la personne si elle est connectée -->
-            <a class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">Bienvenue{{ (!startsWith("public"))  ? " " + user.prenom + " " + user.nom : "" }}</a>
+            <a class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">Bienvenue {{user2.prenom}}   {{user2.nom}} </a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
