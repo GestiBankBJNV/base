@@ -1,7 +1,9 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 
 
 
@@ -25,7 +27,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Entity
-public class Conseiller extends Utilisateur {
+public class Conseiller extends Utilisateur implements Serializable {
 
 	private String matricule;
 	

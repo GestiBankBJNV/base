@@ -1,4 +1,5 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -9,7 +10,7 @@ import javax.persistence.TemporalType;
 import org.springframework.stereotype.Component;
 
 @Entity
-public class Operation {
+public class Operation implements Serializable {
 
 	@Id
 	private int numero;

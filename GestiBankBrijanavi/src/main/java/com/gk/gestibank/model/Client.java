@@ -1,5 +1,7 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.List;
+
 
 
 
@@ -10,6 +12,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 
 
 
@@ -30,7 +33,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Client extends Utilisateur {
+public class Client extends Utilisateur implements Serializable {
 	
 	private int nbEnfants;
 	private String situationMatrimoniale;	

@@ -73,9 +73,8 @@ public class WSNotification {
 	 */
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	public boolean update(Notification notification) {
+	public void update(Notification notification) {
 		dbgLog("Update");
-		return notificationService.update(notification);
 	}
 	
 	//DEBUG (juste pour vérifier qu'on passe bien par les fonctions)

@@ -1,5 +1,7 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.Date;
+
 
 
 
@@ -19,7 +21,7 @@ import org.springframework.stereotype.Component;
 
 @Produces("application/json")
 @Entity
-public class Notification {
+public class Notification implements Serializable {
 
 	//Variables
 	@Id

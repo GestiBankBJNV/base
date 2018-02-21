@@ -1,6 +1,8 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
+
 
 
 
@@ -18,7 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Entity
-public class Compte {
+public class Compte implements Serializable {
 	@Id
 	private int code;
 	private double solde;

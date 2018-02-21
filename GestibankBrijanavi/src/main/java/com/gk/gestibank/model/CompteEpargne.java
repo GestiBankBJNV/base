@@ -1,6 +1,8 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
+
 
 
 
@@ -9,7 +11,7 @@ import javax.persistence.Entity;
 import org.springframework.stereotype.Component;
 
 @Entity
-public class CompteEpargne extends Compte {
+public class CompteEpargne extends Compte implements Serializable {
 
 	private float taux;
 	

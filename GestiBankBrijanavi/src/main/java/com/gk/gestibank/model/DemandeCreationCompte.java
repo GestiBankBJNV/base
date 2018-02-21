@@ -1,4 +1,5 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -6,7 +7,7 @@ import javax.persistence.Entity;
 import org.springframework.stereotype.Component;
 
 @Entity
-public class DemandeCreationCompte extends DemandeClient {
+public class DemandeCreationCompte extends DemandeClient implements Serializable {
 
 	private String type;
 	
