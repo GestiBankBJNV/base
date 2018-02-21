@@ -1,27 +1,8 @@
 package com.gk.gestibank.model;
 import java.io.Serializable;
 import java.util.List;
-
-
-
-
-
-
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-
-
-
-
-
-
-
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;

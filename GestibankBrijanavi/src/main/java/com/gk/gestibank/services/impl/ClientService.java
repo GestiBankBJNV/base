@@ -37,14 +37,13 @@ public class ClientService implements IClientService {
 		clientDao.updateClient(client);
 
 	}
-<<<<<<< HEAD
+
 	
 	public Set<DemandeClient> getDemandeClientById(String id) {
 		// ajouter la fonction de recherche des demande dans le ClientDao
 		return null;
 	}
-=======
->>>>>>> Nassim
+
 	
 	public Client getClientById(int id){
 		

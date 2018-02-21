@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
@@ -6,7 +7,7 @@ import { of }         from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/map';
 
-import { Conseiller, conseillers, Client, DemandeInscription } from './data-model';
+import { Conseiller, conseillers, Client, DemandeInscription, Utilisateur } from './data-model';
 
   /* ************************************** Ancien Code tout en bas !!! ************************************ */
 
@@ -19,6 +20,12 @@ export class ConseillerService {
   options = new RequestOptions({ headers: this.headers });
 
   constructor(private http : Http) {}
+
+  getUtilisateur(nomUtilisateur: string, mdp: string) : Observable<Utilisateur>{
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/utilisateurs/"+ nomUtilisateur + "/"+ mdp)
+    .map((res: Response) => res.json())
+    .catch((error: any) =>Observable.throw(error.json().error || 'Error'));
+  }
 
   getConseillers() : Observable<Conseiller[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers")
@@ -74,10 +81,16 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
+
+  
+  // todo ?
+  getClientFromConseiller(conseiller: Conseiller){}
+
   getDemandesInscriptionFromConseiller(matricule: string){
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/" + matricule + "/inscriptions")
     .map((res : Response) => res.json())
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+
   }
 
   changerConseiller(client: Client, idConseiller: number){
