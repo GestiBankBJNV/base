@@ -38,10 +38,10 @@ export class NavbarComponent implements OnInit{
     ngOnInit(){
       console.log(this.user2);
       //this.refreshNotifications();
-      if (this.clientID >= 0){
+      /*if (this.clientID >= 0){
         this.clientService.getClientById(this.clientID).subscribe(client => { this.client = client });
-      }
-      this.refreshNotifications();
+      }*/
+      /*this.refreshNotifications();*/
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
