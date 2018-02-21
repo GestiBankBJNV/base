@@ -37,6 +37,7 @@ public class Client extends Utilisateur {
 	private String adresse;
 	private String ville;
 	private String cp;
+	private boolean isClient;
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="client")
@@ -48,16 +49,14 @@ public class Client extends Utilisateur {
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	@JoinColumn(name="client")
-	private List<Notification> notifications;
-	
-	
+	private List<Notification> notifications;	
 	
 	public Client() {
 	}
 
 	public Client(int nbEnfants, String situationMatrimoniale,
 			List<Compte> comptes, String adresse, String ville, String cp,
-			List<DemandeClient> demandes, List<Notification> notifications) {
+			List<DemandeClient> demandes, List<Notification> notifications, boolean isClient) {
 		super();
 		this.nbEnfants = nbEnfants;
 		this.situationMatrimoniale = situationMatrimoniale;
@@ -67,6 +66,15 @@ public class Client extends Utilisateur {
 		this.cp = cp;
 		this.demandes = demandes;
 		this.notifications = notifications;
+		this.isClient = isClient;
+	}
+
+	public boolean getIsClient() {
+		return isClient;
+	}
+
+	public void setIsClient(boolean isClient) {
+		this.isClient = isClient;
 	}
 
 	public int getNbEnfants() {

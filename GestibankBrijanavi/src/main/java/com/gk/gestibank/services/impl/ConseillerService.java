@@ -1,11 +1,14 @@
 package com.gk.gestibank.services.impl;
 
 import java.text.SimpleDateFormat;
+import java.util.Iterator;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.gk.gestibank.dao.ClientDao;
 import com.gk.gestibank.dao.ConseillerDao;
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Conseiller;
@@ -17,30 +20,34 @@ public class ConseillerService implements IConseillerService {
 
 	@Autowired
 	private ConseillerDao conseillerDao;
+	@Autowired
+	private ClientDao clientDao;
 
-	
 	public List<Conseiller> getAll() {
 		return conseillerDao.getAll();
 	}
 
-	
+	@Transactional
 	public void createConseiller(Conseiller conseiller) {
 		// Aucune véfification : le formulaire a déjà validé les champs
+		System.out.println("conseillerService createConseiller()");
 		// On génère un matricule pour le conseiller
 		conseiller.setMatricule(generateMatricule(conseiller));
 		conseillerDao.createConseiller(conseiller);
 	}
 
 	public String generateMatricule(Conseiller conseiller) {
-		SimpleDateFormat sdate = new SimpleDateFormat("MMYY");
-		String matricule = conseiller.getNom().toUpperCase().charAt(0) + sdate.format(conseiller.getDateDebutContrat())
-				+ conseiller.hashCode() + "A";
+		SimpleDateFormat sdate = new SimpleDateFormat("ddMMYY");
+		int nb = (int) (100 + (Math.random() * (999 - 100)));
+		String matricule = conseiller.getNom().toUpperCase().charAt(0)
+				+ sdate.format(conseiller.getDateDebutContrat()) + nb + "A";
 		return matricule;
 	}
 
-	
+	@Transactional
 	public void deleteConseiller(String matricule) {
-		// TODO : On doit vérifier si la liste de client est nulle avant de supprimer
+		// TODO : On doit vérifier si la liste de client est nulle avant de
+		// supprimer
 		// Attention : nullPointerException si matricule ne correspond à aucun
 		// conseiller
 		if (conseillerDao.getClientsFromConseiller(matricule).isEmpty()) {
@@ -48,24 +55,24 @@ public class ConseillerService implements IConseillerService {
 		}
 	}
 
-	
+	@Transactional
 	public void updateConseiller(Conseiller conseiller) {
 		// Aucune véfification : le formulaire a déjà validé les champs
 		conseillerDao.updateConseiller(conseiller);
 	}
 
-	
+	@Transactional
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
 		return conseillerDao.getConseillerByNameOrMatricule(recherche);
 	}
 
-	
+	@Transactional
 	public void addClientToConseiller(Client client, String matricule) {
 		// vérifs ?
 		conseillerDao.addClientToConseiller(client, matricule);
 	}
 
-	
+	@Transactional
 	public void deleteClientFromConseiller(int idClient) {
 		// trouver le matricule du conseiller
 		String matricule = "";
@@ -82,19 +89,21 @@ public class ConseillerService implements IConseillerService {
 		}
 	}
 
-	
-	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule) {
+	@Transactional
+	public List<DemandeInscription> getInscriptionsFromConseiller(
+			String matricule) {
 		// vérifier si matricule existe
 		return conseillerDao.getInscriptionsFromConseiller(matricule);
 	}
 
-	
-	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule) {
+	@Transactional
+	public void addInscriptionToConseiller(
+			DemandeInscription demandeInscription, String matricule) {
 		// vérifs ?
 		conseillerDao.addInscriptionToConseiller(demandeInscription, matricule);
 	}
 
-	
+	@Transactional
 	public List<Client> getClientsFromConseiller(String matricule) {
 		// vérifs ?
 		return conseillerDao.getClientsFromConseiller(matricule);
@@ -111,4 +120,38 @@ public class ConseillerService implements IConseillerService {
 		return null;
 	}
 
+	@Transactional
+	public void changerConseiller(int idClient, int idConseiller) {
+		// Recupération du client 
+		//Client client = clientDao.getClientById(idClient);
+
+		// Récupération de l'ancien conseiller
+		Conseiller c = conseillerDao.getConseillerWithClient(idClient);
+		System.out.println("le client "+ idClient + "est actuellement affecté a" + c.getId()+ "/ "+ c.getNom());
+		
+	
+		Client client = new Client();
+		List<Client> lc = c.getClients();
+		for (Client cli : lc) {
+			if(cli.getId() == idClient){
+				client = cli;
+				break;				
+			}
+		}		
+		lc.remove(client);
+		c.setClients(lc);
+		
+		conseillerDao.updateConseiller(c);
+
+		// ajouter le client au nouveau 
+		// Récupérer du nouveau conseiller
+		Conseiller newc = conseillerDao.getById(idConseiller);
+		try {
+			newc.getClients().add(client);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		conseillerDao.updateConseiller(newc);
+		
+	}
 }

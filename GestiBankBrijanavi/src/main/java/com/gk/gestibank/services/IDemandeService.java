@@ -10,6 +10,7 @@ public interface IDemandeService {
 	List<DemandeInscription> getDemandesInscription();
 	DemandeInscription getDemandeInscrById(int id);
 	void updateDemandeInscription(DemandeInscription demandeInscr);
+	void addDemandeInscription(DemandeInscription demandeInscr);
 	
 	// Demandes client
 	// TODO

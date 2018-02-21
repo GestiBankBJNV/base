@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Client;
+import com.gk.gestibank.services.IClientService;
 import com.gk.gestibank.services.impl.ClientService;
 
 @RestController
@@ -19,10 +20,9 @@ import com.gk.gestibank.services.impl.ClientService;
 public class WSClient {
 	
 	@Autowired
-	ClientService clientService;
+	IClientService clientService;
 	
-	public WSClient(){
-		
+	public WSClient(){		
 	}
 	
 	@GET

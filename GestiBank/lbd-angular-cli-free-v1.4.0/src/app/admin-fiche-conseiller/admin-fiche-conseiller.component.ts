@@ -54,16 +54,16 @@ export class AdminFicheConseillerComponent implements OnInit {
 
   /* Modification du formulaire contenant les données du conseiller */
   ngOnChanges(){
-      this.formulaire.reset({
-        matricule: this.conseiller.matricule,
-        prenom: this.conseiller.prenom,
-        nom: this.conseiller.nom,
-        nomUtilisateur: this.conseiller.nomUtilisateur,
-        mdp: this.conseiller.password,
-        email: this.conseiller.email, 
-        numTel: this.conseiller.numTel,
-        dateDebutContrat: this.conseiller.dateDebutContrat/*.toLocaleDateString()*/      
-      });
+    this.formulaire.reset({
+      matricule: this.conseiller.matricule,
+      prenom: this.conseiller.prenom,
+      nom: this.conseiller.nom,
+      nomUtilisateur: this.conseiller.nomUtilisateur,
+      mdp: this.conseiller.password,
+      email: this.conseiller.email, 
+      numTel: this.conseiller.numTel,
+      dateDebutContrat: this.conseiller.dateDebutContrat/*.toLocaleDateString()*/      
+    });
   }
 
   // Modifier la fiche
@@ -86,7 +86,7 @@ export class AdminFicheConseillerComponent implements OnInit {
         this.notif.showNotificationMessage('top', 'right', 'Modifications effectuées', 'warning', 'pe-7s-magic-wand');        
       }
       if(this.creer) { // on crée un conseiller
-        this.conseillerService.addConseiller(this.conseiller);
+        this.conseillerService.addConseiller(this.conseiller).subscribe();
         this.onCreate.emit(); // on dit au composant parent que la fiche a été créée
         // Notifier la création
         this.notif.showNotificationMessage('top', 'right', 'Création du conseiller ' + this.conseiller.prenom + ' ' + this.conseiller.nom, 'success', 'pe-7s-add-user');  
@@ -128,7 +128,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   /* Méthode pour supprimer un conseiller */
   supprConseiller() {
     var temp = this.conseiller.matricule + ' : ' + this.conseiller.prenom + ' ' + this.conseiller.nom;
-    this.conseillerService.deleteConseiller(this.conseiller.matricule);
+    this.conseillerService.deleteConseiller(this.conseiller.matricule).subscribe();
     // enlever la fiche
     this.onDelete.emit();
     // Notifier la suppression

@@ -1,4 +1,0 @@
-127.0.0.1 - - [19/Feb/2018:09:43:00 +0100] "GET / HTTP/1.1" 404 1005
-0:0:0:0:0:0:0:1 - - [19/Feb/2018:09:43:00 +0100] "GET /GestiBankBrijanavi/WEB-INF/classes/com/gk/gestibank/model/Bouchons.java HTTP/1.1" 404 1003
-127.0.0.1 - - [19/Feb/2018:09:47:30 +0100] "GET / HTTP/1.1" 404 1005
-0:0:0:0:0:0:0:1 - - [19/Feb/2018:09:47:31 +0100] "GET /GestiBankBrijanavi/WEB-INF/classes/com/gk/gestibank/web/WSConseiller.java HTTP/1.1" 404 1003

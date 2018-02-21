@@ -65,7 +65,7 @@ export class UserComponent implements OnInit {
   		
   		//On attend une nouvelle confirmation après la validation d'un formulaire
   		this.resetWait();
-  		console.log(this.client.mail);
+  		//console.log(this.client.mail);
   	}
   }
 
