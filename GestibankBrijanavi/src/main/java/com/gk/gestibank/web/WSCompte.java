@@ -82,7 +82,5 @@ public class WSCompte {
 	//DEBUG (juste pour vérifier qu'on passe bien par les fonctions)
 	private void dbgLog(String log){
 		System.out.println("SERVICE COMPTE - " + log);
-		compteService.create(new Compte(19999,1500d, new ArrayList<Operation>(), -150d));
-		compteService.create(new CompteEpargne(199919,1500d, new ArrayList<Operation>(), -150d, 1.5f));
 	}
 }

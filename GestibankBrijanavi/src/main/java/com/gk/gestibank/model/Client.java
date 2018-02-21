@@ -1,4 +1,5 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +13,10 @@ import java.util.List;
 
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 
 
 
@@ -40,27 +43,27 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Client extends Utilisateur {
-	
+
 	private int nbEnfants;
 	private String situationMatrimoniale;	
 	private String adresse;
 	private String ville;
 	private String cp;
-	
-	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER, orphanRemoval=true)
-	@JoinColumn(name="client")
-	private List<Compte> comptes = new ArrayList<Compte>();
-	
+
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
-	@JoinColumn(name = "client")
+	@JoinColumn(name="client", nullable=false, updatable=true)
+	private List<Compte> comptes = new ArrayList<Compte>();
+
+	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
+	@JoinColumn(name = "client", nullable=false, updatable=true)
 	private List<DemandeClient> demandes = new ArrayList<DemandeClient>();
-	
-	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER, orphanRemoval=true)
-	@JoinColumn(name="client")
+
+	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
+	@JoinColumn(name="client", nullable=false, updatable=true)
 	private List<Notification> notifications = new ArrayList<Notification>();
-	
-	
-	
+
+
+
 	public Client() {
 	}
 
@@ -141,11 +144,11 @@ public class Client extends Utilisateur {
 	public void setNotifications(List<Notification> notifications) {
 		this.notifications = notifications;
 	}
-	
+
 	public boolean equals(Object obj) {
 		return super.equals(obj);
 	}
-	
+
 	public void addNotification(Notification notification){
 		this.notifications.add(notification);
 	}

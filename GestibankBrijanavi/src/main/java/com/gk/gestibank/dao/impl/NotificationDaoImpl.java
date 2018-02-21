@@ -14,8 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ClientDao;
+import com.gk.gestibank.dao.CompteDao;
+import com.gk.gestibank.dao.DemandeClientDao;
 import com.gk.gestibank.dao.NotificationDao;
 import com.gk.gestibank.model.Client;
+import com.gk.gestibank.model.Compte;
+import com.gk.gestibank.model.DemandeClient;
 import com.gk.gestibank.model.Notification;
 
 @Repository
@@ -23,6 +27,10 @@ public class NotificationDaoImpl implements NotificationDao {
 	
 	@Autowired
 	ClientDao clientDao;
+	@Autowired
+	CompteDao compteDao;
+	@Autowired
+	DemandeClientDao demandeClientDao;
 	
 	@PersistenceContext
 	EntityManager em;
@@ -45,14 +53,19 @@ public class NotificationDaoImpl implements NotificationDao {
 	
 	@Transactional
 	public void addToClient(int clientId, Notification notification){
-		List<Notification> l = getByClient(clientId);
-		System.out.println("Count before: " + l.size());
-		l.add(notification);
+		
+		List<Notification> ln = getByClient(clientId);
+		List<Compte> lc = compteDao.getCurrentByClient(clientId);
+		List<DemandeClient> ld = demandeClientDao.getByClient(clientId);
+		System.out.println("Count before: " + ln.size());
+		ln.add(notification);
 		Client client = clientDao.getClientById(clientId);
-		client.setNotifications(l);
+		client.setNotifications(ln);
+		client.setComptes(lc);
+		client.setDemandes(ld);
 		//em.merge(client);
-		clientDao.merge(client);
-		System.out.println("Count after: " + l.size());
+		clientDao.updateClient(client);
+		System.out.println("Count after: " + ln.size());
 	}
 
 	@Transactional

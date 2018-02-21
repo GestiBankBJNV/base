@@ -1,12 +1,13 @@
 package com.gk.gestibank.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-public class Bouchons {
+public class Bouchons implements Serializable{
 
 	private ArrayList<Conseiller> conseillers = new ArrayList<Conseiller>();
 	private List<Client> clients = new ArrayList<Client>();

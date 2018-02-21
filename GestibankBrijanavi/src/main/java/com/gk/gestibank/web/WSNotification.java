@@ -61,10 +61,10 @@ public class WSNotification {
 	 */	
 	@POST
 	@Path("/{clientId}")
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)	
 	public void addToClient(@PathParam("clientId") int clientId, Notification notification){
 		dbgLog("Add to client ");
-		notificationService.addToClient(clientId, notification);
+		notificationService.addToClient(clientId, notification);		
 	}
 	
 	/**

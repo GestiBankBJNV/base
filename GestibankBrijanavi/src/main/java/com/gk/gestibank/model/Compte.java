@@ -1,6 +1,8 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
+
 
 
 
@@ -27,7 +29,7 @@ import org.springframework.stereotype.Component;
 	@NamedQuery(name="Compte.delete", query="DELETE FROM Compte c where c.code = :code"),
 	@NamedQuery(name="Compte.getByIBAN", query="SELECT c FROM Compte c where c.code = :code")
 })
-public class Compte {
+public class Compte implements Serializable{
 	@Id
 	private int code;
 	private double solde;

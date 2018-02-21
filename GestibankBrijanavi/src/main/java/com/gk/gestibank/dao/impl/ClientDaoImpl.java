@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -36,15 +38,14 @@ public class ClientDaoImpl implements ClientDao {
 		return clients;
 	}
 
-	
 	public void updateClient(Client client) {
-		// TODO Auto-generated method stub
-		
+		em.merge(client);
+		em.flush();
 	}
 
+	@Transactional
 	public void createClient(Client client) {
-		// TODO Auto-generated method stub
-		
+		em.persist(client);		
 	}
 
 
@@ -70,7 +71,9 @@ public class ClientDaoImpl implements ClientDao {
 
 	//TODO
 	public Client getClientById(int clientId){
-		Client client = new Client();
+		Query q = em.createQuery("SELECT c FROM Client c WHERE id = " + clientId);
+		return (Client)q.getSingleResult();
+/*		Client client = new Client();
 		for(Client c: clients){
 			if(clientId == c.getId()){
 				client = c;
@@ -78,7 +81,7 @@ public class ClientDaoImpl implements ClientDao {
 			}
 		}
 		return client;
-		
+	*/	
 	}
 	
 	public void persist(Client client){

@@ -25,8 +25,8 @@ export class NotificationService{
 		.catch((error : any) => Observable.throw(error.json().error || 'Error'));
 	}
 
-	addNotificationToClient(clientID : number, notification : Notification) : Observable<Notification>{
-		return this.http.post(this.apiUrl + "/" + clientID, notification)
+	addNotificationToClient(clientID : number, notification : Notification) {
+		return this.http.post(this.apiUrl + "/" + clientID, notification)		
 		.catch((error : any) => Observable.throw(error.json().error || 'Server error'));
 	}
 

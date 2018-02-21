@@ -1,4 +1,5 @@
 package com.gk.gestibank.model;
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @NamedQuery(name="Operation.delete", query="DELETE FROM Operation o WHERE o.numero = :numero")
-public class Operation {
+public class Operation implements Serializable {
 
 	@Id
 	private int numero;

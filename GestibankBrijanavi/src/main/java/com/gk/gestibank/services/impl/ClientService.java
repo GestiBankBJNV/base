@@ -26,7 +26,6 @@ public class ClientService implements IClientService {
 	
 	public void createClient(Client client) {
 		clientDao.createClient(client);
-
 	}
 
 	

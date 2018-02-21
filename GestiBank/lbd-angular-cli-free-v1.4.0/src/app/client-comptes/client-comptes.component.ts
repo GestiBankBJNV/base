@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Client, Compte, Operation, Notification } from '../data-model';
+import { Client, Compte, Conseiller, DemandeClient, Operation, Notification } from '../data-model';
 import { CompteService } from '../compte-service';
+import { ConseillerService } from '../conseiller-service';
+import { DemandeService } from '../demande-service';
 import { NotificationService } from '../notification-service';
 import { showNotification } from '../data-model';
 import { DecimalPipe, DatePipe } from '@angular/common';
@@ -45,7 +47,7 @@ export class ClientComptesComponent implements OnInit {
   displayedAmounts : number[];                    //soldes affichés
 
   //CONSTRUCTEUR
-  constructor(private compteService : CompteService, private notificationService : NotificationService) { }
+  constructor(private compteService : CompteService, private notificationService : NotificationService, private conseillerService : ConseillerService, private demandeService : DemandeService) { }
 
   //INITIALISATION
   ngOnInit() {
@@ -119,9 +121,14 @@ export class ClientComptesComponent implements OnInit {
       let msg : string = "Votre commande de chèquier pour le compte " + this.selectedCompte.code + " a bien été enregistrée";
 
       let notif : Notification = {id: -1, message : msg, date : new Date(), type: "info", toggled : false};
-      this.notificationService.addNotificationToClient(this.clientID, notif).subscribe();
+      this.notificationService.addNotificationToClient(this.clientID, notif).subscribe(notif =>{
+        console.log("Notification créée");
+        let demande : DemandeClient = { id: -1, date: new Date(), dateAffectation: new Date(), statut: "en cours", libelle: "Commande de chèquier pour le compte " + this.selectedCompte.code };
+        this.demandeService.sendDemandeClient(this.clientID, demande).subscribe(any => {
+            console.log("demande envoyée");
+        });
+      });
 
-      //TODO : envoyer une demande au conseiller
       showNotification('top','center',msg, notif.type, "pe-7s-mail-open-file");//On affiche une notif sur la page
     }
     else{
@@ -140,12 +147,21 @@ export class ClientComptesComponent implements OnInit {
       this.confirmTransfer = false;
       //console.log("chequier");
       let msg : string = "Votre demande de virement vers le compte " + this.transferDestIBAN + " a bien été enregistrée";
-
+      
+      //ajout d'une notification
       let notif : Notification = {id: -1, message : msg, date : new Date(), type: "info", toggled : false};
-      this.notificationService.addNotificationToClient(this.clientID, notif).subscribe();
-
-      //TODO : envoyer une demande au conseiller
+      this.notificationService.addNotificationToClient(this.clientID, notif).subscribe(notif=> {
+          //Envoi de la demande
+          console.log("Notification créée");
+          let demande : DemandeClient = { id: -1, date: new Date(), dateAffectation: new Date(), statut: "en cours", libelle: "Demande de virement de " + this.transferAmount + " € vers le compte " + this.transferDestIBAN };
+          this.demandeService.sendDemandeClient(this.clientID, demande).subscribe(any => {
+            console.log("demande envoyée");
+          });
+        });     
+      
+      //affichage d'un popup dans le navigateur
       showNotification('top','center',msg, notif.type, "pe-7s-mail-open-file");//On affiche une notif sur la page
+      
       this.transfer = false; //On retourne sur la page opérations.
     }
     //premier clic
