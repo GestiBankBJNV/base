@@ -44,10 +44,17 @@ export class ClientService {
     return of(newClient).delay(this.delayMs); // simulate latency with delay
   }
 
-    getAllDemandeClientById(idClient: number): Observable<DemandeClient[]>{
+
+  getAllDemandeClientById(idClient: number): Observable<DemandeClient[]>{
     return this.http.get("http://localhost:8080/GestiBankBrijanavi/clients/"+idClient+"/demandes")
     .map((res: Response) => res.json())
-    .catch((error: any) => Observable.throw(error.json().error || 'Error'))
+    .catch((error: any) => Observable.throw(error.json().error || 'Error'));
+  }
+  
+  getClientById(clientId : number) : Observable<Client>{
+     return this.http.get("http://localhost:8080/GestiBankBrijanavi/clients/id/" + clientId)
+    .map((res : Response) => res.json())
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
   /* *********** Ancien code ************* */

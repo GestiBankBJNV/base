@@ -40,7 +40,7 @@ export class PublicDevisesComponent implements OnInit {
   //rafraichir la liste de devises de sortie
   refreshCurrenciesOutput(){
 	let sub : Subscription = this.currencyService.getConversionRates(this.currencyTo).subscribe(currency => { 
-		this.currenciesTo = Object.keys(currency.rates);
+		this.currenciesTo = Object.keys(currency.rates);		
 		this.refreshConvertedValue();
 	});	
   }

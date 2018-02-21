@@ -45,8 +45,7 @@ public class ClientService implements IClientService {
 	}
 
 	
-	public Client getClientById(int id){
-		
+	public Client getClientById(int id){		
 		return clientDao.getClientById(id);
 	}
 

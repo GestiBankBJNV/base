@@ -15,5 +15,6 @@ public interface CompteDao {
 	public void updateMontant(double montant);
 	public List<Operation> getAllOperationsFromCompte(int code);
 	public Compte getCompteByCode(int code);
-	public List<Compte> getByClient(int clientId);
+	public List<Compte> getCurrentByClient(int clientId);
+	public List<CompteEpargne> getSavingByClient(int clientId);
 }

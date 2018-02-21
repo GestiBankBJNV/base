@@ -7,6 +7,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Repository;
 
 import com.gk.gestibank.dao.ClientDao;
@@ -22,10 +25,11 @@ import com.gk.gestibank.model.DemandeClient;
 @Repository
 public class ClientDaoImpl implements ClientDao {
 	
-	List<Client> clients = new ArrayList<Client>();
-	
 	@PersistenceContext
-	private EntityManager em;
+	EntityManager em;
+	
+	
+	List<Client> clients = new ArrayList<Client>();
 
 	public ClientDaoImpl() {
 		//chargerClients();
@@ -41,11 +45,16 @@ public class ClientDaoImpl implements ClientDao {
 		Query query = em.createQuery("SELECT c FROM Client as c WHERE isClient=1");
 		return (List<Client>)query.getResultList();
 	}
+
 	
+
 	public void updateClient(Client client) {
-		// TODO Auto-generated method stub		
+		em.merge(client);
+		em.flush();
+
 	}
 
+	@Transactional
 	public void createClient(Client client) {
 		em.persist(client);		
 	}
@@ -68,16 +77,25 @@ public class ClientDaoImpl implements ClientDao {
 		return getClientById(Integer.valueOf(id));		
 	}
 
+	//TODO
 	public Client getClientById(int clientId){
-		Client client = new Client();
+		Query q = em.createQuery("SELECT c FROM Client c WHERE id = " + clientId);
+		return (Client)q.getSingleResult();
+/*		Client client = new Client();
 		for(Client c: clients){
 			if(clientId == c.getId()){
 				client = c;
+				break;
 			}
 		}
 		return client;
-		
+	*/	
 	}
+	
+	public void persist(Client client){
+		em.persist(client);
+	}
+
 
 	public List<DemandeClient> getDemandeByClientId(int id) {
 		return clients.get(id).getDemandes();
@@ -91,6 +109,14 @@ public class ClientDaoImpl implements ClientDao {
 //			}
 //		}
 	}
+
+	public void refresh(Client client){
+		em.refresh(client);
+	}
+	public void merge(Client client){
+		em.merge(client);
+	}
+	
 	
 	
 }

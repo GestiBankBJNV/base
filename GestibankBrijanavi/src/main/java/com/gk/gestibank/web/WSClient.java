@@ -22,16 +22,18 @@ import com.gk.gestibank.model.DemandeClient;
 @RestController
 @Path("/clients")
 public class WSClient {
-	
+
 	@Autowired
 	IClientService clientService;
-	
-	public WSClient(){		
+
+	public WSClient(){
+
 	}
-	
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Client> getAll(){
+		dbgLog("getAll");
 		return clientService.getAll();
 	}
 	
@@ -42,12 +44,24 @@ public class WSClient {
 		return clientService.getDemandeClientById(id);
 	}
 	
+
+
+	//	@GET
+	//	@Produces(MediaType.APPLICATION_JSON)
+	//	@Path("/{id}")
+	//	public Client getClientById(@PathParam("id")String id){
+	//		return clientService.getClientById(id);
+	//	}
+
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{recherche}")
 	public List<Client> getClientByNameOrId(@PathParam("recherche")String recherche){
+		dbgLog("getByNameOrId " + recherche);
 		return clientService.getClientByNameOrId(recherche);
 	}
+
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -55,5 +69,19 @@ public class WSClient {
 	public void UpdateDemandeByClientId(@PathParam("idclient")int idclient, @PathParam("iddemande")int iddemande){
 		//a faire clientService.up
 		clientService.UpdateDemandeByClientId(idclient, iddemande);
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/id/{clientId}")
+	public Client getClientById(@PathParam("clientId") int clientId){
+		dbgLog("getById " + clientId);
+		return clientService.getClientById(clientId);
+	}
+
+	//DEBUG (juste pour vérifier qu'on passe bien par les fonctions)
+	private void dbgLog(String log){
+		System.out.println("SERVICE CLIENT - " + log);
+
 	}
 }

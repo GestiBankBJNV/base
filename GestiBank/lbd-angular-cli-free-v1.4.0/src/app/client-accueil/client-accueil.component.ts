@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Notification } from '../data-model';
 import { NotificationService } from '../notification-service';
 import { CompteService } from '../compte-service';
-import { Compte } from '../data-model';
+import { Compte, CompteEpargne } from '../data-model';
 import { DecimalPipe, DatePipe } from '@angular/common';
 
 @Component({
@@ -13,8 +13,12 @@ import { DecimalPipe, DatePipe } from '@angular/common';
 })
 export class ClientAccueilComponent implements OnInit {
   
+  clientID : number = 2;//Bouchon
+
   notifications : Notification[] = [];
   comptes : Compte[] = [];
+  comptesEpargne : CompteEpargne[] = [];
+
   constructor(private compteService : CompteService, private notificationService : NotificationService) {}
 
   ngOnInit() {
@@ -25,16 +29,20 @@ export class ClientAccueilComponent implements OnInit {
   //Récupérer la liste des notifications
   refreshUnreadNotifications() {
     this.notifications = [];
-    this.notificationService.getNotificationsByClient(1).subscribe(notifications => {  
-      this.notifications = notifications.filter(notif => !notif.read);
+    this.notificationService.getNotificationsByClient(this.clientID).subscribe(notifications => {  
+      this.notifications = notifications.filter(notif => !notif.toggled);
     });
   }
 
   //Rafraichir la liste de comptes
   refreshAccounts(){
     this.comptes = [];
-    this.compteService.getComptesByClient("1").subscribe(comptes => {  
+    this.compteService.getComptesCourantByClient("" + this.clientID).subscribe(comptes => {  
       this.comptes = comptes;
     });
+    this.comptesEpargne = [];
+    this.compteService.getComptesEpargneByClient("" + this.clientID).subscribe(comptes => {  
+      this.comptesEpargne = comptes;
+    });    
   }
 }

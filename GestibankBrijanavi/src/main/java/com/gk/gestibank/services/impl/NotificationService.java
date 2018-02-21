@@ -25,8 +25,8 @@ public class NotificationService implements INotificationService {
 	}
 
 	
-	public void delete(int notificationId){
-		notificationDao.delete(notificationId);
+	public void delete(int clientId, int notificationId){
+		notificationDao.delete(clientId, notificationId);
 	}
 	
 	
@@ -35,8 +35,8 @@ public class NotificationService implements INotificationService {
 	}
 	
 	
-	public boolean update(Notification notification){
-		return notificationDao.update(notification);
+	public void update(int clientId, Notification notification){
+		notificationDao.update(clientId, notification);
 	}
 	
 }

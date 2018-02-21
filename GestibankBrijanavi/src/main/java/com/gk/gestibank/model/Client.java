@@ -1,8 +1,18 @@
 package com.gk.gestibank.model;
 import java.io.Serializable;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +21,8 @@ import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -23,18 +35,19 @@ public class Client extends Utilisateur implements Serializable {
 	private String cp;
 	private boolean isClient;
 	
+
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
-	@JoinColumn(name="client")
-	private List<Compte> comptes;
-	
+	@JoinColumn(name="client", nullable=false, updatable=true)
+	private List<Compte> comptes = new ArrayList<Compte>();
+
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
-	@JoinColumn(name = "client")
-	private List<DemandeClient> demandes;
-	
+	@JoinColumn(name = "client", nullable=false, updatable=true)
+	private List<DemandeClient> demandes = new ArrayList<DemandeClient>();
+
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
-	@JoinColumn(name="client")
-	private List<Notification> notifications;	
-	
+	@JoinColumn(name="client", nullable=false, updatable=true)
+	private List<Notification> notifications = new ArrayList<Notification>();
+
 	public Client() {
 	}
 
@@ -124,11 +137,11 @@ public class Client extends Utilisateur implements Serializable {
 	public void setNotifications(List<Notification> notifications) {
 		this.notifications = notifications;
 	}
-	
+
 	public boolean equals(Object obj) {
 		return super.equals(obj);
 	}
-	
+
 	public void addNotification(Notification notification){
 		this.notifications.add(notification);
 	}

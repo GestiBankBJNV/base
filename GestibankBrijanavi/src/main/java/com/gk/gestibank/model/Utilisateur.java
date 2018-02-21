@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Entity
 public class Utilisateur implements Serializable {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;

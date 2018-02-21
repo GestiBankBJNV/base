@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gk.gestibank.model.Utilisateur;
+import com.gk.gestibank.services.IUtilisateurService;
 import com.gk.gestibank.services.impl.UtilisateurService;
 
 @RestController
@@ -17,7 +18,7 @@ import com.gk.gestibank.services.impl.UtilisateurService;
 public class WSUtilisateur {
 	
 	@Autowired
-	UtilisateurService utilisateurService;
+	IUtilisateurService utilisateurService;
 	
 	
 	public WSUtilisateur(){

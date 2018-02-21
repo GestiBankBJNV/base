@@ -24,12 +24,20 @@ public class CompteService implements ICompteService {
 	private OperationDao operationDao;
 	
 	
-	public List<Compte> getByClient(int clientId){
-		return compteDao.getByClient(clientId);
+	public List<Compte> getCurrentByClient(int clientId){
+		return compteDao.getCurrentByClient(clientId);
+	}
+	public List<CompteEpargne> getSavingByClient(int clientId){
+		return compteDao.getSavingByClient(clientId);
 	}
 	
 	
 	public List<Operation> getOperationsByCompte(int compteId){
 		return operationDao.getByCompte(compteId);
+	}
+	
+	//Test
+	public void create(Compte c){
+		compteDao.createCompte(c);
 	}
 }

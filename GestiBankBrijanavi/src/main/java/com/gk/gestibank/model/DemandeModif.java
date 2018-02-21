@@ -7,14 +7,16 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.ws.rs.Produces;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+@Produces("application/json")
 @Entity
 public class DemandeModif extends DemandeClient implements Serializable {
 	
-	@OneToOne
+
 	private Client coordonnees;
 	
 	public DemandeModif() {

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Compte, Operation } from '../data-model';
+import { Client, Compte, Conseiller, DemandeClient, Operation, Notification } from '../data-model';
 import { CompteService } from '../compte-service';
-import { Client } from '../classes/client';
-import { CLIENT } from '../classes/FAKES';
+import { ConseillerService } from '../conseiller-service';
+import { DemandeService } from '../demande-service';
+import { NotificationService } from '../notification-service';
 import { showNotification } from '../data-model';
 import { DecimalPipe, DatePipe } from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
@@ -13,11 +14,11 @@ declare var $:any;
   selector: 'app-client-comptes',
   templateUrl: './client-comptes.component.html',
   styleUrls: ['./client-comptes.component.scss'],
-  providers: [CompteService]
+  providers: [CompteService, NotificationService]
 })
 export class ClientComptesComponent implements OnInit {
 
-	client : Client = CLIENT;                       //Bouchon
+	clientID : number = 1;                          //Bouchon
   accounts : Compte[] = [];
 	selectedCompte : Compte;                        //Compte selectionné
 
@@ -46,7 +47,7 @@ export class ClientComptesComponent implements OnInit {
   displayedAmounts : number[];                    //soldes affichés
 
   //CONSTRUCTEUR
-  constructor(private compteService : CompteService) { }
+  constructor(private compteService : CompteService, private notificationService : NotificationService, private conseillerService : ConseillerService, private demandeService : DemandeService) { }
 
   //INITIALISATION
   ngOnInit() {
@@ -56,7 +57,7 @@ export class ClientComptesComponent implements OnInit {
   //Rafraichir la liste de comptes
   refreshAccounts(){
     this.accounts = [];
-    let sub : Subscription = this.compteService.getComptesByClient("1").subscribe(accounts => {  
+    let sub : Subscription = this.compteService.getComptesCourantByClient("" + this.clientID).subscribe(accounts => {  
       this.accounts = accounts;
     });
   }
@@ -95,11 +96,15 @@ export class ClientComptesComponent implements OnInit {
     if (this.awaitingConfirm){
       this.awaitingConfirm = false;
       //console.log("demande");
-      let msg : String = "Votre demande d'ouverture de compte " + this.accountType + " a bien été enregistrée";
-      this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté client.
+      let msg : string = "Votre demande d'ouverture de compte " + this.accountType + " a bien été enregistrée";
+
+      let notif : Notification = {id: -1, message : msg, date : new Date(), type: "info", toggled : false};
+      this.notificationService.addNotificationToClient(this.clientID, notif).subscribe();
+
       //TODO : envoyer une demande au conseiller
+
       this.openAccount = false;//On n'affiche plus l'onglet
-      showNotification('top','center',msg, 'info', "pe-7s-mail-open-file");//On affiche une notif sur la page
+      showNotification('top','center',msg, notif.type, "pe-7s-mail-open-file");//On affiche une notif sur la page
     }
     //premier clic
     else{
@@ -113,10 +118,18 @@ export class ClientComptesComponent implements OnInit {
     if (this.awaitingConfirm){
       this.awaitingConfirm = false;
       //console.log("chequier");
-      let msg : String = "Votre commande de chèquier pour le compte " + this.selectedCompte.code + " a bien été enregistrée";
-      this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté cliet.
-      //TODO : envoyer une demande au conseiller
-      showNotification('top','center',msg, 'info', "pe-7s-mail-open-file");//On affiche une notif sur la page
+      let msg : string = "Votre commande de chèquier pour le compte " + this.selectedCompte.code + " a bien été enregistrée";
+
+      let notif : Notification = {id: -1, message : msg, date : new Date(), type: "info", toggled : false};
+      this.notificationService.addNotificationToClient(this.clientID, notif).subscribe(notif =>{
+        console.log("Notification créée");
+        let demande : DemandeClient = { id: -1, date: new Date(), dateAffectation: new Date(), statut: "en cours", libelle: "Commande de chèquier pour le compte " + this.selectedCompte.code };
+        this.demandeService.sendDemandeClient(this.clientID, demande).subscribe(any => {
+            console.log("demande envoyée");
+        });
+      });
+
+      showNotification('top','center',msg, notif.type, "pe-7s-mail-open-file");//On affiche une notif sur la page
     }
     else{
       this.awaitingConfirm = true;
@@ -133,10 +146,22 @@ export class ClientComptesComponent implements OnInit {
     if (this.confirmTransfer){
       this.confirmTransfer = false;
       //console.log("chequier");
-      let msg : String = "Votre demande de virement vers le compte " + this.transferDestIBAN + " a bien été enregistrée";
-      this.client.notifications.splice(0,0, {libelle : msg, date : new Date(), isRead : false});//Pour l'instant, on se contente de créer une notification coté cliet.
-      //TODO : envoyer une demande au conseiller
-      showNotification('top','center',msg, 'info', "pe-7s-mail-open-file");//On affiche une notif sur la page
+      let msg : string = "Votre demande de virement vers le compte " + this.transferDestIBAN + " a bien été enregistrée";
+      
+      //ajout d'une notification
+      let notif : Notification = {id: -1, message : msg, date : new Date(), type: "info", toggled : false};
+      this.notificationService.addNotificationToClient(this.clientID, notif).subscribe(notif=> {
+          //Envoi de la demande
+          console.log("Notification créée");
+          let demande : DemandeClient = { id: -1, date: new Date(), dateAffectation: new Date(), statut: "en cours", libelle: "Demande de virement de " + this.transferAmount + " € vers le compte " + this.transferDestIBAN };
+          this.demandeService.sendDemandeClient(this.clientID, demande).subscribe(any => {
+            console.log("demande envoyée");
+          });
+        });     
+      
+      //affichage d'un popup dans le navigateur
+      showNotification('top','center',msg, notif.type, "pe-7s-mail-open-file");//On affiche une notif sur la page
+      
       this.transfer = false; //On retourne sur la page opérations.
     }
     //premier clic
