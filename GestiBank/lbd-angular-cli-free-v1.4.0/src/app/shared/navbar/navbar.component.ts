@@ -3,7 +3,7 @@ import { ROUTES } from '../../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { NotificationService } from '../../notification-service';
 import {ClientService} from '../../client-service';
-import { Client, Notification } from '../../data-model';
+import { Client, Notification, Utilisateur } from '../../data-model';
 
 
 
@@ -33,6 +33,8 @@ export class NavbarComponent implements OnInit{
     }
 
     ngOnInit(){
+      let user : Utilisateur = JSON.parse(localStorage.getItem('loggedUser'));
+      this.clientID = user.id;
       //this.refreshNotifications();
       if (this.clientID >= 0){
         this.clientService.getClientById(this.clientID).subscribe(client => { this.client = client });

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Client, Compte, Conseiller, DemandeClient, Operation, Notification } from '../data-model';
+import { Client, Compte, Conseiller, DemandeClient, Operation, Notification, Utilisateur } from '../data-model';
 import { CompteService } from '../compte-service';
 import { ConseillerService } from '../conseiller-service';
 import { DemandeService } from '../demande-service';
@@ -51,6 +51,8 @@ export class ClientComptesComponent implements OnInit {
 
   //INITIALISATION
   ngOnInit() {
+    let user : Utilisateur = JSON.parse(localStorage.getItem('loggedUser'));
+    this.clientID = user.id;
     this.refreshAccounts();
   }
 

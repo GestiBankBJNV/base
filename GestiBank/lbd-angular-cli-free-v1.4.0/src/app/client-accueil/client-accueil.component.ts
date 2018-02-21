@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Notification } from '../data-model';
+import { Utilisateur, Notification } from '../data-model';
 import { NotificationService } from '../notification-service';
 import { CompteService } from '../compte-service';
 import { Compte, CompteEpargne } from '../data-model';
@@ -22,6 +22,8 @@ export class ClientAccueilComponent implements OnInit {
   constructor(private compteService : CompteService, private notificationService : NotificationService) {}
 
   ngOnInit() {
+    let user : Utilisateur = JSON.parse(localStorage.getItem('loggedUser'));
+    this.clientID = user.id;
     this.refreshUnreadNotifications();
     this.refreshAccounts();
   }

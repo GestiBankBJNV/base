@@ -42,14 +42,19 @@ public class WSCreateDummies {
 		
 		for (int i = 0; i < count; i++)
 		{
-			//Création du dummy
-			Client client = dummyClient();
 			
-			//persistence dans la BDD
-			clientService.createClient(client);
+			try {
+				//Création du dummy
+				Client client = dummyClient();
+				
+				//persistence dans la BDD
+				clientService.createClient(client);
 
-			//
-			System.out.println("Le client " + client.toString() + " a été créé");
+				//
+				System.out.println("Le client " + client.toString() + " a été créé");
+			} catch (Exception e) {
+				
+			}
 		}
 		
 		return "Created " + count + " dummy clients";
@@ -73,9 +78,11 @@ public class WSCreateDummies {
 	//Créer un compte épargne aléatoire
 	CompteEpargne createRandomCompteEpargne(){
 		CompteEpargne c = new CompteEpargne();
-		c.setCode((int)(Math.random() * (new Date().hashCode())));
+		String code = "" + new Date().getTime();
+		code = code.substring(code.length() - 7);
+		c.setCode(Integer.valueOf(code));
 		c.setSolde(Math.random() * 5000d);
-		c.setDecouvert(c.getSolde() * 0.1d);
+		c.setDecouvert(0d);
 		c.setTaux(1.5f);			
 		c.setType("account_type_saving");
 		List<Operation> operations = new ArrayList<Operation>();
@@ -154,7 +161,28 @@ public class WSCreateDummies {
 		notifications.add(createRandomNotification());
 
 		//Création du client
-		Client client = new Client((int)(Math.random() * 5), ((Math.random() > 0.5)? "Marié" : "Célibataire"), comptes, (int)(1 + (Math.random() * 100)) + " Rue de " + getNom(), "Lille","59000", demandes, notifications, true);
+		Client client = new Client();
+		
+		//isClient
+		client.setIsClient(true);
+		
+		//Notifications
+		client.setNotifications(notifications);
+		
+		//Demandes
+		client.setDemandes(demandes);
+		
+		//Code postal
+		client.setCp("59000");
+		
+		//Ville
+		client.setVille("Lille");
+		
+		//Adresse
+		client.setAdresse((int)(1 + (Math.random() * 100)) + " Rue " + getNom());
+		
+		//Comptes
+		client.setComptes(comptes);
 		
 		//Situation matrimoniale
 		client.setSituationMatrimoniale(((Math.random() > 0.5) ? "Marié" : "Célibataire"));
@@ -173,7 +201,7 @@ public class WSCreateDummies {
 		//Username à partir du nom et du prénom
 		String username = prenom.charAt(0) + nom;
 		String num = "" + new Date().getTime();
-		num = num.substring(num.length() - 4);
+		num = num.substring(num.length() - 5);
 		username = username.toLowerCase() + num;
 		client.setNomUtilisateur(username);
 
@@ -188,6 +216,7 @@ public class WSCreateDummies {
 
 		//Mail
 		client.setEmail(prenom.toLowerCase() + "." + nom.toLowerCase() + "@gestibank.com");
+		
 		return client;
 	}
 }
