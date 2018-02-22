@@ -16,7 +16,7 @@ export class ConseillerAccueilComponent implements OnInit {
 
   currentUser: Conseiller = JSON.parse(localStorage.getItem("user"));
 	clients: Observable<Client[]>;// récuperation des clients
-  demandes: Observable<DemandeClient[]>; //récuperation des demandes par client
+  demandes: DemandeClient[]; //récuperation des demandes par client
   nomDemande: String;//recuperation du nom de la demande
   indexClient: number;//recuperation de l'index du client
   idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
@@ -44,8 +44,10 @@ export class ConseillerAccueilComponent implements OnInit {
     //au moins une demande le tableau des demandes clients s'ouvrent
     if (c.id != this.idSelectionne && c.demandes.length != 0) {
       this.isDetailDemande = true;
-      this.demandes = this.clientService.getAllDemandeClientById(c.id)
-                          .finally(() => this.isLoading = false);
+      this.clientService.getAllDemandeClientById(c.id).subscribe(demandes => {
+        this.isLoading = false;
+        this.demandes = demandes;
+      });
       console.log("id du conseiller : "+c.id);
       console.log(this.demandes);
       this.indexClient = c.id;

@@ -98,7 +98,8 @@ public class ClientDaoImpl implements ClientDao {
 
 
 	public List<DemandeClient> getDemandeByClientId(int id) {
-		return clients.get(id).getDemandes();
+		Query q = em.createQuery("SELECT d FROM DemandeClient d WHERE client = " + id);		
+		return (List<DemandeClient>)q.getResultList();
 	}
 
 	public void UpdateDemandeByClientId(int idclient, DemandeClient demande) {

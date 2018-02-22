@@ -39,12 +39,6 @@ public class ClientService implements IClientService {
 	}
 
 	
-	public Set<DemandeClient> getDemandeClientById(String id) {
-		// ajouter la fonction de recherche des demande dans le ClientDao
-		return null;
-	}
-
-	
 	public Client getClientById(int id){		
 		return clientDao.getClientById(id);
 	}
@@ -54,7 +48,7 @@ public class ClientService implements IClientService {
 		return clientDao.getClientByNameOrId(recherche);
 	}
 
-
+	@Transactional
 	public List<DemandeClient> getDemandeClientById(int id) {
 		return clientDao.getDemandeByClientId(id);
 	}
