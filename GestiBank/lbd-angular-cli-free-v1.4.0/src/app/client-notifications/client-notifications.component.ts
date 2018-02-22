@@ -25,7 +25,7 @@ export class ClientNotificationsComponent implements OnInit {
   constructor(private notificationService : NotificationService) { }
 
   ngOnInit() {
-  	let user : Utilisateur = JSON.parse(localStorage.getItem('loggedUser'));
+  	let user : Utilisateur = JSON.parse(localStorage.getItem('user'));
     this.clientID = user.id;
   	this.refreshNotifications();
   }

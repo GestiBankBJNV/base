@@ -35,11 +35,11 @@ public class Conseiller extends Utilisateur implements Serializable {
 	private Date dateDebutContrat;
 
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
-	@JoinColumn(name="conseiller")
+	@JoinColumn(name="conseiller", nullable=true, updatable=true)
 	private List<Client> clients = new ArrayList<Client>();
 	
 	@OneToMany(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
-	@JoinColumn(name="conseiller")
+	@JoinColumn(name="conseiller", nullable=true, updatable=true)
 	private List<DemandeInscription> demandesInscription = new ArrayList<DemandeInscription>();
 
 

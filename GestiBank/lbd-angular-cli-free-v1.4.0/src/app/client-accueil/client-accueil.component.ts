@@ -22,7 +22,7 @@ export class ClientAccueilComponent implements OnInit {
   constructor(private compteService : CompteService, private notificationService : NotificationService) {}
 
   ngOnInit() {
-    let user : Utilisateur = JSON.parse(localStorage.getItem('loggedUser'));
+    let user : Utilisateur = JSON.parse(localStorage.getItem('user'));
     this.clientID = user.id;
     this.refreshUnreadNotifications();
     this.refreshAccounts();

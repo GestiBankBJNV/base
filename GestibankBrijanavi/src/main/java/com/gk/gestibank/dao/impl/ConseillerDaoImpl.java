@@ -53,6 +53,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 //			System.out.println("L'index " + i + " ne fait pas partie de la liste conseillers");
 //		}	
 		em.merge(conseiller);
+		em.flush();
 	}
 	
 	public void deleteConseiller(String matricule) {
@@ -75,9 +76,9 @@ public class ConseillerDaoImpl implements ConseillerDao {
 //			}
 //		}
 		//return null;
-		Query query = em.createQuery("SELECT c FROM Conseiller as c WHERE c.matricule = :matricule");
+		Query query = em.createQuery("SELECT c FROM Conseiller c WHERE c.matricule = :matricule");
 		query.setParameter("matricule", matricule);
-		return (Conseiller)query.getResultList(); // todo : à revoir
+		return (Conseiller)query.getSingleResult(); // todo : à revoir
 	}	
 	
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
@@ -116,7 +117,10 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	public void addClientToConseiller(Client client, String matricule) {
 		List<Client> clients = getClientsFromConseiller(matricule);
 		clients.add(client);
-		getConseillerByMatricule(matricule).setClients(clients);		
+		Conseiller cons = getConseillerByMatricule(matricule);
+		cons.setClients(clients);
+		em.merge(cons);
+		em.flush();
 	}
 
 	public void deleteClientFromConseiller(int idClient, String matricule) {

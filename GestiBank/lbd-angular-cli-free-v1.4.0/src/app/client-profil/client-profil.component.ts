@@ -29,7 +29,7 @@ export class ClientProfilComponent implements OnInit {
   constructor(private fb: FormBuilder, private router : Router, private clientService : ClientService, private notificationService : NotificationService, private demandeService : DemandeService) { }
 
   ngOnInit() {
-    let user : Utilisateur = JSON.parse(localStorage.getItem('loggedUser'));
+    let user : Utilisateur = JSON.parse(localStorage.getItem('user'));
     this.clientID = user.id;
     //this.sub = this.route.params.subscribe(params => { this.id = params['id']; })//Récupérer l'id du client depuis l'url?
 

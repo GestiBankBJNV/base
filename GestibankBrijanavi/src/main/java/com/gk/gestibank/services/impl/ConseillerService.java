@@ -30,9 +30,9 @@ public class ConseillerService implements IConseillerService {
 	@Transactional
 	public void createConseiller(Conseiller conseiller) {
 		// Aucune véfification : le formulaire a déjà validé les champs
-		System.out.println("conseillerService createConseiller()");
+		//System.out.println("conseillerService createConseiller()");
 		// On génère un matricule pour le conseiller
-		conseiller.setMatricule(generateMatricule(conseiller));
+		conseiller.setMatricule(generateMatricule(conseiller));		
 		conseillerDao.createConseiller(conseiller);
 	}
 

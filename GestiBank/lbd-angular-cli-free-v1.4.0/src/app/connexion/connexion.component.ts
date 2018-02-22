@@ -47,7 +47,7 @@ export class ConnexionComponent implements OnInit {
 
     this.cs.getUtilisateur(email,password).subscribe(user => {
       this.utilisateur = user;
-      localStorage.setItem('loggedUser', JSON.stringify(user));
+      localStorage.setItem('user', JSON.stringify(user));
       this.router.navigate([this.utilisateur.statut + '_accueil']);
 
     });

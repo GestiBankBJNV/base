@@ -51,7 +51,7 @@ export class ClientComptesComponent implements OnInit {
 
   //INITIALISATION
   ngOnInit() {
-    let user : Utilisateur = JSON.parse(localStorage.getItem('loggedUser'));
+    let user : Utilisateur = JSON.parse(localStorage.getItem('user'));
     this.clientID = user.id;
     this.refreshAccounts();
   }

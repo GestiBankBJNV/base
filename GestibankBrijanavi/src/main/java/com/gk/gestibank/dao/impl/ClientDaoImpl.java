@@ -42,7 +42,7 @@ public class ClientDaoImpl implements ClientDao {
 	
 	public List<Client> getAll() {		
 		//return clients;
-		Query query = em.createQuery("SELECT c FROM Client as c WHERE isClient=1");
+		Query query = em.createQuery("SELECT c FROM Client c");
 		return (List<Client>)query.getResultList();
 	}
 
