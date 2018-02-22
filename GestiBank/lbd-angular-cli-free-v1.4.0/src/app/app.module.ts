@@ -81,16 +81,16 @@ export function createTranslateLoader(http: HttpClient) {
     LoginComponent,
     PublicDevisesComponent,
     AppComponent,                  //DEFAULT
+    NotificationsComponent,
+    ClientPaginationComponent,
+    PublicFicheInscriptionComponent,
     HomeComponent,
     IconsComponent,
     MapsComponent,
-    NotificationsComponent,
     UpgradeComponent,
     UserComponent,
     TablesComponent,
-    TypographyComponent,
-    ClientPaginationComponent,
-    PublicFicheInscriptionComponent
+    TypographyComponent
   ],
   imports: [
     AppRoutingModule,

@@ -19,21 +19,21 @@ import com.gk.gestibank.model.DemandeInscription;
 
 @Repository
 public class ConseillerDaoImpl implements ConseillerDao {
-	
+
 	public ArrayList<Conseiller> conseillers = new ArrayList<Conseiller>() ; 
-	
+
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	public ConseillerDaoImpl() {
 		//chargerConseillers();
 	}
-	
+
 	public void chargerConseillers(){
 		Bouchons b = new Bouchons();
 		conseillers = b.getConseillers();
 	}
-	
+
 	public List<Conseiller> getAll() {
 		//return conseillers;
 		Query query = em.createQuery("SELECT c FROM Conseiller as c");
@@ -44,52 +44,51 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		//conseillers.add(conseiller);
 		em.persist(conseiller);
 	}
-	
+
 	public void updateConseiller(Conseiller conseiller) {	
-//		int i = conseillers.indexOf(conseiller);
-//		try {
-//			conseillers.set(i, conseiller);
-//		} catch (ArrayIndexOutOfBoundsException e) {
-//			System.out.println("L'index " + i + " ne fait pas partie de la liste conseillers");
-//		}	
-		em.merge(conseiller);
-		em.flush();
+		//		int i = conseillers.indexOf(conseiller);
+		//		try {
+		//			conseillers.set(i, conseiller);
+		//		} catch (ArrayIndexOutOfBoundsException e) {
+		//			System.out.println("L'index " + i + " ne fait pas partie de la liste conseillers");
+		//		}	
+		em.merge(conseiller);		
 	}
-	
+
 	public void deleteConseiller(String matricule) {
-//		for(Conseiller c : conseillers){
-//			if(c.getMatricule().equals(matricule)){
-//				conseillers.remove(c);
-//				break;
-//			}
-//		}
-		
+		//		for(Conseiller c : conseillers){
+		//			if(c.getMatricule().equals(matricule)){
+		//				conseillers.remove(c);
+		//				break;
+		//			}
+		//		}
+
 		Query query = em.createQuery("DELETE FROM Conseiller as c WHERE c.matricule = :matricule");
 		query.setParameter("matricule", matricule);
 		query.executeUpdate();
 	}
-	
+
 	public Conseiller getConseillerByMatricule(String matricule) {
-//		for(Conseiller c : conseillers){
-//			if(c.getMatricule().equals(matricule)){
-//				return c;
-//			}
-//		}
+		//		for(Conseiller c : conseillers){
+		//			if(c.getMatricule().equals(matricule)){
+		//				return c;
+		//			}
+		//		}
 		//return null;
-		Query query = em.createQuery("SELECT c FROM Conseiller c WHERE c.matricule = :matricule");
+		Query query = em.createQuery("SELECT c FROM Conseiller as c WHERE c.matricule = :matricule");
 		query.setParameter("matricule", matricule);
 		return (Conseiller)query.getSingleResult(); // todo : à revoir
 	}	
-	
+
 	public List<Conseiller> getConseillerByNameOrMatricule(String recherche) {
-//		List<Conseiller> l = new ArrayList<Conseiller>();
-//		for(Conseiller c : conseillers){
-//			if(c.getNom().contains(recherche) || c.getMatricule().equals(recherche)){
-//				l.add(c);
-//			}
-//		}
-//		return l;
-		
+		//		List<Conseiller> l = new ArrayList<Conseiller>();
+		//		for(Conseiller c : conseillers){
+		//			if(c.getNom().contains(recherche) || c.getMatricule().equals(recherche)){
+		//				l.add(c);
+		//			}
+		//		}
+		//		return l;
+
 		Query query = em.createQuery("SELECT c FROM Conseiller as c WHERE c.matricule = :recherche OR c.nom LIKE :rechercheLike");
 		query.setParameter("recherche", recherche);
 		query.setParameter("rechercheLike", recherche + "%");
@@ -97,16 +96,16 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	}
 
 	public List<Client> getClientsFromConseiller(String matricule) {
-//		Conseiller c = getConseillerByMatricule(matricule);
-//		if(c != null) {
-//			return c.getClients();
-//		}
-//		return new ArrayList<Client>();
+		//		Conseiller c = getConseillerByMatricule(matricule);
+		//		if(c != null) {
+		//			return c.getClients();
+		//		}
+		//		return new ArrayList<Client>();
 		Query query = em.createQuery("SELECT c.clients FROM Conseiller AS c WHERE c.matricule = :matricule");
 		query.setParameter("matricule", matricule);
 		return (List<Client>)query.getResultList();
 	}
-	
+
 
 	public List<Client> getClientsFromConseillerWithId(int id) {
 		Query query = em.createQuery("SELECT c.clients FROM Conseiller AS c WHERE c.id = :id");
@@ -117,25 +116,25 @@ public class ConseillerDaoImpl implements ConseillerDao {
 	public void addClientToConseiller(Client client, String matricule) {
 		List<Client> clients = getClientsFromConseiller(matricule);
 		clients.add(client);
-		Conseiller cons = getConseillerByMatricule(matricule);
-		cons.setClients(clients);
-		em.merge(cons);
+		Conseiller c = getConseillerByMatricule(matricule);
+		c.setClients(clients);
+		em.merge(c);
 		em.flush();
 	}
 
 	public void deleteClientFromConseiller(int idClient, String matricule) {
-//		List<Client> clients = getClientsFromConseiller(matricule);
-//		Client client = new Client();
-//		client.setId(idClient);
-//		clients.remove(client);
-//		getConseillerByMatricule(matricule).setClients(clients);
+		//		List<Client> clients = getClientsFromConseiller(matricule);
+		//		Client client = new Client();
+		//		client.setId(idClient);
+		//		clients.remove(client);
+		//		getConseillerByMatricule(matricule).setClients(clients);
 	}
 
 	public List<DemandeInscription> getInscriptionsFromConseiller(String matricule) {
 		Conseiller c = getConseillerByMatricule(matricule);
 		return c.getDemandesInscription();
 	}
-	
+
 	public void addInscriptionToConseiller(DemandeInscription demandeInscription, String matricule) {
 		List<DemandeInscription> inscription = getInscriptionsFromConseiller(matricule);
 		inscription.add(demandeInscription);
@@ -150,8 +149,8 @@ public class ConseillerDaoImpl implements ConseillerDao {
 
 		return (Conseiller)query.getSingleResult();
 	}
-	
-	
+
+
 
 	public void updateClientsFromConseillerWithId(List<Client> clients, int idConseiller) {
 		System.out.println("update");
@@ -165,7 +164,7 @@ public class ConseillerDaoImpl implements ConseillerDao {
 		return em.find(Conseiller.class, cid);
 		// TODO Auto-generated method stub
 	}
-	
-	
+
+
 
 }

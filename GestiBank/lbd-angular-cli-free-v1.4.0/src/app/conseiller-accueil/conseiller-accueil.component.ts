@@ -22,6 +22,7 @@ export class ConseillerAccueilComponent implements OnInit {
   idSelectionne: number = null;//initialisation du selectionneur sur false = aucun client selectionné
   isDetailDemande: boolean = false;//initialisation de la vue des demande sur false
   notif: NotificationsComponent = new NotificationsComponent();
+  derouler : boolean = true;
 
   isLoading = false;
 
@@ -43,6 +44,7 @@ export class ConseillerAccueilComponent implements OnInit {
     //si l'id cliqué est différent de l'ancien id et qu'il y a
     //au moins une demande le tableau des demandes clients s'ouvrent
     if (c.id != this.idSelectionne && c.demandes.length != 0) {
+      this.derouler = false;
       this.isDetailDemande = true;
       this.clientService.getAllDemandeClientById(c.id).subscribe(demandes => {
         this.isLoading = false;
@@ -77,6 +79,7 @@ export class ConseillerAccueilComponent implements OnInit {
     if (this.demandes) {
       this.isDetailDemande = false;
       this.idSelectionne = null;
+      this.derouler = true;
       //this.indexClient = null;
     }
 

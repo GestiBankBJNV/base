@@ -9,7 +9,7 @@
             </button>
            
             <!--On affiche le nom et le prénom de la personne si elle est connectée -->
-            <a class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">Bienvenue {{user.prenom}}   {{user.nom}} </a>            
+            <a class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">{{ 'navbar_welcome' | translate }} <i *ngIf='(user)'>{{user.prenom}} {{user.nom}} </i></a>            
                 <!-- <a *class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">{{ 'navbar_welcome' | translate }}{{ (!startsWith("public"))  ? " " + user.prenom + " " + user.nom : "" }}</a> -->
             
         </div>
@@ -41,7 +41,7 @@
                 <!-- BOUTON "MON COMPTE" - CLIENT-->
                 <li routerLinkActive="active" *ngIf='startsWith("client")'>
                     <a  routerLink="client_profil">
-                        <p>Mon profil</p>
+                        <p>{{'navbar_profile' | translate}}</p>
                     </a>
                       
                     <!--<a href="#">

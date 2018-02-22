@@ -1,4 +1,7 @@
 {	
+	"admin_route_home" : "Administration",
+	"admin_route_advisors" : "Advisors",
+	"admin_route_assignment" : "Assignments",
 	"account_type_current" : "Current",
 	"account_type_saving" : "Saving",
 	"operation_type_credit" : "Credit",
@@ -56,6 +59,10 @@
 	"client_profile_username" : "Username",
 	"client_profile_zipcode" : "Zip code",
 	"client_route_accueil" : "Home",
+	"client_route_profile" : "Profile",
+	"client_route_notifications" : "Notifications",
+	"client_route_account" : "My accounts",
+	"route_currencies" : "Currencies",
 	"admin_accueil_bienvenue" : "Welcome to the administration space",
 	"admin_accueil_conseil_selection" : "You can select the action you need in the sidebar",
 	"admin_accueil_conseil_conseillers" : "Agents: Manage records of agents and creating new records",
@@ -95,11 +102,13 @@
 	"suppr" : "Delete",
 	"loading" : "Is loading...",
 	"valider" : "Validate",
+	"cancel" : "Cancel",
 	"affecter" : "Affect",
 	"login" : "Log in",
 	"logout" : "Log out",
 	"nomUtilisateur" : "Username",
 	"mdp" : "Password",
+	"home" : "Home",
 	"dateDebutContrat" : "Entry date",
 	"admin_affectations_selectConseiller" : "Select agent :",
 	"admin_affectations_change" : "Change assignements",
@@ -112,5 +121,9 @@
 	"navbar_notification_title" : "New notifications.",
 	"admin_affectations_association_header1" : "Associate request n°",
 	"au_conseiller" : "to agent",
-	"navbar_welcome" : "Welcome"
+	"navbar_welcome" : "Welcome",
+	"navbar_profile" : "Profile",
+	"conseiller_accueil_title" : "Clients",
+	"conseiller_accueil_details" : "List of assigned clients",
+	"public_route_home" : "Home"
 }

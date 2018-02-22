@@ -15,21 +15,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{'client_profile_username' | translate}}</label>
-                                        <input type="text" class="form-control" formControlName="username"/>
+                                        <input type="text" class="form-control" formControlName="username" required/>
                                     </div>
                                 </div>
                                 <!--Nom-->
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{'client_profile_lastName' | translate}}</label>
-                                        <input type="text" class="form-control" formControlName="lastname"/>
+                                        <input type="text" class="form-control" formControlName="lastname" required/>
                                     </div>
                                 </div>
                                 <!--Prenom-->
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{'client_profile_firstName' | translate}}</label>
-                                        <input type="text" class="form-control" formControlName="firstname"/>
+                                        <input type="text" class="form-control" formControlName="firstname" required/>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{'client_profile_mail' | translate}}</label>
-                                        <input type="text" class="form-control" formControlName="email"/>
+                                        <input type="text" class="form-control" formControlName="email" required/>
                                     </div>
                                 </div>
                                 <!--Entreprise-->
@@ -57,6 +57,9 @@
                                         <select class="btn dropdown-toggle form-control" formControlName="mat">
                                             <option>{{ 'client_profile_single' | translate }}</option>
                                             <option>{{ 'client_profile_married' | translate }}</option>
+                                            <option>{{ 'Pacsé(e)' | translate }}</option>
+                                            <option>{{ 'En couple' | translate }}</option>
+                                            <option>{{ 'Veuf(ve)' | translate }}</option> <!-- todo -->
                                         </select>
                                     </div>
                                 </div>
@@ -68,7 +71,7 @@
                                     <!--Adresse-->
                                     <div class="form-group">
                                         <label>{{'client_profile_address' | translate}}</label>
-                                        <input type="text" class="form-control" formControlName="address"/>
+                                        <input type="text" class="form-control" formControlName="address" required/>
                                     </div>
                                 </div>
                             </div>
@@ -78,21 +81,21 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{'client_profile_city' | translate}}</label>
-                                        <input type="text" class="form-control" formControlName="city"/>
+                                        <input type="text" class="form-control" formControlName="city" required/>
                                     </div>
                                 </div>
                                 <!--Code Postal-->
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{'client_profile_zipcode' | translate}}</label>
-                                        <input type="text" class="form-control" formControlName="zipcode"/>
+                                        <input type="text" class="form-control" formControlName="zipcode" required/>
                                     </div>
                                 </div>
                                 <!--Pays-->
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{'client_profile_country' | translate}}</label>
-                                        <input type="text" class="form-control" formControlName="country"/>
+                                        <input type="text" class="form-control" formControlName="country" required/>
                                     </div>
                                 </div>
 

@@ -27,6 +27,7 @@ export class Client extends Utilisateur {
   situationMatrimoniale: string;
   comptes: Compte[];
   isClient: boolean;
+  notifications : Notification[];
 }
 
 export class Compte {
@@ -120,7 +121,8 @@ export const clients: Client[] = [
     situationMatrimoniale: 'célibataire',
     comptes: [],
     demandes: [],
-    isClient: true
+    isClient: true,
+    notifications : []
   },
   {
     id: 2,
@@ -136,7 +138,8 @@ export const clients: Client[] = [
     situationMatrimoniale: 'marié',
     comptes: [],
     demandes: [],
-    isClient: true
+    isClient: true,
+    notifications : []
   },
   {
     id: 3,    
@@ -152,7 +155,8 @@ export const clients: Client[] = [
     situationMatrimoniale: 'pacsé',
     comptes: [],
     demandes: [],
-    isClient: true
+    isClient: true,
+    notifications : []
   },
   {
     id: 4,    
@@ -168,7 +172,8 @@ export const clients: Client[] = [
     situationMatrimoniale: 'marié',
     comptes: [],
     demandes: [],
-    isClient: true
+    isClient: true,
+    notifications : []
   },
   {
     id: 5,    
@@ -184,7 +189,8 @@ export const clients: Client[] = [
     situationMatrimoniale: 'marié',
     comptes: [],
     demandes: [],
-    isClient: true
+    isClient: true,
+    notifications : []
   },
   {
     id: 6,    
@@ -200,7 +206,8 @@ export const clients: Client[] = [
     situationMatrimoniale: 'célibataire',
     comptes: [],
     demandes: [],
-    isClient: true
+    isClient: true,
+    notifications : []
   },
   {
     id: 7,    
@@ -216,7 +223,8 @@ export const clients: Client[] = [
     situationMatrimoniale: 'marié',
     comptes: [],
     demandes: [],
-    isClient: true
+    isClient: true,
+    notifications : []
   },
 ];
 
@@ -226,42 +234,42 @@ export const demandesInscription: DemandeInscription[] = [
     dateInscription: new Date(2018,0,15),
     dateAffectation: undefined,
     statut: '',
-    coordonnees: {id: 101, email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", nomUtilisateur: 'DRice', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+    coordonnees: {id: 101, email:"dakota@truc.com", prenom: "Dakota", nom: "Rice", nomUtilisateur: 'DRice', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false, notifications : []}
   },
   {
     id: 2,
     dateInscription: new Date(2017,11,5),
     dateAffectation: new Date(2017,6,12),
     statut: 'traitée',
-    coordonnees: {id: 102, email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", nomUtilisateur: 'MHooper', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+    coordonnees: {id: 102, email:"minerva@truc.com", prenom: "Minerva", nom: "Hooper", nomUtilisateur: 'MHooper', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false, notifications : []}
   },
   {
     id: 3,
     dateInscription: new Date(2018,0,7),
     dateAffectation: undefined,
     statut: '',
-    coordonnees: {id: 103, email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", nomUtilisateur: 'SRodriguez', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+    coordonnees: {id: 103, email:"sage@truc.com", prenom: "Sage", nom: "Rodriguez", nomUtilisateur: 'SRodriguez', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false, notifications : []}
   },
   {
     id: 4,
     dateInscription: new Date(2018,0,9),
     dateAffectation: new Date(2018,0,11),
     statut: 'en cours',
-    coordonnees: {id: 104, email:"philip@truc.com", prenom: "Philip", nom: "Chaney", nomUtilisateur: 'PChaney', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0,situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+    coordonnees: {id: 104, email:"philip@truc.com", prenom: "Philip", nom: "Chaney", nomUtilisateur: 'PChaney', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0,situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false, notifications : []}
   },
   {
     id: 5,
     dateInscription: new Date(2018,0,13),
     dateAffectation: undefined,
     statut: '',
-    coordonnees: {id: 105, email:"doris@truc.com", prenom: "Doris", nom: "Greene", nomUtilisateur: 'DGreen', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+    coordonnees: {id: 105, email:"doris@truc.com", prenom: "Doris", nom: "Greene", nomUtilisateur: 'DGreen', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false, notifications : []}
   },
   {
     id: 6,
     dateInscription: new Date(2018,0,10),
     dateAffectation: undefined,
     statut: '',
-    coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false}
+    coordonnees: {id: 106, email:"mason@truc.com", prenom: "Mason", nom: "Porter", nomUtilisateur:'MPorter', password: '', statut: 'client', adresse: "2 rue machinchose", ville: "Uneville", cp:"56480", numTel: '0625364859', nbEnfants: 0, situationMatrimoniale:"célibataire", comptes: [], demandes: [], isClient: false, notifications : []}
   },
 ];
 

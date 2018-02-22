@@ -79,7 +79,7 @@ public class WSDemande {
 	public void sendDemandeModif(@PathParam("clientId") int clientId, DemandeModif demandeModif){
 		dbgLog("Send demande modif");
 		System.out.println(demandeModif);
-		//demandeService.sendDemandeModif(clientId, demandeModif);		
+		demandeService.sendDemandeModif(clientId, demandeModif);		
 	}
 	
 	//DEBUG

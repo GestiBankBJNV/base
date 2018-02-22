@@ -107,7 +107,8 @@ export class PublicFicheInscriptionComponent implements OnInit {
       statut: 'client',
       demandes: [],
       isClient: false,
-      id: undefined
+      id: undefined,
+      notifications: []
     };
     return saveClient;
   }

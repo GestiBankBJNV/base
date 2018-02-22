@@ -34,8 +34,8 @@ public class DemandeClientDaoImpl implements DemandeClientDao {
 	
 	@Transactional
 	public List<DemandeClient> getByClient(int clientId) {
-		Query q = em.createQuery("SELECT dc FROM DemandeClient dc WHERE dc.client = " + clientId);
-		return (List<DemandeClient>)q.getResultList();
+		Query q = em.createQuery("SELECT d FROM DemandeClient d WHERE client = " + clientId);
+		return q.getResultList();
 	}
 	
 	@Transactional

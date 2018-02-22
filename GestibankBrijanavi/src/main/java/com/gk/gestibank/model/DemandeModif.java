@@ -5,7 +5,10 @@ import java.util.Date;
 
 
 
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 import javax.ws.rs.Produces;
 
@@ -16,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Entity
 public class DemandeModif extends DemandeClient implements Serializable {
 	
-
+	@OneToOne(cascade={CascadeType.ALL}, fetch=FetchType.EAGER)
 	private Client coordonnees;
 	
 	public DemandeModif() {

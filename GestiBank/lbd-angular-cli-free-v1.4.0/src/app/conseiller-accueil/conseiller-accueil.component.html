@@ -1,27 +1,37 @@
 <div class="main-content">
-	<h2>Clients</h2>
-  <p>Liste des clients qui vous sont affectés</p>
-  <!-- Affichage dans un tableau de la liste des clients du conseiller -->           
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>{{"prenom" | translate}}</th>
-        <th>Nom</th>
-        <th>E-mail</th>
-        <th>Demande(s)</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let client of clients | async" (click)="voirDemande(client)">
-      	<td>{{client.prenom}}</td>
-      	<td>{{client.nom}}</td>
-      	<td>{{client.email}}</td>
-      	<td>{{client.demandes.length}}</td>
-        <td><button type="button" class="btn btn-info btn-sm">Editer</button></td>
-      </tr>      
-    </tbody>
-  </table>
+	<h2>{{ 'conseiller_accueil_title' | translate }}</h2>
+  <!-- Affichage dans un tableau de la liste des clients du conseiller -->
+  <accordion>
+    <accordion-group [isOpen]="derouler">
+      <!-- ============== Titre ============== -->
+        <div accordion-heading class="clearfix">
+          <h4>{{ 'conseiller_accueil_details' | translate }}</h4> 
+          <!-- TODO : ajouter une fleche -->      
+        </div>
+        <div class="content">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>{{"prenom" | translate}}</th>
+                <th>Nom</th>
+                <th>E-mail</th>
+                <th>Demande(s)</th>
+              <!--  <th>Action</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let client of clients | async" (click)="voirDemande(client)">
+              	<td>{{client.prenom}}</td>
+              	<td>{{client.nom}}</td>
+              	<td>{{client.email}}</td>
+              	<td>{{client.demandes.length}}</td>
+       <!--  <td><button type="button" class="btn btn-info btn-sm">Editer</button></td> -->
+            </tr>      
+          </tbody>
+        </table>
+      </div>
+    </accordion-group>
+</accordion>
 <!-- Affichage dans un tableau de la liste des demandes du client sélectionner -->
 <div *ngIf="isDetailDemande">
   <h2>Client {{nomDemande}}</h2>
@@ -43,8 +53,8 @@
         <td>{{demande.statut}}</td>
         <td>{{demande.libelle}}</td>
         <td>
-            <button type="button" class="btn btn-success" (click)="demandeTraite(demande)">Envoyer</button>
-            <button type="button" class="btn btn-warning" (click)="fermerfenetre()">Annuler</button>
+            <button type="button" class="btn btn-success" (click)="demandeTraite(demande)">{{ 'validate' | translate }}</button>
+            <button type="button" class="btn btn-warning" (click)="fermerfenetre()">{{ 'cancel' | translate }}</button>
         </td>       
       </tr>      
     </tbody>

@@ -151,7 +151,7 @@ public class WSCreateDummies {
 		List<Compte> comptes = new ArrayList<Compte>();
 		comptes.add(createRandomCompteCourant());
 		comptes.add(createRandomCompteCourant());
-		comptes.add(createRandomCompteEpargne());
+		//comptes.add(createRandomCompteEpargne());
 
 		//Liste de demandes
 		List<DemandeClient> demandes = new ArrayList<DemandeClient>();
@@ -319,8 +319,7 @@ public class WSCreateDummies {
 
 			try {
 				Conseiller cons = lc.get(i);			
-				conseillerService.createConseiller(cons);
-				
+				conseillerService.createConseiller(cons);				
 				for (Client client :  listOfList.get(i)){
 					conseillerService.addClientToConseiller(client, cons.getMatricule());
 				}

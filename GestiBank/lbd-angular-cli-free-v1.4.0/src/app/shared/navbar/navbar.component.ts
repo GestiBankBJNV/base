@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
 import { ROUTES } from '../../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { NotificationService } from '../../notification-service';
@@ -29,10 +29,8 @@ export class NavbarComponent implements OnInit{
     notifications : Notification[] = []; //Ne contiendra que les notifications non lues.
 
 
-
-
     constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService, private clientService : ClientService, private conseillerService : ConseillerService, private router: Router) {      
-
+      this.router.events.subscribe(event => this.user = JSON.parse(localStorage.getItem("user")));
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -108,7 +106,9 @@ export class NavbarComponent implements OnInit{
     }
 
     logout(){
+      this.user =null;
       localStorage.removeItem("user");
-      this.router.navigate(["public_accueil"]);
+      this.router.navigate(["public_connexion"]);
+     
     }
 }

@@ -84,13 +84,6 @@ public class WSConseiller {
 		return conseillerService.getConseillerWithClient(idClient);
 	}
 	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/id/{ id }")
-	public Conseiller getConseillerById(@PathParam("id") int id) {
-		return conseillerService.getById(id);
-	}
-	
 	@DELETE
 	@Path("/clients/{ idClient }")
 	public void deleteClientFromConseiller(@PathParam("idClient") int idClient) {
