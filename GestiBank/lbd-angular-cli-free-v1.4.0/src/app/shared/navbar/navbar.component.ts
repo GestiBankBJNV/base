@@ -5,6 +5,7 @@ import { NotificationService } from '../../notification-service';
 import { CLIENT } from '../../classes/FAKES';
 import { Notification, Utilisateur, Client } from '../../data-model';
 import {ClientService} from '../../client-service';
+import { Router} from '@angular/router';
 
 
 
@@ -17,8 +18,8 @@ import {ClientService} from '../../client-service';
 
 export class NavbarComponent implements OnInit{
 
-    user : any = CLIENT;
-    user2: Utilisateur = JSON.parse(localStorage.getItem("user"));
+    //user : any = CLIENT;
+    user: Utilisateur = JSON.parse(localStorage.getItem("user"));
     client : Client                       //Bouchon
     clientID : number = 1;                //Bouchon
     private listTitles: any[];
@@ -30,18 +31,17 @@ export class NavbarComponent implements OnInit{
 
 
 
-    constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService, private clientService : ClientService) {      
+    constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService, private clientService : ClientService, private router: Router) {      
       this.location = location;
           this.sidebarVisible = false;
     }
 
     ngOnInit(){
-      console.log(this.user2);
-      //this.refreshNotifications();
-      /*if (this.clientID >= 0){
+      this.refreshNotifications();
+      if (this.clientID >= 0){
         this.clientService.getClientById(this.clientID).subscribe(client => { this.client = client });
-      }*/
-      /*this.refreshNotifications();*/
+      }
+      this.refreshNotifications();
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
@@ -108,6 +108,12 @@ export class NavbarComponent implements OnInit{
       this.notificationService.getNotificationsByClient(1).subscribe(notifications => {  
         this.notifications = notifications.filter(notif => !notif.toggled);
       });
+    }
+
+    logout(){
+      localStorage.removeItem("user");
+      this.router.navigate(["public_accueil"]);
+
     }
     
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
 import { ClientService } from '../client-service';
 import { DatePipe } from '@angular/common';
-import { Conseiller, Client, DemandeClient } from '../data-model';
+import { Conseiller, Client, DemandeClient, Utilisateur, conseillers } from '../data-model';
 import { Observable } from 'rxjs/Observable';
 import { NotificationsComponent } from '../notifications/notifications.component';
 
@@ -14,7 +14,7 @@ import { NotificationsComponent } from '../notifications/notifications.component
 
 export class ConseillerAccueilComponent implements OnInit {	
 
-
+  currentUser: Conseiller = JSON.parse(localStorage.getItem("user"));
 	clients: Observable<Client[]>;// récuperation des clients
   demandes: Observable<DemandeClient[]>; //récuperation des demandes par client
   nomDemande: String;//recuperation du nom de la demande
@@ -28,10 +28,10 @@ export class ConseillerAccueilComponent implements OnInit {
   constructor(private conseillerService: ConseillerService, private clientService: ClientService) { }
 
   ngOnInit() {
-
+    console.log(this.currentUser.matricule);
     this.isLoading = true;
   	//initiatlisation pour l'affichage dans le tableau des différents clients.
-  	this.clients = this.conseillerService.getListeClientsFromConseiller("425A")    
+  	this.clients = this.conseillerService.getListeClientsFromConseiller(this.currentUser.matricule)    
                          // Normalement à faire : error handling
                         .finally(() => this.isLoading = false);
     this.clients

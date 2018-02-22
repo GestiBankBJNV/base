@@ -87,8 +87,8 @@
             </button>
            
             <!--On affiche le nom et le prénom de la personne si elle est connectée -->
-            <a class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">Bienvenue {{user2.prenom}}   {{user2.nom}} </a>
-                <a class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">{{ 'navbar_welcome' | translate }}{{ (!startsWith("public"))  ? " " + client.prenom + " " + client.nom : "" }}</a>
+            <a class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">Bienvenue {{user.prenom}}   {{user.nom}} </a>            
+                <!-- <a *class="navbar-brand" routerLink="{{ getPrefix() + '_accueil'}}">{{ 'navbar_welcome' | translate }}{{ (!startsWith("public"))  ? " " + user.prenom + " " + user.nom : "" }}</a> -->
             
         </div>
         <div class="collapse navbar-collapse">
@@ -130,7 +130,7 @@
 
                 <!--Bouton de/connexion-->
                 <li>
-                    <a href="#">
+                    <a (click)="logout();">
                         <p>{{ (startsWith("public")) ? ('login' | translate) : ('logout' | translate) }}</p>
                     </a>
                 </li>

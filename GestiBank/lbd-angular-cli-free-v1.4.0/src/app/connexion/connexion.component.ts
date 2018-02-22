@@ -15,7 +15,6 @@ import { ConseillerService } from '../conseiller-service';
 export class ConnexionComponent implements OnInit {
 
   utilisateur: Utilisateur;
-
   // création d'utilisateurs pour les tests
   /*utilisateurs = [
                      {user: 'nassim', password: '1234', status: 'client'},
@@ -31,6 +30,12 @@ export class ConnexionComponent implements OnInit {
   constructor(public fb: FormBuilder, private router: Router, private cs: ConseillerService) { }
 
   ngOnInit() {
+
+
+    var user: Utilisateur = JSON.parse(localStorage.getItem("user"));
+    if(user != null){
+      this.router.navigate([user.statut + "_accueil"]);
+    }
 
     // Rend les champs du login (user et password obligatoire)
   	this.formGroupLogin = this.fb.group({
