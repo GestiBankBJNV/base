@@ -41,8 +41,7 @@ public class WSClient {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{id}/demandes")
 	public List<DemandeClient> getDemandeByClientid(@PathParam("id")int id){
-		List<DemandeClient> ltest = clientService.getDemandeClientById(id);
-		System.out.println("COUNT : " + ltest.size());
+		List<DemandeClient> ltest = clientService.getDemandeClientById(id);		
 		return ltest;
 	}
 	
