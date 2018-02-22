@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Notification } from '../data-model';
+import { Notification, Utilisateur } from '../data-model';
 import { NotificationService } from '../notification-service';
 import { Subscription } from 'rxjs/Subscription';
 import { Client } from '../classes/client';
@@ -25,6 +25,8 @@ export class ClientNotificationsComponent implements OnInit {
   constructor(private notificationService : NotificationService) { }
 
   ngOnInit() {
+  	let user : Utilisateur = JSON.parse(localStorage.getItem('user'));
+    this.clientID = user.id;
   	this.refreshNotifications();
   }
 

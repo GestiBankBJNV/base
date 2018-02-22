@@ -32,7 +32,7 @@ public class ConseillerService implements IConseillerService {
 		// Aucune véfification : le formulaire a déjà validé les champs
 		System.out.println("conseillerService createConseiller()");
 		// On génère un matricule pour le conseiller
-		conseiller.setMatricule(generateMatricule(conseiller));
+		conseiller.setMatricule(generateMatricule(conseiller));		
 		conseillerDao.createConseiller(conseiller);
 	}
 
@@ -153,5 +153,10 @@ public class ConseillerService implements IConseillerService {
 		}
 		conseillerDao.updateConseiller(newc);
 		
+	}
+	
+	@Transactional
+	public Conseiller getById(int id){
+		return conseillerDao.getById(id);
 	}
 }

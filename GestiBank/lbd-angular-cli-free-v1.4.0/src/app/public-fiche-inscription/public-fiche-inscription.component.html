@@ -7,17 +7,14 @@
             </div>
             <div class="content">
                 <form [formGroup] = "formulaire" (ngSubmit)="onSubmit()" novalidate>
-
-                    <div class="row">
-                                                
+                    <div class="row">                                                
                         <div class="col-md-7">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">{{ 'admin_fiche_conseiller_form_email' | translate }}</label>
                                 <input type="email" class="form-control" placeholder="email@exemple.com" formControlName="email" required>
                             </div>
                         </div>
-                    </div>
-
+                    </div> 
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -76,13 +73,14 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>{{ 'Situation matrimoniale' | translate }}</label>
-                                <input type="text" class="form-control" placeholder="{{ 'Célibataire' | translate }}" formControlName="situationMatrimoniale" required>
-                            </div>
+                        <div class="col-md-6">
+                           <label>{{ 'Situation matrimoniale' | translate }}</label>
+                            <select class="btn dropdown-toggle form-control" formControlName="situationMatrimoniale">
+                                <option>{{ 'client_profile_single' | translate }}</option>
+                                <option>{{ 'client_profile_married' | translate }}</option>
+                            </select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label>{{ 'Nombre d\'enfants' | translate }}</label>
                                 <input type="number" class="form-control" placeholder="{{ '0' | translate }}" formControlName="nbEnfants" required>

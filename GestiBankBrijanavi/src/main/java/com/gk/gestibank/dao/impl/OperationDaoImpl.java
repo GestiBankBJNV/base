@@ -22,7 +22,7 @@ public class OperationDaoImpl implements OperationDao {
 	
 	@Transactional
 	public List<Operation> getByCompte(int compteId) {
-		Query q = em.createQuery("SELECT o FROM Operation o WHERE compte = " + compteId);
+		Query q = em.createQuery("SELECT o FROM Operation o WHERE compte = " + compteId + " ORDER BY dateOperation DESC");
 		return (List<Operation>)q.getResultList();
 		/*
 		List<Operation> l = new ArrayList<Operation>();

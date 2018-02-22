@@ -16,11 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gk.gestibank.model.Client;
 import com.gk.gestibank.model.Compte;
 import com.gk.gestibank.model.CompteEpargne;
+import com.gk.gestibank.model.Conseiller;
 import com.gk.gestibank.model.DemandeClient;
+import com.gk.gestibank.model.DemandeInscription;
 import com.gk.gestibank.model.Notification;
 import com.gk.gestibank.model.Operation;
 import com.gk.gestibank.services.IClientService;
-import com.gk.gestibank.services.impl.ClientService;
+
+import com.gk.gestibank.services.IConseillerService;
+
 
 @RestController
 @Path("/dummies")
@@ -28,6 +32,10 @@ public class WSCreateDummies {
 
 	@Autowired
 	IClientService clientService;
+
+	@Autowired
+	IConseillerService conseillerService;
+
 
 
 	/**
@@ -39,19 +47,24 @@ public class WSCreateDummies {
 	public String createDummyClient(@PathParam("count") int count){
 		//
 		System.out.println("Création de " + count + "clients aléatoires.");
-		
+
 		for (int i = 0; i < count; i++)
 		{
-			//Création du dummy
-			Client client = dummyClient();
-			
-			//persistence dans la BDD
-			clientService.createClient(client);
 
-			//
-			System.out.println("Le client " + client.toString() + " a été créé");
+			try {
+				//Création du dummy
+				Client client = dummyClient();
+
+				//persistence dans la BDD
+				clientService.createClient(client);
+
+				//
+				System.out.println("Le client " + client.toString() + " a été créé");
+			} catch (Exception e) {
+
+			}
 		}
-		
+
 		return "Created " + count + " dummy clients";
 	}
 
@@ -73,9 +86,11 @@ public class WSCreateDummies {
 	//Créer un compte épargne aléatoire
 	CompteEpargne createRandomCompteEpargne(){
 		CompteEpargne c = new CompteEpargne();
-		c.setCode((int)(Math.random() * (new Date().hashCode())));
+		String code = "" + new Date().getTime();
+		code = code.substring(code.length() - 7);
+		c.setCode(Integer.valueOf(code));
 		c.setSolde(Math.random() * 5000d);
-		c.setDecouvert(c.getSolde() * 0.1d);
+		c.setDecouvert(0d);
 		c.setTaux(1.5f);			
 		c.setType("account_type_saving");
 		List<Operation> operations = new ArrayList<Operation>();
@@ -120,12 +135,13 @@ public class WSCreateDummies {
 	}
 
 	//Récupérer un prénom aléatoire
-	private static String[] prenoms = {"Gaspard", "Balthazar", "Melchior", "Bertrand", "Thierry", "Richard"};
+	private static String[] prenoms = {"Jean", "Philippe", "Michel", "Alain", "Patrick", "Nicolas", "Christophe", "Pierre", "Christian", "Éric", "Marie", "Nathalie", "Isabelle", "Sylvie", "Catherine", "Martine", "Christine", "Françoise", "Valérie", "Sandrine"};
 	String getPrenom(){
 		return prenoms[(int)(Math.random() * (prenoms.length - 1))];
 	}
+
 	//Nom aléatoire
-	private static String[] noms = {"Lucas", "Dupont", "Sanchez", "Michel", "Durand", "Dubois"};
+	private static String[] noms = {"Martin", "Bernard", "Thomas", "Petit", "Robert", "Richard", "Durand", "Dubois", "Moreau", "Laurent", "Simon", "Michel", "Lefebvre", "Leroy", "Roux"};
 	String getNom(){
 		return noms[(int)(Math.random() * (noms.length - 1))];
 	}
@@ -153,20 +169,48 @@ public class WSCreateDummies {
 		notifications.add(createRandomNotification());
 
 		//Création du client
-		Client client = new Client((int)(Math.random() * 5), ((Math.random() > 0.5)? "Marié" : "Célibataire"), comptes, "10 Rue de Menin", "Lille","59000", demandes, notifications, true);
+		Client client = new Client();
 
-		//Assignation du prenom
+		//isClient
+		client.setIsClient(false);
+
+		//Notifications
+		client.setNotifications(notifications);
+
+		//Demandes
+		client.setDemandes(demandes);
+
+		//Code postal
+		client.setCp("59000");
+
+		//Ville
+		client.setVille("Lille");
+
+		//Adresse
+		client.setAdresse((int)(1 + (Math.random() * 100)) + " Rue " + getNom());
+
+		//Comptes
+		client.setComptes(comptes);
+
+
+		//Situation matrimoniale
+		client.setSituationMatrimoniale(((Math.random() > 0.5) ? "Marié" : "Célibataire"));
+
+		//Nb enfants
+		client.setNbEnfants((int)(Math.random() * 5));
+
+		//Prenom
 		String prenom = getPrenom();		
 		client.setPrenom(prenom);
 
-		//Assignation du nom
+		//Nom
 		String nom = getNom();
 		client.setNom(nom);
 
 		//Username à partir du nom et du prénom
 		String username = prenom.charAt(0) + nom;
 		String num = "" + new Date().getTime();
-		num = num.substring(num.length() - 4);
+		num = num.substring(num.length() - 5);
 		username = username.toLowerCase() + num;
 		client.setNomUtilisateur(username);
 
@@ -181,6 +225,113 @@ public class WSCreateDummies {
 
 		//Mail
 		client.setEmail(prenom.toLowerCase() + "." + nom.toLowerCase() + "@gestibank.com");
+
 		return client;
+	}
+
+	Conseiller dummyConseiller(){
+		Conseiller conseiller = new Conseiller();
+
+		//Liste client
+		conseiller.setClients(new ArrayList<Client>());
+
+		//Date début contrat
+		conseiller.setDateDebutContrat(new Date());
+
+		//Demandes inscriptions
+		conseiller.setDemandesInscription(new ArrayList<DemandeInscription>());
+
+		//Prenom
+		String prenom = getPrenom();		
+		conseiller.setPrenom(prenom);
+
+		//Nom
+		String nom = getNom();
+		conseiller.setNom(nom);
+
+		//Username à partir du nom et du prénom
+		String username = prenom.charAt(0) + nom;
+		String num = "" + new Date().getTime();
+		num = num.substring(num.length() - 5);
+		username = username.toLowerCase() + num;
+		conseiller.setNomUtilisateur(username);
+
+		//Mail
+		conseiller.setEmail(prenom.toLowerCase() + "." + nom.toLowerCase() + "@gestibank.com");
+
+		//Matricule
+		String mat = "" + prenom.charAt(0) + nom.charAt(0);
+		mat = mat.toUpperCase();
+		num = "" + new Date().getTime();
+		num = num.substring(num.length() - 7);
+		conseiller.setMatricule(mat + num);
+
+		//Numero téléphone
+		conseiller.setNumTel("0606060606");
+
+		//Password
+		conseiller.setPassword("azerty");
+
+		//Statut
+		conseiller.setStatut("conseiller");	
+
+		return conseiller;
+	}
+
+
+	@GET
+	@Path("/conseiller/{count}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String createDummyConseiller(@PathParam("count") int count){
+
+		//ADMIN
+		Conseiller admin = dummyConseiller();
+		admin.setStatut("admin");
+		conseillerService.createConseiller(admin);
+
+		//Conseillers
+
+		List<Conseiller> lc = new ArrayList<Conseiller>();
+
+		List<List<Client>> listOfList = new ArrayList<List<Client>>();
+
+
+
+		for (int i=0; i < count; i++){
+			lc.add(dummyConseiller());
+			listOfList.add(new ArrayList<Client>());
+		}
+
+		//Distribution des clients aux conseillers (on laisse 10 clients sans conseillers, pour la démo)
+		List<Client> lClients = clientService.getAll();
+		System.out.println("GETALL : " + lClients.size());
+		int token=0;		
+		for (int i = 0; i < lClients.size() - 10; i++){
+
+			lClients.get(i).setIsClient(true);
+			listOfList.get(token).add(lClients.get(i));
+
+			token++;
+			if (token >= count){ token = 0; }
+		}
+		//assignation des listes aux conseillers
+		for (int i=0; i < count; i++){
+
+			try {
+				Conseiller cons = lc.get(i);			
+				conseillerService.createConseiller(cons);
+				
+				for (Client client :  listOfList.get(i)){
+					conseillerService.addClientToConseiller(client, cons.getMatricule());
+				}
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+
+		return "Created " + count + " dummy Conseiller";
 	}
 }

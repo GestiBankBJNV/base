@@ -39,6 +39,12 @@ export class ConseillerService {
     .catch((error : any) => Observable.throw(error.json().error || 'Error'));
   }
 
+  getById(id : number) : Observable<Conseiller>{
+    return this.http.get("http://localhost:8080/GestiBankBrijanavi/conseillers/id/" + id)
+    .map(this.extractData)
+    .catch((error : any) => Observable.throw(error.json().error || 'Error'));
+  }
+
   private extractData(res: Response) {
     var data = res.json() || [];
     data.forEach((d) => {

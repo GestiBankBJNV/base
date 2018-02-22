@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Client, DemandeModif, Notification,showNotification } from '../data-model';
+import { Client, DemandeModif, Notification,showNotification, Utilisateur } from '../data-model';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClientService } from '../client-service';
@@ -29,6 +29,8 @@ export class ClientProfilComponent implements OnInit {
   constructor(private fb: FormBuilder, private router : Router, private clientService : ClientService, private notificationService : NotificationService, private demandeService : DemandeService) { }
 
   ngOnInit() {
+    let user : Utilisateur = JSON.parse(localStorage.getItem('user'));
+    this.clientID = user.id;
     //this.sub = this.route.params.subscribe(params => { this.id = params['id']; })//Récupérer l'id du client depuis l'url?
 
     this.userForm = new FormGroup({

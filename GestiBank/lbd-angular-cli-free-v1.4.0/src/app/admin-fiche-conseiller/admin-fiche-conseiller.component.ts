@@ -43,7 +43,7 @@ export class AdminFicheConseillerComponent implements OnInit {
   	this.formulaire = this.fb.group({
   		matricule: '',		
   		prenom: ['', Validators.required ],
-  		nom: ['', Validators.required ],
+      nom: ['', Validators.required ],
       nomUtilisateur: ['', Validators.required ],
       mdp: ['', [Validators.required, Validators.minLength(6)]],
       email: ['', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]],

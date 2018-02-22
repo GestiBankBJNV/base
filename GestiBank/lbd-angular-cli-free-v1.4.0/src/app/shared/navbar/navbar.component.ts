@@ -6,6 +6,7 @@ import { CLIENT } from '../../classes/FAKES';
 import { Notification, Utilisateur, Client } from '../../data-model';
 import {ClientService} from '../../client-service';
 import { Router} from '@angular/router';
+import { ConseillerService } from "../../conseiller-service";
 
 
 
@@ -13,15 +14,13 @@ import { Router} from '@angular/router';
     // moduleId: module.id,
     selector: 'navbar-cmp',
     templateUrl: 'navbar.component.html',
-    providers: [ClientService, NotificationService]
+    providers: [ClientService, ConseillerService, NotificationService]
 })
 
 export class NavbarComponent implements OnInit{
 
     //user : any = CLIENT;
     user: Utilisateur = JSON.parse(localStorage.getItem("user"));
-    client : Client                       //Bouchon
-    clientID : number = 1;                //Bouchon
     private listTitles: any[];
     location: Location;
     private toggleButton: any;
@@ -31,17 +30,15 @@ export class NavbarComponent implements OnInit{
 
 
 
-    constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService, private clientService : ClientService, private router: Router) {      
+
+    constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService, private clientService : ClientService, private conseillerService : ConseillerService, private router: Router) {      
+
       this.location = location;
           this.sidebarVisible = false;
     }
 
-    ngOnInit(){
-      this.refreshNotifications();
-      if (this.clientID >= 0){
-        this.clientService.getClientById(this.clientID).subscribe(client => { this.client = client });
-      }
-      this.refreshNotifications();
+    ngOnInit(){      
+      //this.refreshNotifications();
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
@@ -78,7 +75,7 @@ export class NavbarComponent implements OnInit{
     //Retourne le préfixe de l'url en fonction du type d'utilisateur
     //On teste si les variables existent, pour déterminer le type d'user
     getPrefix(){
-      if(this.client){ return this.client.statut; }      
+      if(this.user){ return this.user.statut; }      
       return "public";
     }
 
@@ -105,7 +102,7 @@ export class NavbarComponent implements OnInit{
 
     refreshNotifications(){
       this.notifications = [];
-      this.notificationService.getNotificationsByClient(1).subscribe(notifications => {  
+      this.notificationService.getNotificationsByClient(this.user.id).subscribe(notifications => {  
         this.notifications = notifications.filter(notif => !notif.toggled);
       });
     }
@@ -113,7 +110,5 @@ export class NavbarComponent implements OnInit{
     logout(){
       localStorage.removeItem("user");
       this.router.navigate(["public_accueil"]);
-
     }
-    
 }

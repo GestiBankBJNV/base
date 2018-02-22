@@ -15,6 +15,7 @@ import { ConseillerService } from '../conseiller-service';
 export class ConnexionComponent implements OnInit {
 
   utilisateur: Utilisateur;
+
   // création d'utilisateurs pour les tests
   /*utilisateurs = [
                      {user: 'nassim', password: '1234', status: 'client'},
@@ -52,8 +53,8 @@ export class ConnexionComponent implements OnInit {
 
     this.cs.getUtilisateur(email,password).subscribe(user => {
       this.utilisateur = user;
-    this.router.navigate([this.utilisateur.statut + '_accueil']);
-    localStorage.setItem("user", JSON.stringify(this.utilisateur));
+      localStorage.setItem('user', JSON.stringify(user));
+      this.router.navigate([this.utilisateur.statut + '_accueil']);
     });
 
     
