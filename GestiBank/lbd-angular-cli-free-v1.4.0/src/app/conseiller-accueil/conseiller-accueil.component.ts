@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConseillerService } from '../conseiller-service';
 import { ClientService } from '../client-service';
 import { DatePipe } from '@angular/common';
-import { Conseiller, Client, DemandeClient, Utilisateur, conseillers } from '../data-model';
+import { Conseiller, Client, DemandeClient, Utilisateur, conseillers, DemandeInscription } from '../data-model';
 import { Observable } from 'rxjs/Observable';
 import { NotificationsComponent } from '../notifications/notifications.component';
 
@@ -15,7 +15,8 @@ import { NotificationsComponent } from '../notifications/notifications.component
 export class ConseillerAccueilComponent implements OnInit {	
 
   currentUser: Conseiller = JSON.parse(localStorage.getItem("user"));
-	clients: Observable<Client[]>;// récuperation des clients
+	clients: Client[];// récuperation des clients
+  vclient: Client[];//récupération des client non prospect
   demandes: DemandeClient[]; //récuperation des demandes par client
   nomDemande: String;//recuperation du nom de la demande
   indexClient: number;//recuperation de l'index du client
@@ -31,10 +32,20 @@ export class ConseillerAccueilComponent implements OnInit {
     console.log(this.currentUser.matricule);
     this.isLoading = true;
   	//initiatlisation pour l'affichage dans le tableau des différents clients.
-  	this.clients = this.conseillerService.getListeClientsFromConseiller(this.currentUser.matricule)    
+  	//this.clients = this.conseillerService.getListeClientsFromConseiller(this.currentUser.matricule)    
                          // Normalement à faire : error handling
-                        .finally(() => this.isLoading = false);
-    this.clients
+    //                    .finally(() => this.isLoading = false);
+    this.conseillerService.getListeClientsFromConseiller(this.currentUser.matricule).subscribe(clients =>{
+      this.clients = clients;
+      this.vclient = [];
+      for(let i=0; i<this.clients.length; i++){
+      if(this.clients[i].isClient == true){
+        this.vclient.push(this.clients[i])
+      }
+    }
+    });
+
+    
 
   }
 
@@ -45,9 +56,9 @@ export class ConseillerAccueilComponent implements OnInit {
     if (c.id != this.idSelectionne && c.demandes.length != 0) {
       this.isDetailDemande = true;
       this.clientService.getAllDemandeClientById(c.id).subscribe(demandes => {
-        this.isLoading = false;
-        this.demandes = demandes;
+        this.isLoading = false;  
       });
+
       console.log("id du conseiller : "+c.id);
       console.log(this.demandes);
       this.indexClient = c.id;

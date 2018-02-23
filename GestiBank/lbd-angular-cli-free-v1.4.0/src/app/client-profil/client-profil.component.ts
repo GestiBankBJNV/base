@@ -81,8 +81,12 @@ export class ClientProfilComponent implements OnInit {
       this.notificationService.addNotificationToClient(this.clientID, notif).subscribe(notif=> {
           //Envoi de la demande
           this.client.comptes = [];
-          console.log("Notification créée");          
-          let demande : DemandeModif = { id: -1, date: new Date(), dateAffectation: null, statut: "client", coordonnees: this.client, libelle: "Demande de modification" };
+          console.log("Notification créée");
+          let coordonnees = this.client;
+          coordonnees.comptes = [];
+          coordonnees.demandes = [];
+          coordonnees.nomUtilisateur += "temp";
+          let demande : DemandeModif = { id: -1, date: new Date(), dateAffectation: null, statut: "client", coordonnees: coordonnees, libelle: "Demande de modification" };
           this.demandeService.sendDemandeModif(this.clientID, demande).subscribe(any => {
             console.log("demande envoyée");
           });

@@ -33,6 +33,7 @@ export class NavbarComponent implements OnInit{
 
     constructor(location: Location,  private element: ElementRef, private notificationService : NotificationService, private clientService : ClientService, private conseillerService : ConseillerService, private router: Router) {      
 
+      this.router.events.subscribe(event => this.user = JSON.parse(localStorage.getItem("user")));  
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -109,6 +110,6 @@ export class NavbarComponent implements OnInit{
 
     logout(){
       localStorage.removeItem("user");
-      this.router.navigate(["public_accueil"]);
+      this.router.navigate(["public_connexion"]);
     }
 }

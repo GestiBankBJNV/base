@@ -42,6 +42,7 @@ import { ClientProfilComponent } from './client-profil/client-profil.component';
 
 //IMPORTS CONSEILLER
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
+import { ProspectionConseillerComponent } from './prospection-conseiller/prospection-conseiller.component';
 
 //IMPORTS PUBLIC
 import { ConnexionComponent } from './connexion/connexion.component';
@@ -55,6 +56,7 @@ import { ClientService } from './client-service'; /*****/
 import { DemandeService } from './demande-service';
 import { CompteService } from './compte-service';
 import { PublicFicheInscriptionComponent } from './public-fiche-inscription/public-fiche-inscription.component';
+
 
 //Fonctions utilisées par le module de traduction
 // AoT requires an exported function for factories
@@ -90,7 +92,8 @@ export function createTranslateLoader(http: HttpClient) {
     TablesComponent,
     TypographyComponent,
     ClientPaginationComponent,
-    PublicFicheInscriptionComponent
+    PublicFicheInscriptionComponent,
+    ProspectionConseillerComponent
   ],
   imports: [
     AppRoutingModule,

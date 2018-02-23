@@ -49,6 +49,11 @@ public class DemandeInscriptionDaoImpl implements DemandeInscriptionDao {
 		return em.find(DemandeInscription.class, id);
 	}
 	
+//	public List<DemandeInscription> getDemandeInscriptionByConseillerId(int id){
+//		Query query = em.createQuery("SELECT dI FROM DemandeInscription as dI WHERE ");.
+//		return em.fin
+//	}
+	
 	public void updateDemandeInscription(DemandeInscription demandeInscr) {
 //		int i = demInscriptions.indexOf(demandeInscr);
 //		demInscriptions.set(i, demandeInscr);

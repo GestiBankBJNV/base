@@ -80,6 +80,7 @@
 	"nom" : "Nom",
 	"tel" : "Numéro de téléphone",
 	"adresse" : "Adresse",
+	"bienvenue" : "Bienvenue",
 	"ville" : "Ville",
 	"cp" : "Code Postal",
 	"clients" : "Clients",

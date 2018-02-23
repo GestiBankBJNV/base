@@ -22,7 +22,7 @@ import { LoginComponent } from './login/login.component';
 
 //IMPORTS CONSEILLER
 import { ConseillerAccueilComponent } from './conseiller-accueil/conseiller-accueil.component';
-
+import { ProspectionConseillerComponent } from './prospection-conseiller/prospection-conseiller.component';
 
 
 //IMPORTS ADMIN
@@ -52,6 +52,7 @@ const routes: Routes =[
     { path: 'client_profil',  component: ClientProfilComponent },
     { path: 'conseiller_accueil',    component: ConseillerAccueilComponent },   //ROUTES CONSEILLER
     { path: 'conseiller_devises',    component: PublicDevisesComponent },
+    { path: 'conseiller_prospection', component: ProspectionConseillerComponent},
     { path: 'public_accueil',        component: EspacePublicComponent },        //ROUTES PUBLIC
     { path: 'public_login',             component: LoginComponent },
     { path: 'public_connexion',      component: ConnexionComponent },

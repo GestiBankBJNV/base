@@ -1,0 +1,27 @@
+<div class="main-content">
+	<h2>Liste des Prospects</h2>
+  <p>Liste des prospects à valider</p>
+  <!-- Affichage dans un tableau de la liste des clients du conseiller -->           
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>{{"prenom" | translate}}</th>
+        <th>Nom</th>
+        <th>E-mail</th>
+        <th>date d'inscription</th>
+        <th>date d'affectation</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let di of demandeInscription" (click)="voirDemande(client)">
+      	<td>{{di.coordonnees.prenom}}</td>
+      	<td>{{di.coordonnees.nom}}</td>
+      	<td>{{di.coordonnees.email}}</td>
+      	<td>{{di.dateInscription | date:'dd/MM/yyyy'}}</td>
+      	<td>{{di.dateAffectation | date:'dd/MM/yyyy'}}</td>
+        <td><button type="button" class="btn btn-info btn-sm">Valider</button></td>
+      </tr>      
+    </tbody>
+  </table>
+</div>
