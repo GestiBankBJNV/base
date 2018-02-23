@@ -77,7 +77,7 @@
 	"admin_affectations_tableau_titre" : "List of account opening requests",
 	"admin_affectations_bouton_filtre" : "Filter requests",
 	"prenom" : "First name",
-	"bienvenue" : "Welcome",
+	"welcome" : "Welcome",
 	"nom" : "Last name",
 	"tel" : "Telephone number",
 	"adresse" : "Address",
