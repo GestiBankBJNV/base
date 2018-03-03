@@ -79,7 +79,7 @@
 	"prenom" : "First name",
 	"welcome" : "Welcome",
 	"nom" : "Last name",
-	"tel" : "Telephone number",
+	"tel" : "Phone number",
 	"adresse" : "Address",
 	"ville" : "City",
 	"cp" : "Zip code",

@@ -41,8 +41,8 @@ export class PublicFicheInscriptionComponent implements OnInit {
       	adresse: ['', Validators.required ],
       	cp: ['', Validators.required ],
       	ville: ['', Validators.required ],
-      	situationMatrimoniale: ['', Validators.required ], // select
-      	nbEnfants: ['', Validators.required ]
+      	situationMatrimoniale: [''], // select
+      	nbEnfants: ['']
   	});
   }
 

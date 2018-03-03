@@ -46,7 +46,13 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>{{ 'mdp' | translate }}</label>
-                                <input type="text" class="form-control" placeholder="{{ 'mdp' | translate }}" formControlName="mdp" required>
+                                <input type="password" class="form-control" placeholder="{{ 'mdp' | translate }}" formControlName="mdp" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>{{ 'Comfirmer le mot de passe' | translate }}</label>
+                                <input type="password" class="form-control" placeholder="{{ 'mdp' | translate }}" formControlName="mdp" required>
                             </div>
                         </div>
                     </div>
@@ -87,7 +93,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>{{ 'Nombre d\'enfants' | translate }}</label>
-                                <input type="number" class="form-control" placeholder="{{ '0' | translate }}" formControlName="nbEnfants" required>
+                                <input type="number" class="form-control" placeholder="{{ '0' | translate }}" formControlName="nbEnfants">
                             </div>
                         </div>
                     </div>
